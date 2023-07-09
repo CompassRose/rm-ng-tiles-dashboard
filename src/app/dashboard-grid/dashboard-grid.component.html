@@ -1,0 +1,34 @@
+<!-- <button class="btn btn-primary btn-sm m-1" (click)="addItem()">Add</button> -->
+
+<gridster [options]="options" style="background-color: rgb(237, 237, 237);">
+  <gridster-item
+    [item]="item"
+    *ngFor="let item of sortTileOptionsService.dashboard"
+    class="gridster-item-content"
+  >
+    <div class="transparent-top"></div>
+    <div class="reviewed-tag" *ngIf="item.reviewed">
+      Reviewed
+    </div>
+
+    <div class="drag-handler">
+      {{item.name}}
+
+      <div class="identity-row noselect">
+        <div class="number-container" [style.background-color]="item.color">
+          {{item.priority}}
+        </div>
+        <div class="nested-column">
+          <div class="title fw-600">{{item.name}}</div>
+          <div class="sub-title">421 Flights</div>
+        </div>
+      </div>
+      <div class="identity-row mb-5">
+        <div class="update-column ms-4">
+          <div class="title">Last Update</div>
+          <div class="sub-title">10:45 - 20th-May-2023</div>
+        </div>
+      </div>
+    </div>
+  </gridster-item>
+</gridster>

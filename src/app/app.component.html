@@ -1,0 +1,204 @@
+<div class="flex-basis-main">
+  <div class="d-flex align-items-center me-auto pre-header">
+    <div class="logo-flight-nfo d-flex ml-5">
+      <div>
+        <img
+          class="accelya-text-img me-4"
+          style="width: 150px; height: 45px;"
+          src="{{pathToAssets}}accelyaTextLogo.jpg"
+        />
+      </div>
+      <!-- <span class="font-16 fw-600 me-5">{{selectedFlightValues.airlineCode}}: {{selectedFlightValues.flightNumber}}
+      </span> -->
+    </div>
+    <div class="ps-3">AirRm Flags Dashboard</div>
+  </div>
+  <div class="flex-main">
+    <div class="header navy-background">
+      <div class="mx-3 mt-4">
+        <app-priority-chart></app-priority-chart>
+      </div>
+      <div class="mx-3 mt-4">
+        <monthly-flags-chart></monthly-flags-chart>
+      </div>
+      <div class="mx-3 mt-4">
+        <div class="m-2 fw-600">My List</div>
+        <div class="list-rect-group">
+          <div class="list-column">
+            <div class="list-row-group">
+              <div class="left-strip blue-tint"></div>
+              <div class="list-rect">
+                <div class="list-text-group ms-2">
+                  Title
+                  <div class="list-sub">421 Flights</div>
+                </div>
+              </div>
+            </div>
+            <div class="list-row-group">
+              <div class="left-strip orange-tint"></div>
+              <div class="list-rect">
+                <div class="list-text-group ms-2">
+                  Title
+                  <div class="list-sub">421 Flights</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="list-column">
+            <div class="list-rect">
+              <div class="list-row-group">
+                <div class="left-strip magenta-tint"></div>
+                <div class="list-rect">
+                  <div class="list-text-group ms-2">
+                    Title
+                    <div class="list-sub">421 Flights</div>
+                  </div>
+                </div>
+              </div>
+              <div class="list-row-group">
+                <div class="left-strip green-tint"></div>
+                <div class="list-rect">
+                  <div class="list-text-group ms-2">
+                    Title
+                    <div class="list-sub">421 Flights</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="d-flex align-items-center ms-auto me-4">
+        <button class="btn btn-primary btn-sm me-4" (click)="addItem()">
+          Add
+        </button>
+        <div class="d-flex align-items-center me-5">
+          <label class="me-2">NDO</label>
+          <mat-slide-toggle [(ngModel)]="isNdoChecked"></mat-slide-toggle>
+          <div class="ms-2">Dates</div>
+        </div>
+        <label class="me-2">Light</label>
+        <mat-slide-toggle
+          [(ngModel)]="isThemeChange"
+          (change)="onThemeChange($event)"
+        ></mat-slide-toggle>
+        <div class="ms-2">Dark</div>
+      </div> -->
+      </div>
+      <div class="floating-control-panel">
+        <div class="control-state">
+          <div class="control-row">
+            <div class="d-flex align-items-center">
+              <div class="list-column-group fw-600 mx-3">
+                Analyst
+                <div class="list-sub">
+                  38 of 38 Analysts
+                </div>
+              </div>
+
+              <ng-select
+                class="custom-select"
+                title="Select Metric"
+                [multiple]="true"
+                [closeOnSelect]="false"
+                placeholder="None"
+                [clearable]="false"
+                [searchable]="true"
+                [items]="sortTileOptionsService.analystGroup"
+                [bindLabel]="'name'"
+              >
+                <ng-template ng-header-tmp>
+                  Custom header
+                </ng-template>
+                <ng-template ng-label-tmp let-itemState="item">
+                  <div class="img-overlap" *ngIf="itemState.state">
+                    <img height="35" width="35" [src]="itemState.avatar" />
+                  </div>
+                </ng-template>
+                <ng-template ng-option-tmp let-item="item" let-i="index">
+                  <div class="analyst-row w-100">
+                    <div class="me-2">
+                      <img height="30" width="30" [src]="item.avatar" />
+                    </div>
+                    <input
+                      type="checkbox"
+                      [checked]="item.state"
+                      (change)="sortTileOptionsService.selectYearlyElement(i)"
+                    />
+                    <div class="d-flex ms-1">
+                      <div class="ms-2">
+                        {{ item.name }}: ({{ item.title }})
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </ng-select>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex align-items-center ms-5">
+          <div class="list-column-group fw-600 mx-3">
+            Routes
+            <div class="list-sub">
+              {{sortTileOptionsService.selectedItems.length}} of 38 Routes
+            </div>
+          </div>
+
+          <ng-select
+            class="custom-select"
+            title="Select Metric"
+            [multiple]="true"
+            [closeOnSelect]="false"
+            placeholder="Select"
+            [(ngModel)]="sortTileOptionsService.selectedItems"
+            [clearable]="false"
+            [searchable]="true"
+            [items]="sortTileOptionsService.dropdownList"
+            [bindLabel]="'name'"
+          >
+            <ng-template ng-option-tmp let-item="item" let-i="index">
+              <div class="d-flex w-100">
+                <input
+                  type="checkbox"
+                  [checked]="item.state"
+                  (change)="sortTileOptionsService.onNdoSelect(i)"
+                />
+                <div class="d-flex ms-1">
+                  <div class="ms-2">
+                    {{ item.name }}
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+
+        <div class="d-flex align-items-center ms-auto me-3">
+          <div class="list-column-group fw-600 mx-3">
+            Sort by
+          </div>
+
+          <div
+            class="ng-select.primary-background"
+            *ngIf="(sortTileOptionsService.priorityListBehaviorSubject$ | async) as allCabins"
+          >
+            <ng-select
+              class="custom-select"
+              title="Select Priority"
+              (change)="sortTileOptionsService.selectSortMethod($event)"
+              [clearable]="false"
+              [searchable]="false"
+              [items]="allCabins"
+            >
+              <ng-template ng-option-tmp let-item="item">
+                <div>
+                  {{ item.name }}
+                </div>
+              </ng-template>
+            </ng-select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-dashboard-grid></app-dashboard-grid>

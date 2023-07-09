@@ -1,0 +1,124 @@
+// Chart Colors
+$brand-secondary-violet: #5f1baf;
+$brand-secondary-purple: #981d97;
+
+// Main Backgrounds
+$brand-primary-background: #001871;
+$brand-primary-background2: #041a70;
+$brand-primary-background3: #b6d8f656;
+
+$Brand-off-white-background: rgb(248, 248, 250);
+$brand-gray-contrast-background: rgb(196, 212, 237);
+$brand-component-background: rgb(248, 248, 248);
+$brand-chart-background: rgb(234, 245, 255);
+$brand-primary-background-50: #00187173;
+
+// Main Text Colors from spec
+$brand-link-blue-text: #007bff;
+$brand-primary-text: #001871;
+$brand-off-white-lt: #e7e7e7;
+$brand-off-white-md: #a8aebb;
+$brand-off-black-text: #111111;
+$brand-dark-gray-text: #313f4a;
+$brand-medium-gray-text: #656f77;
+$brand-light-gray-text: #a2a9ae;
+
+$accelya-blue: rgb(19, 33, 106);
+$accelya-contrast-blue: rgb(92, 136, 218);
+$accelya-pink: rgb(223, 70, 97);
+
+$font-size-large: 2rem; // 1.4rem == 14px
+$font-size-medium-large: 1.8rem;
+
+$font-size-base-a: 16px !important; // 16px == 16px
+$font-size-base-xl: 17px !important;
+$font-size-base-lg: 14px; // 14px == 16px
+$font-size-base-ml: 13px; //12px @ 16px base
+$font-size-base-md: 12px; //12px @ 16px base
+$font-size-base-sm: 11px !important; //11px @ 16px base
+$font-size-base-xs: 10px !important; //10px @ 16px base
+
+$font-weight-lg: 600;
+$font-weight-md: 500;
+$font-weight-nml: 400;
+$font-weight-lt: 300;
+
+$chart-corner-radius: 3px;
+
+$font-family: "OpenSans-Semibold", sans-serif;
+// $font-family-sans-serif: // Safari for macOS and iOS (San Francisco)
+
+// -apple-system,
+// // Chrome < 56 for macOS (San Francisco)
+// BlinkMacSystemFont,
+// // Windows
+// "Roboto",
+// "Segoe UI",
+// // Android
+
+// // Basic web fallback
+// "Helvetica Neue",
+// Arial,
+// sans-serif,
+// // Emoji fonts
+// "Apple Color Emoji",
+// "Segoe UI Emoji",
+// "Segoe UI Symbol" !default;
+
+.fw-600 {
+  font-weight: $font-weight-lg;
+}
+
+.fw-500 {
+  font-weight: $font-weight-md;
+}
+
+.fw-400 {
+  font-weight: $font-weight-nml;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(197, 197, 197);
+  border-radius: 1px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(139, 139, 139);
+  border-radius: 1px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(99, 99, 99);
+}
+
+.ng-select.primary-background ::ng-deep .ng-select-container {
+  color: $brand-off-white-lt !important;
+  background-color: $brand-primary-background;
+  border-radius: 2px;
+  border: 1px solid $brand-off-white-lt !important;
+  min-height: 0.85rem !important;
+  max-height: 1.1rem !important;
+  padding: 0 3px;
+  align-items: center;
+  font-size: $font-size-base-xs;
+}
+
+.ng-select.white-button-match ::ng-deep .ng-select-container {
+  color: $brand-dark-gray-text !important;
+  background-color: $Brand-off-white-background;
+  border-radius: 2px;
+  border: 1px solid $brand-off-white-md !important;
+  min-height: 0.65rem !important;
+  max-height: 1.1rem !important;
+  min-width: 60px;
+  align-items: left;
+  font-size: $font-size-base-xs;
+}
