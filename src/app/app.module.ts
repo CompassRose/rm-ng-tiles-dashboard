@@ -15,12 +15,14 @@ import { MonthlyFlagsChartComponent } from './monthly-flags-chart/monthly-flags-
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 //import { SortTileOptionsService } from './services/sort-tiles-options.service';
+import { AnalystSearchComponent } from './analyst-search/analyst-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardGridComponent,
     PriorityChartComponent,
+    AnalystSearchComponent,
     MonthlyFlagsChartComponent
   ],
   imports: [

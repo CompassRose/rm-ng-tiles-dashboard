@@ -1,13 +1,45 @@
 <!-- <button class="btn btn-primary btn-sm m-1" (click)="addItem()">Add</button> -->
 
-<gridster [options]="options" style="background-color: rgb(237, 237, 237);">
-  <gridster-item
-    [item]="item"
-    *ngFor="let item of sortTileOptionsService.dashboard"
-    class="gridster-item-content"
-  >
+<div class="grid-parent">
+  <div *ngFor="let item of sortTileOptionsService.dashboard"
+     class="item-content">
+
+
+
+    <div class="drag-handler">
+      <div class="reviewed-tag"
+         *ngIf="item.reviewed">Reviewed</div>
+      <div class="identity-row noselect">
+
+        <div class="number-container"
+           [style.background-color]="item.color">
+          {{item.priority}}
+        </div>
+        <div class="nested-column">
+          <div class="title fw-600">{{item.name}}</div>
+          <div class="sub-title">421 Flights</div>
+        </div>
+      </div>
+      <div class="identity-row mb-5">
+        <div class="update-column ms-4">
+          <div class="title">Last Update</div>
+          <div class="sub-title">{{item.lastUpdate}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 
+<gridster [options]="options"
+   style="background-color: rgb(237, 237, 237); width:100%;">
+  <gridster-item [item]="item"
+     *ngFor="let item of sortTileOptionsService.dashboard"
+     class="gridster-item-content">
     <div class="transparent-top"></div>
-    <div class="reviewed-tag" *ngIf="item.reviewed">
+    <div class="reviewed-tag"
+       *ngIf="item.reviewed">
       Reviewed
     </div>
 
@@ -15,7 +47,8 @@
       {{item.name}}
 
       <div class="identity-row noselect">
-        <div class="number-container" [style.background-color]="item.color">
+        <div class="number-container"
+           [style.background-color]="item.color">
           {{item.priority}}
         </div>
         <div class="nested-column">
@@ -31,4 +64,4 @@
       </div>
     </div>
   </gridster-item>
-</gridster>
+</gridster> -->

@@ -1,19 +1,19 @@
-<div class="flex-basis-main">
-  <div class="d-flex align-items-center me-auto pre-header">
-    <div class="logo-flight-nfo d-flex ml-5">
-      <div>
-        <img
-          class="accelya-text-img me-4"
-          style="width: 150px; height: 45px;"
-          src="{{pathToAssets}}accelyaTextLogo.jpg"
-        />
+<div class="">
+  <div class="flex-basis-main">
+    <div class="pre-header">
+
+      <span class="accelya-logo-svg"></span>
+      <span class="headline-text headline-20-28-600 ps-3">Flags Dashboard</span>
+
+      <div class="logging-center">
+        <div class="logged-in-as">
+          <div class="body-text body-14-24-600">Tanya Robinson</div>
+          <div class="body-text body-12-16-400">Admin Accelys</div>
+        </div>
+        <div class="logout-svg"></div>
       </div>
-      <!-- <span class="font-16 fw-600 me-5">{{selectedFlightValues.airlineCode}}: {{selectedFlightValues.flightNumber}}
-      </span> -->
     </div>
-    <div class="ps-3">AirRm Flags Dashboard</div>
-  </div>
-  <div class="flex-main">
+
     <div class="header navy-background">
       <div class="mx-3 mt-4">
         <app-priority-chart></app-priority-chart>
@@ -32,15 +32,18 @@
                   Title
                   <div class="list-sub">421 Flights</div>
                 </div>
+                <div class="todo-calendar"></div>
               </div>
+
             </div>
             <div class="list-row-group">
               <div class="left-strip orange-tint"></div>
               <div class="list-rect">
                 <div class="list-text-group ms-2">
                   Title
-                  <div class="list-sub">421 Flights</div>
+                  <div class="list-sub">388 Flights</div>
                 </div>
+                <div class="todo-calendar"></div>
               </div>
             </div>
           </div>
@@ -51,8 +54,9 @@
                 <div class="list-rect">
                   <div class="list-text-group ms-2">
                     Title
-                    <div class="list-sub">421 Flights</div>
+                    <div class="list-sub">126 Flights</div>
                   </div>
+                  <div class="todo-calendar"></div>
                 </div>
               </div>
               <div class="list-row-group">
@@ -62,106 +66,49 @@
                     Title
                     <div class="list-sub">421 Flights</div>
                   </div>
+                  <div class="todo-calendar"></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- <div class="d-flex align-items-center ms-auto me-4">
-        <button class="btn btn-primary btn-sm me-4" (click)="addItem()">
-          Add
-        </button>
-        <div class="d-flex align-items-center me-5">
-          <label class="me-2">NDO</label>
-          <mat-slide-toggle [(ngModel)]="isNdoChecked"></mat-slide-toggle>
-          <div class="ms-2">Dates</div>
-        </div>
-        <label class="me-2">Light</label>
-        <mat-slide-toggle
-          [(ngModel)]="isThemeChange"
-          (change)="onThemeChange($event)"
-        ></mat-slide-toggle>
-        <div class="ms-2">Dark</div>
-      </div> -->
       </div>
-      <div class="floating-control-panel">
-        <div class="control-state">
-          <div class="control-row">
-            <div class="d-flex align-items-center">
-              <div class="list-column-group fw-600 mx-3">
-                Analyst
-                <div class="list-sub">
-                  38 of 38 Analysts
-                </div>
+    </div>
+    <div class="floating-control-panel ">
+      <div class="menu-bar-items analysts bordered">
+        <analyst-search></analyst-search>
+      </div>
+
+      <div class="menu-bar-items analysts">
+
+        <div class="d-flex align-items-center">
+
+          <div class="list-column-group">
+            <div class="row-list ps-3">
+              <div>Routes</div>
+              <div class="list-sub">
+                {{sortTileOptionsService.selectedItems.length}} of {{sortTileOptionsService.routeList.length}} Routes
               </div>
-
-              <ng-select
-                class="custom-select"
-                title="Select Metric"
-                [multiple]="true"
-                [closeOnSelect]="false"
-                placeholder="None"
-                [clearable]="false"
-                [searchable]="true"
-                [items]="sortTileOptionsService.analystGroup"
-                [bindLabel]="'name'"
-              >
-                <ng-template ng-header-tmp>
-                  Custom header
-                </ng-template>
-                <ng-template ng-label-tmp let-itemState="item">
-                  <div class="img-overlap" *ngIf="itemState.state">
-                    <img height="35" width="35" [src]="itemState.avatar" />
-                  </div>
-                </ng-template>
-                <ng-template ng-option-tmp let-item="item" let-i="index">
-                  <div class="analyst-row w-100">
-                    <div class="me-2">
-                      <img height="30" width="30" [src]="item.avatar" />
-                    </div>
-                    <input
-                      type="checkbox"
-                      [checked]="item.state"
-                      (change)="sortTileOptionsService.selectYearlyElement(i)"
-                    />
-                    <div class="d-flex ms-1">
-                      <div class="ms-2">
-                        {{ item.name }}: ({{ item.title }})
-                      </div>
-                    </div>
-                  </div>
-                </ng-template>
-              </ng-select>
             </div>
           </div>
-        </div>
-        <div class="d-flex align-items-center ms-5">
-          <div class="list-column-group fw-600 mx-3">
-            Routes
-            <div class="list-sub">
-              {{sortTileOptionsService.selectedItems.length}} of 38 Routes
-            </div>
-          </div>
+          <ng-select class="custom-select"
+             title="Select Metric"
+             [multiple]="true"
+             [closeOnSelect]="false"
+             placeholder="Select Routes"
+             [(ngModel)]="sortTileOptionsService.selectedItems"
+             [clearable]="false"
+             [searchable]="true"
+             [items]="sortTileOptionsService.routeList"
+             [bindLabel]="'name'">
 
-          <ng-select
-            class="custom-select"
-            title="Select Metric"
-            [multiple]="true"
-            [closeOnSelect]="false"
-            placeholder="Select"
-            [(ngModel)]="sortTileOptionsService.selectedItems"
-            [clearable]="false"
-            [searchable]="true"
-            [items]="sortTileOptionsService.dropdownList"
-            [bindLabel]="'name'"
-          >
-            <ng-template ng-option-tmp let-item="item" let-i="index">
+            <ng-template ng-option-tmp
+               let-item="item"
+               let-i="index">
               <div class="d-flex w-100">
-                <input
-                  type="checkbox"
-                  [checked]="item.state"
-                  (change)="sortTileOptionsService.onNdoSelect(i)"
-                />
+                <input type="checkbox"
+                   [checked]="item.state"
+                   (change)="sortTileOptionsService.onNdoSelect(i)" />
                 <div class="d-flex ms-1">
                   <div class="ms-2">
                     {{ item.name }}
@@ -171,34 +118,46 @@
             </ng-template>
           </ng-select>
         </div>
+      </div>
 
-        <div class="d-flex align-items-center ms-auto me-3">
-          <div class="list-column-group fw-600 mx-3">
-            Sort by
-          </div>
+      <div class="menu-bar-items ms-auto py-2">
+        <div class="list-column-group">
+          Sort By
+        </div>
 
-          <div
-            class="ng-select.primary-background"
-            *ngIf="(sortTileOptionsService.priorityListBehaviorSubject$ | async) as allCabins"
-          >
-            <ng-select
-              class="custom-select"
-              title="Select Priority"
-              (change)="sortTileOptionsService.selectSortMethod($event)"
-              [clearable]="false"
-              [searchable]="false"
-              [items]="allCabins"
-            >
-              <ng-template ng-option-tmp let-item="item">
-                <div>
-                  {{ item.name }}
-                </div>
-              </ng-template>
-            </ng-select>
-          </div>
+        <div *ngIf="(sortTileOptionsService.priorityListBehaviorSubject$ | async) as allCabins"
+           class="me-5">
+          <ng-select class="custom-select"
+             title="Select Priority"
+             (change)="sortTileOptionsService.selectSortMethod($event)"
+             [clearable]="false"
+             [searchable]="false"
+             [(ngModel)]="sortTileOptionsService.selectedPriority"
+             placeholder="Select Priority"
+             [items]="allCabins">
+            <ng-template ng-label-tmp
+               let-item="item">
+              <div>{{item.name}}</div>
+            </ng-template>
+            <ng-template ng-option-tmp
+               let-item="item">
+              <div>
+                {{ item.name }}
+              </div>
+            </ng-template>
+          </ng-select>
         </div>
       </div>
     </div>
+
+    <div class="flex-main">
+      <app-dashboard-grid></app-dashboard-grid>
+    </div>
+
+    <div class="footer">
+      <span class="accelya-logo-svg"></span>
+      <span class="privacy-text">
+        Privacy | Terms & Conditions</span>
+    </div>
   </div>
 </div>
-<app-dashboard-grid></app-dashboard-grid>

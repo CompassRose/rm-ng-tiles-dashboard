@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, AfterViewInit } from '@angular/core';
 import { myGridOptions } from '../../assets/gridster-options';
 import { SortTileOptionsService } from '../services/sort-tiles-options.service';
 
@@ -8,14 +8,13 @@ import { GridsterConfig, GridsterItem } from 'angular-gridster2';
 @Component({
   selector: 'app-dashboard-grid',
   templateUrl: './dashboard-grid.component.html',
-  // changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./dashboard-grid.component.scss']
 })
 
 
 
-export class DashboardGridComponent implements OnInit {
+export class DashboardGridComponent implements OnInit, AfterViewInit {
 
   public options: GridsterConfig = myGridOptions;
   public dashboard: Array<GridsterItem>;
@@ -27,11 +26,19 @@ export class DashboardGridComponent implements OnInit {
     this.dashboardCollection.push(this.sortTileOptionsService.dashboard);
   }
 
+  public ngAfterViewInit() {
+    this.options.itemChangeCallback = this.itemChange.bind(this);
+  }
 
   saveDashboard() {
     window.localStorage.setItem('savedDashboard', JSON.stringify(this.sortTileOptionsService.dashboard));
   }
 
+  // Gridster option callback subscribed to in ngAfterViewInit
+  private itemChange(itemComponent: any) {
+    console.log('itemChange ', this.sortTileOptionsService.dashboard, ' itemComponent ', itemComponent)
+
+  }
   changedOptions() {
     if (this.options.api && this.options.api.optionsChanged) {
       console.log('Dashboard ', this.sortTileOptionsService.dashboard)

@@ -1,126 +1,176 @@
 
 import { Injectable, OnInit } from '@angular/core';
+
 import { BehaviorSubject } from 'rxjs';
+
 import { PathToAssets } from '../dashboard-constants';
+
 import { GridsterConfig, GridsterItem } from 'angular-gridster2';
+
+import * as moment from 'moment';
+
+
 
 @Injectable({
     providedIn: 'root',
 })
 
 
+
+
 export class SortTileOptionsService {
 
-    public dashboard: Array<GridsterItem>;
+    public dashboard: any = [];
+
     public isNdoChecked = true;
+
     public isThemeChange = true;
+
     public chartThemeSelect = 'dark';
+
     public selectedItems: any[] = [];
+
     public priorityItems: any[] = [];
+
     public selectedPriority: number = 0;
 
-    public dropdownListBehaviorSubject$ = new BehaviorSubject<any[]>([]);
+    public routeListBehaviorSubject$ = new BehaviorSubject<any[]>([]);
+
     public priorityListBehaviorSubject$ = new BehaviorSubject<any[]>([]);
 
-    public dropdownList: any[] = [];
-
-
+    public routeList: any[] = [];
 
     public analystGroup = [
         {
+            idx: 0,
             name: "Guy Hawkins",
             title: 'Senior Analyst',
-            state: false,
-            avatar: '../assets/images/analyst01.png'
+            state: true,
+            avatar: '../assets/images/img-6525-8-01.png'
         },
         {
+            idx: 1,
             name: "Franklin Webb",
             title: 'Junior Analyst',
-            state: true,
-            avatar: '../assets/images/analyst02.png'
+            state: false,
+            avatar: '../assets/images/img-6525-8-02.png'
         },
         {
+            idx: 2,
             name: "John Anderson",
             title: 'Junior Analyst',
             state: false,
-            avatar: '../assets/images/analyst03.png'
+            avatar: '../assets/images/img-6525-8-03.png'
         },
         {
+            idx: 3,
             name: "Willie Smish",
             title: 'Senior Analyst',
-            state: false,
-            avatar: '../assets/images/analyst04.png'
+            state: true,
+            avatar: '../assets/images/img-6525-8-04.png'
         },
         {
+            idx: 4,
             name: "Peter Johnson",
             title: 'Senior Analyst',
             state: false,
-            avatar: '../assets/images/analyst05.png'
+            avatar: '../assets/images/img-6525-8-03.png'
         },
         {
+            idx: 5,
             name: "Guy Hawkins",
             title: 'Senior Analyst',
             state: false,
-            avatar: '../assets/images/analyst01.png'
+            avatar: '../assets/images/img-6525-8-01.png'
         },
         {
+            idx: 6,
             name: "Franklin Webb",
             title: 'Junior Analyst',
             state: true,
-            avatar: '../assets/images/analyst02.png'
+            avatar: '../assets/images/img-6525-8-01.png'
         },
         {
+            idx: 7,
             name: "John Anderson",
             title: 'Junior Analyst',
-            state: true,
-            avatar: '../assets/images/analyst03.png'
+            state: false,
+            avatar: '../assets/images/img-6525-8-02.png'
         },
         {
+            idx: 8,
             name: "Willie Smish",
             title: 'Senior Analyst',
             state: false,
-            avatar: '../assets/images/analyst04.png'
+            avatar: '../assets/images/img-6525-8-02.png'
         },
         {
+            idx: 9,
             name: "Peter Johnson",
             title: 'Senior Analyst',
-            state: true,
+            state: false,
             avatar: '../assets/images/analyst05.png'
         },
     ]
 
-    public selectedAnalysts = [0]
+    public selectedAnalysts: any = []
 
 
     constructor() {
 
+        let momentOne = moment(new Date(2023, 2, 12, 5, 0, 0));
+
+        let firstDay = momentOne.format('M/DD/YYYY: H');
+
+        let duration = moment.duration({ 'days': 4, 'hours': 1, 'minutes': 15 });
+
+        let addedDay = momentOne.add(duration);
+
+        let addADay = addedDay.format('M/DD/YYYY: H');
+
+        addedDay.format('M/DD/YYYY');
+        // addedDay.format('M/DD/YYYY');
+
+        console.log('firstDay ', firstDay, ' addedDay ', addADay)
 
         this.dashboard = [
-            { idx: 0, cols: 1, rows: 1, y: 0, x: 0, color: 'Brown', name: 'Title', priority: 1, reviewed: true },
-            { idx: 1, cols: 1, rows: 1, y: 0, x: 1, color: 'navy', name: 'Title', priority: 1, reviewed: true },
-            { idx: 2, cols: 1, rows: 1, y: 0, x: 2, color: 'DarkGreen', name: 'Title', priority: 1, reviewed: true },
-            { idx: 3, cols: 1, rows: 1, y: 0, x: 3, color: 'DarkBlue', name: 'Title', priority: 1, reviewed: true },
-            { idx: 4, cols: 1, rows: 1, y: 0, x: 4, color: 'Brown', name: 'Title', priority: 2, reviewed: false },
-            { idx: 5, cols: 1, rows: 1, y: 1, x: 0, color: 'DarkGreen', name: 'Title', priority: 2, reviewed: true },
-            { idx: 6, cols: 1, rows: 1, y: 1, x: 1, color: 'DarkSlateGrey', name: 'Title', priority: 2, reviewed: true },
-            { idx: 7, cols: 1, rows: 1, y: 1, x: 2, color: 'DarkRed', name: 'Title', priority: 2, reviewed: true },
-            { idx: 8, cols: 1, rows: 1, y: 1, x: 3, color: 'purple', name: 'Title', priority: 3, reviewed: true },
-            { idx: 9, cols: 1, rows: 1, y: 2, x: 0, color: 'DarkGreen', name: 'Title', priority: 3, reviewed: false },
-            { idx: 10, cols: 1, rows: 1, y: 2, x: 1, color: 'DarkSlateGrey', name: 'Title', priority: 3, reviewed: false },
-            { idx: 11, cols: 1, rows: 1, y: 2, x: 2, color: 'navy', name: 'Title', priority: 3, reviewed: false },
-            { idx: 12, cols: 1, rows: 1, y: 2, x: 3, color: 'Indigo', name: 'Title', priority: 4, reviewed: true },
-            { idx: 13, cols: 1, rows: 1, y: 3, x: 0, color: 'DarkBlue', name: 'Title', priority: 4, reviewed: true }
+            { idx: 0, color: 'Brown', name: 'Title', priority: 1, reviewed: true, lastUpdate: '20th-July-2023' },
+            { idx: 1, color: 'navy', name: 'Title', priority: 1, reviewed: true, lastUpdate: '20th-May-2023' },
+            { idx: 2, color: 'DarkGreen', name: 'Title', priority: 1, reviewed: true, lastUpdate: '20th-May-2023' },
+            { idx: 3, color: 'DarkBlue', name: 'Title', priority: 1, reviewed: true, lastUpdate: '20th-May-2023' },
+            { idx: 4, color: 'Brown', name: 'Title', priority: 2, reviewed: false, lastUpdate: '20th-May-2023' },
+            { idx: 5, color: 'DarkGreen', name: 'Title', priority: 2, reviewed: true, lastUpdate: '20th-May-2023' },
+            { idx: 6, color: 'DarkSlateGrey', name: 'Title', priority: 2, reviewed: true, lastUpdate: '20th-May-2023' },
+            { idx: 7, color: 'DarkRed', name: 'Title', priority: 2, reviewed: false, lastUpdate: '20th-May-2023' },
+            { idx: 8, color: 'purple', name: 'Title', priority: 3, reviewed: true, lastUpdate: '20th-May-2023' },
+            { idx: 9, color: 'DarkGreen', name: 'Title', priority: 3, reviewed: false, lastUpdate: '20th-May-2023' },
+            { idx: 10, color: 'DarkSlateGrey', name: 'Title', priority: 3, reviewed: false, lastUpdate: '20th-May-2023' },
+            { idx: 11, color: 'navy', name: 'Title', priority: 3, reviewed: false, lastUpdate: '20th-May-2023' },
+            { idx: 12, color: 'Indigo', name: 'Title', priority: 4, reviewed: true, lastUpdate: '20th-May-2023' },
+            { idx: 13, color: 'DarkBlue', name: 'Title', priority: 4, reviewed: false, lastUpdate: '20th-May-2023' },
+            { idx: 14, color: 'Brown', name: 'Title', priority: 2, reviewed: false, lastUpdate: '20th-May-2023' },
+            { idx: 15, color: 'DarkGreen', name: 'Title', priority: 1, reviewed: true, lastUpdate: '20th-May-2023' },
+            { idx: 16, color: 'DarkBlue', name: 'Title', priority: 1, reviewed: true, lastUpdate: '20th-May-2023' },
+            { idx: 17, color: 'Brown', name: 'Title', priority: 2, reviewed: false, lastUpdate: '20th-May-2023' },
+            { idx: 18, color: 'DarkGreen', name: 'Title', priority: 2, reviewed: true, lastUpdate: '20th-May-2023' },
+            { idx: 19, color: 'DarkSlateGrey', name: 'Title', priority: 2, reviewed: true, lastUpdate: '20th-May-2023' },
         ];
+
+        this.dashboard.map((db: any, i: number) => {
+            db.lastUpdate = momentOne.add(duration).format('h:mm - MMM-DD-YYYY');
+            console.log('???? ', db.lastUpdate)
+            return db;
+        })
 
         this.priorityItems = [
-            { id: 0, name: 'Priority' },
-            { id: 1, name: 'Last Run' },
-            { id: 2, name: 'Reviewed' }
+            { id: 0, name: 'Priority', metric: 'priority' },
+            { id: 1, name: 'Last Run', metric: 'lastUpdate' },
+            { id: 2, name: 'Reviewed', metric: 'reviewed' }
         ];
 
-        this.selectedPriority = 0;
+        this.selectedPriority = this.priorityItems[0];
 
-        this.dropdownList = [
+        this.routeList = [
             { id: 1, name: 'LGN - PMI', state: true },
             { id: 2, name: 'LTN - PMI', state: false },
             { id: 3, name: 'LGW - PMI', state: false },
@@ -131,9 +181,11 @@ export class SortTileOptionsService {
             { id: 3, name: 'LGW - PMI' },
         ];
 
+        this.selectedAnalysts = [this.analystGroup[0], this.analystGroup[3], this.analystGroup[6]]
+
         this.priorityListBehaviorSubject$.next(this.priorityItems)
 
-        this.dropdownListBehaviorSubject$.next(this.dropdownList)
+        this.routeListBehaviorSubject$.next(this.routeList)
 
         this.priorityListBehaviorSubject$
             .subscribe((res) => {
@@ -143,7 +195,29 @@ export class SortTileOptionsService {
 
 
     public selectSortMethod(ev: any) {
-        console.log('selectSortMethod ', ev)
+
+        // console.log('selectSortMethod ', ev)
+
+        function dynamicSort(property: any) {
+
+            var sortOrder = 1;
+            // Sort function
+            return function (a: any, b: any) {
+                // console.log('a ', a[property], ' b ', b[property])
+                let result;
+                if (typeof a[property] == 'boolean') {
+                    result = (a[property] > b[property]) ? -1 : (a[property] > b[property]) ? 0 : 1;
+                } else {
+                    result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+                }
+
+                // console.log('result ', sortOrder)
+                return result * sortOrder;
+            }
+        }
+
+        this.dashboard.sort(dynamicSort(ev.metric))
+        //console.log('this.dashboard ', this.dashboard)
 
     }
 
@@ -167,11 +241,13 @@ export class SortTileOptionsService {
     public selectYearlyElement(idx: number) {
 
         console.log('selectYearlyElement ', idx)
-        if (!this.selectedAnalysts.includes(idx)) {
-            this.selectedAnalysts.push(idx);
-        }
-        this.analystGroup[idx].state = !this.analystGroup[idx].state;
-        this.selectedAnalysts[idx]
+
+        // if (!this.selectedAnalysts.includes(idx)) {
+        //     this.selectedAnalysts.push(idx);
+        // }
+
+
+
         console.log('this.selectedAnalysts ', this.selectedAnalysts)
     }
 

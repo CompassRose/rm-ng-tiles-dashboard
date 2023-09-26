@@ -1,150 +1,235 @@
 @import "../styles/configuration.scss";
 
+.frame {
+  display: inline-flex;
+  //align-items: flex-start;
+  position: relative;
+}
+
+.frame .IMG {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+}
+
+.frame .img {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  margin-left: -8px;
+  object-fit: cover;
+}
+
+.frame .airport-code-large-wrapper {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px;
+  position: relative;
+  margin-left: -8px;
+  background-color: var(--txt-bglightgrey2);
+  border-radius: 44px;
+}
+
+.frame .airport-code-large {
+  position: relative;
+  width: fit-content;
+  font-family: var(--semibold-font-size-100-semi-font-family);
+  font-weight: var(--semibold-font-size-100-semi-font-weight);
+  color: var(--txt-bgdarkgrey);
+  font-size: var(--semibold-font-size-100-semi-font-size);
+  letter-spacing: var(--semibold-font-size-100-semi-letter-spacing);
+  line-height: var(--semibold-font-size-100-semi-line-height);
+  white-space: nowrap;
+  font-style: var(--semibold-font-size-100-semi-font-style);
+}
+
+@mixin make-container($padding-x: $container-padding-x) {
+  width: 100%;
+  padding-right: $padding-x;
+  padding-left: $padding-x;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .flex-basis-main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(218, 218, 255);
-  width: 100% !important;
+  justify-items: flex-start;
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
+
   .pre-header {
     width: 100%;
-    height: 50px !important;
-    margin-bottom: 10px;
+    border-bottom: 1px solid gray;
     padding-left: 15px;
-    background-color: $accelya-blue;
+    background-color: var(--bs-white);
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     font-size: $font-size-base-xl !important;
-    color: white;
-    font-size: 22px;
+    color: $accelya-blue;
     font-weight: normal;
-    width: 100%;
   }
-  .flex-main {
+
+  .logging-center {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 100% !important;
+    margin-left: auto;
+    margin-right: 20px;
 
-    .header {
-      //z-index: 100;
-      width: 100%;
+    .logged-in-as {
       display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      height: 320px;
+      flex-direction: column;
+    }
+    .logout-svg {
+      margin-left: 30px;
+      margin-top: 20px;
+      background-image: url("../assets/svg/logout_circle.svg") !important;
+      background-repeat: no-repeat;
+      width: 40px;
+      height: 40px;
+    }
+  }
 
-      &.navy-background {
-        background-color: $accelya-blue;
-        color: $brand-off-white-lt;
-      }
+  .header {
+    width: 90% !important;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 40px;
 
-      .logo-flight-nfo {
-        flex-wrap: nowrap;
-        padding: 10px;
+    &.navy-background {
+      background-color: $accelya-blue;
+      color: $brand-off-white-lt;
+    }
 
-        .accelya-text-img {
-          width: 10px;
-          height: 20px;
-          display: flex;
-        }
+    .logo-flight-nfo {
+      flex-wrap: nowrap;
+      padding: 10px;
+
+      .accelya-text-img {
+        width: 10px;
+        height: 20px;
+        display: flex;
       }
     }
 
-    .floating-control-panel {
-      position: absolute;
-      border-collapse: separate;
+    .list-rect-group {
       display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .list-column {
+        display: flex;
+        flex-direction: column;
+        .list-row-group {
+          display: flex;
+          align-items: center;
+
+          .left-strip {
+            width: 10px;
+            height: 85px;
+            margin: 0 0px 10px 5px;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            margin-right: auto;
+            &.blue-tint {
+              background-color: rgb(55, 55, 189);
+            }
+            &.magenta-tint {
+              background-color: rgb(167, 65, 180);
+            }
+            &.orange-tint {
+              background-color: rgb(184, 94, 42);
+            }
+            &.green-tint {
+              background-color: rgb(22, 95, 22);
+            }
+          }
+
+          .list-rect {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 270px;
+            height: 85px;
+            padding-left: 10px;
+            margin: auto 5px 10px 0;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            box-shadow: 0px 2px 8px rgba(1, 99, 226, 0.3);
+            background-color: rgba(0, 0, 0, 0.25);
+
+            .todo-calendar {
+              z-index: 11001;
+              margin-top: 35px;
+              margin-right: -5px;
+              background-image: url("../assets/svg/todo-calendar.svg") !important;
+              background-repeat: no-repeat;
+              width: 55px;
+              height: 55px;
+            }
+          }
+
+          .list-text-group {
+            font-size: 22px;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            .list-sub {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .flex-main {
+    margin: 0 auto;
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    width: 85% !important;
+  }
+
+  .footer {
+    display: flex;
+    margin-top: auto !important;
+    align-self: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    padding: 16px 32px;
+    background: white;
+    border-top: 1px #d0d3d4 solid;
+    bottom: 0% !important;
+    .privacy-text {
       margin-left: auto;
-      margin-right: auto;
-      left: 0;
-      right: 0;
-      justify-content: flex-start;
-      z-index: 1000;
-      width: 90%;
-      margin-top: 280px;
-      background-color: white;
-      border: 1px solid rgba(0, 0, 0, 0.2);
-      height: 70px;
-      border-radius: 6px;
-      box-shadow: 3px 0px 8px rgba(0, 0, 0, 0.356);
+      color: #012169;
+      font-size: 14px;
+      font-weight: 400;
+      word-wrap: break-word;
     }
   }
 }
 
-.list-rect-group {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  .list-column {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    .list-row-group {
-      display: flex;
-      align-items: center;
-
-      .left-strip {
-        width: 10px;
-        height: 85px;
-        margin: 0 0px 10px 5px;
-        border-top-left-radius: 6px;
-        border-bottom-left-radius: 6px;
-        margin-right: auto;
-        &.blue-tint {
-          background-color: rgb(55, 55, 189);
-        }
-        &.magenta-tint {
-          background-color: rgb(167, 65, 180);
-        }
-        &.orange-tint {
-          background-color: rgb(184, 94, 42);
-        }
-        &.green-tint {
-          background-color: rgb(22, 95, 22);
-        }
-      }
-
-      .list-rect {
-        display: flex;
-        align-items: center;
-        width: 280px;
-        height: 85px;
-        padding-left: 10px;
-        margin: auto 5px 10px 0;
-        border-top-right-radius: 6px;
-        border-bottom-right-radius: 6px;
-        box-shadow: 0px 2px 8px rgba(1, 99, 226, 0.3);
-        background-color: rgba(0, 0, 0, 0.25);
-      }
-      .list-text-group {
-        font-size: 22px;
-        font-weight: 500;
-        display: flex;
-        flex-direction: column;
-        .list-sub {
-          font-size: 12px;
-        }
-      }
-    }
-  }
+.accelya-logo-svg {
+  background-image: url("../assets/svg/accelya-logo.svg") !important;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 38px;
 }
 
 .img-overlap {
   margin-right: -5px;
-}
-
-.list-column-group {
-  font-size: 16px;
-  font-weight: 600;
-  display: flex;
-  color: navy;
-  flex-direction: column;
-  .list-sub {
-    font-size: 11px;
-    font-weight: normal;
-    color: gray;
-  }
 }
 
 .collapse-js-button {

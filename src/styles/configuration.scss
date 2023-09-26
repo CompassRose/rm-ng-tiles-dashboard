@@ -65,6 +65,114 @@ $font-family: "OpenSans-Semibold", sans-serif;
 // "Segoe UI Emoji",
 // "Segoe UI Symbol" !default;
 
+.headline-text {
+  color: $brand-primary-text;
+
+  &.headline-20-28-600 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  &.headline-24-32-600 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+  }
+
+  &.headline-32-40-600 {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+  }
+}
+
+.body-text {
+  &.body-12-16-600 {
+    color: var(--body-02-txt-color);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+  }
+  &.body-14-24-600 {
+    color: var(--body-02-txt-color);
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+  }
+  &.body-16-24-600 {
+    color: var(--accelya-primary-blue);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+  }
+  &.body-02 {
+    color: var(--body-02-txt-color);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+  }
+  &.body-14-20-600 {
+    color: var(--body-02-txt-color);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+  }
+  &.body-12-16-400 {
+    color: var(--body-02-txt-color);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+  }
+  &.body-12-16-400 {
+    color: var(--body-02-txt-color);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+  }
+  &.body-14-16-400 {
+    color: var(--body-02-txt-color);
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+  }
+  &.body-16-24-600 {
+    color: var(--body-02-txt-color);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+  }
+  &.body-16-24-400 {
+    color: var(--body-02-txt-color);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+}
+
+.subtitle-text {
+  &.sub-title-18-600 {
+    color: var(--body-02-txt-color);
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+  }
+  &.sub-title-20-28-600 {
+    color: var(--body-02-txt-color);
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+  }
+  &.sub-title-16-700 {
+    color: var(--body-02-txt-color);
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 700;
+  }
+}
+
 .fw-600 {
   font-weight: $font-weight-lg;
 }
@@ -99,26 +207,26 @@ $font-family: "OpenSans-Semibold", sans-serif;
   background: rgb(99, 99, 99);
 }
 
-.ng-select.primary-background ::ng-deep .ng-select-container {
-  color: $brand-off-white-lt !important;
-  background-color: $brand-primary-background;
-  border-radius: 2px;
-  border: 1px solid $brand-off-white-lt !important;
-  min-height: 0.85rem !important;
-  max-height: 1.1rem !important;
-  padding: 0 3px;
-  align-items: center;
-  font-size: $font-size-base-xs;
-}
+// .ng-select.primary-background ::ng-deep .ng-select-container {
+//   color: $brand-off-white-lt !important;
+//   background-color: $brand-primary-background;
+//   border-radius: 2px;
+//   border: 1px solid $brand-off-white-lt !important;
+//   min-height: 0.85rem !important;
+//   max-height: 1.1rem !important;
+//   padding: 0 3px;
+//   align-items: center;
+//   font-size: $font-size-base-xs;
+// }
 
-.ng-select.white-button-match ::ng-deep .ng-select-container {
-  color: $brand-dark-gray-text !important;
-  background-color: $Brand-off-white-background;
-  border-radius: 2px;
-  border: 1px solid $brand-off-white-md !important;
-  min-height: 0.65rem !important;
-  max-height: 1.1rem !important;
-  min-width: 60px;
-  align-items: left;
-  font-size: $font-size-base-xs;
-}
+// .ng-select.white-button-match ::ng-deep .ng-select-container {
+//   color: $brand-dark-gray-text !important;
+//   background-color: $Brand-off-white-background;
+//   border-radius: 2px;
+//   border: 1px solid $brand-off-white-md !important;
+//   min-height: 0.65rem !important;
+//   max-height: 1.1rem !important;
+//   min-width: 60px;
+//   align-items: left;
+//   font-size: $font-size-base-xs;
+// }
