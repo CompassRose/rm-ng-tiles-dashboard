@@ -8,14 +8,13 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { MaterialExampleModule } from '../material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { GridsterModule } from 'angular-gridster2';
-import { NgForOf } from '@angular/common';
 import { DashboardGridComponent } from './dashboard-grid/dashboard-grid.component';
 import { PriorityChartComponent } from './priority-chart/priority-chart.component';
 import { MonthlyFlagsChartComponent } from './monthly-flags-chart/monthly-flags-chart.component';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 //import { SortTileOptionsService } from './services/sort-tiles-options.service';
 import { AnalystSearchComponent } from './analyst-search/analyst-search.component';
+import { TileCardComponent } from './dashboard-grid/tile-card/tile-card.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,8 @@ import { AnalystSearchComponent } from './analyst-search/analyst-search.componen
     DashboardGridComponent,
     PriorityChartComponent,
     AnalystSearchComponent,
-    MonthlyFlagsChartComponent
+    MonthlyFlagsChartComponent,
+    TileCardComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +32,6 @@ import { AnalystSearchComponent } from './analyst-search/analyst-search.componen
     GridsterModule,
     NgSelectModule,
     HttpClientModule,
-    NgMultiSelectDropDownModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
     NgxEchartsModule.forRoot({

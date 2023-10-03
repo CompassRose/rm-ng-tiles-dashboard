@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewEncapsulation, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { SortTileOptionsService } from '../services/sort-tiles-options.service';
+import { of, delay, Observable, BehaviorSubject } from 'rxjs';
+
 
 @Component({
     selector: 'analyst-search',
@@ -11,37 +13,61 @@ import { SortTileOptionsService } from '../services/sort-tiles-options.service';
 
 
 
-export class AnalystSearchComponent implements OnInit, AfterViewInit {
+export class AnalystSearchComponent {
 
-    public selectedAnalystImages: any[] = []
-    public selectedAnalysts: any = [];
 
-    constructor(public sortTileOptionsService: SortTileOptionsService) {
-        this.selectedAnalysts = [];
+    public numAnalystsSelected = false;
+
+
+    constructor(public sortTileOptionsService: SortTileOptionsService) { }
+
+
+    public onSelectAll() {
+
+        let stateTest = true;
+
+        if (this.sortTileOptionsService.selectedAnalysts.length === this.sortTileOptionsService.analystGroup.length) {
+            stateTest = false;
+        }
+
+        if (this.sortTileOptionsService.selectedAnalysts.length > 0 && stateTest) {
+            this.sortTileOptionsService.selectedAnalysts = [];
+        }
+
+
+        this.sortTileOptionsService.analystGroup.forEach((ag, i) => {
+            ag.state = stateTest;
+
+            if (stateTest) {
+                this.sortTileOptionsService.selectedAnalysts.push(ag.idx);
+                this.sortTileOptionsService.analystGroup[ag.idx].state = true;
+            } else {
+                this.sortTileOptionsService.selectedAnalysts = [];
+                this.sortTileOptionsService.analystGroup[ag.idx].state = false;
+            }
+        })
+        console.log('this.sortTileOptionsService.selectedAnalysts ', this.sortTileOptionsService.selectedAnalysts)
+
     }
 
-    public onAdd($event: any) {
-        // console.log('AnalystSearchComponent onAdd ', $event)
-        this.selectedAnalysts.push($event)
-        // this.selectedAnalystImages.push($event.avatar)
-        console.log('AnalystSearchComponent onAdd ', this.selectedAnalysts, ' images ', this.selectedAnalystImages)
-    }
 
-    public onChange(event: any) {
-        // this.sortTileOptionsService.analystGroup[idx].state = !this.sortTileOptionsService.analystGroup[idx].state;
-        //  console.log('AnalystSearchComponent onChange ', event)
-
-    }
-
-    public ngOnInit(): void {
-        //console.log('AnalystSearchComponent ngOnInit ', this.sortTileOptionsService)
-    }
-
-    public ngAfterViewInit() {
-        console.log('AnalystSearchComponent ngAfterViewInit ')
-
+    public clear(item: any) {
+        console.log('clear', item)
     }
 
 
+    public onAdd(event: any) {
+
+        if (!this.sortTileOptionsService.selectedAnalysts.includes(event.idx)) {
+
+            this.sortTileOptionsService.selectedAnalysts.push(event.idx)
+            this.sortTileOptionsService.analystGroup[event.idx].state = true;
+        } else {
+            this.sortTileOptionsService.selectedAnalysts.splice(event.idx, 1)
+            this.sortTileOptionsService.analystGroup[event.idx].state = false;
+        }
+
+        // console.log('AnalystSearchComponent onAdd ', this.sortTileOptionsService.selectedAnalysts)
+    }
 
 }

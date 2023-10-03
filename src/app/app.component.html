@@ -1,8 +1,14 @@
-<div class="">
+<div class="container">
   <div class="flex-basis-main">
+
     <div class="pre-header">
 
-      <span class="accelya-logo-svg"></span>
+      <span class="accelya-logo-svg">
+
+        <span class="text-wrapper">AirRM
+
+        </span>
+      </span>
       <span class="headline-text headline-20-28-600 ps-3">Flags Dashboard</span>
 
       <div class="logging-center">
@@ -15,20 +21,20 @@
     </div>
 
     <div class="header navy-background">
-      <div class="mx-3 mt-4">
+      <div class="me-2 mt-2">
         <app-priority-chart></app-priority-chart>
       </div>
-      <div class="mx-3 mt-4">
+      <div class="mt-2">
         <monthly-flags-chart></monthly-flags-chart>
       </div>
-      <div class="mx-3 mt-4">
+      <div class="me-3 mt-2">
         <div class="m-2 fw-600">My List</div>
         <div class="list-rect-group">
           <div class="list-column">
             <div class="list-row-group">
               <div class="left-strip blue-tint"></div>
               <div class="list-rect">
-                <div class="list-text-group ms-2">
+                <div class="list-text-group subtitle-text sub-title-20-28-600 ms-2">
                   Title
                   <div class="list-sub">421 Flights</div>
                 </div>
@@ -39,7 +45,7 @@
             <div class="list-row-group">
               <div class="left-strip orange-tint"></div>
               <div class="list-rect">
-                <div class="list-text-group ms-2">
+                <div class="list-text-group subtitle-text sub-title-20-28-600 ms-2">
                   Title
                   <div class="list-sub">388 Flights</div>
                 </div>
@@ -52,7 +58,7 @@
               <div class="list-row-group">
                 <div class="left-strip magenta-tint"></div>
                 <div class="list-rect">
-                  <div class="list-text-group ms-2">
+                  <div class="list-text-group subtitle-text sub-title-20-28-600 ms-2">
                     Title
                     <div class="list-sub">126 Flights</div>
                   </div>
@@ -62,7 +68,7 @@
               <div class="list-row-group">
                 <div class="left-strip green-tint"></div>
                 <div class="list-rect">
-                  <div class="list-text-group ms-2">
+                  <div class="list-text-group subtitle-text sub-title-20-28-600 ms-2">
                     Title
                     <div class="list-sub">421 Flights</div>
                   </div>
@@ -74,41 +80,78 @@
         </div>
       </div>
     </div>
+
     <div class="floating-control-panel ">
       <div class="menu-bar-items analysts bordered">
         <analyst-search></analyst-search>
       </div>
-
-      <div class="menu-bar-items analysts">
-
+      <div class="menu-bar-items routes">
         <div class="d-flex align-items-center">
-
           <div class="list-column-group">
             <div class="row-list ps-3">
               <div>Routes</div>
               <div class="list-sub">
-                {{sortTileOptionsService.selectedItems.length}} of {{sortTileOptionsService.routeList.length}} Routes
+                {{sortTileOptionsService.selectedRoutes.length}} of {{sortTileOptionsService.routeList.length}} Routes
               </div>
             </div>
           </div>
           <ng-select class="custom-select"
+             *ngIf="(sortTileOptionsService.routeListBehaviorSubject$ | async) as routes"
              title="Select Metric"
              [multiple]="true"
              [closeOnSelect]="false"
              placeholder="Select Routes"
-             [(ngModel)]="sortTileOptionsService.selectedItems"
              [clearable]="false"
-             [searchable]="true"
-             [items]="sortTileOptionsService.routeList"
-             [bindLabel]="'name'">
-
+             [searchable]="false"
+             [ngModel]="sortTileOptionsService.selectedRoutes"
+             [items]="routes"
+             bindLabel="name">
+            <ng-template ng-header-tmp>
+              <div class="options-variant">
+                <div class="base-option">
+                  <div class="content">
+                    <div class="option-type">
+                      <div class="div-wrapper">
+                        <input type="checkbox"
+                           [checked]="getNumRoutesSelected()"
+                           class="unselected"
+                           (change)="sortTileOptionsService.onSelectAllRoutes()" />
+                      </div>
+                      <div class="div-wrapper">
+                        <div class="option-title">
+                          Select All
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template ng-multi-label-tmp
+               let-items="items"
+               let-clear="clear">
+              <div class="ng-value"
+                 *ngFor="let item of sortTileOptionsService.selectedRoutes | slice: 0:2">
+                <div class="d-flex"
+                   *ngIf="item.state">
+                  <span class="ng-value-icon"
+                     (click)="sortTileOptionsService.clear(item)">
+                    ×</span>
+                  {{item.name}}
+                </div>
+              </div>
+              <div class="ng-value"
+                 *ngIf="sortTileOptionsService.selectedRoutes.length > 2">
+                <span class="ng-value-label">{{ sortTileOptionsService.selectedRoutes.length - 2 }} more...</span>
+              </div>
+            </ng-template>
             <ng-template ng-option-tmp
                let-item="item"
                let-i="index">
-              <div class="d-flex w-100">
+              <div class="d-flex">
                 <input type="checkbox"
                    [checked]="item.state"
-                   (change)="sortTileOptionsService.onNdoSelect(i)" />
+                   (change)="sortTileOptionsService.onRouteSelect(item, i, true, false)" />
                 <div class="d-flex ms-1">
                   <div class="ms-2">
                     {{ item.name }}
@@ -121,11 +164,11 @@
       </div>
 
       <div class="menu-bar-items ms-auto py-2">
-        <div class="list-column-group">
+        <div class="list-column-group me-3">
           Sort By
         </div>
 
-        <div *ngIf="(sortTileOptionsService.priorityListBehaviorSubject$ | async) as allCabins"
+        <div *ngIf="(sortTileOptionsService.priorityListBehaviorSubject$ | async) as priorities"
            class="me-5">
           <ng-select class="custom-select"
              title="Select Priority"
@@ -134,7 +177,7 @@
              [searchable]="false"
              [(ngModel)]="sortTileOptionsService.selectedPriority"
              placeholder="Select Priority"
-             [items]="allCabins">
+             [items]="priorities">
             <ng-template ng-label-tmp
                let-item="item">
               <div>{{item.name}}</div>
@@ -148,6 +191,29 @@
           </ng-select>
         </div>
       </div>
+    </div>
+
+    <div class="flag-category-frame mt-3">
+      <a class="tabs-variant is-active">
+        <div class="text-wrapper">Exceptions</div>
+        <div class="number">
+          <div class="div">20</div>
+        </div>
+      </a>
+      <a class="tabs-variant not-active">
+        <div class="text-wrapper">Alerts</div>
+
+        <div class="number">
+          <div class="div">12</div>
+        </div>
+
+      </a>
+      <a class="tabs-variant not-active">
+        <div class="text-wrapper">Actions</div>
+        <div class="number">
+          <div class="div">7</div>
+        </div>
+      </a>
     </div>
 
     <div class="flex-main">

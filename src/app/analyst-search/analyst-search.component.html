@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center">
+<div class="list-parent">
     <div class="list-column-group">
         <div class="row-list ms-3">
             <div>Analyst</div>
@@ -8,39 +8,42 @@
             </div>
         </div>
     </div>
-
-    <div class="me-3 ms-auto">
-        <ng-select class="custom-select  ms-3"
+    <div class="">
+        <ng-select class="analyst-select"
+           *ngIf="(sortTileOptionsService.analystBehaviorSubject$| async) as analysts"
            title="Select Analysts"
            [multiple]="true"
            [closeOnSelect]="false"
            [clearable]="false"
            [searchable]="true"
+           [ngModel]="sortTileOptionsService.selectedAnalysts"
            placeholder="Select Analysts"
-           appendTo=".list-column-group"
+           appendTo=".list-parent"
            [multiple]="true"
-           [(ngModel)]="sortTileOptionsService.selectedAnalysts"
-           [items]="sortTileOptionsService.analystGroup"
+           [items]="analysts"
            [bindLabel]="'name'">
             <ng-template ng-header-tmp>
-                <div class="search-options">
+                <!-- <div class="search-options">
                     <div class="input-variant">
                         <div class="search"></div>
                         <div class="text">
                             <div class="text-wrapper">Search</div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="options-variant">
                     <div class="base-option">
                         <div class="content">
                             <div class="option-type">
                                 <div class="div-wrapper">
-                                    <div class="unselected"></div>
+                                    <input type="checkbox"
+                                       [checked]="sortTileOptionsService.getNumAnalystsSelected()"
+                                       class="unselected"
+                                       (change)="sortTileOptionsService.onSelectAllAnalysts()" />
                                 </div>
                                 <div class="div-wrapper">
                                     <div class="option-title">
-                                        <div class="div">Select All</div>
+                                        Select All
                                     </div>
                                 </div>
                             </div>
@@ -49,24 +52,47 @@
                     </div>
                 </div>
             </ng-template>
-            <ng-template ng-label-tmp
-               let-item="item">
-                <img height="40"
-                   width="40"
-                   [src]="item.avatar" />
+            <ng-template ng-multi-label-tmp
+               let-items="items"
+               let-clear="clear">
+                <div class="ng-value"
+                   *ngFor="let item of sortTileOptionsService.selectedAnalysts | slice: 0:6">
+                    <div *ngIf="item.state">
+                        <img height="40"
+                           width="40"
+                           [src]="item.avatar" />
+                    </div>
+                </div>
+                <div class="ng-value"
+                   *ngIf="sortTileOptionsService.selectedAnalysts.length > 6">
+                    <span class="ng-value-label ms-2">{{ sortTileOptionsService.selectedAnalysts.length - 6 }}
+                        more...</span>
+                </div>
             </ng-template>
+            <ng-template ng-label-tmp
+               let-item="item"
+               let-i="index">
+                <div *ngIf="item.state">
+                    <img height="40"
+                       width="40"
+                       [src]="item.avatar" />
+                </div>
+            </ng-template>
+
             <ng-template ng-option-tmp
                let-item="item"
                let-i="index">
+
                 <div class="analyst-row w-100">
                     <div class="me-2">
-                        <img height="30"
-                           width="30"
+                        <img height="35"
+                           width="35"
                            [src]="item.avatar" />
                     </div>
+
                     <input type="checkbox"
                        [checked]="item.state"
-                       (change)="onAdd(item)" />
+                       (change)="sortTileOptionsService.onAnalystSelect(item, i, true, false)" />
                     <div class="d-flex ms-1">
                         <div class="ms-2">
                             <div class="frame-2">
@@ -78,6 +104,5 @@
                 </div>
             </ng-template>
         </ng-select>
-
     </div>
 </div>

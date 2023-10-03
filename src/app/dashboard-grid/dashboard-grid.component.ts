@@ -1,58 +1,59 @@
-import { Component, OnInit, ViewEncapsulation, AfterViewInit } from '@angular/core';
-import { myGridOptions } from '../../assets/gridster-options';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { SortTileOptionsService } from '../services/sort-tiles-options.service';
 
-import { GridsterConfig, GridsterItem } from 'angular-gridster2';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  query,
+  stagger
+} from '@angular/animations';
 
+export const fadeAnimation = trigger('fadeAnimation', [
+  transition(':enter', [
+    style({ opacity: 0 }), animate('300ms', style({ opacity: 1 }))]
+  ),
+  transition(':leave',
+    [style({ opacity: 1 }), animate('300ms', style({ opacity: 0 }))]
+  )
+]);
 
 @Component({
   selector: 'app-dashboard-grid',
   templateUrl: './dashboard-grid.component.html',
-  encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./dashboard-grid.component.scss']
+  styleUrls: ['./dashboard-grid.component.scss'],
+  animations: [fadeAnimation]
 })
 
 
 
 export class DashboardGridComponent implements OnInit, AfterViewInit {
 
-  public options: GridsterConfig = myGridOptions;
-  public dashboard: Array<GridsterItem>;
-  public dashboardCollection: any[] = [];
+  public showOptions = false;
+
+  public openedItem: number;
+
+  public sendDashboardItems = [];
+
+  public selectionOptions: any[] = [
+    { idx: 0, name: 'View History' },
+    { idx: 1, name: 'Go to Rule' }
+  ];
 
   constructor(public sortTileOptionsService: SortTileOptionsService) { }
 
-  public ngOnInit(): void {
-    this.dashboardCollection.push(this.sortTileOptionsService.dashboard);
+  public ngOnInit(): void { }
+
+  public ngAfterViewInit() { }
+
+
+  public updatePassengers(event: any) {
+    console.log('updatePassengers ', event)
+    //this.passengerCount = event;
   }
 
-  public ngAfterViewInit() {
-    this.options.itemChangeCallback = this.itemChange.bind(this);
-  }
-
-  saveDashboard() {
-    window.localStorage.setItem('savedDashboard', JSON.stringify(this.sortTileOptionsService.dashboard));
-  }
-
-  // Gridster option callback subscribed to in ngAfterViewInit
-  private itemChange(itemComponent: any) {
-    console.log('itemChange ', this.sortTileOptionsService.dashboard, ' itemComponent ', itemComponent)
-
-  }
-  changedOptions() {
-    if (this.options.api && this.options.api.optionsChanged) {
-      console.log('Dashboard ', this.sortTileOptionsService.dashboard)
-      this.options.api.optionsChanged();
-    }
-  }
-
-  removeItem(item: any): void {
-    this.dashboard.splice(this.sortTileOptionsService.dashboard.indexOf(item), 1);
-  }
-
-  addItem(): void {
-    this.sortTileOptionsService.dashboard.push({ x: 0, y: 0, cols: 1, rows: 1 });
-  }
 
 
 }

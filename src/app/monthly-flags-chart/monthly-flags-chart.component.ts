@@ -40,7 +40,6 @@ export class MonthlyFlagsChartComponent implements OnInit {
     let dataAxis = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
     let data = [42, 74, 39, 78, 72, 115, 32, 43, 72, 25, 60, 55];
 
-    // console.log('setChartContents ', this.myChart)
 
     this.myChart.setOption({
       grid: {
@@ -48,7 +47,7 @@ export class MonthlyFlagsChartComponent implements OnInit {
         left: 25,
         right: 5,
         top: 45,
-        bottom: 30
+        bottom: 20
       },
 
       backgroundStyle: {
@@ -64,14 +63,14 @@ export class MonthlyFlagsChartComponent implements OnInit {
           fontSize: 14
 
         }
-        // subtext: 'Feature Sample: Gradient Color, Shadow, Click Zoom'
       },
       xAxis: {
         show: true,
+        type: 'category',
         data: dataAxis,
-        interval: 1,
+        //interval: 1,
         axisLabel: {
-          fontSize: 11,
+          fontSize: 10,
           color: 'white'
         },
         axisTick: {
@@ -101,7 +100,7 @@ export class MonthlyFlagsChartComponent implements OnInit {
           show: true
         },
         axisLabel: {
-          fontSize: 11,
+          fontSize: 10,
           color: 'white'
         },
       },
@@ -114,6 +113,7 @@ export class MonthlyFlagsChartComponent implements OnInit {
         {
           type: 'bar',
           barWidth: 16,
+          barGap: 1,
           label: {
             show: true,
             color: 'white',
@@ -121,6 +121,7 @@ export class MonthlyFlagsChartComponent implements OnInit {
           },
           showBackground: false,
           itemStyle: {
+            // borderRadius: [5, 5, 0, 0],
             borderRadius: [7],
             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
               { offset: 0, color: '#83bff6' },

@@ -54,12 +54,12 @@ export class PriorityChartComponent implements OnInit {
 
   public setChartContents() {
 
-    console.log('setChartContents ', this.myChart)
+    // console.log('setChartContents ', this.myChart)
 
     this.myChart.setOption({
       title: {
         text: 'Priority status',
-        left: 0,
+        left: 10,
         top: 10,
         textStyle: {
           color: 'white',
@@ -71,30 +71,31 @@ export class PriorityChartComponent implements OnInit {
       },
       grid: {
         show: false,
-        //left: 5,
-        right: 45,
-        top: 25,
-        bottom: 30
+        left: 0,
+        right: 25,
+        top: 5,
+        bottom: 0
       },
       tooltip: {
         trigger: 'item'
       },
       legend: {
         show: true,
-        top: '20%',
+        top: '25%',
         right: 0,
         align: 'right',
         orient: 'vertical',
         icon: 'circle',
         itemHeight: 20,
-        itemWidth: 20,
-        itemGap: 10,
+        itemWidth: 10,
+        itemGap: 15,
         textStyle: {
-          color: 'white'
+          color: 'white',
+          fontSize: 11,
         },
         //data: this.legendData,
         formatter: this.legendData.map((item, i) => {
-          console.log('item ', item)
+
           const test = {
             name: item,
             icon: 'circle',
@@ -106,7 +107,7 @@ export class PriorityChartComponent implements OnInit {
         {
           name: 'Urgency',
           type: 'pie',
-          radius: ['45%', '70%'],
+          radius: ['45%', '65%'],
           avoidLabelOverlap: false,
           label: {
             rotate: 0,
