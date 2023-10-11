@@ -47,7 +47,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="icon"></div>
                         </div>
                     </div>
                 </div>
@@ -55,7 +54,7 @@
             <ng-template ng-multi-label-tmp
                let-items="items"
                let-clear="clear">
-                <div class="ng-value"
+                <div class="ng-value me-1"
                    *ngFor="let item of sortTileOptionsService.selectedAnalysts | slice: 0:6">
                     <div *ngIf="item.state">
                         <img height="40"
@@ -65,7 +64,7 @@
                 </div>
                 <div class="ng-value"
                    *ngIf="sortTileOptionsService.selectedAnalysts.length > 6">
-                    <span class="ng-value-label ms-2">{{ sortTileOptionsService.selectedAnalysts.length - 6 }}
+                    <span class="ng-value-label ms-4">{{ sortTileOptionsService.selectedAnalysts.length - 6 }}
                         more...</span>
                 </div>
             </ng-template>

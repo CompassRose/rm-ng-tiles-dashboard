@@ -6,21 +6,26 @@ import { of, delay, Observable, BehaviorSubject } from 'rxjs';
 @Component({
     selector: 'analyst-search',
     templateUrl: './analyst-search.component.html',
-    // changeDetection: ChangeDetectionStrategy.OnPush,
-    encapsulation: ViewEncapsulation.None,
+    //encapsulation: ViewEncapsulation.None,
     styleUrls: ['./analyst-search.component.scss']
 })
 
 
 
-export class AnalystSearchComponent {
+export class AnalystSearchComponent implements OnInit {
 
 
-    public numAnalystsSelected = false;
+    //public numAnalystsSelected = false;
 
 
-    constructor(public sortTileOptionsService: SortTileOptionsService) { }
+    constructor(public sortTileOptionsService: SortTileOptionsService) {
 
+    }
+
+    public ngOnInit(): void {
+        console.log('ngOnInit ')
+        // this.onSelectAll()
+    }
 
     public onSelectAll() {
 
@@ -37,15 +42,16 @@ export class AnalystSearchComponent {
 
         this.sortTileOptionsService.analystGroup.forEach((ag, i) => {
             ag.state = stateTest;
-
+            console.log('ag ', ag, ' stateTest ', stateTest)
             if (stateTest) {
-                this.sortTileOptionsService.selectedAnalysts.push(ag.idx);
+                this.sortTileOptionsService.selectedAnalysts.push(ag);
                 this.sortTileOptionsService.analystGroup[ag.idx].state = true;
             } else {
                 this.sortTileOptionsService.selectedAnalysts = [];
                 this.sortTileOptionsService.analystGroup[ag.idx].state = false;
             }
         })
+        this.sortTileOptionsService.analystBehaviorSubject$.next(this.sortTileOptionsService.analystGroup);
         console.log('this.sortTileOptionsService.selectedAnalysts ', this.sortTileOptionsService.selectedAnalysts)
 
     }
@@ -60,7 +66,7 @@ export class AnalystSearchComponent {
 
         if (!this.sortTileOptionsService.selectedAnalysts.includes(event.idx)) {
 
-            this.sortTileOptionsService.selectedAnalysts.push(event.idx)
+            this.sortTileOptionsService.selectedAnalysts.push(event)
             this.sortTileOptionsService.analystGroup[event.idx].state = true;
         } else {
             this.sortTileOptionsService.selectedAnalysts.splice(event.idx, 1)

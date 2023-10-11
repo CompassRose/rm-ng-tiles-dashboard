@@ -1,0 +1,78 @@
+<div class="avatar-center w-100">
+    <div class="m-4 subtitle-text sub-title-18-600">Create Avatar</div>
+    <div class="avatar-container">
+        <div class="image-container"
+           *ngIf="file; else placeholder"
+           [ngClass]="{'box-shadow-avatar': !!file}"
+           [ngStyle]="{backgroundImage: 'url(' + file + ')'}">
+        </div>
+
+        <ng-template #placeholder>
+            <div class="image-container avatar-placeholder">
+            </div>
+        </ng-template>
+
+        <label for="avatar-input-file">
+            <div class="icon-wrapper">
+                <input type="file"
+                   id="avatar-input-file"
+                   accept="image/*"
+                   (change)="onFileChange($event)" />
+                <mat-icon class="icon"
+                   fontIcon="edit"></mat-icon>
+            </div>
+        </label>
+    </div>
+</div>
+
+<!-- <div class="modal fade"
+   id="avatarModal"
+   tabindex="-1"
+   aria-labelledby="avatarModalLabel"
+   aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="body-text body-16-24-600 color-body-text"
+                   id="avatarModalLabel">Create Avatar</span>
+            </div>
+            <div class="modal-body">
+
+                <div class="avatar-container">
+                    <div class="image-container"
+                       *ngIf="file; else placeholder"
+                       [ngClass]="{'box-shadow-avatar': !!file}"
+                       [ngStyle]="{backgroundImage: 'url(' + file + ')'}">
+                    </div>
+
+                    <ng-template #placeholder>
+                        <div class="image-container avatar-placeholder">
+                        </div>
+                    </ng-template>
+
+                    <label for="avatar-input-file">
+                        <div class="icon-wrapper">
+                            <input type="file"
+                               id="avatar-input-file"
+                               accept="image/*"
+                               (change)="onFileChange($event)" />
+                            <mat-icon class="icon"
+                               fontIcon="edit"></mat-icon>
+                        </div>
+                    </label>
+
+                </div>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button"
+                   class="btn btn-secondary"
+                   data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+ -->

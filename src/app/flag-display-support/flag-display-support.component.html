@@ -1,0 +1,40 @@
+<div class="action-center">
+    <div class="flag-category-frame mt-3">
+        <div [ngClass]="selectedFlagElement === 1 ? 'tabs-variant  is-active' : 'tabs-variant  not-active'">
+            <div class="text-wrapper body-text body-16-24-600 color-body-text">Exceptions</div>
+            <a [ngClass]="selectedFlagElement === 1 ? 'flag-number is-active' : 'flag-number  not-active'"
+               (click)="setCollectionType(1)">
+                <div class="body-text body-12-20-600 color-white">{{getCollectionLength(1)}}</div>
+            </a>
+        </div>
+        <div [ngClass]="selectedFlagElement === 2 ? 'tabs-variant  is-active' : 'tabs-variant  not-active'">
+            <div class="text-wrapper body-text body-16-24-600 color-body-text">Alerts</div>
+            <a [ngClass]="selectedFlagElement === 2 ? 'flag-number is-active' : 'flag-number  not-active'"
+               (click)="setCollectionType(2)">
+                <div class="body-text body-12-20-600 color-white">{{getCollectionLength(2)}}</div>
+            </a>
+        </div>
+
+        <div [ngClass]="selectedFlagElement === 3 ? 'tabs-variant  is-active' : 'tabs-variant  not-active'">
+            <div class="text-wrapper body-text body-16-24-600 color-body-text">Actions</div>
+
+            <a [ngClass]="selectedFlagElement === 3 ? 'flag-number is-active' : 'flag-number  not-active'"
+               (click)="setCollectionType(3)">
+                <div class="div body-text body-12-20-600 color-white">{{getCollectionLength(3)}}
+                </div>
+            </a>
+
+        </div>
+
+        <a *ngIf="hassSelectionBeenRegistered"
+           class="flag-reset reset ml-auto"
+           (click)="resetCollectionType()">
+            <span class="undo-svg"></span>
+        </a>
+
+    </div>
+
+    <div class="flex-main">
+        <app-dashboard-grid></app-dashboard-grid>
+    </div>
+</div>

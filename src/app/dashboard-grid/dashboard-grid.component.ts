@@ -29,7 +29,7 @@ export const fadeAnimation = trigger('fadeAnimation', [
 
 
 
-export class DashboardGridComponent implements OnInit, AfterViewInit {
+export class DashboardGridComponent {
 
   public showOptions = false;
 
@@ -44,9 +44,6 @@ export class DashboardGridComponent implements OnInit, AfterViewInit {
 
   constructor(public sortTileOptionsService: SortTileOptionsService) { }
 
-  public ngOnInit(): void { }
-
-  public ngAfterViewInit() { }
 
 
   public updatePassengers(event: any) {

@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rm-flag-dashboard-ng",
+            "outputPath": "dist/angular-rm-tiles",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -34,10 +34,12 @@
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.css",
               "src/theme.scss",
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/cropperjs/dist/cropper.css"
             ],
             "scripts": [
-              "./node_modules/bootstrap/dist/js/bootstrap.js"
+              "./node_modules/bootstrap/dist/js/bootstrap.js",
+              "./node_modules/cropperjs/dist/cropper.js"
             ]
           },
           "configurations": {
@@ -45,12 +47,12 @@
               "budgets": [{
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "4mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumError": "16kb"
                 }
               ],
               "outputHashing": "all"

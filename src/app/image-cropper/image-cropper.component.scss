@@ -1,0 +1,59 @@
+::ng-deep {
+    .cropper-view-box,
+    .cropper-face {
+        border-radius: 50%;
+    }
+
+    .cropper-view-box {
+        outline: 0;
+        box-shadow: 0 0 0 1px #39f;
+    }
+}
+
+.crop-actions {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0.5rem 0 !important;
+}
+
+::ng-deep {
+    .cropper-container {
+        width: 480px;
+        height: 480px;
+        transform: translateX(0px) translateY(0px) !important;
+    }
+}
+
+::ng-deep {
+    .cropper-wrap-box,
+    .cropper-canvas {
+        overflow: hidden;
+    }
+}
+
+::ng-deep {
+    .cropper-wrap-box,
+    .cropper-canvas,
+    .cropper-drag-box,
+    .cropper-crop-box,
+    .cropper-modal {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+::ng-deep {
+    .cropper-container .cropper-bg {
+        width: 200px !important;
+        height: 320px !important;
+    }
+}
+
+// element.style {
+//     width: 320px;
+//     height: 320px;
+//     transform: translateX(40px) translateY(66px);
+// }

@@ -1,3 +1,10 @@
+.truncate {
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .item-content {
     border: 2px solid rgb(202, 202, 202);
     box-shadow: 0px 10px 15px -3px rgba(15, 15, 16, 0.1);
@@ -80,6 +87,11 @@
                         letter-spacing: var(--heading-font-size-300-semi-letter-spacing);
                         line-height: var(--heading-font-size-300-semi-line-height);
                         font-style: var(--heading-font-size-300-semi-font-style);
+
+                        width: 140px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
 
                     .text-wrapper {

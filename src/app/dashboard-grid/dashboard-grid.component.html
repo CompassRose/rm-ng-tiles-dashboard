@@ -5,6 +5,7 @@
   </div>
 </div>
 
+
 <div class="modal fade"
    id="exampleModal"
    tabindex="-1"
@@ -13,7 +14,7 @@
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <span class="body-text body-16-24-600"
+        <span class="body-text body-16-24-600 color-body-text"
            id="exampleModalLabel">Modal title</span>
         <button type="button"
            class="btn-close"
@@ -52,8 +53,7 @@
                   </div>
                 </div>
                 <div style="justify-content: center; align-items: center; display: flex">
-                  <div
-                     style="padding-left: 8px; padding-right: 8px; padding-top: 4px; padding-bottom: 4px; background: #E3F0C5; border-radius: 16px; justify-content: flex-start; align-items: center; gap: 4px; display: flex">
+                  <div>
                     <div
                        style="width: 8px; height: 8px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
                       <div style="align-self: stretch; flex: 1 1 0; background: #008311; border-radius: 16px">
@@ -85,8 +85,6 @@
           </div>
         </div>
 
-
-
       </div>
       <div class="modal-footer">
         <button type="button"
@@ -98,60 +96,3 @@
     </div>
   </div>
 </div>
-
-
-
-<!-- <div class="drag-handler">
-      <div [ngClass]="item.reviewed ? 'reviewed-tag visible' : 'reviewed-tag not-visible'">Reviewed</div>
-      <div class="identity-row noselect">
-    
-        <div class="number-container"
-           [style.background-color]="item.color">
-          {{item.priority}}
-        </div>
-        <div class="nested-column">
-          <div class="title fw-600">{{item.name}}</div>
-          <div class="sub-title">421 Flights</div>
-        </div>
-      </div>
-      <div class="identity-row mb-4 mt-3">
-        <div class="update-column ms-4">
-          <div class="title">Last Update</div>
-          <div class="sub-title">{{item.lastUpdate}}</div>
-        </div>
-    
-        <a class="ellipsis-vertical"
-           (click)="selectDropdown(item.idx)"></a>
-    
-        <div class="flex-column noselect"
-           [ngClass]="item.showOptions ? 'dropdown-selector opened' : 'dropdown-selector closed'">
-    
-          <a class="link-text"
-             data-bs-toggle="modal"
-             data-bs-target="#exampleModal"
-             *ngFor="let option of selectionOptions"
-             (click)="goToDestination(option, item.idx)">{{option.name}}</a>
-    
-        </div>
-      </div>
-    </div> -->
-
-<!-- 
-<div style="width: 628px; height: 88px; padding-top: 16px; padding-bottom: 16px; padding-left: 24px; padding-right: 16px; background: white; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
-  <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
-    <div style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 16px; display: inline-flex">
-      <div style="width: 24px; height: 24px; position: relative">
-        <div style="width: 20px; height: 20px; left: 2px; top: 2px; position: absolute; background: #012169"></div>
-      </div>
-      <div style="color: #012169; font-size: 20px; font-family: Open Sans; font-weight: 600; line-height: 28px; word-wrap: break-word">Modal title</div>
-    </div>
-    <div style="padding-left: 40px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
-      <div style="color: #111111; font-size: 16px; font-family: Open Sans; font-weight: 400; line-height: 24px; word-wrap: break-word">Insert here all the information for the subtitle</div>
-    </div>
-  </div>
-  <div style="width: 24px; height: 24px; position: relative">
-    <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute">
-      <div style="width: 12px; height: 12px; left: 6px; top: 6px; position: absolute; background: #2F3C46"></div>
-    </div>
-  </div>
-</div> -->

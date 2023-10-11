@@ -20,7 +20,9 @@ import * as moment from 'moment';
 
 export class SortTileOptionsService {
 
-    public dashboard: any = [];
+    public dashboard: any[] = [];
+
+    public savedDashboard: any[] = [];
 
     public isNdoChecked = true;
 
@@ -97,21 +99,21 @@ export class SortTileOptionsService {
                 idx: 7,
                 name: "John Anderson",
                 title: 'Junior Analyst',
-                state: false,
+                state: true,
                 avatar: '../assets/images/img-6525-8-02.png'
             },
             {
                 idx: 8,
                 name: "Willie Smish",
                 title: 'Senior Analyst',
-                state: false,
+                state: true,
                 avatar: '../assets/images/img-6525-8-02.png'
             },
             {
                 idx: 9,
                 name: "Peter Johnson",
                 title: 'Senior Analyst',
-                state: false,
+                state: true,
                 avatar: '../assets/images/img-6525-8-01.png'
             },
         ]
@@ -120,6 +122,7 @@ export class SortTileOptionsService {
 
 
     constructor() {
+
 
         const observer = {
             next: (x: any) => console.log('Observer got a next value: ' + x),
@@ -142,32 +145,59 @@ export class SortTileOptionsService {
         let addADay = addedDay.format('M/DD/YYYY: H');
 
         addedDay.format('M/DD/YYYY');
-        // addedDay.format('M/DD/YYYY');
-
-        // console.log('firstDay ', firstDay, ' addedDay ', addADay)
 
         this.dashboard = [
-            { idx: 0, color: 'Brown', name: 'Overbooked Flag', priority: 1, reviewed: true, lastUpdate: '20th-July-2023', showOptions: false },
-            { idx: 1, color: 'navy', name: 'Forecast Deviation', priority: 1, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
-            { idx: 2, color: 'DarkGreen', name: 'Why Flag', priority: 1, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
-            { idx: 3, color: 'DarkBlue', name: 'Title', priority: 1, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
-            { idx: 4, color: 'Brown', name: 'Title', priority: 2, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
-            { idx: 5, color: 'DarkGreen', name: 'Title', priority: 2, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
-            { idx: 6, color: 'DarkSlateGrey', name: 'Title', priority: 2, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
-            { idx: 7, color: 'DarkRed', name: 'Title', priority: 2, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
-            { idx: 8, color: 'purple', name: 'Title', priority: 3, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
-            { idx: 9, color: 'DarkGreen', name: 'Title', priority: 3, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
-            { idx: 10, color: 'DarkSlateGrey', name: 'Title', priority: 3, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
-            { idx: 11, color: 'navy', name: 'Title', priority: 3, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
-            { idx: 12, color: 'Indigo', name: 'Title', priority: 4, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
-            { idx: 13, color: 'DarkBlue', name: 'Title', priority: 4, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
-            { idx: 14, color: 'Brown', name: 'Title', priority: 2, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
-            { idx: 15, color: 'DarkGreen', name: 'Title', priority: 1, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
-            { idx: 16, color: 'DarkBlue', name: 'Title', priority: 1, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
-            { idx: 17, color: 'Brown', name: 'Title', priority: 2, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
-            { idx: 18, color: 'DarkGreen', name: 'Title', priority: 2, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
-            { idx: 19, color: 'DarkSlateGrey', name: 'Title', priority: 2, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            {
+                idx: 0,
+                color: 'Brown',
+                name: 'Overbooked Flag',
+                priority: 1,
+                reviewed: true,
+                lastUpdate: '20th-July-2023',
+                showOptions: false
+            },
+            { idx: 1, color: 'Brown', name: 'Forecast Deviation', priority: 1, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 2, color: 'Brown', name: 'Why Flag', priority: 1, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 3, color: 'Brown', name: 'Pickup Flag', priority: 1, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 4, color: 'DarkOrange', name: 'Other Flag', priority: 2, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 5, color: 'DarkOrange', name: 'CF Lower Flag', priority: 2, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 6, color: 'DarkOrange', name: 'Overbooked Flag', priority: 2, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 7, color: 'DarkOrange', name: 'Not Selling Flag', priority: 2, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 8, color: 'DarkGreen', name: 'Element Up Flag', priority: 3, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 9, color: 'DarkGreen', name: 'New Flights', priority: 3, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 10, color: 'DarkGreen', name: 'CF Higher Flag', priority: 3, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 11, color: 'DarkGreen', name: 'CF Lower Flag', priority: 3, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 12, color: 'DarkOrange', name: 'Element Up Flag', priority: 2, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 13, color: 'Brown', name: 'Element Up Flag', priority: 1, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 14, color: 'DarkOrange', name: 'Element Up Flag', priority: 2, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 15, color: 'Brown', name: 'Element Dwn Flag', priority: 1, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 16, color: 'Brown', name: 'Someone put a long name on a flag', priority: 1, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 17, color: 'DarkOrange', name: 'CF Higher Flag', priority: 2, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 18, color: 'DarkOrange', name: 'Title', priority: 2, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 19, color: 'DarkOrange', name: 'Why Not Flag', priority: 2, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 20, color: 'Brown', name: 'Element Dwn Flag', priority: 1, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 21, color: 'Brown', name: 'Someone put a long name on a flag', priority: 1, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 22, color: 'DarkOrange', name: 'CF Higher Flag', priority: 2, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 23, color: 'DarkGreen', name: 'Title', priority: 3, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            { idx: 24, color: 'DarkOrange', name: 'Why Flag', priority: 2, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            // { idx: 25, color: 'DarkOrange', name: 'CF Lower Flag', priority: 2, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            // { idx: 26, color: 'DarkOrange', name: 'Overbooked Flag', priority: 2, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            // { idx: 27, color: 'DarkOrange', name: 'Not Selling Flag', priority: 2, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
+            // { idx: 28, color: 'DarkGreen', name: 'Element Up Flag', priority: 3, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            // { idx: 29, color: 'DarkGreen', name: 'New Flights', priority: 3, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
+            // { idx: 30, color: 'Brown', name: 'Element Dwn Flag', priority: 1, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            // { idx: 31, color: 'Brown', name: 'Someone put a long name on a flag', priority: 1, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            // { idx: 32, color: 'DarkOrange', name: 'CF Higher Flag', priority: 2, reviewed: false, lastUpdate: '20th-May-2023', showOptions: false },
+            // { idx: 33, color: 'DarkGreen', name: 'Title', priority: 3, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
+            // { idx: 34, color: 'DarkOrange', name: 'Why Flag', priority: 2, reviewed: true, lastUpdate: '20th-May-2023', showOptions: false },
         ];
+
+        this.selectedAnalysts = [];
+
+        if (this.savedDashboard.length === 0) {
+            this.savedDashboard = [...this.dashboard];
+        }
+
 
         this.dashboard.map((db: any, i: number) => {
             db.lastUpdate = momentOne.add(duration).format('h:mm - MMM-DD-YYYY');
@@ -184,15 +214,15 @@ export class SortTileOptionsService {
         this.selectedPriority = this.priorityItems[0];
 
         this.routeList = [
-            { id: 0, name: 'LGN - STN', state: false },
-            { id: 1, name: 'LGN - PMI', state: false },
-            { id: 2, name: 'LTN - PMI', state: false },
-            { id: 3, name: 'LGW - PMI', state: false },
-            { id: 4, name: 'PMI - LTN', state: false },
-            { id: 5, name: 'STN - PMI', state: false }
+            { id: 0, name: 'LGN - STN', state: true },
+            { id: 1, name: 'LGN - PMI', state: true },
+            { id: 2, name: 'LTN - PMI', state: true },
+            { id: 3, name: 'LGW - PMI', state: true },
+            { id: 4, name: 'PMI - LTN', state: true },
+            { id: 5, name: 'STN - PMI', state: true }
         ];
 
-        this.selectedRoutes = [];
+        this.selectedRoutes = [...this.routeList];
 
 
         this.priorityListBehaviorSubject$.next(this.priorityItems);
@@ -205,6 +235,11 @@ export class SortTileOptionsService {
             })
     }
 
+    // from Priority Selection
+    public selectedFlag(set: any) {
+        //  console.log('selectedFlag ', set)
+        this.dashboard = set;
+    }
 
     // from Priority Selection
     public selectSortMethod(ev: any) {

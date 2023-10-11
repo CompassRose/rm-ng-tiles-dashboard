@@ -1,20 +1,39 @@
-<div class="container">
+<div class="container-fluid">
   <div class="flex-basis-main">
 
     <div class="pre-header">
 
       <span class="accelya-logo-svg">
-
-        <span class="text-wrapper">AirRM
-
-        </span>
       </span>
+      <span class="airRm-text">AirRM </span>
+
       <span class="headline-text headline-20-28-600 ps-3">Flags Dashboard</span>
 
       <div class="logging-center">
+
+        <div id="avatar-parent">
+          <a (click)="gottoAvatarScreen()">
+            <div *ngIf="!imageService.imageChangedEvent">
+              <img class="placeholder-img" />
+            </div>
+
+            <div id="myNewAvatar"
+               *ngIf="imageService.imageCollect$"></div>
+          </a>
+        </div>
+        <!-- 
+        <ng-template #placeholder>
+          <div class="placeholder-img"></div>
+        </ng-template> -->
+
+        <button class="btn btn-primary-1 me-4"
+           (click)="gottoAvatarScreen()"
+           data-bs-toggle
+           data-bs-target="#exampleModal">Create Avatar</button>
+
         <div class="logged-in-as">
-          <div class="body-text body-14-24-600">Tanya Robinson</div>
-          <div class="body-text body-12-16-400">Admin Accelys</div>
+          <div class="body-text body-14-24-600 color-body-text">Tanya Robinson</div>
+          <div class="body-text body-12-16-400 color-body-text">Admin Accelya</div>
         </div>
         <div class="logout-svg"></div>
       </div>
@@ -192,33 +211,39 @@
         </div>
       </div>
     </div>
-
-    <div class="flag-category-frame mt-3">
-      <a class="tabs-variant is-active">
-        <div class="text-wrapper">Exceptions</div>
-        <div class="number">
-          <div class="div">20</div>
+    <!-- 
+    <div class="modal-body">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">.col-md-4</div>
+          <div class="col-md-4 ms-auto">.col-md-4 .ms-auto</div>
         </div>
-      </a>
-      <a class="tabs-variant not-active">
-        <div class="text-wrapper">Alerts</div>
-
-        <div class="number">
-          <div class="div">12</div>
+        <div class="row">
+          <div class="col-md-3 ms-auto">.col-md-3 .ms-auto</div>
+          <div class="col-md-2 ms-auto">.col-md-2 .ms-auto</div>
         </div>
-
-      </a>
-      <a class="tabs-variant not-active">
-        <div class="text-wrapper">Actions</div>
-        <div class="number">
-          <div class="div">7</div>
+        <div class="row">
+          <div class="col-md-6 ms-auto">.col-md-6 .ms-auto</div>
         </div>
-      </a>
-    </div>
+        <div class="row">
+          <div class="col-sm-9">
+            Level 1: .col-sm-9
+            <div class="row">
+              <div class="col-8 col-sm-6">
+                Level 2: .col-8 .col-sm-6
+              </div>
+              <div class="col-4 col-sm-6">
+                Level 2: .col-4 .col-sm-6
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
 
-    <div class="flex-main">
-      <app-dashboard-grid></app-dashboard-grid>
-    </div>
+
+    <router-outlet></router-outlet>
+    <!-- <app-flag-display></app-flag-display> -->
 
     <div class="footer">
       <span class="accelya-logo-svg"></span>

@@ -1,0 +1,17 @@
+<div>
+    <img id="image"
+       height="200"
+       [src]="sanitizedUrl">
+    <div class="crop-actions">
+        <button class="btn btn-primary-1 ms-2"
+           (click)="reset()">
+            Reset
+        </button>
+
+        <button class="btn btn-primary-1 me-2"
+           (click)="crop()">
+            Ok
+        </button>
+
+    </div>
+</div>

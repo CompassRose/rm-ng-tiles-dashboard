@@ -1,7 +1,7 @@
 $accelya-primary-blue: rgb(1, 33, 105);
 $accelya-primary-grey: rgb(66, 85, 99);
 $accelya-primary-rose: rgb(223, 70, 97);
-
+$accelya-unselected-blue: #315fb3;
 // $font-size-large: 2rem; // 1.4rem == 14px
 // $font-size-medium-large: 1.8rem;
 
@@ -19,6 +19,22 @@ $font-weight-nml: 400;
 $font-weight-lt: 300;
 
 :root {
+  --accelya-primary-blue: #012169;
+  --accelya-primary-disabled: #575656;
+  --accelya-primary-color-disabled: #000000;
+  --accelya-primary-green: #425563;
+  --dl-color-txt-bg-neutralgrey: #8e99a1;
+  --body-02-txt-color: #313f4a;
+  --bg-light-blue: #dee7f8;
+  --bs-white: white;
+  // Button states
+  --button-primary-blue-hover: #344d87;
+  --button-primary-blue-pressed: #011a54;
+
+  --accelya-primary-red: #df4661;
+  --button-primary-red-hover: #e56b81;
+  --button-primary-red-pressed: #b2384e;
+
   --14px-body-1-semibold-font-family: "OpenSans-SemiBold", Helvetica;
   --14px-body-1-semibold-font-size: 14px;
   --14px-body-1-semibold-font-style: normal;
@@ -140,62 +156,62 @@ $font-weight-lt: 300;
 }
 
 .body-text {
-  &.body-12-16-600 {
+  &.color-white {
+    color: var(--bs-white);
+  }
+  &.color-primary-blue {
+    color: var(--accelya-primary-blue);
+  }
+  &.color-body-text {
     color: var(--body-02-txt-color);
+  }
+
+  &.body-12-16-600 {
     font-size: 12px;
     line-height: 16px;
     font-weight: 600;
   }
   &.body-14-24-600 {
-    color: var(--body-02-txt-color);
     font-size: 14px;
     line-height: 24px;
     font-weight: 600;
   }
   &.body-16-24-600 {
-    color: var(--accelya-primary-blue);
     font-size: 16px;
     line-height: 24px;
     font-weight: 600;
   }
   &.body-02 {
-    color: var(--body-02-txt-color);
     font-size: 14px;
     line-height: 20px;
     font-weight: 600;
   }
   &.body-14-20-600 {
-    color: var(--body-02-txt-color);
     font-size: 14px;
     line-height: 20px;
     font-weight: 600;
   }
   &.body-12-16-400 {
-    color: var(--body-02-txt-color);
     font-size: 12px;
     line-height: 16px;
     font-weight: 400;
   }
-  &.body-12-16-400 {
-    color: var(--body-02-txt-color);
+  &.body-12-20-600 {
     font-size: 12px;
-    line-height: 16px;
+    line-height: 20px;
     font-weight: 600;
   }
   &.body-14-16-400 {
-    color: var(--body-02-txt-color);
     font-size: 14px;
     line-height: 16px;
     font-weight: 400;
   }
   &.body-16-24-600 {
-    color: var(--body-02-txt-color);
     font-size: 16px;
     line-height: 24px;
     font-weight: 600;
   }
   &.body-16-24-400 {
-    color: var(--body-02-txt-color);
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
