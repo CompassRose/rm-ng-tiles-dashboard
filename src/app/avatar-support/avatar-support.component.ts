@@ -28,7 +28,7 @@ export class AvatarSupportComponent {
     public router: Router,
     public sortTileOptionsService: SortTileOptionsService,
     public dialog: MatDialog,
-    public imageSupportService: CommonService) { }
+    public imageService: CommonService) { }
 
 
 
@@ -37,9 +37,9 @@ export class AvatarSupportComponent {
     const files = event.target.files as FileList;
 
     if (files.length > 0) {
-      console.log('????? ', files[0])
+      // console.log('????? ', files[0])
       const _file = URL.createObjectURL(files[0]);
-      console.log('????? ', _file)
+      //console.log('????? ', _file)
       this.resetInput();
 
       this.openAvatarEditor(_file)
@@ -47,37 +47,16 @@ export class AvatarSupportComponent {
           (result) => {
             console.log('openAvatarEditor ', result, ' typeof ', typeof (result))
             if (result) {
-
-
               window.localStorage.setItem('avatarImage', result);
-
               const img = new Image();
-
               img.src = result;
-
-              console.log('myAvatar result ', result)
-
               console.log('myAvatar img ', img)
-
-
-              // document.body.appendChild(img)
-
-              if (document.getElementById('myNewAvatar')) {
-                // @ts-ignore
-                document.getElementById('myNewAvatar').appendChild(img)
-              }
-
               this.file = result;
-
-              console.log('openAvatarEditor ', this.file)
-
-              this.returnToFlagsScreen()
+              this.imageService.returnToFlagsScreen();
             }
           }
         )
-
     }
-
   }
 
 
@@ -95,6 +74,8 @@ export class AvatarSupportComponent {
 
   public openAvatarEditor(image: string): Observable<any> {
 
+    // @ts-ignore
+    const imageData: any = window.localStorage.getItem('avatarImage');
 
     const dialogRef = this.dialog.open(ImageCropperComponent, {
       maxWidth: '40vw',
@@ -116,14 +97,4 @@ export class AvatarSupportComponent {
 
 
 
-  public returnToFlagsScreen() {
-
-    const tom: any = document.getElementById('myNewAvatar') as HTMLImageElement
-
-    // this.imageSupportService.changePicture(tom)
-
-    // // @ts-ignore
-    console.log('\n\n\n\n\n*************************** tom ', tom)
-    this.router.navigate(['/start-page']);
-  }
 }

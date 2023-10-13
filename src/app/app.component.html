@@ -11,32 +11,28 @@
 
       <div class="logging-center">
 
-        <div id="avatar-parent">
+        <div id="myavatar-container"
+           *ngIf="(imageService.editedImage$ | async) && userInfo; else placeholder">
           <a (click)="gottoAvatarScreen()">
-            <div *ngIf="!imageService.imageChangedEvent">
-              <img class="placeholder-img" />
-            </div>
-
-            <div id="myNewAvatar"
-               *ngIf="imageService.imageCollect$"></div>
+            <img id="myNewAvatar"
+               [ngStyle]="{backgroundImage: 'url(' + file + ')'}">
           </a>
         </div>
-        <!-- 
+
         <ng-template #placeholder>
-          <div class="placeholder-img"></div>
-        </ng-template> -->
+          <div class="myavatar-container avatar-placeholder"></div>
+        </ng-template>
 
-        <button class="btn btn-primary-1 me-4"
-           (click)="gottoAvatarScreen()"
-           data-bs-toggle
-           data-bs-target="#exampleModal">Create Avatar</button>
-
-        <div class="logged-in-as">
+        <div class="logged-in-as ms-2"
+           *ngIf="userInfo">
           <div class="body-text body-14-24-600 color-body-text">Tanya Robinson</div>
           <div class="body-text body-12-16-400 color-body-text">Admin Accelya</div>
         </div>
-        <div class="logout-svg"></div>
+        <a class="logout-svg"
+           title='Log In to Tiles'
+           (click)="gottoAvatarScreen()"></a>
       </div>
+
     </div>
 
     <div class="header navy-background">

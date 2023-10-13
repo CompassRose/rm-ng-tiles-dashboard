@@ -1,5 +1,40 @@
 @import "../styles/configuration.scss";
 
+.new-icon-wrapper {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  padding: 0.35rem;
+  background-color: #2962ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 20%;
+  top: 75%;
+  z-index: 2;
+  cursor: pointer;
+
+  &:hover {
+    transition: all 0.25s;
+    background-color: darken(#2962ff, 15%);
+  }
+
+  .icon {
+    color: white;
+  }
+
+  label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+}
 @mixin make-container($padding-x: $container-padding-x) {
   width: 100%;
   padding-right: $padding-x;
@@ -9,13 +44,27 @@
 }
 
 #myNewAvatar {
-  img {
-    max-width: 24px !important;
-    height: 24px !important;
+  width: 40px !important;
+  height: 40px !important;
+  background-repeat: no-repeat !important;
+  background-size: cover;
+}
+
+.myavatar-container {
+  width: 40px !important;
+  height: 40px !important;
+  z-index: 1;
+  border-radius: 50%;
+  background-color: #fff;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 10px 20px 20px #6c93001a;
+  &.avatar-placeholder {
+    background-image: url("../assets/avatar/avatar-placeholder.png");
   }
 }
 
-.placeholder-img {
+#placeholder-img {
   background-image: url("../assets/avatar/avatar-placeholder.png") !important;
   width: 34px !important;
   height: 34px !important;

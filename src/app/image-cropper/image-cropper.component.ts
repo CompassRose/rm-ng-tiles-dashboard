@@ -18,7 +18,7 @@ export class ImageCropperComponent implements OnInit, AfterViewInit {
   public myAvatar: any = {};
 
   constructor(
-    public commonImageService: CommonService,
+    public imageService: CommonService,
     public dialogRef: MatDialogRef<ImageCropperComponent>,
     @Inject(MAT_DIALOG_DATA) public image: string,
     private sanitizer: DomSanitizer
@@ -43,9 +43,7 @@ export class ImageCropperComponent implements OnInit, AfterViewInit {
 
     const image = document.getElementById('image') as HTMLImageElement;
 
-    // console.log(' initCropper ', image)
-
-
+    console.log(' initCropper ', image)
 
     this.cropper = new Cropper(image,
       {
@@ -61,12 +59,11 @@ export class ImageCropperComponent implements OnInit, AfterViewInit {
   // make the crop box rounded
 
   getRoundedCanvas(sourceCanvas: any) {
-    console.log('getRoundedCanvas ', sourceCanvas)
     const canvas = document.createElement('canvas');
     var context: any = canvas.getContext('2d');
     var width = sourceCanvas.width / 3;
     var height = sourceCanvas.height / 3;
-    console.log('width ', width, ' height ', height)
+    // console.log('width ', width, ' height ', height)
     canvas.width = width;
     canvas.height = height;
     context.imageSmoothingEnabled = true;
@@ -92,19 +89,20 @@ export class ImageCropperComponent implements OnInit, AfterViewInit {
   //get the cropped image and closes the dialog 
   //returning an url or null if no image
 
-  // public loadImage(src: any): Observable<HTMLImageElement> {
+  public loadImage(src: any): Observable<HTMLImageElement> {
 
-  //   const imageCollect$ = new Observable<HTMLImageElement>();
-  //   console.log('$$$$$$$$$$$$$$$$$$$$$$ image ', src)
-  //   const image = new Image();
-  //   image.src = src;
-  //   image.onload = () => {
+    const imageCollect$ = new Observable<HTMLImageElement>();
+    console.log('$$$$$$$$$$$$$$$$$$$$$$ image ', src)
+    const image = new Image();
+    image.src = src;
+    image.onload = () => {
 
-  //     this.imageCollect$.next(image);
-  //     this.imageCollect$.complete();
-  //   };
-  //   return imageCollect$;
-  // }
+      this.imageService.editedImage$.next(image);
+      this.imageService.editedImage$.complete();
+    };
+
+    return imageCollect$;
+  }
 
   // private loadInSequence(images: string[]): Observable<HTMLImageElement> {
   //   return from(images).pipe(
@@ -120,8 +118,13 @@ export class ImageCropperComponent implements OnInit, AfterViewInit {
     let roundedImage = document.createElement('img');
 
     console.log('roundedCanvas ', roundedCanvas.toDataURL(), ' roundedImage ', roundedImage)
-    this.commonImageService.changePicture(roundedCanvas.toDataURL())
-    this.commonImageService.imageChangedEvent = true;
+
+    window.localStorage.setItem('editedAvatarImage', roundedCanvas.toDataURL());
+
+    this.imageService.changePicture(roundedCanvas.toDataURL())
+
+    this.imageService.imageChangedEvent = true;
+
     // this.loadInSequence([roundedCanvas.toDataURL()])
     if (roundedImage) {
       this.dialogRef.close([roundedCanvas.toDataURL()]);
@@ -137,6 +140,8 @@ export class ImageCropperComponent implements OnInit, AfterViewInit {
   reset() {
     this.cropper.clear();
     this.cropper.crop();
+    this.dialogRef.close(null);
+    this.imageService.returnToFlagsScreen()
     // console.log(' this.cropper ', this.cropper)
   }
 

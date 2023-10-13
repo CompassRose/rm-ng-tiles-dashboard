@@ -12,39 +12,6 @@ export const PathToAssets = ImagePath.devPathToAssets;
 
 
 
-
-// export const nDoDropdownSettings: IDropdownSettings = {
-//     singleSelection: false,
-//     idField: 'item_id',
-//     textField: 'item_text',
-//     selectAllText: 'All Regions',
-//     limitSelection: 2,
-//     unSelectAllText: 'Deselect All Regions',
-//     enableCheckAll: false,
-//     allowSearchFilter: false
-// };
-
-// export const dropdownSettings: IDropdownSettings = {
-//     singleSelection: false,
-//     idField: 'item_id',
-//     textField: 'item_text',
-//     selectAllText: 'All Regions',
-//     limitSelection: 4,
-//     unSelectAllText: 'Deselect All Regions',
-//     enableCheckAll: false,
-//     allowSearchFilter: false
-// };
-
-// export const dropdownSettingsSingle: IDropdownSettings = {
-//     singleSelection: true,
-//     idField: 'item_id',
-//     textField: 'item_text',
-//     closeDropDownOnSelection: true,
-
-//     enableCheckAll: false,
-//     allowSearchFilter: false,
-// };
-
 export const fareClasses = ['Y', 'D', 'B', 'A', 'Z', 'W', 'U', 'S', 'R', 'I', 'L', 'J', 'H', 'K', 'N', 'Q', 'T', 'O'];
 export const days = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct'];
 export const blueRamp16 = [
@@ -54,7 +21,7 @@ export const blueRamp16 = [
     '#505ef0',
     '#0030e3',
 ];
-export const redRamp10 = ['#cb1c1e', '#d2382a', '#d84c36', '#de5e43', '#e46e51', '#e97e5f', '#ef8d6e', '#f39c7e', '#f8aa8e', '#fcb99f'];
+
 
 export const ThemeCollection = [
     'dark',

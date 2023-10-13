@@ -14,7 +14,7 @@ import { CommonService } from './services/image-support';
 
 
 
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit {
 
   public pathToAssets = PathToAssets;
 
@@ -22,149 +22,60 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   public avatarImage: any;
 
-  public realAvatarImage: any;
-
-
   public hassSelectionBeenRegistered = false;
 
-
+  public userInfo = false;
 
   public file: string = '';
 
   constructor(public router: Router, public sortTileOptionsService: SortTileOptionsService, public imageService: CommonService, public changeDetector: ChangeDetectorRef) {
 
 
-    this.imageService.imageCollect$
-      .subscribe((image: any) => {
-        console.log('||||||||||||||||||||||| image ', image)
+
+    this.imageService.editedImage$
+      .subscribe((image: HTMLImageElement) => {
+        console.log('Edited image ', image)
       })
+
+
 
 
     this.imageService.imageValue$
       .subscribe((image) => {
 
-        // @ts-ignore
-        const imageData: any = window.localStorage.getItem('avatarImage');
-        console.log('PRE  image ', image)
-
-        // const tom: any = document.getElementById('myNewAvatar') as HTMLImageElement;
-
         if (image !== null) {
 
-
+          const img = new Image();
           // @ts-ignore
           img.src = image;
+          this.file = image;
+          setTimeout(() => {
+            this.imageService.editedImage$.next(img);
+            this.userInfo = true;
+          }, 100);
 
-          const img = new Image();
-
-          img.src = imageData;
-
-          console.log('myAvatar result ', imageData)
-
-          console.log('myAvatar img ', img)
-
-          const tester = img as HTMLImageElement;
-
-          console.log('tester ', tester)
-          // document.body.appendChild(img)
-
-          this.imageService.imageCollect$.next(img)
-
-          // @ts-ignore
-          const numImgs = document.getElementById('myNewAvatar').querySelectorAll('img').length;
-
-          console.log(' -----------APPLICATION myAvatar img ', img, ' num ', numImgs)
-
-          // if (numImgs === 0) {
-
-          // @ts-ignore
-          //document.getElementById('myNewAvatar').appendChild(img);
-          this.imageService.imageChangedEvent = true;
-          //}
-
-          // if (document.getElementById('myNewAvatar')) {
-          //   // @ts-ignore
-          //   document.getElementById('myNewAvatar').appendChild(img)
-          //   //console.log('image ', image)
-          // }
-
+        } else {
+          this.userInfo = false;
         }
-        //else {
-        // console.log('ELLLLLLSE')
-        // console.log('image ', image)
-        //}
 
-
-
-        //const tom = document.getElementById('myNewAvatar')
-
-        //console.log('\n\n\n\n\n*************************** tom ', this.realAvatarImage)
+        const tom = document.getElementById('myNewAvatar')
 
       })
   }
 
 
-  public ngAfterViewInit(): void {
-
-    console.log('image ')
-
-    // const parent = document.getElementById('avatar-parent')
-    // const child = document.getElementById('myNewAvatar')
-    //
-    // parent.removeChild(child)
-    // @ts-ignore
-    // const imageData: any = JSON.parse(window.localStorage.getItem('avatarImage'));
-    // this.imageService.changePicture(imageData);
-
-    //let img = new Image();
-    // @ts-ignore
-    // img.src = imageData;
-
-    // @ts-ignore
-    //this.file = imageData;
-
-
-    //console.log('APPLICATION myAvatar file ', imageData)
-
-    // @ts-ignore
-    const imageData: any = window.localStorage.getItem('avatarImage');
-    console.log('imageData ', imageData)
-    //this.loadImage(imageData)
-    this.imageService.changePicture(imageData);
-
-  }
-
 
 
   public ngOnInit(): void {
 
-    // this.imageCollect$
-    //   .subscribe(image => {
-    //     console.log('$$$$$$$$$$$$$$$$$$$$$$ image ', image)
-    //   })
-    // if (!document.getElementById('myNewAvatar')) {
+    // @ts-ignore
+    const editedmageData: any = window.localStorage.getItem('editedAvatarImage');
 
-    //   let elem: any = document.getElementById('avatar-parent')
-    //   console.log('elem ', elem)
-    //   let mna: any = document.createElement('myNewAvatar');
-    //   console.log('elem ', mna)
+    console.log('editedmageData ', editedmageData)
 
-    //   elem.appendChild(mna);
+    this.imageService.changePicture(editedmageData);
 
-
-    //   // @ts-ignore
-    //   //document.getElementById('myNewAvatar').appendChild(this.realAvatarImage)
-    // }
-
-    // if (document.getElementById('myNewAvatar')) {
-    //   const box = document.getElementById('myNewAvatar')
-    //   // @ts-ignore
-    //   console.log(box.getAttribute('id')); // box-1
-    //   // @ts-ignore
-    //   box.removeAttribute('id');
-    //   // @ts-ignore
-    //   console.log(box.getAttribute('id')); // null
-    // }
+    this.userInfo = false;
     this.router.navigate(['/start-page']);
   }
 
@@ -181,6 +92,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   public gottoAvatarScreen() {
     // console.log('gottoAvatarScreen ')
+
     this.router.navigate(['/avatar-screen']);
   }
 
