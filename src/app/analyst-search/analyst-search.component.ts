@@ -23,7 +23,6 @@ export class AnalystSearchComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        console.log('ngOnInit ')
         // this.onSelectAll()
     }
 

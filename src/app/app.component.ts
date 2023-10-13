@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
 
   public userInfo = false;
 
-  public file: string = '';
+  public iconFile: string = '';
 
   constructor(public router: Router, public sortTileOptionsService: SortTileOptionsService, public imageService: CommonService, public changeDetector: ChangeDetectorRef) {
 
@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
 
     this.imageService.editedImage$
       .subscribe((image: HTMLImageElement) => {
-        console.log('Edited image ', image)
+        //console.log('Edited image ', image)
       })
 
 
@@ -48,7 +48,7 @@ export class AppComponent implements OnInit {
           const img = new Image();
           // @ts-ignore
           img.src = image;
-          this.file = image;
+          this.iconFile = image;
           setTimeout(() => {
             this.imageService.editedImage$.next(img);
             this.userInfo = true;
@@ -58,7 +58,7 @@ export class AppComponent implements OnInit {
           this.userInfo = false;
         }
 
-        const tom = document.getElementById('myNewAvatar')
+        //const tom = document.getElementById('myNewAvatar')
 
       })
   }
@@ -68,14 +68,27 @@ export class AppComponent implements OnInit {
 
   public ngOnInit(): void {
 
-    // @ts-ignore
-    const editedmageData: any = window.localStorage.getItem('editedAvatarImage');
+    let editedmageData;
+    let cropperBackImaage;
 
-    console.log('editedmageData ', editedmageData)
+    if (window.localStorage.getItem('avatarImage')) {
+      const tempImg = window.localStorage.getItem('avatarImage')
+      this.imageService.setImageFile(tempImg)
 
-    this.imageService.changePicture(editedmageData);
+    }
 
-    this.userInfo = false;
+    if (window.localStorage.getItem('editedAvatarImage')) {
+
+      // @ts-ignore
+      if (window.localStorage.getItem('editedAvatarImage')) {
+        editedmageData = window.localStorage.getItem('editedAvatarImage');
+        this.imageService.loadImage(editedmageData)
+        this.userInfo = true;
+      }
+
+      this.imageService.changePicture(editedmageData);
+    }
+
     this.router.navigate(['/start-page']);
   }
 
@@ -91,6 +104,7 @@ export class AppComponent implements OnInit {
 
 
   public gottoAvatarScreen() {
+
     // console.log('gottoAvatarScreen ')
 
     this.router.navigate(['/avatar-screen']);

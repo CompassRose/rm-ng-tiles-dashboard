@@ -12,10 +12,10 @@
       <div class="logging-center">
 
         <div id="myavatar-container"
-           *ngIf="(imageService.editedImage$ | async) && userInfo; else placeholder">
+           *ngIf="(imageService.newImage$ | async) && userInfo; else placeholder">
           <a (click)="gottoAvatarScreen()">
-            <img id="myNewAvatar"
-               [ngStyle]="{backgroundImage: 'url(' + file + ')'}">
+            <div id="myNewAvatar"
+               [ngStyle]="{backgroundImage: 'url(' + iconFile + ')'}"></div>
           </a>
         </div>
 
@@ -25,7 +25,7 @@
 
         <div class="logged-in-as ms-2"
            *ngIf="userInfo">
-          <div class="body-text body-14-24-600 color-body-text">Tanya Robinson</div>
+          <div class="body-text body-14-24-600 color-body-text">Tom Placeholder</div>
           <div class="body-text body-12-16-400 color-body-text">Admin Accelya</div>
         </div>
         <a class="logout-svg"

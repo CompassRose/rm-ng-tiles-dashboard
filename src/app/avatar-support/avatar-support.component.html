@@ -1,9 +1,18 @@
-<div class="avatar-center w-100">
-    <div class="m-4 subtitle-text sub-title-18-600">Create Avatar</div>
+<div class="avatar-center">
+    <div class="d-flex align-items-center w-100">
+        <div class="title-row">
+            <div class="subtitle-text sub-title-20-28-600">Create Avatar</div>
+        </div>
+        <span clas="ml-auto">
+            <mat-icon (click)="saveAndCloseEditor()"
+               class="icon-wrapper relative icon"
+               fontIcon="done"></mat-icon>
+        </span>
+    </div>
     <div class="avatar-container">
-        <div class="image-container"
+
+        <div class="image-container box-shadow-avatar"
            *ngIf="file; else placeholder"
-           [ngClass]="{'box-shadow-avatar': !!file}"
            [ngStyle]="{backgroundImage: 'url(' + file + ')'}">
         </div>
 
@@ -13,7 +22,7 @@
         </ng-template>
 
         <label for="avatar-input-file">
-            <div class="icon-wrapper">
+            <div class="icon-wrapper absolute">
                 <input type="file"
                    id="avatar-input-file"
                    accept="image/*"
@@ -23,56 +32,12 @@
             </div>
         </label>
     </div>
-</div>
-
-<!-- <div class="modal fade"
-   id="avatarModal"
-   tabindex="-1"
-   aria-labelledby="avatarModalLabel"
-   aria-hidden="true">
-
-    <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="body-text body-16-24-600 color-body-text"
-                   id="avatarModalLabel">Create Avatar</span>
-            </div>
-            <div class="modal-body">
-
-                <div class="avatar-container">
-                    <div class="image-container"
-                       *ngIf="file; else placeholder"
-                       [ngClass]="{'box-shadow-avatar': !!file}"
-                       [ngStyle]="{backgroundImage: 'url(' + file + ')'}">
-                    </div>
-
-                    <ng-template #placeholder>
-                        <div class="image-container avatar-placeholder">
-                        </div>
-                    </ng-template>
-
-                    <label for="avatar-input-file">
-                        <div class="icon-wrapper">
-                            <input type="file"
-                               id="avatar-input-file"
-                               accept="image/*"
-                               (change)="onFileChange($event)" />
-                            <mat-icon class="icon"
-                               fontIcon="edit"></mat-icon>
-                        </div>
-                    </label>
-
-                </div>
-
-
-
-            </div>
-            <div class="modal-footer">
-                <button type="button"
-                   class="btn btn-secondary"
-                   data-bs-dismiss="modal">Close</button>
-            </div>
+    <div class="flex-column">
+        <label>Initials</label>
+        <div class="d-flex">
+            <input type="text"
+               class=""
+               (change)="setInitials($event)" />
         </div>
     </div>
 </div>
- -->

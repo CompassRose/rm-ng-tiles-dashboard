@@ -17,21 +17,22 @@ export class ImageCropperComponent implements OnInit, AfterViewInit {
   cropper!: Cropper;
   public myAvatar: any = {};
 
+
   constructor(
     public imageService: CommonService,
     public dialogRef: MatDialogRef<ImageCropperComponent>,
     @Inject(MAT_DIALOG_DATA) public image: string,
     private sanitizer: DomSanitizer
   ) {
-    // console.log('||||||||||||||||||||  dialogRef ', this.dialogRef)
-
-    // with (request.urlopen('data:image/png;base64,iVBORw0...') as response:
-    // im = response.read())
 
   }
 
   ngOnInit(): void {
+
+    console.log('  this.image ', this.image)
+
     this.sanitizedUrl = this.sanitizer.bypassSecurityTrustUrl(this.image);
+
   }
 
   ngAfterViewInit() {
@@ -43,35 +44,42 @@ export class ImageCropperComponent implements OnInit, AfterViewInit {
 
     const image = document.getElementById('image') as HTMLImageElement;
 
-    console.log(' initCropper ', image)
+
+    // let packetSend;
+    // if (window.localStorage.getItem('avatarImage')) {
+    //   packetSend = window.localStorage.getItem('avatarImage')
+    //   console.log(' packetSend ', packetSend)
+    // } else {
+    //   //packetSend = result
+    // }
+
+    // console.log(' initCropper ', image)
 
     this.cropper = new Cropper(image,
       {
         aspectRatio: 1,
         viewMode: 1,
-        guides: false,
+        guides: true,
 
       });
 
-    //console.log('cropper ', this.cropper.getCanvasData())
+    console.log('cropper ', this.cropper)
   }
+
+
 
   // make the crop box rounded
 
   getRoundedCanvas(sourceCanvas: any) {
     const canvas = document.createElement('canvas');
     var context: any = canvas.getContext('2d');
-    var width = sourceCanvas.width / 3;
-    var height = sourceCanvas.height / 3;
-    // console.log('width ', width, ' height ', height)
+    var width = sourceCanvas.width / 2;
+    var height = sourceCanvas.height / 2;
     canvas.width = width;
     canvas.height = height;
     context.imageSmoothingEnabled = true;
-
     context.drawImage(sourceCanvas, 0, 0, width, height);
-
     context.globalCompositeOperation = 'destination-in';
-
     context.beginPath();
 
     context.arc(
@@ -86,46 +94,23 @@ export class ImageCropperComponent implements OnInit, AfterViewInit {
     return canvas;
   }
 
-  //get the cropped image and closes the dialog 
-  //returning an url or null if no image
 
-  public loadImage(src: any): Observable<HTMLImageElement> {
-
-    const imageCollect$ = new Observable<HTMLImageElement>();
-    console.log('$$$$$$$$$$$$$$$$$$$$$$ image ', src)
-    const image = new Image();
-    image.src = src;
-    image.onload = () => {
-
-      this.imageService.editedImage$.next(image);
-      this.imageService.editedImage$.complete();
-    };
-
-    return imageCollect$;
-  }
-
-  // private loadInSequence(images: string[]): Observable<HTMLImageElement> {
-  //   return from(images).pipe(
-  //     concatMap(src => this.loadImage(src))
-  //   );
-  //}
 
 
   crop() {
 
     const croppedCanvas = this.cropper.getCroppedCanvas();
+
     const roundedCanvas = this.getRoundedCanvas(croppedCanvas);
+
     let roundedImage = document.createElement('img');
 
-    console.log('roundedCanvas ', roundedCanvas.toDataURL(), ' roundedImage ', roundedImage)
+    // console.log('roundedCanvas ', roundedCanvas.toDataURL(), ' roundedImage ', roundedImage)
 
     window.localStorage.setItem('editedAvatarImage', roundedCanvas.toDataURL());
 
     this.imageService.changePicture(roundedCanvas.toDataURL())
 
-    this.imageService.imageChangedEvent = true;
-
-    // this.loadInSequence([roundedCanvas.toDataURL()])
     if (roundedImage) {
       this.dialogRef.close([roundedCanvas.toDataURL()]);
     } else {
@@ -140,8 +125,8 @@ export class ImageCropperComponent implements OnInit, AfterViewInit {
   reset() {
     this.cropper.clear();
     this.cropper.crop();
-    this.dialogRef.close(null);
-    this.imageService.returnToFlagsScreen()
+    //this.dialogRef.close(null);
+    // this.imageService.returnToFlagsScreen()
     // console.log(' this.cropper ', this.cropper)
   }
 

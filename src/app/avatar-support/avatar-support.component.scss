@@ -4,22 +4,35 @@
     margin-top: 30px;
     display: flex;
     align-content: center;
-
+    width: 450px;
+    height: 500px;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
-    padding: 10px 150px 100px;
+    justify-content: space-around;
+    //padding-top: 10px;
     border: 1px solid black;
     border-radius: 6px;
+
+    .avatar-container {
+        position: relative;
+        width: fit-content;
+    }
+
+    .title-row {
+        width: 100% !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .icon-config {
+            align-self: flex-end;
+        }
+    }
+
     .avatar-row {
         display: flex;
         align-content: center;
     }
-}
-
-.avatar-container {
-    position: relative;
-    width: fit-content;
 }
 
 .box-shadow-avatar {
@@ -27,7 +40,6 @@
 }
 
 .icon-wrapper {
-    position: absolute;
     height: 40px;
     width: 40px;
     padding: 0.35rem;
@@ -41,11 +53,19 @@
     z-index: 2;
     cursor: pointer;
 
+    &.absolute {
+        position: absolute;
+    }
+    &.relative {
+        position: relative;
+    }
     &:hover {
         transition: all 0.25s;
         background-color: darken(#2962ff, 15%);
     }
-
+    &.icon {
+        color: white;
+    }
     .icon {
         color: white;
     }
