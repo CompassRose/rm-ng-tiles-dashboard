@@ -30,9 +30,6 @@ export class CommonService {
 
 
     public setImageFile(img: any) {
-
-        console.log('APP Start ///////////||||||||||\\\\\\\\\\\\setInitials ', img)
-
         this.editedAvatarImage = img
     }
 
@@ -45,23 +42,23 @@ export class CommonService {
         let savedSrc;
 
         const image = new Image();
-        image.src = src;
+        image.src = src.avatar
+        // console.log('\n image ', image)
         image.onload = () => {
 
-            // console.log('$$$ image $$$', image, ' type ', type)
             this.newImage$.next(image);
             this.newImage$.complete();
         };
-
+        // console.log('loadImage savedSrc ', savedSrc)
         return savedSrc;
     }
 
 
     public changePicture(data: any) {
-        // console.log('\n image ', data)
+        console.log('\n image ', data.avatar)
         if (data) {
-            this.loadImage(data);
-            this.imageValue$.next(data)
+            this.loadImage(data.avatar);
+            this.imageValue$.next(data.avatar)
         }
     }
 

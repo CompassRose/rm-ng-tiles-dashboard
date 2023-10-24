@@ -1,0 +1,102 @@
+[
+  {
+    "FlagKey": 4,
+    "Name": "Test FFT",
+    "Priority": 1,
+    "FlagType": "Alert",
+    "Runs": [
+      {
+        "ProcessDate": "2023-06-30 11:34:43.000",
+        "FlightCount": 2,
+        "HistoryID": 9,
+        "Reviewed": true,
+        "FlightList": {
+          "Flights": [
+            {
+              "ODMasterkey": 285966,
+              "AirlineCode": "V7",
+              "FlightLine": "VCEBRI1234",
+              "DepartureDate": "2020-12-05 00:00:00"
+            },
+            {
+              "ODMasterkey": 285967,
+              "AirlineCode": "V7",
+              "FlightLine": "BRIVCE1235",
+              "DepartureDate": "2020-12-05 00:00:00"
+            }
+          ],
+          "BoxContents": {
+            "ShortNames": "List of shortnames separated by the | character",
+            "Suffixes": "List of Suffixes separated by the | character"
+          }
+        }
+      },
+      {
+        "ProcessDate": "2023-06-30 11:30:43.000",
+        "FlightCount": 3,
+        "HistoryID": 8,
+        "Reviewed": true,
+        "FlightList": {
+          "Flights": [
+            {
+              "ODMasterkey": 285966,
+              "AirlineCode": "V7",
+              "FlightLine": "VCEBRI1234",
+              "DepartureDate": "2020-12-05 00:00:00"
+            },
+            {
+              "ODMasterkey": 285967,
+              "AirlineCode": "V7",
+              "FlightLine": "BRIVCE1235",
+              "DepartureDate": "2020-12-05 00:00:00"
+            },
+            {
+              "ODMasterkey": 286003,
+              "AirlineCode": "V7",
+              "FlightLine": "TRNPMO1549",
+              "DepartureDate": "2020-12-05 00:00:00"
+            }
+          ],
+          "BoxContents": {
+            "ShortNames": "List of shortnames separated by the | character",
+            "Suffixes": "List of Suffixes separated by the | character"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "FlagKey": 5,
+    "Priority": 5,
+    "Name": "Test FFT2",
+    "FlagType": "Exception",
+    "Runs": [
+      {
+        "ProcessDate": "2023-06-30 11:35:43.000",
+        "FlightCount": 2,
+        "HistoryID": 10,
+        "Reviewed": false,
+        "FlightList": {
+          "Flights": [
+            {
+              "ODMasterkey": 286004,
+              "AirlineCode": "V7",
+              "FlightLine": "TFSOVD3541",
+              "DepartureDate": "2020-12-05 00:00:00"
+            },
+            {
+              "ODMasterkey": 286038,
+              "AirlineCode": "V7",
+              "FlightLine": "VRNPMO1533",
+              "DepartureDate": "2020-12-05 00:00:00"
+            }
+          ],
+          "BoxContents": {
+            "ShortNames": "List of shortnames separated by the | character",
+            "Suffixes": "List of Suffixes separated by the | character"
+          }
+        }
+      }
+    ]
+  }
+]

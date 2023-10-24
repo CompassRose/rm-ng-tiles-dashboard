@@ -25,8 +25,8 @@
 
         <div class="logged-in-as ms-2"
            *ngIf="userInfo">
-          <div class="body-text body-14-24-600 color-body-text">Tom Placeholder</div>
-          <div class="body-text body-12-16-400 color-body-text">Admin Accelya</div>
+          <div class="body-text body-14-24-600 color-body-text">{{firstName}} {{lastName}}</div>
+          <div class="body-text body-12-16-400 color-body-text">{{initials}}</div>
         </div>
         <a class="logout-svg"
            title='Log In to Tiles'
@@ -100,65 +100,27 @@
       <div class="menu-bar-items analysts bordered">
         <analyst-search></analyst-search>
       </div>
-      <div class="menu-bar-items routes">
-        <div class="d-flex align-items-center">
-          <div class="list-column-group">
-            <div class="row-list ps-3">
-              <div>Routes</div>
-              <div class="list-sub">
-                {{sortTileOptionsService.selectedRoutes.length}} of {{sortTileOptionsService.routeList.length}} Routes
-              </div>
-            </div>
-          </div>
+
+      <div class="menu-bar-items ms-auto py-2">
+        <div class="list-column-group me-3">
+          Flag Type
+        </div>
+
+        <div *ngIf="(sortTileOptionsService.flagTypeBehaviorSubject$ | async) as flags"
+           class="me-5">
           <ng-select class="custom-select"
-             *ngIf="(sortTileOptionsService.routeListBehaviorSubject$ | async) as routes"
-             title="Select Metric"
-             [multiple]="true"
-             [closeOnSelect]="false"
-             placeholder="Select Routes"
+             title="Select Flag Type"
+             (change)="sortTileOptionsService.selectSortMethod($event)"
              [clearable]="false"
              [searchable]="false"
-             [ngModel]="sortTileOptionsService.selectedRoutes"
-             [items]="routes"
-             bindLabel="name">
-            <ng-template ng-header-tmp>
-              <div class="options-variant">
-                <div class="base-option">
-                  <div class="content">
-                    <div class="option-type">
-                      <div class="div-wrapper">
-                        <input type="checkbox"
-                           [checked]="getNumRoutesSelected()"
-                           class="unselected"
-                           (change)="sortTileOptionsService.onSelectAllRoutes()" />
-                      </div>
-                      <div class="div-wrapper">
-                        <div class="option-title">
-                          Select All
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ng-template>
-            <ng-template ng-multi-label-tmp
-               let-items="items"
-               let-clear="clear">
-              <div class="ng-value"
-                 *ngFor="let item of sortTileOptionsService.selectedRoutes | slice: 0:2">
-                <div class="d-flex"
-                   *ngIf="item.state">
-                  <span class="ng-value-icon"
-                     (click)="sortTileOptionsService.clear(item)">
-                    ×</span>
-                  {{item.name}}
-                </div>
-              </div>
-              <div class="ng-value"
-                 *ngIf="sortTileOptionsService.selectedRoutes.length > 2">
-                <span class="ng-value-label">{{ sortTileOptionsService.selectedRoutes.length - 2 }} more...</span>
-              </div>
+             [multiple]="true"
+             [closeOnSelect]="false"
+             [(ngModel)]="sortTileOptionsService.selectedFlags"
+             placeholder="Select Flag Type"
+             [items]="sortTileOptionsService.flagTypeSelect">
+            <ng-template ng-label-tmp
+               let-item="item">
+              <div>{{item.name}}</div>
             </ng-template>
             <ng-template ng-option-tmp
                let-item="item"
@@ -166,7 +128,7 @@
               <div class="d-flex">
                 <input type="checkbox"
                    [checked]="item.state"
-                   (change)="sortTileOptionsService.onRouteSelect(item, i, true, false)" />
+                   (change)="sortTileOptionsService.onFlagsSelected(item, i, true, false)" />
                 <div class="d-flex ms-1">
                   <div class="ms-2">
                     {{ item.name }}
@@ -206,38 +168,14 @@
           </ng-select>
         </div>
       </div>
+
     </div>
     <!-- 
-    <div class="modal-body">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-4">.col-md-4</div>
-          <div class="col-md-4 ms-auto">.col-md-4 .ms-auto</div>
-        </div>
-        <div class="row">
-          <div class="col-md-3 ms-auto">.col-md-3 .ms-auto</div>
-          <div class="col-md-2 ms-auto">.col-md-2 .ms-auto</div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 ms-auto">.col-md-6 .ms-auto</div>
-        </div>
-        <div class="row">
-          <div class="col-sm-9">
-            Level 1: .col-sm-9
-            <div class="row">
-              <div class="col-8 col-sm-6">
-                Level 2: .col-8 .col-sm-6
-              </div>
-              <div class="col-4 col-sm-6">
-                Level 2: .col-4 .col-sm-6
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="menu-bar-lower ">
+      <div class="routes">
+        <route-selection></route-selection>
       </div>
     </div> -->
-
-
     <router-outlet></router-outlet>
     <!-- <app-flag-display></app-flag-display> -->
 

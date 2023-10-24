@@ -11,15 +11,16 @@ import { GridsterModule } from 'angular-gridster2';
 import { DashboardGridComponent } from './dashboard-grid/dashboard-grid.component';
 import { PriorityChartComponent } from './priority-chart/priority-chart.component';
 import { MonthlyFlagsChartComponent } from './monthly-flags-chart/monthly-flags-chart.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgSelectModule } from '@ng-select/ng-select';
 //import { SortTileOptionsService } from './services/sort-tiles-options.service';
 import { AnalystSearchComponent } from './analyst-search/analyst-search.component';
 import { TileCardComponent } from './dashboard-grid/tile-card/tile-card.component';
 import { FlagDisplaySupportComponent } from './flag-display-support/flag-display-support.component';
-import { AvatarSupportComponent } from '../app/avatar-support/avatar-support.component';
-import { ImageCropperComponent } from './image-cropper/image-cropper.component';
+import { AvatarSupportComponent } from './avatar-support/avatar-support.component';
 import { CommonService } from './services/image-support';
-import { ImageCropperModule } from 'ngx-image-cropper';;
+import { RouteSelectionComponent } from './route-selection/route-selection.component';
+import { MockService } from './services/tiles-mock-api'
 
 @NgModule({
   declarations: [
@@ -31,14 +32,14 @@ import { ImageCropperModule } from 'ngx-image-cropper';;
     TileCardComponent,
     FlagDisplaySupportComponent,
     AvatarSupportComponent,
-    ImageCropperComponent
+    RouteSelectionComponent
   ],
   imports: [
     BrowserModule,
-    ImageCropperModule,
     CommonModule,
     MaterialExampleModule,
     GridsterModule,
+    BrowserAnimationsModule,
     NgSelectModule,
     AppRoutingModule,
     HttpClientModule,
@@ -49,7 +50,7 @@ import { ImageCropperModule } from 'ngx-image-cropper';;
     })
   ],
 
-  providers: [CommonService],
+  providers: [CommonService, MockService],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })

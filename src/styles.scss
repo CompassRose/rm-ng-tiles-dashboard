@@ -170,6 +170,10 @@ a {
   }
 }
 
+.flight-details-select {
+  font-size: 14px;
+}
+
 .analyst-select {
   width: 100%;
   font-size: 15px;
@@ -205,6 +209,7 @@ a {
     transform: rotate(0deg);
     transform-origin: 10px 5px;
     &:before {
+      max-width: 12px !important;
       content: url("./assets/images/arrowupdown.svg") !important;
     }
   }
@@ -216,19 +221,14 @@ a {
   }
 }
 
-.ng-dropdown-panel {
-  box-sizing: border-box;
-  position: absolute;
-  opacity: 0;
-  width: auto !important;
-  z-index: 1050;
+// From History modal
+.ng-dropdown-panel .scroll-host {
+  width: 100px !important;
+  overflow: hidden;
+  overflow-y: auto;
+  position: relative;
+  display: block;
   -webkit-overflow-scrolling: touch;
-}
-
-.custom-select.ng-select.ng-select-multiple .ng-select-container .ng-value-container {
-  display: flex;
-  align-items: center;
-  width: 310px !important;
 }
 
 .analyst-select.ng-select.ng-select-multiple .ng-select-container .ng-value-container {
@@ -263,6 +263,12 @@ a {
 .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {
   color: #333;
   background-color: white !important;
+}
+
+.custom-select.ng-select.ng-select-multiple .ng-select-container .ng-value-container {
+  display: flex;
+  align-items: center;
+  width: 310px !important;
 }
 
 .custom-select.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value {

@@ -45,19 +45,15 @@ export class AvatarSupportComponent implements OnInit, OnDestroy {
     console.log('|||||| ngOnInit \\\\\\ ', this.file)
   }
 
+
+
   onFileChange(event: any) {
     const files = event.target.files as FileList;
-
-
+    console.log('|||||| onFileChange \\\\\\ ', files)
     if (files.length > 0) {
-      // console.log('|||||| onFileChange \\\\\\ ', files)
-      //console.log('????? ', files[0])
+
       const _file = URL.createObjectURL(files[0]);
 
-
-      // window.localStorage.setItem('avatarImage', (_file));
-
-      //console.log('????? ', _file)
       this.resetInput();
 
       this.sub01 = this.openAvatarEditor(_file)

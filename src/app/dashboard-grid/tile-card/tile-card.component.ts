@@ -21,7 +21,7 @@ export class TileCardComponent {
 
   public selectionOptions: any[] = [
     { idx: 0, name: 'View History' },
-    { idx: 1, name: 'Go to Rule' }
+    { idx: 1, name: 'Go to Overview' }
   ];
 
   public openedItem: number;

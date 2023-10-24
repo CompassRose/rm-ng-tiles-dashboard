@@ -1,0 +1,33 @@
+<form [formGroup]="form"
+   (ngSubmit)="submit()">
+    <avatar-details-display formControlName="avatar"></avatar-details-display>
+    <div class="row margin-top">
+        <mat-form-field appearance="fill">
+            <mat-label>First name</mat-label>
+            <input type="text"
+               matInput
+               formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Last name</mat-label>
+            <input type="text"
+               matInput
+               formControlName="lastName">
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="fill">
+            <mat-label>Initials</mat-label>
+            <input type="text"
+               matInput
+               formControlName="initials">
+        </mat-form-field>
+    </div>
+    <div class="button-footer">
+        <button type="button"
+           class="btn btn-secondary  px-4 "
+           (click)="onExit()">Exit</button>
+        <button type="submit"
+           class="btn btn-primary ms-2 px-4">Save</button>
+    </div>
+</form>

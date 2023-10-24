@@ -54,7 +54,7 @@ export class MonthlyFlagsChartComponent implements OnInit {
         color: 'transarent'
       },
       title: {
-        text: 'Flags by month',
+        text: 'Affected Flights by NDO',
         left: 0,
         top: 10,
         textStyle: {

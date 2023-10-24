@@ -3,7 +3,7 @@ import { Injectable, OnInit } from '@angular/core';
 
 import { BehaviorSubject } from 'rxjs';
 
-import { PathToAssets } from '../dashboard-constants';
+import { FlightGroups } from '../dashboard-constants';
 
 import { GridsterConfig, GridsterItem } from 'angular-gridster2';
 
@@ -41,6 +41,10 @@ export class SortTileOptionsService {
     public priorityListBehaviorSubject$ = new BehaviorSubject<any[]>([]);
 
     public analystBehaviorSubject$ = new BehaviorSubject<any[]>([]);
+
+    public flagTypeBehaviorSubject$ = new BehaviorSubject<any[]>([]);
+
+    public flightGroups = FlightGroups;
 
     public routeList: any[] = [];
 
@@ -120,6 +124,10 @@ export class SortTileOptionsService {
 
     public selectedAnalysts: any[] = [];
 
+    public flagTypeSelect: any[] = [];
+
+    public selectedFlags: any[] = [];
+
 
     constructor() {
 
@@ -132,7 +140,7 @@ export class SortTileOptionsService {
 
         this.analystBehaviorSubject$.next(this.analystGroup)
 
-        this.analystBehaviorSubject$.subscribe(observer);
+        // this.analystBehaviorSubject$.subscribe(observer);
 
         let momentOne = moment(new Date(2023, 2, 12, 5, 0, 0));
 
@@ -211,6 +219,13 @@ export class SortTileOptionsService {
             { id: 2, name: 'Reviewed', metric: 'reviewed' }
         ];
 
+
+        this.flagTypeSelect = [
+            { id: 0, name: 'Exceptions', metric: 'exceptions' },
+            { id: 1, name: 'Alerts', metric: 'alerts' },
+            { id: 2, name: 'Actions', metric: 'actions' }
+        ];
+
         this.selectedPriority = this.priorityItems[0];
 
         this.routeList = [
@@ -222,8 +237,11 @@ export class SortTileOptionsService {
             { id: 5, name: 'STN - PMI', state: true }
         ];
 
+        this.selectedFlags = [...this.flagTypeSelect];
+
         this.selectedRoutes = [...this.routeList];
 
+        this.flagTypeBehaviorSubject$.next(this.flagTypeSelect);
 
         this.priorityListBehaviorSubject$.next(this.priorityItems);
 
@@ -378,6 +396,44 @@ export class SortTileOptionsService {
         })
         console.log('routeList onSelectAll ', stateTest)
 
+    }
+
+
+    public onFlagsSelected(item: any, idx: number, from: boolean, state: boolean) {
+
+        if (!from) {
+
+            if (state) {
+
+                this.selectedFlags.push(item);
+            } else {
+                this.selectedFlags = [];
+            }
+
+        } else {
+
+            if (!this.flagTypeSelect[idx].state) {
+
+                // console.log('onFlagsSelect item ', item, ' idx ', idx, ' from ', from, ' state ', state)
+                this.selectedFlags.push(item);
+                this.flagTypeSelect[idx].state = true;
+
+            } else {
+
+                const elementIdx = this.selectedFlags.findIndex(fi => {
+                    console.log('fi ', fi)
+                    return item.id === fi.id;
+                });
+
+                console.log('elementIdx ', elementIdx)
+
+                this.selectedFlags.splice(elementIdx, 1);
+                this.flagTypeSelect[idx].state = false;
+            }
+
+        }
+        console.log('selectedFlags selectedFlags ', this.selectedFlags, '\n routeList ', this.flagTypeSelect)
+        this.flagTypeBehaviorSubject$.next(this.flagTypeSelect);
     }
 
 

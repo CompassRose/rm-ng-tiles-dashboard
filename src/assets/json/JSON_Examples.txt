@@ -1,0 +1,213 @@
+//*** JSON doesn't allow comments so please copy and paste each object to a different file before compiling ***//
+
+
+/* Main user object */
+{
+  "UserId": "DGONZALEZ",
+  "FullName": "Daniel Gonzalez",
+  "UserType": "RM Admin",
+  "IsSupervisor": false
+}
+
+/* Analyst display Flag list */
+[
+  {
+    "FlagKey": 4,
+    "Name": "Test FFT",
+    "Priority": 1,
+    "FlagType": "Alert",
+    "Runs": [
+      {
+        "ProcessDate": "2023-06-30 11:34:43.000",
+        "FlightCount": 2,
+        "HistoryID": 9,
+        "Reviewed": true,
+        "FlightList": {
+          "Flights": [
+            {
+              "ODMasterkey": 285966,
+              "AirlineCode": "V7",
+              "FlightLine": "VCEBRI1234",
+              "DepartureDate": "2020-12-05 00:00:00"
+            },
+            {
+              "ODMasterkey": 285967,
+              "AirlineCode": "V7",
+              "FlightLine": "BRIVCE1235",
+              "DepartureDate": "2020-12-05 00:00:00"
+            }
+          ],
+          "BoxContents": {
+            "ShortNames": "List of shortnames separated by the | character",
+            "Suffixes": "List of Suffixes separated by the | character"
+          }
+        }
+      },
+      {
+        "ProcessDate": "2023-06-30 11:30:43.000",
+        "FlightCount": 3,
+        "HistoryID": 8,
+        "Reviewed": true,
+        "FlightList": {
+          "Flights": [
+            {
+              "ODMasterkey": 285966,
+              "AirlineCode": "V7",
+              "FlightLine": "VCEBRI1234",
+              "DepartureDate": "2020-12-05 00:00:00"
+            },
+            {
+              "ODMasterkey": 285967,
+              "AirlineCode": "V7",
+              "FlightLine": "BRIVCE1235",
+              "DepartureDate": "2020-12-05 00:00:00"
+            },
+            {
+              "ODMasterkey": 286003,
+              "AirlineCode": "V7",
+              "FlightLine": "TRNPMO1549",
+              "DepartureDate": "2020-12-05 00:00:00"
+            }
+          ],
+          "BoxContents": {
+            "ShortNames": "List of shortnames separated by the | character",
+            "Suffixes": "List of Suffixes separated by the | character"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "FlagKey": 5,
+    "Priority": 5,
+    "Name": "Test FFT2",
+    "FlagType": "Exception",
+    "Runs": [
+      {
+        "ProcessDate": "2023-06-30 11:35:43.000",
+        "FlightCount": 2,
+        "HistoryID": 10,
+        "Reviewed": false,
+        "FlightList": {
+          "Flights": [
+            {
+              "ODMasterkey": 286004,
+              "AirlineCode": "V7",
+              "FlightLine": "TFSOVD3541",
+              "DepartureDate": "2020-12-05 00:00:00"
+            },
+            {
+              "ODMasterkey": 286038,
+              "AirlineCode": "V7",
+              "FlightLine": "VRNPMO1533",
+              "DepartureDate": "2020-12-05 00:00:00"
+            }
+          ],
+          "BoxContents": {
+            "ShortNames": "List of shortnames separated by the | character",
+            "Suffixes": "List of Suffixes separated by the | character"
+          }
+        }
+      }
+    ]
+  }
+]
+
+/* Supervisor display Flag List */
+
+[
+  {
+    "FlagKey": 4,
+    "Name": "Test FFT",
+    "Priority": 1,
+    "FlagType": "Alert",
+    "ProcessDate": "2023-06-30 11:34:43.000",
+    "Reviews": [
+      {
+        "UserID": "DGONZALEZ",
+        "FullName": "David Gonzalez",
+        "LastReviwed": "2023-06-30 11:36:43.000"
+      },
+      {
+        "UserID": "ABARO",
+        "FullName": "Alex Baró",
+        "LastReviwed": "2023-06-30 12:45:43.000"
+      }
+    ]
+  },
+  {
+    "FlagKey": 5,
+    "Name": "Test FFT2",
+    "Priority": 5,
+    "FlagType": "Exception",
+    "ProcessDate": "2023-06-30 11:35:43.000",
+    "Reviews": [
+      {
+        "UserID": "DGONZALEZ",
+        "FullName": "David Gonzalez",
+        "LastReviwed": "2023-06-30 13:36:43.000"
+      },
+      {
+        "UserID": "ABARO",
+        "FullName": "Alex Baró",
+        "LastReviwed": "2023-06-30 16:45:43.006"
+      }
+    ]
+  }
+]
+
+/* Aggregated data*/
+{
+  "PriorityData": [
+    {
+      "Priority": 1,
+      "Count": 4
+    },
+    {
+      "Priority": 3,
+      "Count": 7
+    },
+    {
+      "Priority": 5,
+      "Count": 6
+    },
+    {
+      "Priority": 6,
+      "Count": 8
+    }
+  ],
+  "NDOData": [
+    {
+      "Range": "0-1",
+      "Count": 15
+    },
+    {
+      "Range": "2-7",
+      "Count": 12
+    },
+    {
+      "Range": "8-14",
+      "Count": 6
+    },
+    {
+      "Range": "15-30",
+      "Count": 3
+    },
+    {
+      "Range": "31-60",
+      "Count": 2
+    },
+    {
+      "Range": "61-120",
+      "Count": 1
+    },
+    {
+      "Range": "121-250",
+      "Count": 1
+    },
+    {
+      "Range": "251+",
+      "Count": 1
+    }
+  ]
+}

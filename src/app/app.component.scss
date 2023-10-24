@@ -184,6 +184,15 @@
     }
   }
 
+  .menu-bar-lower {
+    min-width: 1232px !important;
+    .routes {
+      width: 30%;
+      padding-right: 15px;
+      justify-content: flex-start;
+    }
+  }
+
   .floating-control-panel {
     display: flex;
     padding-left: 5px;

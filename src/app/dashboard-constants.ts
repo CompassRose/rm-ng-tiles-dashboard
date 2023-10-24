@@ -10,6 +10,149 @@ export enum ImagePath {
 
 export const PathToAssets = ImagePath.devPathToAssets;
 
+export const FlightGroups =
+    [
+        {
+            idx: 0,
+            name: "125 Flights",
+            title: '1306 - 21-May, 2022',
+            state: false,
+            details: [
+                { flightNumber: 987 },
+                { flightNumber: 123 },
+                { flightNumber: 456 },
+                { flightNumber: 654 },
+                { flightNumber: 23 },
+                { flightNumber: 234 }
+            ]
+        },
+        {
+            idx: 1,
+            name: "213 Flights",
+            title: '1306 - 21-May, 2022',
+            state: false,
+            details: [
+                { flightNumber: 987 },
+                { flightNumber: 123 },
+                { flightNumber: 456 },
+                { flightNumber: 654 },
+                { flightNumber: 23 },
+                { flightNumber: 234 }
+            ]
+        },
+        {
+            idx: 2,
+            name: "72 Flights",
+            title: '1306 - 21-May, 2022',
+            state: false,
+            details: [
+                { flightNumber: 987 },
+                { flightNumber: 123 },
+                { flightNumber: 456 },
+                { flightNumber: 654 },
+                { flightNumber: 23 },
+                { flightNumber: 234 }
+            ]
+        },
+        {
+            idx: 3,
+            name: "19 Flights",
+            title: '1306 - 21-May, 2022',
+            state: false,
+            details: [
+                { flightNumber: 987 },
+                { flightNumber: 123 },
+                { flightNumber: 456 },
+                { flightNumber: 654 },
+                { flightNumber: 23 },
+                { flightNumber: 234 }
+            ]
+        },
+        {
+            idx: 4,
+            name: "125 Flights",
+            title: '1306 - 21-May, 2022',
+            state: false,
+            details: [
+                { flightNumber: 987 },
+                { flightNumber: 123 },
+                { flightNumber: 456 },
+                { flightNumber: 654 },
+                { flightNumber: 23 },
+                { flightNumber: 234 }
+            ]
+        },
+        {
+            idx: 5,
+            name: "211 Flights",
+            title: '1306 - 21-May, 2022',
+            state: false,
+            details: [
+                { flightNumber: 987 },
+                { flightNumber: 123 },
+                { flightNumber: 456 },
+                { flightNumber: 654 },
+                { flightNumber: 23 },
+                { flightNumber: 234 }
+            ]
+        },
+        {
+            idx: 6,
+            name: "85 Flights",
+            title: '1306 - 21-May, 2022',
+            state: false,
+            details: [
+                { flightNumber: 987 },
+                { flightNumber: 123 },
+                { flightNumber: 456 },
+                { flightNumber: 654 },
+                { flightNumber: 23 },
+                { flightNumber: 234 }
+            ]
+        },
+        {
+            idx: 7,
+            name: "57 Flights",
+            title: '1306 - 21-May, 2022',
+            state: true,
+            details: [
+                { flightNumber: 987 },
+                { flightNumber: 123 },
+                { flightNumber: 456 },
+                { flightNumber: 654 },
+                { flightNumber: 23 },
+                { flightNumber: 234 }
+            ]
+        },
+        {
+            idx: 8,
+            name: "23 Flights",
+            title: '1306 - 21-May, 2022',
+            state: true,
+            details: [
+                { flightNumber: 987 },
+                { flightNumber: 123 },
+                { flightNumber: 456 },
+                { flightNumber: 654 },
+                { flightNumber: 23 },
+                { flightNumber: 234 }
+            ]
+        },
+        {
+            idx: 9,
+            name: "178 Flights",
+            title: '1306 - 21-May, 2022',
+            state: true,
+            details: [
+                { flightNumber: 987 },
+                { flightNumber: 123 },
+                { flightNumber: 456 },
+                { flightNumber: 654 },
+                { flightNumber: 23 },
+                { flightNumber: 234 }
+            ]
+        },
+    ]
 
 
 export const fareClasses = ['Y', 'D', 'B', 'A', 'Z', 'W', 'U', 'S', 'R', 'I', 'L', 'J', 'H', 'K', 'N', 'Q', 'T', 'O'];
