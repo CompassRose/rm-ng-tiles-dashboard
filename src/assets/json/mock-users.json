@@ -6,8 +6,8 @@
   "IsSupervisor": false
 },
 {
-  "UserId": "DGONZALEZ",
-  "FullName": "Daniel Gonzalez",
+  "UserId": "DSALAZAR",
+  "FullName": "Dominic Salazar",
   "UserType": "RM Admin",
-  "IsSupervisor": false
+  "IsSupervisor": true
 }]

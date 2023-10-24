@@ -4,7 +4,7 @@ import { PathToAssets } from './dashboard-constants';
 import { SortTileOptionsService } from './services/sort-tiles-options.service';
 import { CommonService } from './services/image-support';
 import { MockService } from './services/tiles-mock-api';
-
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -34,6 +34,8 @@ export class AppComponent implements OnInit {
 
   public initials: string = '';
 
+  public currentApplicationVersion = environment.appVersion;
+
   constructor(
     public router: Router,
     public sortTileOptionsService: SortTileOptionsService,
@@ -42,9 +44,19 @@ export class AppComponent implements OnInit {
     public changeDetector: ChangeDetectorRef) {
 
 
+
     this.mockTileService.combineAndSendLatestValues()
       .subscribe((response: any) => {
-        console.log('combineAndSendLatestValues response ', response)
+        // console.log('combineAndSendLatestValues response ', response)
+        response[0].subscribe((res: any) => {
+          console.log('Users response ', res)
+        })
+        response[1].subscribe((res: any) => {
+          console.log('Flags response ', res)
+        })
+        response[2].subscribe((res: any) => {
+          console.log('Priorities response ', res)
+        })
       })
 
     this.mockTileService.apiFlagsSubject$.subscribe((res: any) => {

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { FlagDisplaySupportComponent } from './flag-display-support/flag-display-support.component';
-import { AvatarSupportComponent } from './avatar-support/avatar-support.component';
 import { AvataDetailsSupportComponent } from './avatar-details-support/avatar-details-support.component';
 
 const routes: Routes = [

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UserValidateTsService } from './user-validate.ts.service';
+import { UserValidateTsService } from './services/user-validate.ts.service';
 
 describe('UserValidateTsService', () => {
   let service: UserValidateTsService;

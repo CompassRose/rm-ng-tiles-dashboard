@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
 
 @Injectable()
 export class AuthenticationService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   isLoginSubject = new BehaviorSubject<boolean>(this.hasToken());
 

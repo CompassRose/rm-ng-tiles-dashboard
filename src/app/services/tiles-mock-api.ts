@@ -47,7 +47,7 @@ export class MockService implements OnInit {
     return this.http.get(`${_url}${type}`)
       .pipe(
         map(response => {
-          console.log('response ', response)
+          // console.log('response ', response)
           return response;
         }),
         catchError(error => {
@@ -61,7 +61,7 @@ export class MockService implements OnInit {
   /**
    * @return Three element array, elem 1 is FlightClientDetails, elem 2 is BidPriceInfluencers[]
    */
-  public combineAndSendLatestValues(): Observable<any> {
+  public combineAndSendLatestValues() {
     console.log('combineAndSendLatestValues ')
     // debounce time insures enough time to get all new values,
     // switchMap: higher order observable that unsubscribes after return...
@@ -72,9 +72,9 @@ export class MockService implements OnInit {
       combineLatest(
         [this.apiUsersSubject$, this.apiFlagsSubject$, this.apiPrioritiesSubject$]
       ).pipe(
-        //debounceTime(10),
+        debounceTime(10),
         switchMap(([users, flags, priorities]) => {
-          console.log('users ', users, '\nflags ', flags, '\npriorities ', priorities)
+          // console.log('users ', users, '\nflags ', flags, '\npriorities ', priorities)
           return of([users, flags, priorities])
         })
       );
