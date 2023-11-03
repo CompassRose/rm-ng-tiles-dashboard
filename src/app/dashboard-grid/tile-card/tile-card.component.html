@@ -1,5 +1,5 @@
 <div class="item-content">
-    <div [ngClass]="dashboardTile.reviewed ? 'reviewed-tag visible' : 'reviewed-tag not-visible'">Reviewed</div>
+    <div [ngClass]="flagRuns[0][0].Reviewed ? 'reviewed-tag visible' : 'reviewed-tag not-visible'">Reviewed</div>
 
     <div class="drag-handler">
 
@@ -7,12 +7,14 @@
 
             <div class="card-top-row mb-2">
                 <div class="number-container"
-                   [style.background-color]="dashboardTile.color">
-                    <span class="number-wrapper">{{dashboardTile.priority}}</span>
+                   [style.background-color]="getPriorityColor(dashboardTile.Priority)">
+                    <span class="number-wrapper">{{dashboardTile.Priority}}</span>
                 </div>
                 <div class="card-row-frame">
-                    <div class="div">{{dashboardTile.name}}</div>
-                    <div class="text-wrapper">421 Flights</div>
+                    <div class="div">{{dashboardTile.Name}}</div>
+                    <div class="body-text body-12-16-600 text-p-blue">Flight Count:
+                        {{flagRuns[0][flagRuns.length -
+                        1].FlightCount}}</div>
                 </div>
             </div>
         </div>
@@ -21,9 +23,11 @@
                 <div class="system-time-wrapper">
                     <div class="clock-svg"></div>
                 </div>
-                <div class="column-frame ms-1">
-                    <div class="text-wrapper mb-1">Last Update</div>
-                    <div class="p">{{dashboardTile.lastUpdate}}</div>
+                <div class="ms-1">
+                    <div class="body-text body-12-16-600 text-p-blue mb-1">Last Runs</div>
+                    <div class="body-text text-p-blue body-12-16-400">{{flagRuns[0][flagRuns.length -
+                        1].ProcessDate}}</div>
+                    <!-- <div class="p">{{dashboardTile.lastUpdate}}</div> -->
                 </div>
             </div>
             <a class="ellipsis-vertical"

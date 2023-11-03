@@ -1,55 +1,64 @@
-
-[{
-  "PriorityData": [
-    {
-      "Priority": 1,
-      "Count": 4
-    },
-    {
-      "Priority": 3,
-      "Count": 7
-    },
-    {
-      "Priority": 5,
-      "Count": 6
-    },
-    {
-      "Priority": 6,
-      "Count": 8
-    }
-  ],
-  "NDOData": [
-    {
-      "Range": "0-1",
-      "Count": 15
-    },
-    {
-      "Range": "2-7",
-      "Count": 12
-    },
-    {
-      "Range": "8-14",
-      "Count": 6
-    },
-    {
-      "Range": "15-30",
-      "Count": 3
-    },
-    {
-      "Range": "31-60",
-      "Count": 2
-    },
-    {
-      "Range": "61-120",
-      "Count": 1
-    },
-    {
-      "Range": "121-250",
-      "Count": 1
-    },
-    {
-      "Range": "251+",
-      "Count": 1
-    }
-  ]
-}]
+[
+  {
+    "PriorityData": [
+      {
+        "Priority": 1,
+        "Count": 4
+      },
+      {
+        "Priority": 2,
+        "Count": 3
+      },
+      {
+        "Priority": 3,
+        "Count": 7
+      },
+      {
+        "Priority": 4,
+        "Count": 12
+      },
+      {
+        "Priority": 5,
+        "Count": 6
+      },
+      {
+        "Priority": 6,
+        "Count": 8
+      }
+    ],
+    "NDOData": [
+      {
+        "Range": "0-1",
+        "Count": 15
+      },
+      {
+        "Range": "2-7",
+        "Count": 12
+      },
+      {
+        "Range": "8-14",
+        "Count": 9
+      },
+      {
+        "Range": "15-30",
+        "Count": 7
+      },
+      {
+        "Range": "31-60",
+        "Count": 6
+      },
+      {
+        "Range": "61-120",
+        "Count": 5
+      },
+      {
+        "Range": "121-250",
+        "Count": 3
+      },
+      {
+        "Range": "251+",
+        "Count": 1
+      }
+    ]
+  }
+]

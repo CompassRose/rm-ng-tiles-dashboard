@@ -18,25 +18,25 @@ export class FlagDisplaySupportComponent {
 
   }
 
-  // this.savedDashboard
-  public setCollectionType(id: number) {
-    let newColl: any[] = [];
+  // // this.savedDashboard
+  // public setCollectionType(id: number) {
+  //   let newColl: any[] = [];
 
-    this.selectedFlagElement = id;
+  //   this.selectedFlagElement = id;
 
-    //  console.log('setCollectionType ')
-    this.sortTileOptionsService.dashboard = [...this.sortTileOptionsService.savedDashboard];
+  //   console.log('setCollectionType ')
+  //   this.sortTileOptionsService.dashboard = [...this.sortTileOptionsService.savedDashboard];
 
-    this.hassSelectionBeenRegistered = true;
+  //   this.hassSelectionBeenRegistered = true;
 
-    this.sortTileOptionsService.dashboard.map((cb: any) => {
-      if (cb.priority === id) {
-        newColl.push(cb);
-      }
-    })
+  //   this.sortTileOptionsService.dashboard.map((cb: any) => {
+  //     if (cb.priority === id) {
+  //       newColl.push(cb);
+  //     }
+  //   })
 
-    this.sortTileOptionsService.selectedFlag(newColl);
-  }
+  //   this.sortTileOptionsService.selectedFlag(newColl);
+  // }
 
 
   public getCollectionLength(id: number): number {

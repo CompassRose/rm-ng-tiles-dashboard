@@ -57,7 +57,7 @@ export class CommonService {
     public changePicture(data: any) {
         console.log('\n image ', data.avatar)
         if (data) {
-            this.loadImage(data.avatar);
+            // this.loadImage(data.avatar);
             this.imageValue$.next(data.avatar)
         }
     }

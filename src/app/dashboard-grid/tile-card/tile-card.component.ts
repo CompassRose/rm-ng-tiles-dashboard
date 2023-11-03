@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, AfterViewInit, EventEmitter } from '@angular/core';
 import {
   trigger,
   state,
@@ -15,7 +15,7 @@ import {
 
 })
 
-export class TileCardComponent {
+export class TileCardComponent implements AfterViewInit {
 
   public dashboardTile: any;
 
@@ -26,6 +26,7 @@ export class TileCardComponent {
 
   public openedItem: number;
   public showOptions = false;
+  public flagRuns: any[] = [];
 
   @Output()
   public callHistoryModal: EventEmitter<any> = new EventEmitter();
@@ -33,17 +34,31 @@ export class TileCardComponent {
   @Input()
   set DashboardItem(item: any) {
 
-
     this.dashboardTile = item;
-    // console.log('  DashboardItem ', this.dashboardTile)
+    this.flagRuns.push(item.Runs);
+
   }
 
-  constructor() { }
+  constructor() {
 
+  }
+
+  public ngAfterViewInit(): void {
+    // console.log('  DashboardItem ', this.dashboardTile, ' flagRuns ', this.flagRuns)
+  }
+
+  public getPriorityColor(idx: number): string {
+
+    const testColors = ['Navy', 'OrangeRed', 'DarkGreen', '#7A2B39', 'DodgerBlue', 'Red'];
+
+    //console.log('testColors[idx] ', idx, '  -- ', testColors[idx - 1])
+    return testColors[idx - 1];
+
+  }
 
   public selectDropdown(index: number) {
 
-    // console.log('this.openedItem ', this.openedItem)
+    //console.log('this.openedItem ', this.openedItem)
 
     if (this.openedItem !== undefined && this.openedItem !== index) {
       this.dashboardTile.showOptions = false;
@@ -55,7 +70,7 @@ export class TileCardComponent {
 
     this.showOptions = !this.showOptions;
 
-    console.log('selectDropdown ', index, ' showOptions ', this.showOptions)
+    //console.log('selectDropdown ', index, ' showOptions ', this.showOptions)
   }
 
 
@@ -67,7 +82,7 @@ export class TileCardComponent {
 
     this.callHistoryModal.emit(this.dashboardTile);
 
-    console.log('goToDestination ', option, ' dashboardTile ', this.dashboardTile)
+    // console.log('goToDestination ', option, ' dashboardTile ', this.dashboardTile)
 
   }
 

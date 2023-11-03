@@ -1,33 +1,57 @@
 <form [formGroup]="form"
    (ngSubmit)="submit()">
-    <avatar-details-display formControlName="avatar"></avatar-details-display>
-    <div class="row margin-top">
-        <mat-form-field appearance="fill">
-            <mat-label>First name</mat-label>
-            <input type="text"
-               matInput
-               formControlName="firstName">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Last name</mat-label>
-            <input type="text"
-               matInput
-               formControlName="lastName">
-        </mat-form-field>
-    </div>
-    <div class="row">
-        <mat-form-field appearance="fill">
-            <mat-label>Initials</mat-label>
-            <input type="text"
-               matInput
-               formControlName="initials">
-        </mat-form-field>
-    </div>
-    <div class="button-footer">
-        <button type="button"
+
+    <div class="form-group w-75 pt-4">
+        <div for="fullName body-text text-p-blue ml-3">Login Name</div>
+
+        <ng-select *ngIf="(mockTileService.apiUsersSubject$ | async) as allNames"
+           [items]="allNames"
+           #select
+           bindLabel="FullName"
+           dropdownPosition="auto"
+           labelForId="fullName"
+           placeholder="Select User"
+           [clearable]="false"
+           (change)="selectUserFromDropdown($event)"
+           formControlName="FullName">
+            <ng-template ng-option-tmp
+               let-item="item"
+               let-search="searchTerm">
+                <!-- <div class="body-text text-p-blue  body-12-16-600">
+
+                </div> -->
+                <small><b>Title: </b>{{item.FullName}}</small><br />
+                <small><b>Id: </b> {{item.UserId}}</small><br />
+                <small><b>Position: </b> {{item.UserType}}</small>
+
+            </ng-template>
+        </ng-select>
+
+        <!-- <avatar-details-display formControlName="avatar"></avatar-details-display> -->
+        <div class="row mt-1">
+            <mat-form-field appearance="fill"
+               class="body-text text-p-blue body-14-16-400">
+                <mat-label class="body-text text-p-blue">User Id</mat-label>
+                <input type="text"
+                   matInput
+                   formControlName="UserId">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="fill"
+               class="body-text text-p-blue body-14-16-400">
+                <mat-label>User Type</mat-label>
+                <input type="text"
+                   matInput
+                   formControlName="UserType">
+            </mat-form-field>
+        </div>
+        <div class="button-footer">
+            <!-- <button type="button"
            class="btn btn-secondary  px-4 "
-           (click)="onExit()">Exit</button>
-        <button type="submit"
-           class="btn btn-primary ms-2 px-4">Save</button>
+           (click)="onExit()">Exit</button> -->
+            <button type="submit"
+               class="btn btn-primary ms-2 px-4">Login</button>
+        </div>
     </div>
 </form>

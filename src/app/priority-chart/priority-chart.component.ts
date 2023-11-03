@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
 import { blueRamp16 } from '../dashboard-constants';
+import { MockService } from '../services/tiles-mock-api';
 
 @Component({
   selector: 'app-priority-chart',
@@ -8,32 +9,47 @@ import { blueRamp16 } from '../dashboard-constants';
   styleUrls: ['./priority-chart.component.scss']
 })
 
-export class PriorityChartComponent implements OnInit {
+export class PriorityChartComponent {
 
   public options: any = {};
   public myChart: any = null;
+  public priorityPercent: number;
+  public priorityValues: number[] = [];
 
-  public legendData = [
-    'Very Urgent',
-    'Urgent',
-    'Medium Urgency',
-    'Low Urgency',
-    'All in order'
-  ]
+  // public legendData = [
+  //   'Very Urgent',
+  //   'Urgent',
+  //   'Medium Urgency',
+  //   'Low Urgency',
+  //   'All in order'
+  // ]
 
-  public chartValues = [
-    { value: 42, name: 'Very Urgent', percent: '42%' },
-    { value: 7, name: 'Urgent', percent: '7%' },
-    { value: 6, name: 'Medium Urgency', percent: '6%' },
-    { value: 12, name: 'Low Urgency', percent: '12%' },
-    { value: 33, name: 'All in order', percent: '33%' }
-  ]
+  // public chartValues = [
+  //   { value: 42, name: 'Very Urgent', percent: '42%' },
+  //   { value: 7, name: 'Urgent', percent: '7%' },
+  //   { value: 6, name: 'Medium Urgency', percent: '6%' },
+  //   { value: 12, name: 'Low Urgency', percent: '12%' },
+  //   { value: 33, name: 'All in order', percent: '33%' }
+  // ]
+
   public blueRamp = blueRamp16
 
-  constructor() { }
+  constructor(public mockTileService: MockService) {
+    let totalCount = 0;
+    this.mockTileService.apiPrioritiesSubject$.subscribe((res: any) => {
 
-  public ngOnInit(): void {
-    this.createSvg()
+      if (res.length > 0) {
+
+        this.priorityValues = res[0].PriorityData;
+
+        res[0].PriorityData.forEach((priorValue: any) => {
+          totalCount += priorValue.Count
+        })
+        this.priorityPercent = totalCount
+
+        this.createSvg()
+      }
+    })
   }
 
   // Sets up Dom node and attaches myChart element
@@ -47,7 +63,7 @@ export class PriorityChartComponent implements OnInit {
 
     setTimeout(() => {
       this.setChartContents()
-    }, 100);
+    }, 200);
 
   }
 
@@ -58,7 +74,7 @@ export class PriorityChartComponent implements OnInit {
 
     this.myChart.setOption({
       title: {
-        text: 'Priority status',
+        text: 'Priority Status',
         left: 10,
         top: 10,
         textStyle: {
@@ -80,7 +96,7 @@ export class PriorityChartComponent implements OnInit {
         trigger: 'item'
       },
       legend: {
-        show: true,
+        show: false,
         top: '25%',
         right: 0,
         align: 'right',
@@ -93,14 +109,15 @@ export class PriorityChartComponent implements OnInit {
           color: 'white',
           fontSize: 11,
         },
-        //data: this.legendData,
-        formatter: this.legendData.map((item, i) => {
 
-          const test = {
-            name: item,
+        formatter: this.priorityValues.map((item: any, i) => {
+          const percentValue = +((item.Count / this.priorityPercent) * 100).toFixed(2);
+          const percentStr = `${percentValue} %`
+          const percentVal = {
+            name: percentStr,
             icon: 'circle',
           }
-          return test
+          return percentVal
         }),
       },
       series: [
@@ -131,10 +148,10 @@ export class PriorityChartComponent implements OnInit {
           labelLine: {
             show: true
           },
-          data: this.chartValues.map((values, i) => {
+          data: this.priorityValues.map((values: any, i) => {
             return {
-              value: values.value,
-              name: values.percent,
+              value: values.Priority,
+              name: values.Count,
               itemStyle: {
                 color: this.blueRamp[i]
               },

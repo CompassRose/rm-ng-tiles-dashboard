@@ -6,7 +6,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialExampleModule } from '../material.module';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+//import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { GridsterModule } from 'angular-gridster2';
 import { DashboardGridComponent } from './dashboard-grid/dashboard-grid.component';
 import { PriorityChartComponent } from './priority-chart/priority-chart.component';
@@ -43,8 +43,8 @@ import { MockService } from './services/tiles-mock-api'
     NgSelectModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
+    // FormsModule,
+    // ReactiveFormsModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     })

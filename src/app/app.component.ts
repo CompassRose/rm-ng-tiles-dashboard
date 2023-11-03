@@ -28,13 +28,19 @@ export class AppComponent implements OnInit {
 
   public iconFile: string = '';
 
-  public firstName: string = '';
+  public FullName: string = '';
 
-  public lastName: string = '';
+  public UserId: string = '';
 
-  public initials: string = '';
+  public UserType: string = '';
+
+  public IsSupervisor = false;
+
+  public isLoggedIn = false;
 
   public currentApplicationVersion = environment.appVersion;
+
+
 
   constructor(
     public router: Router,
@@ -43,41 +49,49 @@ export class AppComponent implements OnInit {
     public mockTileService: MockService,
     public changeDetector: ChangeDetectorRef) {
 
+    this.mockTileService.apiUsersSubject$.subscribe((res: any) => {
+      if (res.length > 0) {
+        console.log('apiUsersSubject ', res)
+      }
 
+    })
 
-    this.mockTileService.combineAndSendLatestValues()
-      .subscribe((response: any) => {
-        // console.log('combineAndSendLatestValues response ', response)
-        response[0].subscribe((res: any) => {
-          console.log('Users response ', res)
-        })
-        response[1].subscribe((res: any) => {
-          console.log('Flags response ', res)
-        })
-        response[2].subscribe((res: any) => {
-          console.log('Priorities response ', res)
-        })
-      })
+    // this.mockTileService.userLoggedInSubject$
+    //   .subscribe(user => {
+    //     if (user !== null) {
+    //       this.isLoggedIn = true;
+    //       this.FullName = user.FullName;
+    //       this.UserId = user.UserId;
+    //       this.IsSupervisor = user.IsSupervisor;
+    //       this.UserType = user.UserType;
+    //     } else {
+    //       this.isLoggedIn = false;
+    //     }
+    //   })
+
 
     this.mockTileService.apiFlagsSubject$.subscribe((res: any) => {
-      console.log('tester ', res)
+      if (res.length > 0) {
+        console.log('apiFlagsSubject ', res)
+
+        // this.mockTileService.selectedFlags = res;
+
+      }
     })
 
-    this.mockTileService.apiUsersSubject$.subscribe((res: any) => {
-      console.log('apiUsersSubject ', res)
-    })
 
 
     this.mockTileService.apiPrioritiesSubject$.subscribe((res: any) => {
-      console.log('apiPrioritiesSubject ', res)
+      if (res.length > 0) {
+        // console.log('apiPrioritiesSubject ', res)
+      }
     })
+
 
     this.imageService.editedImage$
       .subscribe((image: HTMLImageElement) => {
         //console.log('Edited image ', image)
       })
-
-
 
 
     this.imageService.imageValue$
@@ -99,53 +113,13 @@ export class AppComponent implements OnInit {
   }
 
 
-
-
   public ngOnInit(): void {
 
     let editedmageData: any;
 
-    const mockFlags = this.mockTileService.loadConfiguration('mock-flags.json');
-    const mockUsers = this.mockTileService.loadConfiguration('mock-users.json');
-    const mockPriorities = this.mockTileService.loadConfiguration('mock-priorities.json');
-
-    setTimeout(() => {
-      this.mockTileService.apiFlagsSubject$.next(mockFlags);
-      this.mockTileService.apiUsersSubject$.next(mockUsers);
-      this.mockTileService.apiPrioritiesSubject$.next(mockPriorities);
-      this.mockTileService.combineAndSendLatestValues()
-    }, 1000);
-
-
-
-
-    // .subscribe((response) => {
-
-    // })
-    // }
-
-
-
-    // if (window.localStorage.getItem('tiles-profile')) {
-
-    //   const tempImg: any = window.localStorage.getItem(JSON.parse('tiles-profile'));
-    //   console.log('tempImg ', tempImg)
-    //   this.imageService.setImageFile(tempImg.avatar);
-    // }
-
-
-
-    //tiles-profile
-
-    // if (window.localStorage.getItem('editedAvatarImage')) {
-    //   // @ts-ignore
-    //   if (window.localStorage.getItem('editedAvatarImage')) {
-    //     editedmageData = window.localStorage.getItem('editedAvatarImage');
-    //     this.imageService.loadImage(editedmageData)
-    //     this.userInfo = true;
-    //   }
-    //   this.imageService.changePicture(editedmageData);
-    // }
+    this.mockTileService.loadConfiguration('mock-flags');
+    this.mockTileService.loadConfiguration('mock-users');
+    this.mockTileService.loadConfiguration('mock-priorities');
 
 
     // @ts-ignore
@@ -153,20 +127,21 @@ export class AppComponent implements OnInit {
 
       editedmageData = window.localStorage.getItem('tiles-profile');
       const loginInfo = JSON.parse(editedmageData)
-      console.log('loginInfo ', loginInfo)
-      this.firstName = loginInfo.firstName;
-      this.lastName = loginInfo.lastName;
-      this.initials = loginInfo.initials;
-      this.imageService.loadImage(loginInfo);
+      this.mockTileService.userLoggedInSubject$.next(loginInfo)
+      this.FullName = loginInfo.FullName;
+      this.UserId = loginInfo.UserId;
+      this.IsSupervisor = loginInfo.IsSupervisor;
+      this.UserType = loginInfo.UserType;
       this.userInfo = true;
     }
-    //this.imageService.changePicture(editedmageData);
-
-
     this.router.navigate(['/start-page']);
   }
 
 
+  // From label cross in selected flag type
+  public clear(item: any) {
+    this.mockTileService.selectFlagTypes(item)
+  }
 
 
   public openAvatarModal(option: any, idx: number) {
@@ -177,51 +152,21 @@ export class AppComponent implements OnInit {
 
 
 
-  public gottoAvatarScreen() {
+  public gottoAvatarScreen(clear: boolean) {
+
     // this.router.navigate(['/avatar-screen']);
+    if (clear) {
+      localStorage.removeItem("tiles-profile");
+      //this.mockTileService.userLoggedInSubject$.complete();
+      this.FullName = '';
+      this.UserId = '';
+      this.IsSupervisor = false;
+      this.UserType = '';
+
+    }
+
     this.router.navigate(['/profile']);
   }
-
-
-
-  public setCollectionType(id: number) {
-
-    let newColl: any[] = [];
-    this.selectedFlagElement = id;
-    this.sortTileOptionsService.dashboard = [...this.sortTileOptionsService.savedDashboard];
-    this.hassSelectionBeenRegistered = true;
-
-    this.sortTileOptionsService.dashboard.map((cb: any) => {
-      if (cb.priority === id) {
-        newColl.push(cb);
-      }
-    })
-
-    this.sortTileOptionsService.selectedFlag(newColl);
-  }
-
-
-
-  public getCollectionLength(id: number): number {
-    // console.log('getCollectionLength ', id)
-    let counter = 0;
-    this.sortTileOptionsService.savedDashboard.map((cb: any) => {
-      if (cb.priority === id) {
-        counter += 1;
-      }
-    })
-    return counter;
-  }
-
-
-
-
-  public resetCollectionType() {
-    this.hassSelectionBeenRegistered = false;
-    this.sortTileOptionsService.dashboard = [...this.sortTileOptionsService.savedDashboard];
-  }
-
-
 
 
 }

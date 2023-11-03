@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MockService } from '../services/tiles-mock-api';
 import * as echarts from 'echarts';
+import { NdoValuesModel } from '../models/tiles.model';
+
 
 
 @Component({
@@ -12,12 +15,19 @@ export class MonthlyFlagsChartComponent implements OnInit {
 
   public options: any = {};
   public myChart: any = null;
+  public NdoData: NdoValuesModel[] = [];
 
-  constructor() { }
+  constructor(public mockTileService: MockService) {
 
-  public ngOnInit(): void {
-    this.createSvg();
+    this.mockTileService.apiPrioritiesSubject$.subscribe((res: any) => {
+      if (res.length > 0) {
+        this.NdoData = res[0].NDOData;
+        this.createSvg();
+      }
+    })
   }
+
+  public ngOnInit(): void { }
 
   // Sets up Dom node and attaches myChart element
   public createSvg(): void {
@@ -37,17 +47,16 @@ export class MonthlyFlagsChartComponent implements OnInit {
 
   public setChartContents() {
 
-    let dataAxis = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
-    let data = [42, 74, 39, 78, 72, 115, 32, 43, 72, 25, 60, 55];
+    let axisData = [...this.NdoData];
 
 
     this.myChart.setOption({
       grid: {
         show: false,
-        left: 25,
+        left: 40,
         right: 5,
-        top: 45,
-        bottom: 20
+        top: 55,
+        bottom: 35
       },
 
       backgroundStyle: {
@@ -55,7 +64,7 @@ export class MonthlyFlagsChartComponent implements OnInit {
       },
       title: {
         text: 'Affected Flights by NDO',
-        left: 0,
+        left: 10,
         top: 10,
         textStyle: {
           color: 'white',
@@ -67,8 +76,9 @@ export class MonthlyFlagsChartComponent implements OnInit {
       xAxis: {
         show: true,
         type: 'category',
-        data: dataAxis,
-        //interval: 1,
+        name: 'NDO Range',
+        nameLocation: 'middle',
+        nameGap: 25,
         axisLabel: {
           fontSize: 10,
           color: 'white'
@@ -82,11 +92,17 @@ export class MonthlyFlagsChartComponent implements OnInit {
             color: 'white'
           }
         },
+        data: axisData.map((nd: any, i: number) => {
+          return nd.Range
+        }),
         z: 10
       },
       yAxis: {
         show: true,
         type: 'value',
+        name: 'Flight Count',
+        nameLocation: 'middle',
+        nameGap: 25,
         axisLine: {
           show: true,
           lineStyle: {
@@ -112,8 +128,8 @@ export class MonthlyFlagsChartComponent implements OnInit {
       series: [
         {
           type: 'bar',
-          barWidth: 16,
-          barGap: 1,
+          barWidth: 30,
+          barGap: 0,
           label: {
             show: true,
             color: 'white',
@@ -122,7 +138,7 @@ export class MonthlyFlagsChartComponent implements OnInit {
           showBackground: false,
           itemStyle: {
             // borderRadius: [5, 5, 0, 0],
-            borderRadius: [7],
+            borderRadius: [5],
             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
               { offset: 0, color: '#83bff6' },
               { offset: 0.5, color: '#188df0' },
@@ -138,7 +154,10 @@ export class MonthlyFlagsChartComponent implements OnInit {
               ])
             }
           },
-          data: data
+          data: this.NdoData.map((nd: any, i: number) => {
+            //   console.log('nd ', nd)
+            return nd.Count
+          })
         }
       ]
     });

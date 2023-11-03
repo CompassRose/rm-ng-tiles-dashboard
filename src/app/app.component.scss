@@ -54,6 +54,7 @@
   height: 100vh;
 
   .pre-header {
+    padding: 10px 0;
     width: 100%;
     border-bottom: 1px solid gray;
     padding-left: 15px;
@@ -75,23 +76,39 @@
         display: flex;
         flex-direction: column;
       }
+      .logout01-svg {
+        margin-left: 10px;
+        background-image: url("../assets/svg/arrow-to-shape-right-svgrepo-com.svg") !important;
+        background-repeat: no-repeat;
+        width: 22px;
+        height: 22px;
+      }
       .logout-svg {
-        margin-left: 30px;
-        margin-top: 20px;
+        margin-left: 10px;
         background-image: url("../assets/svg/logout_circle.svg") !important;
         background-repeat: no-repeat;
-        width: 40px;
-        height: 40px;
+        width: 22px;
+        height: 22px;
       }
     }
   }
 
+  .list-parent {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  // .row-list {
+  //   position: relative;
+  // }
+
   .header {
     min-width: 1440px !important;
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-bottom: 40px;
+    align-content: flex-start;
+    justify-content: flex-start;
+    padding-bottom: 30px;
 
     &.navy-background {
       background-color: $accelya-primary-blue;
@@ -107,6 +124,12 @@
         height: 20px;
         display: flex;
       }
+    }
+    .priority-parent {
+      width: 30%;
+    }
+    .analayst-parent {
+      width: 35%;
     }
 
     .list-rect-group {
@@ -182,59 +205,13 @@
         }
       }
     }
-  }
 
-  .menu-bar-lower {
-    min-width: 1232px !important;
-    .routes {
-      width: 30%;
-      padding-right: 15px;
-      justify-content: flex-start;
-    }
-  }
-
-  .floating-control-panel {
-    display: flex;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    justify-content: flex-start;
-    z-index: 1000;
-    margin-top: -27px;
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.356);
-
-    .menu-bar-items {
-      display: flex;
-      align-items: center;
-      background-color: white;
-
-      &.analysts {
-        padding-right: 20px;
-        &.bordered {
-          border-right: 1px solid rgb(128, 128, 128);
-        }
-      }
-      &.routes {
+    .menu-bar-lower {
+      min-width: 1232px !important;
+      .routes {
+        //width: 30%;
         padding-right: 15px;
-      }
-      .list-column-group {
-        position: relative;
-        font-size: 16px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        color: navy;
-
-        .list-sub {
-          width: 120px;
-          font-size: 11px;
-          font-weight: normal;
-          color: gray;
-        }
+        justify-content: flex-start;
       }
     }
   }

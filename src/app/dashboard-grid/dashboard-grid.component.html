@@ -1,5 +1,6 @@
-<div class="grid-parent">
-  <div *ngFor="let item of sortTileOptionsService.dashboard">
+<div class="grid-parent"
+   *ngIf="(mockTileService.apiFlagsSubject$ | async) as flagList">
+  <div *ngFor="let item of flagList">
     <app-tile-card (callHistoryModal)="updatePassengers($event)"
        [DashboardItem]="item"></app-tile-card>
   </div>
@@ -14,7 +15,7 @@
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <span class="body-text body-16-24-600 color-body-text"
+        <span class="body-text body-16-24-600 text-body-plat"
            id="exampleModalLabel">Modal title</span>
         <button type="button"
            class="btn-close"

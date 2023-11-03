@@ -11,37 +11,47 @@
 
       <div class="logging-center">
 
-        <div id="myavatar-container"
+        <!-- <div id="myavatar-container"
            *ngIf="(imageService.newImage$ | async) && userInfo; else placeholder">
           <a (click)="gottoAvatarScreen()">
             <div id="myNewAvatar"
                [ngStyle]="{backgroundImage: 'url(' + iconFile + ')'}"></div>
           </a>
-        </div>
+        </div> -->
 
         <ng-template #placeholder>
           <div class="myavatar-container avatar-placeholder"></div>
         </ng-template>
 
-        <div class="logged-in-as ms-2"
-           *ngIf="userInfo">
-          <div class="body-text body-14-24-600 color-body-text">{{firstName}} {{lastName}}</div>
-          <div class="body-text body-12-16-400 color-body-text">{{initials}}</div>
+        <div *ngIf="(mockTileService.userLoggedInSubject$ | async) as loggedUser">
+          <div class="logged-in-as ms-2">
+            <div class="body-text body-14-24-600 text-body-plat">{{loggedUser.FullName}}</div>
+            <div class="body-text body-12-16-400 text-body-plat">{{loggedUser.UserType}}</div>
+          </div>
         </div>
-        <a class="logout-svg"
-           title='Log In to Tiles'
-           (click)="gottoAvatarScreen()"></a>
+        <div class="d-flex">
+          <a class="logout-svg"
+             *ngIf="!isLoggedIn"
+             title='Log In to Tiles'
+             (click)="gottoAvatarScreen(false)"></a>
+          <a class="logout01-svg"
+             *ngIf="isLoggedIn"
+             title='Log In to Tiles'
+             (click)="gottoAvatarScreen(true)"></a>
+        </div>
+
       </div>
-      <span class="color-white">v: {{currentApplicationVersion}}</span>
+      <span class="body-text body-12-16-400 text-p-blue me-1">v: {{currentApplicationVersion}}</span>
     </div>
 
     <div class="header navy-background">
-      <div class="me-2 mt-2">
+      <div class="priority-parent me-2 mt-2">
         <app-priority-chart></app-priority-chart>
       </div>
-      <div class="mt-2">
+      <div class="analayst-parent mt-2">
         <monthly-flags-chart></monthly-flags-chart>
       </div>
+
       <div class="me-3 mt-2">
         <div class="m-2 fw-600">My List</div>
         <div class="list-rect-group">
@@ -95,62 +105,53 @@
         </div>
       </div>
     </div>
+    <div class="floating-control-panel">
 
-    <div class="floating-control-panel ">
-      <div class="menu-bar-items analysts bordered">
-        <analyst-search></analyst-search>
-      </div>
+      <analyst-search *ngIf="mockTileService.IsSupervisor else placeholder"></analyst-search>
+      <ng-template #placeholder></ng-template>
 
-      <div class="menu-bar-items ms-auto py-2">
-        <div class="list-column-group me-3">
+      <div class="menu-bar-items flags py-2">
+        <div class="list-column-group w-25">
           Flag Type
         </div>
 
-        <div *ngIf="(sortTileOptionsService.flagTypeBehaviorSubject$ | async) as flags"
-           class="me-5">
+        <div *ngIf="(mockTileService.flagTypeBehaviorSubject$ | async) as flags"
+           class="me-2 w-75">
           <ng-select class="custom-select"
              title="Select Flag Type"
-             (change)="sortTileOptionsService.selectSortMethod($event)"
-             [clearable]="false"
+             (change)="mockTileService.selectFlagTypes($event)"
+             [clearable]="true"
              [searchable]="false"
-             [multiple]="true"
-             [closeOnSelect]="false"
-             [(ngModel)]="sortTileOptionsService.selectedFlags"
+             [multiple]="false"
+             [closeOnSelect]="true"
+             (clear)="clear('All');"
+             [(ngModel)]="mockTileService.selectedFlags"
              placeholder="Select Flag Type"
-             [items]="sortTileOptionsService.flagTypeSelect">
+             [items]="flags">
             <ng-template ng-label-tmp
                let-item="item">
-              <div>{{item.name}}</div>
+              <div>{{item}}</div>
             </ng-template>
             <ng-template ng-option-tmp
-               let-item="item"
-               let-i="index">
-              <div class="d-flex">
-                <input type="checkbox"
-                   [checked]="item.state"
-                   (change)="sortTileOptionsService.onFlagsSelected(item, i, true, false)" />
-                <div class="d-flex ms-1">
-                  <div class="ms-2">
-                    {{ item.name }}
-                  </div>
-                </div>
+               let-item="item">
+              <div class="ms-2">
+                {{ item }}
               </div>
+
             </ng-template>
           </ng-select>
         </div>
       </div>
-
-      <div class="menu-bar-items ms-auto py-2">
-        <div class="list-column-group me-3">
+      <div class="menu-bar-items priorities py-2 me-2">
+        <div class="list-column-group w-25">
           Sort By
         </div>
-
         <div *ngIf="(sortTileOptionsService.priorityListBehaviorSubject$ | async) as priorities"
-           class="me-5">
+           class="w-75">
           <ng-select class="custom-select"
              title="Select Priority"
              (change)="sortTileOptionsService.selectSortMethod($event)"
-             [clearable]="false"
+             [clearable]="true"
              [searchable]="false"
              [(ngModel)]="sortTileOptionsService.selectedPriority"
              placeholder="Select Priority"
@@ -168,14 +169,8 @@
           </ng-select>
         </div>
       </div>
-
     </div>
-    <!-- 
-    <div class="menu-bar-lower ">
-      <div class="routes">
-        <route-selection></route-selection>
-      </div>
-    </div> -->
+
     <router-outlet></router-outlet>
     <!-- <app-flag-display></app-flag-display> -->
 
@@ -184,5 +179,5 @@
       <span class="privacy-text">
         Privacy | Terms & Conditions</span>
     </div>
+
   </div>
-</div>
