@@ -1,42 +1,55 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SortTileOptionsService } from '../services/sort-tiles-options.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { FlagsDashboardDotNetWrapper } from '../api/Flags-dashboard-Interface';
 
-
+import { DashboardTilesAPIComponent } from '../api/dashboard-api.service';
 @Component({
-  selector: 'app-flag-display',
+  selector: 'app-grid',
   templateUrl: './flag-display-support.component.html',
   styleUrls: ['./flag-display-support.component.scss']
 })
 
-export class FlagDisplaySupportComponent {
+export class FlagDisplaySupportComponent implements OnInit {
 
   public selectedFlagElement = 1;
 
   public hassSelectionBeenRegistered = false;
 
-  constructor(public sortTileOptionsService: SortTileOptionsService) {
+  // From router params
+  public pathId: any;
+
+  public activeUser: any;
+
+  constructor(public sortTileOptionsService: SortTileOptionsService, private route: ActivatedRoute, public flagsDashboardDotNetWrapper: FlagsDashboardDotNetWrapper, public dashboardTilesAPIComponent: DashboardTilesAPIComponent) {
 
   }
 
-  // // this.savedDashboard
-  // public setCollectionType(id: number) {
-  //   let newColl: any[] = [];
 
-  //   this.selectedFlagElement = id;
 
-  //   console.log('setCollectionType ')
-  //   this.sortTileOptionsService.dashboard = [...this.sortTileOptionsService.savedDashboard];
+  public ngOnInit(): void {
+    console.log('ngOnInit ',)
 
-  //   this.hassSelectionBeenRegistered = true;
+    this.route.paramMap
+      .subscribe((params: ParamMap) => {
+        //console.log('params ', params)
+        // @ts-ignore
+        if (this.pathId !== params.get('UserId') && this.pathId !== null) {
 
-  //   this.sortTileOptionsService.dashboard.map((cb: any) => {
-  //     if (cb.priority === id) {
-  //       newColl.push(cb);
-  //     }
-  //   })
+          // @ts-ignore
+          this.pathId = params.get('UserId');
+          // console.log('this.pathId ', this.pathId)
 
-  //   this.sortTileOptionsService.selectedFlag(newColl);
-  // }
+          this.dashboardTilesAPIComponent.getAnalystsFlags(this.pathId)
+          this.dashboardTilesAPIComponent.getSupervisorFlags(this.pathId)
+          this.dashboardTilesAPIComponent.getActiveUser(this.pathId)
+
+
+        }
+      });
+
+  }
+
 
 
   public getCollectionLength(id: number): number {

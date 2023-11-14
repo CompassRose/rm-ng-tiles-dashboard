@@ -33,7 +33,7 @@ export class TileCardComponent implements AfterViewInit {
 
   @Input()
   set DashboardItem(item: any) {
-
+    console.log('item ', item)
     this.dashboardTile = item;
     this.flagRuns.push(item.Runs);
 

@@ -1,11 +1,11 @@
 <div class="grid-parent"
-   *ngIf="(mockTileService.apiFlagsSubject$ | async) as flagList">
+   *ngIf="(dashboardTilesAPIComponent.apiFlags$ | async) as flagList">
+
   <div *ngFor="let item of flagList">
     <app-tile-card (callHistoryModal)="updatePassengers($event)"
        [DashboardItem]="item"></app-tile-card>
   </div>
 </div>
-
 
 <div class="modal fade"
    id="exampleModal"

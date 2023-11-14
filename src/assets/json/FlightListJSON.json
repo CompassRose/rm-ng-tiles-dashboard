@@ -1,0 +1,260 @@
+{
+	"flights": [
+		{
+			"odMasterkey": 285966,
+			"airlineCode": "V7 ",
+			"flightLine": "VCEBRI1234              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 285967,
+			"airlineCode": "V7 ",
+			"flightLine": "BRIVCE1235              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286003,
+			"airlineCode": "V7 ",
+			"flightLine": "TRNPMO1549              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286004,
+			"airlineCode": "V7 ",
+			"flightLine": "TFSOVD3541              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286038,
+			"airlineCode": "V7 ",
+			"flightLine": "VRNPMO1533              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286039,
+			"airlineCode": "V7 ",
+			"flightLine": "BRIVRN1603              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286040,
+			"airlineCode": "V7 ",
+			"flightLine": "CAGTRN1797              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286041,
+			"airlineCode": "V7 ",
+			"flightLine": "OVDACE3550              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286109,
+			"airlineCode": "V7 ",
+			"flightLine": "VCECAG1222              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286110,
+			"airlineCode": "V7 ",
+			"flightLine": "TRSPMO1531              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286111,
+			"airlineCode": "V7 ",
+			"flightLine": "TRNCAG1796              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286112,
+			"airlineCode": "V7 ",
+			"flightLine": "BIOSVQ3528              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286113,
+			"airlineCode": "V7 ",
+			"flightLine": "OVDTFS3540              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286215,
+			"airlineCode": "V7 ",
+			"flightLine": "VRNCTA1741              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286216,
+			"airlineCode": "V7 ",
+			"flightLine": "NAPCAG1798              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286217,
+			"airlineCode": "V7 ",
+			"flightLine": "SDRSVQ3268              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286353,
+			"airlineCode": "V7 ",
+			"flightLine": "VRNBRI1602              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286354,
+			"airlineCode": "V7 ",
+			"flightLine": "NAPGOA1632              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286492,
+			"airlineCode": "V7 ",
+			"flightLine": "CTAGOA1708              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286493,
+			"airlineCode": "V7 ",
+			"flightLine": "CTANAP1848              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286494,
+			"airlineCode": "V7 ",
+			"flightLine": "OVDLPA3560              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286632,
+			"airlineCode": "V7 ",
+			"flightLine": "VCECTA1260              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286633,
+			"airlineCode": "V7 ",
+			"flightLine": "NAPPMO1547              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286634,
+			"airlineCode": "V7 ",
+			"flightLine": "PMOTRN1548              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286635,
+			"airlineCode": "V7 ",
+			"flightLine": "GOANAP1633              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286636,
+			"airlineCode": "V7 ",
+			"flightLine": "CAGNAP1799              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286637,
+			"airlineCode": "V7 ",
+			"flightLine": "NAPCTA1849              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286638,
+			"airlineCode": "V7 ",
+			"flightLine": "ACEOVD3551              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286639,
+			"airlineCode": "V7 ",
+			"flightLine": "PMIOVD3591              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286671,
+			"airlineCode": "V7 ",
+			"flightLine": "PMOTRS1530              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286672,
+			"airlineCode": "V7 ",
+			"flightLine": "PMOVRN1532              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286673,
+			"airlineCode": "V7 ",
+			"flightLine": "PMONAP1546              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286674,
+			"airlineCode": "V7 ",
+			"flightLine": "VRNNAP1688              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286675,
+			"airlineCode": "V7 ",
+			"flightLine": "SVQBIO3529              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286676,
+			"airlineCode": "V7 ",
+			"flightLine": "LPAOVD3561              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286815,
+			"airlineCode": "V7 ",
+			"flightLine": "CTAVCE1261              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286816,
+			"airlineCode": "V7 ",
+			"flightLine": "CTAVRN1740              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 286817,
+			"airlineCode": "V7 ",
+			"flightLine": "SVQSDR3269              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 288177,
+			"airlineCode": "V7 ",
+			"flightLine": "CAGVCE1223              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 288178,
+			"airlineCode": "V7 ",
+			"flightLine": "NAPVRN1689              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 288179,
+			"airlineCode": "V7 ",
+			"flightLine": "GOACTA1709              ",
+			"departureDate": "2020-12-05T00:00:00"
+		},
+		{
+			"odMasterkey": 288180,
+			"airlineCode": "V7 ",
+			"flightLine": "OVDPMI3590              ",
+			"departureDate": "2020-12-05T00:00:00"
+		}
+	],
+	"boxContents": {
+		"shortNames": "",
+		"suffixes": ""
+	}
+}

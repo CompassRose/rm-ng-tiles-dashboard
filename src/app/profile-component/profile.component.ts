@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MockService } from '../services/tiles-mock-api';
 import { UserModel } from '../models/tiles.model';
+import { DashboardTilesAPIComponent } from '../api/dashboard-api.service';
 
 @Component({
   selector: 'app-profile',
@@ -16,7 +17,7 @@ export class ProfileComponent implements OnInit {
   public allUsers: UserModel[] = [];
   public selectedUser: UserModel;
 
-  constructor(private fb: FormBuilder, public router: Router, public mockTileService: MockService) {
+  constructor(private fb: FormBuilder, public router: Router, public mockTileService: MockService, public dashboardTilesAPIComponent: DashboardTilesAPIComponent) {
 
     console.log('Profile running')
 
@@ -60,7 +61,9 @@ export class ProfileComponent implements OnInit {
   }
 
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.selectedUser = this.dashboardTilesAPIComponent.activeUser
+  }
 
   public selectUserFromDropdown(event: any) {
 

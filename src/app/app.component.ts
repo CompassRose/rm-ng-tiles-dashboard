@@ -5,6 +5,7 @@ import { SortTileOptionsService } from './services/sort-tiles-options.service';
 import { CommonService } from './services/image-support';
 import { MockService } from './services/tiles-mock-api';
 import { environment } from '../environments/environment';
+import { DashboardTilesAPIComponent } from './api/dashboard-api.service';
 
 @Component({
   selector: 'app-root',
@@ -47,6 +48,7 @@ export class AppComponent implements OnInit {
     public sortTileOptionsService: SortTileOptionsService,
     public imageService: CommonService,
     public mockTileService: MockService,
+    public dashboardTilesAPIComponent: DashboardTilesAPIComponent,
     public changeDetector: ChangeDetectorRef) {
 
     this.mockTileService.apiUsersSubject$.subscribe((res: any) => {
@@ -56,23 +58,10 @@ export class AppComponent implements OnInit {
 
     })
 
-    // this.mockTileService.userLoggedInSubject$
-    //   .subscribe(user => {
-    //     if (user !== null) {
-    //       this.isLoggedIn = true;
-    //       this.FullName = user.FullName;
-    //       this.UserId = user.UserId;
-    //       this.IsSupervisor = user.IsSupervisor;
-    //       this.UserType = user.UserType;
-    //     } else {
-    //       this.isLoggedIn = false;
-    //     }
-    //   })
-
 
     this.mockTileService.apiFlagsSubject$.subscribe((res: any) => {
       if (res.length > 0) {
-        console.log('apiFlagsSubject ', res)
+        //  console.log('apiFlagsSubject ', res)
 
         // this.mockTileService.selectedFlags = res;
 
@@ -134,7 +123,7 @@ export class AppComponent implements OnInit {
       this.UserType = loginInfo.UserType;
       this.userInfo = true;
     }
-    this.router.navigate(['/start-page']);
+
   }
 
 
@@ -146,7 +135,7 @@ export class AppComponent implements OnInit {
 
   public openAvatarModal(option: any, idx: number) {
     const myModalEl = document.getElementById('exampleModal');
-    console.log('goToDestination ', option);
+    //console.log('goToDestination ', option);
   }
 
 

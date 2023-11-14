@@ -19,17 +19,20 @@
           </a>
         </div> -->
 
-        <ng-template #placeholder>
+        <!-- <ng-template #placeholder>
           <div class="myavatar-container avatar-placeholder"></div>
-        </ng-template>
+        </ng-template> -->
 
-        <div *ngIf="(mockTileService.userLoggedInSubject$ | async) as loggedUser">
+
+        <div *ngIf="(dashboardTilesAPIComponent.apiUser$ | async) as loggedInUser">
           <div class="logged-in-as ms-2">
-            <div class="body-text body-14-24-600 text-body-plat">{{loggedUser.FullName}}</div>
-            <div class="body-text body-12-16-400 text-body-plat">{{loggedUser.UserType}}</div>
+            <div class="body-text body-12-16-600 text-body-plat">{{loggedInUser.userID}}</div>
+            <div class="body-text body-12-16-400 text-body-plat">{{loggedInUser.fullName}}</div>
+            <div *ngIf="loggedInUser.isSupervisor"
+               class="body-text body-12-16-400 text-body-plat">Supervisor</div>
           </div>
         </div>
-        <div class="d-flex">
+        <!-- <div class="d-flex">
           <a class="logout-svg"
              *ngIf="!isLoggedIn"
              title='Log In to Tiles'
@@ -38,10 +41,10 @@
              *ngIf="isLoggedIn"
              title='Log In to Tiles'
              (click)="gottoAvatarScreen(true)"></a>
-        </div>
+        </div> -->
 
       </div>
-      <span class="body-text body-12-16-400 text-p-blue me-1">v: {{currentApplicationVersion}}</span>
+      <span class="body-text body-12-16-400 text-p-blue me-2">v: {{currentApplicationVersion}}</span>
     </div>
 
     <div class="header navy-background">

@@ -1,20 +1,16 @@
 <div class="item-content">
-    <div [ngClass]="flagRuns[0][0].Reviewed ? 'reviewed-tag visible' : 'reviewed-tag not-visible'">Reviewed</div>
-
+    <div [ngClass]="dashboardTile.Reviewed ? 'reviewed-tag visible' : 'reviewed-tag not-visible'">Reviewed</div>
     <div class="drag-handler">
-
         <div class="identity-row noselect mt-2 mb-1">
-
             <div class="card-top-row mb-2">
                 <div class="number-container"
-                   [style.background-color]="getPriorityColor(dashboardTile.Priority)">
-                    <span class="number-wrapper">{{dashboardTile.Priority}}</span>
+                   [style.background-color]="getPriorityColor(dashboardTile.priority)">
+                    <span class="number-wrapper">{{dashboardTile.priority}}</span>
                 </div>
                 <div class="card-row-frame">
-                    <div class="div">{{dashboardTile.Name}}</div>
+                    <div class="div">{{dashboardTile.name}}</div>
                     <div class="body-text body-12-16-600 text-p-blue">Flight Count:
-                        {{flagRuns[0][flagRuns.length -
-                        1].FlightCount}}</div>
+                        {{dashboardTile.flightCount}}</div>
                 </div>
             </div>
         </div>
@@ -25,14 +21,12 @@
                 </div>
                 <div class="ms-1">
                     <div class="body-text body-12-16-600 text-p-blue mb-1">Last Runs</div>
-                    <div class="body-text text-p-blue body-12-16-400">{{flagRuns[0][flagRuns.length -
-                        1].ProcessDate}}</div>
+                    <div class="body-text text-p-blue body-12-16-400">{{dashboardTile.processDate}}</div>
                     <!-- <div class="p">{{dashboardTile.lastUpdate}}</div> -->
                 </div>
             </div>
             <a class="ellipsis-vertical"
                (click)="selectDropdown(dashboardTile.idx)"></a>
-
             <div class="flex-column noselect"
                [ngClass]="dashboardTile.showOptions ? 'dropdown-selector opened' : 'dropdown-selector closed'">
                 <a class="link-text"

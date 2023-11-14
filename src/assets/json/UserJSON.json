@@ -1,0 +1,14 @@
+[
+	{
+		"userID": "RMSTEST",
+		"fullName": "RMS TEST",
+		"userType": "RM Admin",
+		"isSuprvisor": true
+	},
+	{
+		"userID": "DGONZALEZ",
+		"fullName": "David Gonzalez",
+		"userType": "RM Admin",
+		"isSuprvisor": false
+	}
+]

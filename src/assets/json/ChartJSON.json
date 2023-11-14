@@ -1,0 +1,62 @@
+{
+	"priorityData": [
+		{
+			"value": 1,
+			"count": 2
+		},
+		{
+			"value": 3,
+			"count": 1
+		},
+		{
+			"value": 7,
+			"count": 1
+		}
+	],
+	"ndoData": [
+		{
+			"value": 2,
+			"count": 6
+		},
+		{
+			"value": 3,
+			"count": 24
+		},
+		{
+			"value": 5,
+			"count": 30
+		},
+		{
+			"value": 10,
+			"count": 246
+		},
+		{
+			"value": 11,
+			"count": 168
+		},
+		{
+			"value": 12,
+			"count": 12
+		},
+		{
+			"value": 13,
+			"count": 6
+		},
+		{
+			"value": 14,
+			"count": 80
+		},
+		{
+			"value": 15,
+			"count": 36
+		},
+		{
+			"value": 17,
+			"count": 32
+		},
+		{
+			"value": 18,
+			"count": 4
+		}
+	]
+}

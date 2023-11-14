@@ -1,6 +1,6 @@
 import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
+import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxEchartsModule } from 'ngx-echarts';
@@ -20,7 +20,11 @@ import { FlagDisplaySupportComponent } from './flag-display-support/flag-display
 import { AvatarSupportComponent } from './avatar-support/avatar-support.component';
 import { CommonService } from './services/image-support';
 import { RouteSelectionComponent } from './route-selection/route-selection.component';
-import { MockService } from './services/tiles-mock-api'
+import { MockService } from './services/tiles-mock-api';
+import { FlagsDashboardDotNetWrapper } from './api/Flags-dashboard-Interface';
+import { DashboardTilesAPIComponent } from './api/dashboard-api.service';
+import { BidPriceAspNetService } from "./api/au-visualization.service";
+
 
 @NgModule({
   declarations: [
@@ -43,14 +47,12 @@ import { MockService } from './services/tiles-mock-api'
     NgSelectModule,
     AppRoutingModule,
     HttpClientModule,
-    // FormsModule,
-    // ReactiveFormsModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     })
   ],
 
-  providers: [CommonService, MockService],
+  providers: [CommonService, FlagsDashboardDotNetWrapper, DashboardTilesAPIComponent, MockService, { provide: LocationStrategy, useClass: HashLocationStrategy }],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })

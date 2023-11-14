@@ -90,7 +90,7 @@ export class MockService implements OnInit {
       .subscribe((users: UserModel[]) => {
         if (users.length > 0) {
           this.allUserList = users;
-          console.log('this.allUserList  ', this.allUserList)
+          //  console.log('this.allUserList  ', this.allUserList)
 
           this.allUserList.map((au: UserModel, i: number) => {
             au.state = false;
@@ -181,7 +181,7 @@ export class MockService implements OnInit {
 
   // Logged In User
   public returnUserFromDropdown(event: any): any {
-    console.log(' returnUserFromDropdown ', event)
+    //  console.log(' returnUserFromDropdown ', event)
     return event
   }
 
@@ -213,7 +213,7 @@ export class MockService implements OnInit {
         this.flagTypeSelect.push(it.FlagType)
       }
     })
-    console.log('this.flagTypeSelect ', this.flagTypeSelect)
+    // console.log('this.flagTypeSelect ', this.flagTypeSelect)
     this.flagTypeBehaviorSubject$.next(this.flagTypeSelect)
 
 
@@ -222,7 +222,7 @@ export class MockService implements OnInit {
 
   public onFlagsSelected(item: any, idx: number) {
 
-    console.log('onFlagsSelected ', item)
+    // console.log('onFlagsSelected ', item)
   }
 
 

@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { FlagDisplaySupportComponent } from './flag-display-support/flag-display-support.component';
 import { AvataDetailsSupportComponent } from './avatar-details-support/avatar-details-support.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'start-page', pathMatch: 'full' },
+
+  { path: 'grid/:UserId', component: FlagDisplaySupportComponent },
+
   {
     path: 'profile',
     loadChildren: () =>
       import('./profile-component/profile.module').then((m) => m.ProfileModule),
   },
-  { path: 'start-page', component: FlagDisplaySupportComponent },
+
   { path: 'avatar-screen', component: AvataDetailsSupportComponent }
 ];
 
@@ -19,12 +20,10 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [],
-  imports: [
-    RouterModule.forRoot(routes),
-    CommonModule
-  ],
+  imports: [RouterModule.forRoot(routes, { useHash: true, onSameUrlNavigation: 'reload' })],
   exports: [RouterModule]
 })
+
 
 
 export class AppRoutingModule { }

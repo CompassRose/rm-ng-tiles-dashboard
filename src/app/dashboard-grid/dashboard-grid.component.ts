@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { SortTileOptionsService } from '../services/sort-tiles-options.service';
 import { MockService } from '../services/tiles-mock-api';
+import { DashboardTilesAPIComponent } from '../api/dashboard-api.service'
 
 import {
   trigger,
@@ -46,13 +47,22 @@ export class DashboardGridComponent {
     { idx: 1, name: 'Go to Rule' }
   ];
 
-  constructor(public mockTileService: MockService, public sortTileOptionsService: SortTileOptionsService) {
+  constructor(public mockTileService: MockService,
+    public sortTileOptionsService: SortTileOptionsService,
+    public dashboardTilesAPIComponent: DashboardTilesAPIComponent) {
 
-
+    // console.log('user ', user)
     this.mockTileService.apiFlagsSubject$.subscribe((res: any) => {
       if (res.length > 0) {
       }
     })
+    this.dashboardTilesAPIComponent.apiFlagRuns$
+      .subscribe((flag) => {
+        if (flag.length > 0) {
+          //console.log('{{{{{}}}}}}}apiFlagRuns$ ', flag)
+        }
+
+      })
   }
 
 
