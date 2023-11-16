@@ -3,7 +3,8 @@
 
   <div *ngFor="let item of flagList">
     <app-tile-card (callHistoryModal)="updatePassengers($event)"
-       [DashboardItem]="item"></app-tile-card>
+       [DashboardItem]="item"
+       [FlagRuns]="flagsRunFromApi"></app-tile-card>
   </div>
 </div>
 

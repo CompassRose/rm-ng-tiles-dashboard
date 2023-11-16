@@ -23,6 +23,10 @@ export class FlagDisplaySupportComponent implements OnInit {
 
   constructor(public sortTileOptionsService: SortTileOptionsService, private route: ActivatedRoute, public flagsDashboardDotNetWrapper: FlagsDashboardDotNetWrapper, public dashboardTilesAPIComponent: DashboardTilesAPIComponent) {
 
+    this.dashboardTilesAPIComponent.apiAllUsers$
+      .subscribe((params: any) => {
+        console.log('apiAllUsers$ ', params)
+      })
   }
 
 

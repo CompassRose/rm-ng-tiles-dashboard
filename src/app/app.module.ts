@@ -14,7 +14,7 @@ import { MonthlyFlagsChartComponent } from './monthly-flags-chart/monthly-flags-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgSelectModule } from '@ng-select/ng-select';
 //import { SortTileOptionsService } from './services/sort-tiles-options.service';
-import { AnalystSearchComponent } from './analyst-search/analyst-search.component';
+//import { AnalystSearchComponent } from './analyst-search/analyst-search.component';
 import { TileCardComponent } from './dashboard-grid/tile-card/tile-card.component';
 import { FlagDisplaySupportComponent } from './flag-display-support/flag-display-support.component';
 import { AvatarSupportComponent } from './avatar-support/avatar-support.component';
@@ -31,7 +31,6 @@ import { BidPriceAspNetService } from "./api/au-visualization.service";
     AppComponent,
     DashboardGridComponent,
     PriorityChartComponent,
-    AnalystSearchComponent,
     MonthlyFlagsChartComponent,
     TileCardComponent,
     FlagDisplaySupportComponent,

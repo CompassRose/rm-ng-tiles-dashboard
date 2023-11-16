@@ -35,8 +35,15 @@ export class TileCardComponent implements AfterViewInit {
   set DashboardItem(item: any) {
     console.log('item ', item)
     this.dashboardTile = item;
-    this.flagRuns.push(item.Runs);
+    // this.flagRuns.push(item.Runs);
+  }
 
+  @Input()
+  set FlagRuns(runs: any) {
+    if (runs.length > 0) {
+      console.log(' runs ', runs)
+      this.flagRuns.push(runs);
+    }
   }
 
   constructor() {
@@ -58,7 +65,7 @@ export class TileCardComponent implements AfterViewInit {
 
   public selectDropdown(index: number) {
 
-    //console.log('this.openedItem ', this.openedItem)
+    console.log('this.openedItem ', this.openedItem)
 
     if (this.openedItem !== undefined && this.openedItem !== index) {
       this.dashboardTile.showOptions = false;
@@ -70,7 +77,7 @@ export class TileCardComponent implements AfterViewInit {
 
     this.showOptions = !this.showOptions;
 
-    //console.log('selectDropdown ', index, ' showOptions ', this.showOptions)
+    console.log('selectDropdown ', index, ' showOptions ', this.showOptions)
   }
 
 
@@ -82,7 +89,7 @@ export class TileCardComponent implements AfterViewInit {
 
     this.callHistoryModal.emit(this.dashboardTile);
 
-    // console.log('goToDestination ', option, ' dashboardTile ', this.dashboardTile)
+    console.log('goToDestination ', option, ' dashboardTile ', this.dashboardTile)
 
   }
 

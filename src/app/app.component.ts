@@ -53,7 +53,7 @@ export class AppComponent implements OnInit {
 
     this.mockTileService.apiUsersSubject$.subscribe((res: any) => {
       if (res.length > 0) {
-        console.log('apiUsersSubject ', res)
+        //onsole.log('apiUsersSubject ', res)
       }
 
     })

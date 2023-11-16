@@ -86,39 +86,39 @@ export class MockService implements OnInit {
       return initials;
     };
 
-    this.apiUsersSubject$
-      .subscribe((users: UserModel[]) => {
-        if (users.length > 0) {
-          this.allUserList = users;
-          //  console.log('this.allUserList  ', this.allUserList)
+    // this.apiUsersSubject$
+    //   .subscribe((users: UserModel[]) => {
+    //     if (users.length > 0) {
+    //       this.allUserList = users;
+    //       //  console.log('this.allUserList  ', this.allUserList)
 
-          this.allUserList.map((au: UserModel, i: number) => {
-            au.state = false;
-            au.UserInitials = getInitials(au.FullName)
-            return au;
-          })
-        }
-      })
-
-
+    //       this.allUserList.map((au: UserModel, i: number) => {
+    //         au.state = false;
+    //         au.UserInitials = getInitials(au.FullName)
+    //         return au;
+    //       })
+    //     }
+    //   })
 
 
-    this.userLoggedInSubject$
-      .subscribe(user => {
-        if (user !== null) {
-          // console.log('this. user  ', user)
 
-          this.isLoggedIn = true;
-          this.FullName = user.FullName;
-          this.UserId = user.UserId;
-          this.IsSupervisor = user.IsSupervisor;
-          this.UserType = user.UserType;
 
-          //  this.userLoggedInSubject$.next(user)
-        } else {
-          this.isLoggedIn = false;
-        }
-      })
+    // this.userLoggedInSubject$
+    //   .subscribe(user => {
+    //     if (user !== null) {
+    //       // console.log('this. user  ', user)
+
+    //       this.isLoggedIn = true;
+    //       this.FullName = user.FullName;
+    //       this.UserId = user.UserId;
+    //       this.IsSupervisor = user.IsSupervisor;
+    //       this.UserType = user.UserType;
+
+    //       //  this.userLoggedInSubject$.next(user)
+    //     } else {
+    //       this.isLoggedIn = false;
+    //     }
+    //   })
 
 
 

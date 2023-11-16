@@ -49,16 +49,16 @@ export class AnalystSearchComponent implements OnInit {
             this.mockTileService.selectedUsersBySupervisor = [];
         }
 
-        this.mockTileService.allUserList.map((ag, i) => {
+        // this.mockTileService.allUserList.map((ag, i) => {
 
-            ag.state = this.userSelectAllState;
+        //     ag.state = this.userSelectAllState;
 
-            if (this.userSelectAllState) {
-                this.mockTileService.selectedUsersBySupervisor.push(i);
-            }
-            console.log(' idx ', ag.state)
-            return ag;
-        })
+        //     if (this.userSelectAllState) {
+        //         this.mockTileService.selectedUsersBySupervisor.push(i);
+        //     }
+        //     console.log(' idx ', ag.state)
+        //     return ag;
+        // })
 
 
         //  this.mockTileService.apiUsersSubject$.next(this.mockTileService.allUserList);
@@ -79,23 +79,23 @@ export class AnalystSearchComponent implements OnInit {
         //     return fi.idx === event;
         // })
 
-        if (this.mockTileService.allUserList[event].state) {
-            this.mockTileService.allUserList[event].state = false;
-        } else {
-            this.mockTileService.allUserList[event].state = true;
-        }
-        //  this.mockTileService.selectedUsersBySupervisor = []
-        // console.log('\n\n --this.mockTileService.selectedUsersBySupervisor', this.mockTileService.allUserList[event])
+        // if (this.mockTileService.allUserList[event].state) {
+        //     this.mockTileService.allUserList[event].state = false;
+        // } else {
+        //     this.mockTileService.allUserList[event].state = true;
+        // }
+        // //  this.mockTileService.selectedUsersBySupervisor = []
+        // // console.log('\n\n --this.mockTileService.selectedUsersBySupervisor', this.mockTileService.allUserList[event])
 
-        this.mockTileService.allUserList.forEach((user: UserModel, i: number) => {
+        // this.mockTileService.allUserList.forEach((user: UserModel, i: number) => {
 
 
-            if (user.state) {
-                this.mockTileService.selectedUsersBySupervisor.push(i)
-            } else {
-                this.mockTileService.selectedUsersBySupervisor.splice(i, 1)
-            }
-        })
+        //     if (user.state) {
+        //         this.mockTileService.selectedUsersBySupervisor.push(i)
+        //     } else {
+        //         this.mockTileService.selectedUsersBySupervisor.splice(i, 1)
+        //     }
+        // })
 
 
     }

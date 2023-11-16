@@ -1,7 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { map, merge, Observable, debounceTime, BehaviorSubject } from 'rxjs';
-
+import { map, merge, Observable, Subject, debounceTime, BehaviorSubject } from 'rxjs';
+import { FlagRuns, FlagList } from '../models/tiles.model';
 
 import { environment } from '../../environments/environment.development';
 
@@ -22,11 +22,23 @@ const dateModifierPipe = new DateFormatterPipe();
 
 export class DashboardTilesAPIComponent implements OnInit {
 
-    public flagRuns: any[] = []
+    public flagRuns: FlagRuns[] = [];
+
+    public userFlags: FlagList[] = [];
+
     public activeUser: any;
+
+    public allFlightList: any[] = [];
+
     public apiUser$ = new BehaviorSubject<any>([]);
-    public apiFlags$ = new BehaviorSubject<any[]>([]);
-    public apiFlagRuns$ = new BehaviorSubject<any[]>([]);
+
+    public apiAllUsers$ = new BehaviorSubject<any>([]);
+
+    public apiFlags$ = new BehaviorSubject<FlagList[]>([]);
+
+    public apiFlagsRunElement$ = new BehaviorSubject<FlagRuns[]>([]);
+
+    public apiFlagRuns$ = new Subject<FlagRuns[]>();
 
     constructor(public flagsDashboardDotNetWrapper: FlagsDashboardDotNetWrapper) { }
 
@@ -36,75 +48,111 @@ export class DashboardTilesAPIComponent implements OnInit {
     // Negative SA values form API are fine - Display them as zero
     // First time through 
     public getActiveUser(id: string) {
-        console.log('getActiveUser ', id)
+
         let parser: any;
         this.flagsDashboardDotNetWrapper.GetUser(id)
             .then((response: string) => {
                 parser = JSON.parse(response);
-                console.log('getActiveUser ', parser)
+                parser.userID = parser.userID.split(" ").join("");
+                parser.fullName = parser.fullName.split(" ").join("");
+                parser.userType = parser.userType.split(" ").join("");
                 this.activeUser = parser;
+                console.log('getActiveUser ', this.activeUser)
                 this.apiUser$.next(parser)
+                this.getAllAnalystUsers()
             })
     }
 
 
+
     public getAnalystsFlags(user: string) {
-        let parser: any[] = [];
-        let runs: any[] = [];
+
+        let parser: FlagList[] = [];
 
         this.flagsDashboardDotNetWrapper.GetAnalystFlags(user)
             .then((response: string) => {
                 parser = JSON.parse(response);
-                this.apiFlags$.next(parser)
                 parser.forEach((flag, i) => {
-                    //console.log('flag ', flag)
-                    this.getFlagRuns(flag.flagKey)
-
+                    flag.name = flag.name.split(" ").join("");
+                    flag['flagRuns'] = []
+                    this.userFlags.push(flag)
                 })
+                this.apiFlags$.next(this.userFlags);
+                this.getAnalystFlagChartData(user)
+            })
+    }
 
 
+    public getAnalystFlagChartData(userId: string) {
+        let parser: any;
+
+        this.flagsDashboardDotNetWrapper.GetAnalystFlagChartData(userId)
+            .then((response: string) => {
+                parser = JSON.parse(response);
+                console.log('GetAnalystFlagChartData  ', parser);
+            })
+
+    }
+
+    public getAllAnalystUsers() {
+        let parser: any;
+        this.flagsDashboardDotNetWrapper.GetAllAnalystUsers()
+            .then((response: string) => {
+                parser = JSON.parse(response);
+                parser.map((p: any, i: number) => {
+                    p.userID = p.userID.split(" ").join("");
+                    p.fullName = p.fullName.split(" ").join("");
+                    p.userType = p.userType.split(" ").join("");
+                    return p
+                })
+                this.apiAllUsers$.next(parser)
             })
 
     }
 
     public getSupervisorFlags(user: string) {
-        let parser: any[] = [];
+        let parser: FlagList[] = [];
         this.flagsDashboardDotNetWrapper.GetSupervisorFlags(user)
             .then((response: string) => {
                 parser = JSON.parse(response);
-                console.log('getSupervisorFlags ', parser)
-
+                // console.log('getSupervisorFlags ', parser)
             })
     }
+
 
     public getFlagRuns(flagKey: number) {
-
-        let parser: any[] = [];
-        let fRuns: any[] = [];
-        console.log('flagKey ', flagKey)
-
+        let parser: FlagRuns[] = [];
         this.flagsDashboardDotNetWrapper.GetFlagRuns(flagKey)
             .then((response: string) => {
-                parser = JSON.parse(response);
 
-                parser.forEach((flagRun) => {
-                    //this.getFlightList(flag.flagKey, flag.historyId);
-                    //  this.getReviews(flag.flagKey)
-                    this.flagRuns.push(flagRun)
-                })
-                this.apiFlagRuns$.next(this.flagRuns)
-                console.log('getFlagRuns ', this.flagRuns)
+                parser = JSON.parse(response);
+                this.apiFlagsRunElement$.next(parser)
             })
     }
 
-    public getFlightList(key: number, historyId: number) {
-        let parser: any[] = [];
-        this.flagsDashboardDotNetWrapper.GetFlightList(key, historyId)
+
+    public renderFlightList(): any[] {
+        // this.allFlightList = flights;
+
+        console.log('getFlightList ', this.allFlightList)
+        return this.allFlightList;
+    }
+
+
+    public getFlightList(key: number, historyId: number): any {
+
+        // console.log('getFlightList ', key, ' historyId ', historyId)
+        let parser: any;
+        let myFlights: any;
+        return this.flagsDashboardDotNetWrapper.GetFlightList(key, historyId)
             .then((response: string) => {
                 parser = JSON.parse(response);
-                console.log('getFlightList ', parser)
+                return parser
             })
 
+
+
+        //return parser.flights
     }
 
     public getReviews(key: number) {
