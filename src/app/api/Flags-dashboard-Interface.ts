@@ -32,7 +32,7 @@ export interface IFlagsDashboardDotNet {
   //input: A serialized JSON FlightList object
   //output: True if successful, false if not succesful
   //Note: This method is not yet implemented, can be called, but it won't do anything
-  //ToOverview(fligtiList: string): Promise<boolean>;
+  ToOverview(fligtiList: string): Promise<boolean>;
 
 }
 
@@ -109,10 +109,15 @@ export class FlagsDashboardDotNetWrapper implements IFlagsDashboardDotNet {
     });
   }
 
-  //public ToOverview(fligtiList: string): Promise<string> {
-  // return new Promise<string>(async (resolve, reject) => {
-  //   const result = await this.bridge.ToOverview(fligtiList);
-  //   resolve(result);
-  // });
-  //}
+
+  public ToOverview(fligtList: string): Promise<boolean> {
+    console.log('API ToOverview ', fligtList)
+    return new Promise<boolean>(async (resolve, reject) => {
+
+      const result = await this.bridge.ToOverview(fligtList);
+      console.log('\n\nAPI Returned result ', result)
+
+      resolve(result);
+    });
+  }
 }

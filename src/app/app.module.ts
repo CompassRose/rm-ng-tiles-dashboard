@@ -14,17 +14,15 @@ import { MonthlyFlagsChartComponent } from './monthly-flags-chart/monthly-flags-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgSelectModule } from '@ng-select/ng-select';
 //import { SortTileOptionsService } from './services/sort-tiles-options.service';
-//import { AnalystSearchComponent } from './analyst-search/analyst-search.component';
+
 import { TileCardComponent } from './dashboard-grid/tile-card/tile-card.component';
 import { FlagDisplaySupportComponent } from './flag-display-support/flag-display-support.component';
-import { AvatarSupportComponent } from './avatar-support/avatar-support.component';
-import { CommonService } from './services/image-support';
-import { RouteSelectionComponent } from './route-selection/route-selection.component';
+//import { RouteSelectionComponent } from './route-selection/route-selection.component';
 import { MockService } from './services/tiles-mock-api';
 import { FlagsDashboardDotNetWrapper } from './api/Flags-dashboard-Interface';
 import { DashboardTilesAPIComponent } from './api/dashboard-api.service';
 import { BidPriceAspNetService } from "./api/au-visualization.service";
-
+import { AnalystSearchComponent } from '../app/analyst-search/analyst-search.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +32,9 @@ import { BidPriceAspNetService } from "./api/au-visualization.service";
     MonthlyFlagsChartComponent,
     TileCardComponent,
     FlagDisplaySupportComponent,
-    AvatarSupportComponent,
-    RouteSelectionComponent
+    AnalystSearchComponent,
+    //AvatarSupportComponent,
+    //RouteSelectionComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +50,7 @@ import { BidPriceAspNetService } from "./api/au-visualization.service";
     })
   ],
 
-  providers: [CommonService, FlagsDashboardDotNetWrapper, DashboardTilesAPIComponent, MockService, { provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [FlagsDashboardDotNetWrapper, DashboardTilesAPIComponent, MockService, { provide: LocationStrategy, useClass: HashLocationStrategy }],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })

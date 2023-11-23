@@ -23,20 +23,19 @@ export class FlagDisplaySupportComponent implements OnInit {
 
   constructor(public sortTileOptionsService: SortTileOptionsService, private route: ActivatedRoute, public flagsDashboardDotNetWrapper: FlagsDashboardDotNetWrapper, public dashboardTilesAPIComponent: DashboardTilesAPIComponent) {
 
-    this.dashboardTilesAPIComponent.apiAllUsers$
-      .subscribe((params: any) => {
-        console.log('apiAllUsers$ ', params)
-      })
+    // this.dashboardTilesAPIComponent.apiAllUsers$
+    //   .subscribe((params: any) => {
+    //     console.log('apiAllUsers$ ', params)
+    //   })
   }
 
 
 
   public ngOnInit(): void {
-    console.log('ngOnInit ',)
+    //console.log('||||||||||| ngOnInit ||||||||||||')
 
     this.route.paramMap
       .subscribe((params: ParamMap) => {
-        //console.log('params ', params)
         // @ts-ignore
         if (this.pathId !== params.get('UserId') && this.pathId !== null) {
 

@@ -2,92 +2,78 @@
    *ngIf="(dashboardTilesAPIComponent.apiFlags$ | async) as flagList">
 
   <div *ngFor="let item of flagList">
-    <app-tile-card (callHistoryModal)="updatePassengers($event)"
+    <app-tile-card (callHistoryModal)="updateFlagRun($event)"
        [DashboardItem]="item"
        [FlagRuns]="flagsRunFromApi"></app-tile-card>
   </div>
 </div>
+
+<!-- <div *ngIf="dashboardTilesAPIComponent.showHistoryModal$ | async"
+   data-bs-toggle="modal"
+   data-bs-target="#exampleModal">
+</div> -->
+
+
 
 <div class="modal fade"
    id="exampleModal"
    tabindex="-1"
    aria-labelledby="exampleModalLabel"
    aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
+
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
     <div class="modal-content">
+
       <div class="modal-header">
         <span class="body-text body-16-24-600 text-body-plat"
-           id="exampleModalLabel">Modal title</span>
-        <button type="button"
+           id="exampleModalLabel">History</span>
+
+        <!-- <button type="button"
            class="btn-close"
            data-bs-dismiss="modal"
-           aria-label="Close"></button>
+           aria-label="Close"></button> -->
       </div>
       <div class="modal-body">
-        <div *ngFor="let item of sortTileOptionsService.flightGroups">
-          <div class="noselect analyst-block">
-            <div class="seperator-dot">
-              <div class="seperator-line"></div>
-            </div>
-            <div class="flex-column"
-               style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-              <div
-                 style="align-self: stretch; justify-content: space-between; align-items: flex-start; display: inline-flex">
-                <div style="justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
-                  <div class="flex-column">
-                    <div
-                       style="text-align: left; color: #111111; font-size: 13px; font-family: Open Sans; font-weight: 600; line-height: 24px; word-wrap: break-word">
-                      {{item.name}}</div>
-                    <div style="justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
-                      <div style="width: 16px; height: 16px; position: relative">
-                        <div style="width: 16px; height: 16px; left: 0px; top: 0px; position: absolute">
-                          <div style="width: 16px; height: 16px; left: 0px; top: 0px; position: absolute">
-                            <div class="clock-svg">
-                            </div>
-                          </div>
-                        </div>
+        <div *ngFor="let item of selectedFlagRuns">
+
+          <div class="w-100 noselect">
+            <div class="flex-row border-gray-bottom">
+              <!-- <div class="seperator-dot"></div> -->
+
+              <!-- <div class="clock-svg mx-2"></div> -->
+              <div class="flag-run-row w-100">
+                <span class="mr-auto w-25">Run: {{item.processDate}}</span>
+                <span class="ml-auto w-75">
+                  <ng-select class="flight-details-select"
+                     title="Flights"
+                     [clearable]="false"
+                     [searchable]="false"
+                     appendTo=".modal-dialog"
+                     placeholder="View Flights"
+                     [items]="item.flights.value.flights">
+                    <ng-template ng-option-tmp
+                       let-item="item"
+                       let-i="index">
+                      <div class="flight-dropdown">
+                        {{ item.airlineCode }}: {{ item.flightLine }}:: Date: {{
+                        item.departureDate }}
                       </div>
-                      <div
-                         style="text-align: right; color: #425563; font-size: 12px; font-family: Open Sans; font-weight: 400; line-height: 20px; word-wrap: break-word">
-                        {{item.title}}</div>
-                    </div>
-                  </div>
-                </div>
-                <div style="justify-content: center; align-items: center; display: flex">
-                  <div
-                     style="width: 8px; height: 8px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-                    <div style="align-self: stretch; flex: 1 1 0; background: #008311; border-radius: 16px"></div>
-                  </div>
-                  <div *ngIf="item.details && item.details.length > 0">
-                    <div>
-                      <ng-select class="flight-details-select"
-                         title="Show Details"
-                         [clearable]="false"
-                         [searchable]="false"
-                         placeholder="Details"
-                         [items]="item.details">
-                        <ng-template ng-option-tmp
-                           let-item="item">
-                          <div>
-                            {{ item.flightNumber }}
-                          </div>
-                        </ng-template>
-                      </ng-select>
-                    </div>
-                  </div>
-                </div>
+                    </ng-template>
+                  </ng-select>
+
+                </span>
               </div>
             </div>
           </div>
+
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button"
-           class="btn btn-primary"
-           data-bs-dismiss="modal">Close</button>
-        <!-- <button type="button"
+        <div class="modal-footer">
+          <button type="button"
+             class="btn btn-sm btn-primary"
+             data-bs-dismiss="modal">Close</button>
+          <!-- <button type="button"
            class="btn btn-primary">Save changes</button> -->
+        </div>
       </div>
     </div>
   </div>
-</div>

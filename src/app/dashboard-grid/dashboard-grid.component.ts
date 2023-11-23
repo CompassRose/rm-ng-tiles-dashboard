@@ -1,8 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { SortTileOptionsService } from '../services/sort-tiles-options.service';
-import { MockService } from '../services/tiles-mock-api';
 import { DashboardTilesAPIComponent } from '../api/dashboard-api.service'
 import { FlagList, FlagRuns } from '../models/tiles.model';
+import { finalize, map } from "rxjs/operators";
 
 import {
   trigger,
@@ -43,27 +43,49 @@ export class DashboardGridComponent {
 
   public flagsRunFromApi: any[] = [];
 
+  public selectedFlagRuns: any[] = [];
+
+  public selectedFlagRunFlights: any[] = [];
+
   public myFlags: any[] = [];
 
   public counter = 0
+
+  public flightsToPass: any[] = [];
 
   public selectionOptions: any[] = [
     { idx: 0, name: 'View History' },
     { idx: 1, name: 'Go to Rule' }
   ];
 
-  constructor(public mockTileService: MockService,
+  constructor(
     public sortTileOptionsService: SortTileOptionsService,
     public dashboardTilesAPIComponent: DashboardTilesAPIComponent) {
 
+    this.dashboardTilesAPIComponent.apiFlagsRunFlight$
+
+      .subscribe((flights: any) => {
+        if (flights.length > 0) {
+          console.log('Subscribed  flights ', flights)
+        }
+
+      })
+
 
     this.dashboardTilesAPIComponent.apiFlagsRunElement$
+
       .subscribe((flagRuns: any[]) => {
-        if (flagRuns.length) {
+
+        if (flagRuns.length > 0) {
           this.myFlags[this.counter].flagRuns = flagRuns;
           this.flagsRunFromApi.push(flagRuns)
           this.counter++;
         }
+
+        this.selectedFlagRunFlights = flagRuns.map((r: any, i: number) => {
+          this.getFlightLists(r.flagKey, r.historyId)
+
+        })
       })
 
 
@@ -73,59 +95,47 @@ export class DashboardGridComponent {
         flags.forEach((f, i) => {
           this.dashboardTilesAPIComponent.getFlagRuns(f.flagKey)
         })
-        // console.log('{{{{{ apiFlag }}}}}} ', this.myFlags)
       })
 
 
     this.dashboardTilesAPIComponent.apiFlagRuns$
       .subscribe((sendFlagRun: FlagRuns[]) => {
         // console.log('sendFlagRun ', sendFlagRun)
-
         let keyHolder: number[] = [];
-
         if (sendFlagRun.length > 0) {
-
           sendFlagRun.forEach((r: any, e: number) => {
             if (!keyHolder.includes(r.flagKey)) {
               keyHolder.push(r.flagKey)
             }
           })
-
-
-          //console.log(' i  ', i, ' flagKey ', sendFlagRun[i])
-          // for (let e = 0; e < keyHolder.length; e++) {
-
-          //   for (let i = 0; i < sendFlagRun.length; i++) {
-
-          //     if (keyHolder[e] === sendFlagRun[i].flagKey) {
-
-          //       // console.log('  ===   ', keyHolder[e], ' keyHolder ', sendFlagRun[i])
-          //       // console.log(' i  ', i, ' flagKey ', sendFlagRun[i])
-
-          //       this.dashboardTilesAPIComponent.getFlightList(sendFlagRun[i].flagKey, sendFlagRun[i].historyId)
-
-          //         .then((response: string) => {
-          //           return response;
-          //         })
-          //         .then((flights: any) => {
-          //           sendFlagRun[i].flights = flights.flights;
-          //         })
-
-          //       // console.log('   this.flagsRunFromApi', sendFlagRun)
-          //       break;
-          //     }
-          //   }
-          // }
+          //  console.log(' i  ', ' flagKey ', sendFlagRun, ' keyHolder ',)
         }
       })
   }
 
-
-  public updatePassengers(event: FlagList) {
-    console.log('updatePassengers ', event)
-    //this.passengerCount = event;
+  public getFlightLists(key: any, id: number) {
+    return this.dashboardTilesAPIComponent.getFlightList(key, id)
   }
 
+
+  public updateFlagRun(event: any) {
+
+
+    this.selectedFlagRuns = event;
+
+    event.map((r: any, e: number) => {
+
+      this.dashboardTilesAPIComponent.allFlightList.forEach((fl, i) => {
+        if (r.historyId === fl.id) {
+          this.selectedFlagRuns[e].flights = fl;
+          this.flightsToPass.push(fl)
+        }
+      })
+    })
+
+    this.dashboardTilesAPIComponent.apiFlagsRunFlight$.next(this.flightsToPass)
+
+  }
 
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MockService } from '../services/tiles-mock-api';
 import * as echarts from 'echarts';
 import { NdoValuesModel } from '../models/tiles.model';
+import { DashboardTilesAPIComponent } from '../api/dashboard-api.service';
 
 
 
@@ -17,7 +18,15 @@ export class MonthlyFlagsChartComponent implements OnInit {
   public myChart: any = null;
   public NdoData: NdoValuesModel[] = [];
 
-  constructor(public mockTileService: MockService) {
+  constructor(public mockTileService: MockService, public dashboardTilesAPIComponent: DashboardTilesAPIComponent) {
+
+    this.dashboardTilesAPIComponent.apiFlagChartData$
+      .subscribe((values: any) => {
+        if (values) {
+          console.log('apiFlagChartData$ ', values)
+        }
+
+      })
 
     this.mockTileService.apiPrioritiesSubject$.subscribe((res: any) => {
       if (res.length > 0) {
@@ -54,42 +63,36 @@ export class MonthlyFlagsChartComponent implements OnInit {
       grid: {
         show: false,
         left: 40,
-        right: 5,
-        top: 55,
-        bottom: 35
+        right: 25,
+        top: 35,
+        bottom: 60
       },
 
       backgroundStyle: {
         color: 'transarent'
       },
-      title: {
-        text: 'Affected Flights by NDO',
-        left: 10,
-        top: 10,
-        textStyle: {
-          color: 'white',
-          fontWeight: 'normal',
-          fontSize: 14
 
-        }
-      },
       xAxis: {
         show: true,
         type: 'category',
         name: 'NDO Range',
         nameLocation: 'middle',
         nameGap: 25,
+        nameTextStyle: {
+          fontSize: 10,
+          color: 'rgba(230,230,230,1)'
+        },
         axisLabel: {
           fontSize: 10,
-          color: 'white'
+          color: 'rgba(230,230,230,1)'
         },
         axisTick: {
-          show: false
+          show: true
         },
         axisLine: {
           show: true,
           lineStyle: {
-            color: 'white'
+            color: 'rgba(230,230,230,1)'
           }
         },
         data: axisData.map((nd: any, i: number) => {
@@ -103,10 +106,14 @@ export class MonthlyFlagsChartComponent implements OnInit {
         name: 'Flight Count',
         nameLocation: 'middle',
         nameGap: 25,
+        nameTextStyle: {
+          fontSize: 10,
+          color: 'rgba(230,230,230,1)'
+        },
         axisLine: {
           show: true,
           lineStyle: {
-            color: 'white'
+            color: 'rgba(230,230,230,1)'
           }
         },
         splitLine: {
@@ -117,7 +124,7 @@ export class MonthlyFlagsChartComponent implements OnInit {
         },
         axisLabel: {
           fontSize: 10,
-          color: 'white'
+          color: 'rgba(230,230,230,1)'
         },
       },
       dataZoom: [

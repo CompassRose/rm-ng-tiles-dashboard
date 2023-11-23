@@ -1,8 +1,8 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import { SortTileOptionsService } from '../services/sort-tiles-options.service';
 import { of, delay, Observable, BehaviorSubject } from 'rxjs';
-import { MockService } from '../services/tiles-mock-api';
-import { UserModel } from '../models/tiles.model';
+import { UserModel, ApiUserModel } from '../models/tiles.model';
+import { DashboardTilesAPIComponent } from '../api/dashboard-api.service';
 
 @Component({
     selector: 'analyst-search',
@@ -15,19 +15,67 @@ import { UserModel } from '../models/tiles.model';
 
 export class AnalystSearchComponent implements OnInit {
 
-    public userSelectAllState = false;
+    public myAllUserList: ApiUserModel[] = [];
 
-    //public allUserList: UserModel[] = [];
-    //  public selectedUsers: UserModel[] = [];
-
-    constructor(public sortTileOptionsService: SortTileOptionsService, public mockTileService: MockService) {
+    @Input()
+    set AllUsers(items: UserModel[]) {
+        this.myAllUserList = items;
     }
 
+    public userSelectAllState = false;
+
+    public selectedUsersBySupervisor: any[] = [];
+    //  public selectedUsers: UserModel[] = [];
+
+    constructor(public sortTileOptionsService: SortTileOptionsService, public dashboardTilesAPIComponent: DashboardTilesAPIComponent) {
+
+        this.dashboardTilesAPIComponent.apiAllUsers$
+            .subscribe((params: any) => {
+
+                if (params.length > 0) {
+                    params.map((u: any, i: number) => {
+
+                        const result = u.fullName.split(/(?=[A-Z])/);
+
+                        //   console.log(u.fullName.replace(/([A-Z])/g, ' $1').trim());
+
+                        // console.log('result  ', result[result.length - 1])
+                        u.lastName = result[result.length - 1];
+                        return u.state = false;
+
+                    })
+                    this.myAllUserList = params;
+                    // console.log('||||||||||||||  this.myAllUserList ', this.myAllUserList)
+
+                }
+            })
+    }
+
+
     public ngOnInit(): void {
+        //  console.log('getNumAnalystsSelected ', this.myAllUserList)
         // this.onSelectAll()
     }
 
+    public getNumAnalystsSelected(): boolean {
 
+        // console.log('getNumAnalystsSelected ', this.myAllUserList)
+        let test = false;
+
+        this.myAllUserList.forEach((aUser: UserModel) => {
+            //if (!aUser.state){
+
+            //}
+        })
+
+        //if (this.selectedUsersBySupervisor.length ) {
+        // if (this.selectedUsersBySupervisor.length === this.allUserList.length) {
+        //   test = true;
+        //   //}
+        // }
+
+        return test
+    }
 
     public onSelectAll() {
 
@@ -35,7 +83,6 @@ export class AnalystSearchComponent implements OnInit {
 
         this.userSelectAllState = !this.userSelectAllState;
 
-        console.log('ag ', ' stateTest  length ', this.mockTileService.selectedUsersBySupervisor.length)
 
         // if (this.mockTileService.selectedUsersBySupervisor.length === this.allUserList.length) {
         //     stateTest = false;
@@ -43,10 +90,10 @@ export class AnalystSearchComponent implements OnInit {
         //     stateTest = true;
         // }
 
-        console.log('ag ', ' stateTest ', this.userSelectAllState)
+        // console.log('ag ', ' stateTest ', this.userSelectAllState)
 
         if (!this.userSelectAllState) {
-            this.mockTileService.selectedUsersBySupervisor = [];
+
         }
 
         // this.mockTileService.allUserList.map((ag, i) => {
@@ -62,7 +109,6 @@ export class AnalystSearchComponent implements OnInit {
 
 
         //  this.mockTileService.apiUsersSubject$.next(this.mockTileService.allUserList);
-        console.log('this.sortTileOptionsService.selectedAnalysts ', this.mockTileService.allUserList, ' \n this.mockTileService.selectedUsersBySupervisor ', this.mockTileService.selectedUsersBySupervisor)
 
     }
 
@@ -73,30 +119,27 @@ export class AnalystSearchComponent implements OnInit {
 
 
     public onAdd(event: any) {
+
         console.log(' -------onAdd ', ' idx ', event)
 
-        // const elementOrder = this.mockTileService.allUserList.findIndex(fi => {
-        //     return fi.idx === event;
-        // })
+        this.myAllUserList[event].state = !this.myAllUserList[event].state;
 
-        // if (this.mockTileService.allUserList[event].state) {
-        //     this.mockTileService.allUserList[event].state = false;
-        // } else {
-        //     this.mockTileService.allUserList[event].state = true;
-        // }
-        // //  this.mockTileService.selectedUsersBySupervisor = []
-        // // console.log('\n\n --this.mockTileService.selectedUsersBySupervisor', this.mockTileService.allUserList[event])
+        const elementOrder = this.selectedUsersBySupervisor.findIndex(fi => {
+            return fi === event;
+        })
 
-        // this.mockTileService.allUserList.forEach((user: UserModel, i: number) => {
+        console.log('\n\n --this.selectedUsersBySupervisor', elementOrder, ' state ', this.myAllUserList[event].state, ' -----  ', this.selectedUsersBySupervisor[elementOrder])
+
+        if (this.selectedUsersBySupervisor.includes(event) && !this.myAllUserList[event].state) {
+
+            this.selectedUsersBySupervisor.splice(elementOrder, 1)
+        } else {
+            this.selectedUsersBySupervisor.push(event)
+        }
 
 
-        //     if (user.state) {
-        //         this.mockTileService.selectedUsersBySupervisor.push(i)
-        //     } else {
-        //         this.mockTileService.selectedUsersBySupervisor.splice(i, 1)
-        //     }
-        // })
 
+        console.log('\n\n -.selectedUsersBySupervisor ', this.selectedUsersBySupervisor)
 
     }
 }

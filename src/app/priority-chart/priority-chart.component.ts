@@ -63,7 +63,7 @@ export class PriorityChartComponent {
 
     setTimeout(() => {
       this.setChartContents()
-    }, 200);
+    }, 100);
 
   }
 
@@ -73,32 +73,33 @@ export class PriorityChartComponent {
     // console.log('setChartContents ', this.myChart)
 
     this.myChart.setOption({
-      title: {
-        text: 'Priority Status',
-        left: 10,
-        top: 10,
-        textStyle: {
-          color: 'white',
-          fontWeight: 'normal',
-          fontSize: 14
 
-        }
-        // subtext: 'Feature Sample: Gradient Color, Shadow, Click Zoom'
-      },
+      // title: {
+      //   text: 'Priority Status',
+      //   left: 10,
+      //   top: 10,
+      //   textStyle: {
+      //     color: 'white',
+      //     fontWeight: 'normal',
+      //     fontSize: 14
+
+      //   }
+      //   // subtext: 'Feature Sample: Gradient Color, Shadow, Click Zoom'
+      // },
       grid: {
-        show: false,
+        //show: false,
         left: 0,
-        right: 25,
+        right: 45,
         top: 5,
-        bottom: 0
+        bottom: 20
       },
       tooltip: {
         trigger: 'item'
       },
       legend: {
-        show: false,
-        top: '25%',
-        right: 0,
+        show: true,
+        top: '10%',
+        right: 50,
         align: 'right',
         orient: 'vertical',
         icon: 'circle',
@@ -124,7 +125,7 @@ export class PriorityChartComponent {
         {
           name: 'Urgency',
           type: 'pie',
-          radius: ['45%', '65%'],
+          radius: ['30%', '50%'],
           avoidLabelOverlap: false,
           label: {
             rotate: 0,

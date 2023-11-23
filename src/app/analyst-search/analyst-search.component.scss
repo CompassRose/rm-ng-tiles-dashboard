@@ -138,10 +138,11 @@
   position: relative;
 }
 
-.options-variant .base-option {
+.base-option {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   position: relative;
   flex: 1;
   flex-grow: 1;
@@ -169,9 +170,11 @@
   position: relative;
 }
 
-.options-variant .div-wrapper {
-  display: inline-flex;
-  align-items: flex-start;
+.div-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: nowrap;
   position: relative;
   flex: 0 0 auto;
 }
@@ -289,6 +292,7 @@
 }
 
 .frame-2 {
+  white-space: nowrap;
   align-items: flex-start;
   display: inline-flex;
   flex: 0 0 auto;

@@ -1,22 +1,8 @@
 $grid-contrast: adjust-color(gray, $lightness: 1%) !important;
 
-.analyst-block {
-    display: flex;
-    width: 100%;
-    height: auto;
-    padding-left: 22px;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-    justify-content: flex-start;
-    gap: 16px;
-}
-
 .clock-svg {
     width: 16px;
     height: 16px;
-    left: 1.33px;
-    top: 1.33px;
-    position: absolute;
     background-image: url("../../assets/svg/clock.svg") !important;
     background-repeat: no-repeat;
 }
@@ -24,10 +10,10 @@ $grid-contrast: adjust-color(gray, $lightness: 1%) !important;
 .seperator-dot {
     width: 11px;
     height: 11px;
-    left: 10px;
-    margin-left: 0px;
-    margin-top: 7px;
-    position: absolute;
+    //left: 10px;
+    //margin-left: 0px;
+    //margin-top: 7px;
+    //position: absolute;
     background: #3464bc;
     box-shadow: 0px 0px 1px 2px rgba(0, 14, 67, 0.86);
     border-radius: 100px;
@@ -36,7 +22,7 @@ $grid-contrast: adjust-color(gray, $lightness: 1%) !important;
         margin-top: 10px;
         width: 0px;
         margin-left: 1px;
-        height: 69px;
+        height: 100%;
         border: 2px #012169 solid;
     }
 }
@@ -55,18 +41,43 @@ $grid-contrast: adjust-color(gray, $lightness: 1%) !important;
 
 .modal-body {
     position: relative;
+    padding: 8px 10px !important;
     width: auto;
     flex: 1 1 auto;
-    padding: var(--bs-modal-padding);
-    height: 400px;
+    height: auto;
+    .dropdown {
+        position: static !important;
+    }
+}
+
+.modal-footer {
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5px !important;
+    background-color: var(--bs-modal-footer-bg);
+    border-top: var(--bs-modal-footer-border-width) solid var(--bs-modal-footer-border-color);
+    border-bottom-right-radius: var(--bs-modal-inner-border-radius);
+    border-bottom-left-radius: var(--bs-modal-inner-border-radius);
+}
+
+.border-gray-bottom {
+    background-color: rgb(240, 240, 240);
+    padding: 3px 12px;
+    border-radius: 5px;
+    margin-bottom: 6px;
+    //border-bottom: 1px solid rgb(197, 197, 197);
 }
 
 .grid-parent {
     //width: 100% !important;
-    max-width: 1440px;
-    margin-top: 15px;
+    //width: 85% !important;
+    //padding: 0 20px;
+    //margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     //overflow-y: scroll;
     flex-wrap: wrap;
 }

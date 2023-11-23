@@ -1,92 +1,74 @@
-<div class="menu-bar-items analysts py-2 ps-2">
-    <div class="list-column-group me-1">
-        <div class="row-list ms-1">
-            <div>Analysts</div>
-            <div class="list-sub">
-                {{mockTileService.selectedUsersBySupervisor.length}} of {{mockTileService.allUserList.length}}
-                Analysts
-            </div>
-        </div>
-        <div class="">
-            <ng-select class="analyst-select"
-               *ngIf="(mockTileService.apiUsersSubject$ | async) as users"
-               title="Select Analysts"
-               [multiple]="true"
-               [closeOnSelect]="false"
-               [clearable]="false"
-               [searchable]="false"
-               placeholder="Select Analysts"
-               [multiple]="true"
-               [items]="users"
-               [bindLabel]="'name'">
-                <ng-template ng-header-tmp>
-                    <div class="options-variant">
-                        <div class="base-option">
-                            <div class="content">
-                                <div class="option-type">
-                                    <div class="div-wrapper">
-                                        <input type="checkbox"
-                                           [checked]="mockTileService.getNumAnalystsSelected()"
-                                           class="unselected"
-                                           (change)="onSelectAll()" />
-                                    </div>
-                                    <div class="div-wrapper">
-                                        <div class="ng-value-active">
-                                            Select All
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </ng-template>
+<div class="menu-bar-items analysts">
 
-                <ng-template ng-multi-label-tmp
-                   let-items="items"
-                   let-clear="clear">
-                    <div class="ng-value ng-value-active me-1"
-                       *ngFor="let item of mockTileService.allUserList | slice: 0:6 ; index as i">
-                        <div *ngIf="item.state">{{item.UserId}}<span></span>,&nbsp;</div>
-                    </div>
-                    <div class="ng-value"
-                       *ngIf="mockTileService.selectedUsersBySupervisor.length > 6">
-                        <span class="ng-value-label ms-4">{{ mockTileService.selectedUsersBySupervisor.length - 6 }}
-                            more...</span>
-                    </div>
-                </ng-template>
-                <ng-template ng-label-tmp
-                   let-item="item"
-                   let-i="index">
-                    <div *ngIf="item.state">
-                        <img height="40"
-                           width="40"
-                           [src]="item.avatar" />
-                    </div>
-                </ng-template>
+    <div class="list-column-group w-25 ms-2">
+        Analysts
+    </div>
+    <div class="w-75 ml-auto">
+        <ng-select class="custom-select"
+           *ngIf="(dashboardTilesAPIComponent.apiAllUsers$ | async) as users"
+           [multiple]="true"
+           [closeOnSelect]="false"
+           [clearable]="true"
+           [searchable]="false"
+           placeholder="Select Analysts"
+           [items]="users"
+           [bindLabel]="'fullName'">
+            <ng-template ng-header-tmp>
 
-                <ng-template ng-option-tmp
-                   let-item="item"
-                   let-i="index">
-                    <div class="analyst-row w-100">
-                        <!-- <div class="me-2">
+                <div class="div-wrapper">
+                    <input type="checkbox"
+                       [checked]="getNumAnalystsSelected()"
+                       class="unselected"
+                       (change)="onSelectAll()" />
+
+                    <div class="ng-value-active">
+                        Select All
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template ng-multi-label-tmp
+               let-items="items"
+               let-clear="clear">
+                <div class="ng-value ng-value-active me-1"
+                   *ngFor="let item of myAllUserList | slice: 0:3 ; index as i">
+                    <div *ngIf="item.state">{{item.lastName}}<span></span>,&nbsp;</div>
+                </div>
+                <div class="ng-value"
+                   *ngIf="selectedUsersBySupervisor.length > 3">
+                    <span class="ng-value-label ms-4">{{ selectedUsersBySupervisor.length - 3 }}
+                        more...</span>
+                </div>
+            </ng-template>
+            <!-- <ng-template ng-label-tmp
+               let-item="item"
+               let-i="index">
+                <div>
+                    {{item.fullName}}
+                </div>
+            </ng-template> -->
+            <ng-template ng-option-tmp
+               let-item="item"
+               let-i="index">
+                <div class="analyst-row w-100">
+                    <!-- <div class="me-2">
                             <img height="35"
                                width="35"
                                [src]="item.avatar" />
                         </div> -->
-                        <input type="checkbox"
-                           [checked]="item.state"
-                           (change)="onAdd(i)" />
-                        <div class="d-flex ms-1">
-                            <div class="ms-2">
-                                <div class="frame-2">
-                                    <div class="text-wrapper-2">{{i}} -- {{ item.FullName }}</div>
-                                    <div class="text-wrapper-3">{{ item.UserType }}</div>
-                                </div>
+                    <input type="checkbox"
+                       [checked]="item.state"
+                       (change)="onAdd(i)" />
+                    <div class="d-flex ms-1">
+                        <div class="ms-2">
+                            <div class="frame-2">
+                                <div class="text-wrapper-2">{{ item.fullName }}</div>
+                                <!-- <div class="text-wrapper-3">{{ item.UserType }}</div> -->
                             </div>
                         </div>
                     </div>
-                </ng-template>
-            </ng-select>
-        </div>
+                </div>
+            </ng-template>
+        </ng-select>
     </div>
+
 </div>

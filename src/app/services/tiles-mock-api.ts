@@ -1,6 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Subject, BehaviorSubject, AsyncSubject, ReplaySubject, catchError, map, Observable, combineLatest, debounceTime, switchMap, of } from 'rxjs';
-import { Router } from '@angular/router';
 import { HttpClient } from "@angular/common/http";
 import { UserModel } from '../models/tiles.model';
 
@@ -16,50 +15,50 @@ export const testArray02: number[] = [6, 7, 8, 9, 10];
 
 export class MockService implements OnInit {
 
-  public myFlagObj = {}
+  //public myFlagObj = {}
 
-  public apiUsersSubject$ = new BehaviorSubject<any[]>([]);
+  //public apiUsersSubject$ = new BehaviorSubject<any[]>([]);
 
-  public apiFlagsSubject$ = new BehaviorSubject<any[]>([]);
+  //public apiFlagsSubject$ = new BehaviorSubject<any[]>([]);
 
   public apiPrioritiesSubject$ = new BehaviorSubject<any[]>([]);
 
-  public userLoggedInSubject$ = new ReplaySubject<UserModel>();
+  //public userLoggedInSubject$ = new ReplaySubject<UserModel>();
 
-  private readonly destroySubj = new Subject<void>();
+  //private readonly destroySubj = new Subject<void>();
 
-  public isLoggedIn = false;
+  //public isLoggedIn = false;
 
-  public selectedUserSubject$ = new BehaviorSubject<any>(null);
+  //public selectedUserSubject$ = new BehaviorSubject<any>(null);
 
 
-  public dashboardFlags: any[] = [];
+  //public dashboardFlags: any[] = [];
 
-  public flagTypeBehaviorSubject$ = new BehaviorSubject<any[]>([]);
+  //public flagTypeBehaviorSubject$ = new BehaviorSubject<any[]>([]);
 
-  public flagObjects = "../assets/json/mock-flags.json";
+  //public flagObjects = "../assets/json/mock-flags.json";
 
-  public userObjects = "../assets/json/mock-users.json";
+  // public userObjects = "../assets/json/mock-users.json";
 
-  public priorityObjects = "../assets/json/mock-priorities.json";
+  //public priorityObjects = "../assets/json/mock-priorities.json";
 
-  public selectedFlags: any;
+  //public selectedFlags: any;
 
-  public flagTypeSelect: any[] = [];
+  //public flagTypeSelect: any[] = [];
 
-  public selectedUser: UserModel;
+  // public selectedUser: UserModel;
 
-  public allUserList: UserModel[] = [];
+  // public allUserList: UserModel[] = [];
 
-  public selectedUsersBySupervisor: number[] = [];
+  // public selectedUsersBySupervisor: number[] = [];
 
-  public FullName: string = '';
+  //public FullName: string = '';
 
-  public UserId: string = '';
+  //public UserId: string = '';
 
-  public UserType: string = '';
+  //public UserType: string = '';
 
-  public IsSupervisor = false;
+  //public IsSupervisor = false;
 
 
 
@@ -125,27 +124,8 @@ export class MockService implements OnInit {
   }
 
   public ngOnInit(): void { }
-  // @ts-ignore
 
 
-  public getNumAnalystsSelected(): boolean {
-    // console.log('getNumAnalystsSelected ', this.allUserList, ' selectedUsersBySupervisor ', this.selectedUsersBySupervisor)
-    let test = false;
-
-    // this.allUserList.forEach((aUser: UserModel) => {
-    //   if (!aUser.state){
-
-    //   }
-    // })
-
-    //if (this.selectedUsersBySupervisor.length ) {
-    if (this.selectedUsersBySupervisor.length === this.allUserList.length) {
-      test = true;
-      //}
-    }
-
-    return test
-  }
 
 
 
@@ -166,11 +146,11 @@ export class MockService implements OnInit {
       .subscribe(res => {
 
         if (type === 'mock-flags') {
-          this.generateFlagTypeGroup(res)
-          this.selectedFlags = res;
-          this.apiFlagsSubject$.next(res)
+          // this.generateFlagTypeGroup(res)
+          // this.selectedFlags = res;
+          //  this.apiFlagsSubject$.next(res)
         } else if (type === 'mock-users') {
-          this.apiUsersSubject$.next(res)
+          //this.apiUsersSubject$.next(res)
         } else {
           this.apiPrioritiesSubject$.next(res)
         }
@@ -187,66 +167,64 @@ export class MockService implements OnInit {
 
 
   // From Flag Type dropdown
-  public selectFlagTypes(event: any) {
+  // public selectFlagTypes(event: any) {
 
-    let flagListReturn = [...this.selectedFlags];
-    if (event === 'All') {
-      flagListReturn = this.selectedFlags
-    } else {
-      flagListReturn = this.selectedFlags.filter((flag: any) => {
-        if (flag.FlagType === event) {
-          return flag
-        }
-      })
-    }
-    this.apiFlagsSubject$.next(flagListReturn)
-  }
-
-
-  public generateFlagTypeGroup(items: any) {
-
-
-    this.flagTypeSelect.push('All');
-
-    items.forEach((it: any, i: number) => {
-      if (!this.flagTypeSelect.includes(it.FlagType)) {
-        this.flagTypeSelect.push(it.FlagType)
-      }
-    })
-    // console.log('this.flagTypeSelect ', this.flagTypeSelect)
-    this.flagTypeBehaviorSubject$.next(this.flagTypeSelect)
+  //   let flagListReturn = [...this.selectedFlags];
+  //   if (event === 'All') {
+  //     flagListReturn = this.selectedFlags
+  //   } else {
+  //     flagListReturn = this.selectedFlags.filter((flag: any) => {
+  //       if (flag.FlagType === event) {
+  //         return flag
+  //       }
+  //     })
+  //   }
+  //   this.apiFlagsSubject$.next(flagListReturn)
+  // }
 
 
 
-  }
+  // public generateFlagTypeGroup(items: any) {
 
-  public onFlagsSelected(item: any, idx: number) {
+  //   this.flagTypeSelect.push('All');
 
-    // console.log('onFlagsSelected ', item)
-  }
+  //   items.forEach((it: any, i: number) => {
+  //     if (!this.flagTypeSelect.includes(it.FlagType)) {
+  //       this.flagTypeSelect.push(it.FlagType)
+  //     }
+  //   })
+  //   // console.log('this.flagTypeSelect ', this.flagTypeSelect)
+  //   this.flagTypeBehaviorSubject$.next(this.flagTypeSelect)
+
+  // }
+
+  // public onFlagsSelected(item: any, idx: number) {
+
+  //   // console.log('onFlagsSelected ', item)
+  // }
 
 
   /**
    * @return Three element array, elem 1 is FlightClientDetails, elem 2 is BidPriceInfluencers[]
    */
-  public combineAndSendLatestValues() {
-    //console.log('combineAndSendLatestValues ')
-    // debounce time insures enough time to get all new values,
-    // switchMap: higher order observable that unsubscribes after return...
-    // and if there is a fast hover it cancels current operation and starts new evaluation
+  // public combineAndSendLatestValues() {
+  //   //console.log('combineAndSendLatestValues ')
+  //   // debounce time insures enough time to get all new values,
+  //   // switchMap: higher order observable that unsubscribes after return...
+  //   // and if there is a fast hover it cancels current operation and starts new evaluation
 
-    // noinspection UnnecessaryLocalVariableJS
-    const returnVal: Observable<any> =
-      combineLatest(
-        [this.apiUsersSubject$, this.apiFlagsSubject$, this.apiPrioritiesSubject$]
-      ).pipe(
-        // debounceTime(10),
-        switchMap(([users, flags, priorities]) => {
-          //  console.log('users ', users, '\nflags ', flags, '\npriorities ', priorities)
-          return of([users, flags, priorities])
-        })
-      )
-    return returnVal;
-  }
+  //   // noinspection UnnecessaryLocalVariableJS
+  //   const returnVal: Observable<any> =
+  //     combineLatest(
+  //       [this.apiUsersSubject$, this.apiFlagsSubject$, this.apiPrioritiesSubject$]
+  //     ).pipe(
+  //       // debounceTime(10),
+  //       switchMap(([users, flags, priorities]) => {
+  //         //  console.log('users ', users, '\nflags ', flags, '\npriorities ', priorities)
+  //         return of([users, flags, priorities])
+  //       })
+  //     )
+  //   return returnVal;
+  // }
 
 }

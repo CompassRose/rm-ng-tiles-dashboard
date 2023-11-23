@@ -1,9 +1,20 @@
 export interface UserModel {
     fullName: string;
     IsSupervisor: boolean;
-    userId: string;
+    userID: string;
     UserType?: string;
+
 }
+
+export interface ApiUserModel {
+    fullName: string;
+    IsSupervisor: boolean;
+    userID: string;
+    UserType?: string;
+    state?: boolean;
+    lastName?: string;
+}
+
 
 export interface NdoValuesModel {
     Range: string;

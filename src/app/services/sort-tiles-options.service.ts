@@ -34,17 +34,27 @@ export class SortTileOptionsService {
 
     public priorityItems: any[] = [];
 
+    public flagTypes: any[] = [];
+
     public selectedPriority: any;
 
     public routeListBehaviorSubject$ = new BehaviorSubject<any[]>([]);
 
     public priorityListBehaviorSubject$ = new BehaviorSubject<any[]>([]);
 
+    public flagTypeBehaviorSubject$ = new BehaviorSubject<any[]>([]);
 
     public flightGroups = FlightGroups;
 
     public routeList: any[] = [];
 
+
+    // Moved from Mock
+    public selectedFlags: any;
+
+    public flagTypeSelect: any[] = [];
+
+    public apiFlagsSubject$ = new BehaviorSubject<any[]>([]);
 
     constructor() {
 
@@ -54,6 +64,7 @@ export class SortTileOptionsService {
             error: (err: any) => console.error('Observer got an error: ' + err),
             complete: () => console.log('Observer got a complete notification'),
         };
+
 
         // this.allUserListSubject$.next(this.analystGroup)
 
@@ -82,6 +93,12 @@ export class SortTileOptionsService {
             // console.log('???? ', db.lastUpdate)
             return db;
         })
+
+        this.flagTypes = [
+            { id: 0, name: 'Alert', metric: 'alert' },
+            { id: 1, name: 'Action', metric: 'action' },
+            { id: 2, name: 'Exception', metric: 'exception' }
+        ];
 
         this.priorityItems = [
             { id: 0, name: 'Priority', metric: 'priority' },
@@ -117,6 +134,36 @@ export class SortTileOptionsService {
     }
 
 
+    // From Flag Type dropdown
+    public selectFlagTypes(event: any) {
+        console.log('selectFlagTypes ', event)
+        let flagListReturn = [...this.selectedFlags];
+        if (event === 'All') {
+            flagListReturn = this.selectedFlags
+        } else {
+            flagListReturn = this.selectedFlags.filter((flag: any) => {
+                if (flag.FlagType === event) {
+                    return flag
+                }
+            })
+        }
+        this.apiFlagsSubject$.next(flagListReturn)
+    }
+
+
+    public generateFlagTypeGroup(items: any) {
+
+        this.flagTypeSelect.push('All');
+
+        items.forEach((it: any, i: number) => {
+            if (!this.flagTypeSelect.includes(it.FlagType)) {
+                this.flagTypeSelect.push(it.FlagType)
+            }
+        })
+        console.log('this.flagTypeSelect ', this.flagTypeSelect)
+        this.flagTypeBehaviorSubject$.next(this.flagTypeSelect)
+
+    }
 
     // // from Priority Selection
     // public selectedFlag(set: any) {
