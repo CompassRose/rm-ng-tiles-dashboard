@@ -7,6 +7,11 @@ export enum ImagePath {
 }
 
 
+export const flagTypes = [
+    { id: 0, name: 'Exception', metric: 'exception' },
+    { id: 1, name: 'Alert', metric: 'alert' },
+    { id: 2, name: 'Action', metric: 'action' },
+];
 
 export const PathToAssets = ImagePath.devPathToAssets;
 
@@ -157,6 +162,7 @@ export const FlightGroups =
 
 export const fareClasses = ['Y', 'D', 'B', 'A', 'Z', 'W', 'U', 'S', 'R', 'I', 'L', 'J', 'H', 'K', 'N', 'Q', 'T', 'O'];
 export const days = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct'];
+
 export const blueRamp16 = [
     '#d6dcff',
     '#a9b2fd',

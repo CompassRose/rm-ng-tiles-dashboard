@@ -17,7 +17,7 @@ export interface IFlagsDashboardDotNet {
   GetFlagRuns(flagKey: number): Promise<string>;
   //input: flagKey and historyId numeric simple types
   //output: A serialized JSON FlightList object
-  GetFlightList(flagKey: number, historyId: number): Promise<string>;
+  GetFlightList(flagKey: number, historyId: number, userId: string): Promise<string>;
   //input: flagKey numeric simple type
   //output: A serialized JSON array of Review objects
   GetReviews(flagKey: number): Promise<string>;
@@ -32,7 +32,7 @@ export interface IFlagsDashboardDotNet {
   //input: A serialized JSON FlightList object
   //output: True if successful, false if not succesful
   //Note: This method is not yet implemented, can be called, but it won't do anything
-  ToOverview(fligtiList: string): Promise<boolean>;
+  ToOverview(fligtiList: string, flagKey: number, userId: string): Promise<boolean>;
 
 }
 
@@ -76,9 +76,11 @@ export class FlagsDashboardDotNetWrapper implements IFlagsDashboardDotNet {
       resolve(result);
     });
   }
-  public GetFlightList(flagKey: number, historyId: number): Promise<string> {
+
+  //, userId: string
+  public GetFlightList(flagKey: number, historyId: number, userId: string): Promise<string> {
     return new Promise<string>(async (resolve, reject) => {
-      const result = await this.bridge.GetFlightList(flagKey, historyId);
+      const result = await this.bridge.GetFlightList(flagKey, historyId, userId);
       resolve(result);
     });
   }
@@ -109,12 +111,12 @@ export class FlagsDashboardDotNetWrapper implements IFlagsDashboardDotNet {
     });
   }
 
-
-  public ToOverview(fligtList: string): Promise<boolean> {
-    console.log('API ToOverview ', fligtList)
+  //, flagKey: number, userId: string
+  public ToOverview(fligtList: string, flagKey: number, userId: string): Promise<boolean> {
+    //console.log('API ToOverview ', fligtList)
     return new Promise<boolean>(async (resolve, reject) => {
 
-      const result = await this.bridge.ToOverview(fligtList);
+      const result = await this.bridge.ToOverview(fligtList, flagKey, userId);
       console.log('\n\nAPI Returned result ', result)
 
       resolve(result);

@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import * as echarts from 'echarts';
+import { formatRgb, formatHsl, converter, formatHex, samples, filterSepia, interpolate, interpolatorSplineBasis } from 'culori';
 import { blueRamp16 } from '../dashboard-constants';
-import { MockService } from '../services/tiles-mock-api';
+import { DashboardTilesAPIComponent } from '../api/dashboard-api.service';
+const culori: any = require('culori')
 
 @Component({
   selector: 'app-priority-chart',
@@ -16,41 +18,60 @@ export class PriorityChartComponent {
   public priorityPercent: number;
   public priorityValues: number[] = [];
 
-  // public legendData = [
-  //   'Very Urgent',
-  //   'Urgent',
-  //   'Medium Urgency',
-  //   'Low Urgency',
-  //   'All in order'
-  // ]
+  public legendData = [
+    'Very Urgent',
+    'Urgent',
+    'Medium Urgency',
+    'Low Urgency',
+    'All in order'
+  ]
 
-  // public chartValues = [
-  //   { value: 42, name: 'Very Urgent', percent: '42%' },
-  //   { value: 7, name: 'Urgent', percent: '7%' },
-  //   { value: 6, name: 'Medium Urgency', percent: '6%' },
-  //   { value: 12, name: 'Low Urgency', percent: '12%' },
-  //   { value: 33, name: 'All in order', percent: '33%' }
-  // ]
 
-  public blueRamp = blueRamp16
+  public blueRamp: any;
 
-  constructor(public mockTileService: MockService) {
+  public blueRampRange: string[] = ['#313194', '#c4d2ff'];
+
+  constructor(public dashboardTilesAPIComponent: DashboardTilesAPIComponent) {
+
     let totalCount = 0;
-    this.mockTileService.apiPrioritiesSubject$.subscribe((res: any) => {
+
+    dashboardTilesAPIComponent.apiPrioritiesSubject$.subscribe((res: any) => {
 
       if (res.length > 0) {
 
-        this.priorityValues = res[0].PriorityData;
+        this.priorityValues = res;
 
-        res[0].PriorityData.forEach((priorValue: any) => {
-          totalCount += priorValue.Count
+        //console.log('response $ ', this.priorityValues)
+        this.priorityValues.forEach((priorValue: any) => {
+          totalCount += priorValue.count
         })
+
+        //console.log('totalCount', totalCount)
         this.priorityPercent = totalCount
+        this.blueRamp = this.generateRamps(this.priorityValues.length, this.blueRampRange);
 
         this.createSvg()
       }
     })
   }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    if (this.myChart) {
+      this.myChart.resize();
+    }
+  }
+
+
+  // generates color ramp for length of priority array // culori samples
+  public generateRamps(numClasses: number, colorRange: any): any {
+    return samples(numClasses)
+      .map(interpolate(colorRange))
+      //.map(filterSepia(1))
+      .map(formatHex);
+  }
+
+
 
   // Sets up Dom node and attaches myChart element
   public createSvg(): void {
@@ -70,26 +91,23 @@ export class PriorityChartComponent {
 
   public setChartContents() {
 
-    // console.log('setChartContents ', this.myChart)
 
     this.myChart.setOption({
 
-      // title: {
-      //   text: 'Priority Status',
-      //   left: 10,
-      //   top: 10,
-      //   textStyle: {
-      //     color: 'white',
-      //     fontWeight: 'normal',
-      //     fontSize: 14
-
-      //   }
-      //   // subtext: 'Feature Sample: Gradient Color, Shadow, Click Zoom'
-      // },
+      title: {
+        text: 'Priority Status',
+        left: 10,
+        top: 10,
+        textStyle: {
+          color: 'white',
+          fontWeight: 'normal',
+          fontSize: 14
+        }
+      },
       grid: {
         //show: false,
         left: 0,
-        right: 45,
+        right: 65,
         top: 5,
         bottom: 20
       },
@@ -97,7 +115,7 @@ export class PriorityChartComponent {
         trigger: 'item'
       },
       legend: {
-        show: true,
+        show: false,
         top: '10%',
         right: 50,
         align: 'right',
@@ -112,7 +130,8 @@ export class PriorityChartComponent {
         },
 
         formatter: this.priorityValues.map((item: any, i) => {
-          const percentValue = +((item.Count / this.priorityPercent) * 100).toFixed(2);
+          //console.log('formatter ', item, ' priorityPercent ', this.priorityPercent)
+          const percentValue = +((item.count / this.priorityPercent) * 100).toFixed(2);
           const percentStr = `${percentValue} %`
           const percentVal = {
             name: percentStr,
@@ -151,8 +170,8 @@ export class PriorityChartComponent {
           },
           data: this.priorityValues.map((values: any, i) => {
             return {
-              value: values.Priority,
-              name: values.Count,
+              value: values.count,
+              name: values.value,
               itemStyle: {
                 color: this.blueRamp[i]
               },

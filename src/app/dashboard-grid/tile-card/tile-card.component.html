@@ -1,5 +1,5 @@
 <div class="item-content">
-    <div [ngClass]="dashboardTile.Reviewed ? 'reviewed-tag visible' : 'reviewed-tag not-visible'">Reviewed</div>
+    <div [ngClass]="dashboardTile.reviewed ? 'reviewed-tag visible' : 'reviewed-tag not-visible'">Reviewed</div>
     <div class="drag-handler">
         <div class="identity-row noselect mt-2 mb-1">
             <div class="card-top-row mb-2">
@@ -7,8 +7,10 @@
                    [style.background-color]="getPriorityColor(dashboardTile.priority)">
                     <span class="number-wrapper">{{dashboardTile.priority}}</span>
                 </div>
+
                 <div class="card-row-frame">
                     <div class="div">{{dashboardTile.name}}</div>
+                    <div class="body-text body-12-16-600 text-p-blue">{{dashboardTile.flagTypeName}}</div>
                     <div class="body-text body-12-16-600 text-p-blue">Flight Count:
                         {{dashboardTile.flightCount}}</div>
                 </div>

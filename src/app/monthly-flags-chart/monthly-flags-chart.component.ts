@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { MockService } from '../services/tiles-mock-api';
+import { Component, HostListener, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
 import { NdoValuesModel } from '../models/tiles.model';
 import { DashboardTilesAPIComponent } from '../api/dashboard-api.service';
@@ -18,19 +17,45 @@ export class MonthlyFlagsChartComponent implements OnInit {
   public myChart: any = null;
   public NdoData: NdoValuesModel[] = [];
 
-  constructor(public mockTileService: MockService, public dashboardTilesAPIComponent: DashboardTilesAPIComponent) {
+
+  constructor(public dashboardTilesAPIComponent: DashboardTilesAPIComponent) {
 
     this.dashboardTilesAPIComponent.apiFlagChartData$
       .subscribe((values: any) => {
         if (values) {
-          console.log('apiFlagChartData$ ', values)
+          //console.log('apiFlagChartData$ ', values)
+          //this.dashboardTilesAPIComponent.apiPrioritiesSubject$.next(values.priorityData);
+          //this.dashboardTilesAPIComponent.apiFlightsByNdoSubject$.next(values.ndoData)
         }
-
       })
 
-    this.mockTileService.apiPrioritiesSubject$.subscribe((res: any) => {
+    this.dashboardTilesAPIComponent.apiFlightsByNdoSubject$.subscribe((res: any) => {
+
+      let arry: any = [];
+      let totalCount: any = [];
+      let ndoCount = 0;
+      let preIncrement = 1;
+      let iIncrement = 1;
+
       if (res.length > 0) {
-        this.NdoData = res[0].NDOData;
+
+        this.NdoData = res;
+
+        res.forEach((r: any, i: number) => {
+          if (i === 0) {
+            //iIncrement = 1
+          } else if (r.value % 10 !== 0) {
+            iIncrement = r.value;
+            ndoCount += r.count;
+          } else {
+            //console.log('preIncrement ', preIncrement, ' iIncrement ', iIncrement)
+            totalCount.push({ Range: `${preIncrement} to ${iIncrement}`, Count: ndoCount })
+            preIncrement = r.value
+            ndoCount = 0
+          }
+
+        })
+        this.NdoData = totalCount
         this.createSvg();
       }
     })
@@ -53,6 +78,14 @@ export class MonthlyFlagsChartComponent implements OnInit {
 
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    // console.log('event ', event.currentTarget.innerHeight, ' innerWidth ', window.innerHeight)
+    if (this.myChart) {
+      this.myChart.resize();
+    }
+  }
+
 
   public setChartContents() {
 
@@ -60,25 +93,40 @@ export class MonthlyFlagsChartComponent implements OnInit {
 
 
     this.myChart.setOption({
+      responsive: true,
+      maintainAspectRatio: false,
       grid: {
         show: false,
+        height: 'auto',
         left: 40,
-        right: 25,
-        top: 35,
-        bottom: 60
+        right: 65,
+        top: 55,
+        bottom: 40
       },
-
+      title: {
+        left: 20,
+        top: 10,
+        show: true,
+        text: 'Affected Flights',
+        textStyle: {
+          color: 'white',
+          fontWeight: 'normal',
+          fontSize: 14
+        }
+      },
       backgroundStyle: {
-        color: 'transarent'
+        color: 'transparent'
       },
 
       xAxis: {
         show: true,
         type: 'category',
-        name: 'NDO Range',
-        nameLocation: 'middle',
-        nameGap: 25,
+        name: 'NDO',
+        nameLocation: 'end',
+        nameGap: 10,
         nameTextStyle: {
+          lineHeight: -10,
+          verticalAlign: 'bottom',
           fontSize: 10,
           color: 'rgba(230,230,230,1)'
         },
@@ -135,8 +183,8 @@ export class MonthlyFlagsChartComponent implements OnInit {
       series: [
         {
           type: 'bar',
-          barWidth: 30,
-          barGap: 0,
+          barMaxWidth: 30,
+          barGap: 2,
           label: {
             show: true,
             color: 'white',

@@ -13,16 +13,14 @@ import { PriorityChartComponent } from './priority-chart/priority-chart.componen
 import { MonthlyFlagsChartComponent } from './monthly-flags-chart/monthly-flags-chart.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgSelectModule } from '@ng-select/ng-select';
-//import { SortTileOptionsService } from './services/sort-tiles-options.service';
-
 import { TileCardComponent } from './dashboard-grid/tile-card/tile-card.component';
-import { FlagDisplaySupportComponent } from './flag-display-support/flag-display-support.component';
-//import { RouteSelectionComponent } from './route-selection/route-selection.component';
-import { MockService } from './services/tiles-mock-api';
+//import { FlagDisplaySupportComponent } from './flag-display-support/flag-display-support.component';
 import { FlagsDashboardDotNetWrapper } from './api/Flags-dashboard-Interface';
 import { DashboardTilesAPIComponent } from './api/dashboard-api.service';
-import { BidPriceAspNetService } from "./api/au-visualization.service";
+//import { BidPriceAspNetService } from "./api/au-visualization.service";
 import { AnalystSearchComponent } from '../app/analyst-search/analyst-search.component';
+import { FlightEditorComponent } from './flight-editor/flight-editor.component';
+import { AuthenticationService } from './services/authentication.service';
 
 @NgModule({
   declarations: [
@@ -31,10 +29,8 @@ import { AnalystSearchComponent } from '../app/analyst-search/analyst-search.com
     PriorityChartComponent,
     MonthlyFlagsChartComponent,
     TileCardComponent,
-    FlagDisplaySupportComponent,
-    AnalystSearchComponent,
-    //AvatarSupportComponent,
-    //RouteSelectionComponent
+    FlightEditorComponent,
+    AnalystSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +46,7 @@ import { AnalystSearchComponent } from '../app/analyst-search/analyst-search.com
     })
   ],
 
-  providers: [FlagsDashboardDotNetWrapper, DashboardTilesAPIComponent, MockService, { provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [FlagsDashboardDotNetWrapper, DashboardTilesAPIComponent, AuthenticationService, { provide: LocationStrategy, useClass: HashLocationStrategy }],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })

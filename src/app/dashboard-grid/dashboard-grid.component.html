@@ -1,46 +1,30 @@
 <div class="grid-parent"
    *ngIf="(dashboardTilesAPIComponent.apiFlags$ | async) as flagList">
-
   <div *ngFor="let item of flagList">
     <app-tile-card (callHistoryModal)="updateFlagRun($event)"
        [DashboardItem]="item"
        [FlagRuns]="flagsRunFromApi"></app-tile-card>
   </div>
 </div>
-
-<!-- <div *ngIf="dashboardTilesAPIComponent.showHistoryModal$ | async"
-   data-bs-toggle="modal"
-   data-bs-target="#exampleModal">
-</div> -->
-
-
-
 <div class="modal fade"
    id="exampleModal"
    tabindex="-1"
    aria-labelledby="exampleModalLabel"
    aria-hidden="true">
-
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
     <div class="modal-content">
-
       <div class="modal-header">
         <span class="body-text body-16-24-600 text-body-plat"
-           id="exampleModalLabel">History</span>
-
-        <!-- <button type="button"
+           id="exampleModalLabel">{{flagNameAndType}} History</span>
+        <button type="button"
            class="btn-close"
            data-bs-dismiss="modal"
-           aria-label="Close"></button> -->
+           aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div *ngFor="let item of selectedFlagRuns">
-
           <div class="w-100 noselect">
             <div class="flex-row border-gray-bottom">
-              <!-- <div class="seperator-dot"></div> -->
-
-              <!-- <div class="clock-svg mx-2"></div> -->
               <div class="flag-run-row w-100">
                 <span class="mr-auto w-25">Run: {{item.processDate}}</span>
                 <span class="ml-auto w-75">
@@ -60,20 +44,17 @@
                       </div>
                     </ng-template>
                   </ng-select>
-
                 </span>
               </div>
             </div>
           </div>
-
         </div>
         <div class="modal-footer">
           <button type="button"
-             class="btn btn-sm btn-primary"
-             data-bs-dismiss="modal">Close</button>
-          <!-- <button type="button"
-           class="btn btn-primary">Save changes</button> -->
+             class="btn btn-sm btn-disabled"
+             data-bs-dismiss="modal">Open Flight List Editor</button>
         </div>
       </div>
     </div>
   </div>
+</div>

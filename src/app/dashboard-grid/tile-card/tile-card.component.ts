@@ -1,4 +1,4 @@
-import { Component, Input, Output, AfterViewInit, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import {
   trigger,
@@ -6,8 +6,8 @@ import {
   style,
   animate,
   transition,
-  // ...
 } from '@angular/animations';
+
 import { DashboardTilesAPIComponent } from 'src/app/api/dashboard-api.service';
 
 @Component({
@@ -17,7 +17,7 @@ import { DashboardTilesAPIComponent } from 'src/app/api/dashboard-api.service';
 
 })
 
-export class TileCardComponent implements AfterViewInit {
+export class TileCardComponent {
 
   public dashboardTile: any;
   public showHistoryModal = false;
@@ -40,7 +40,7 @@ export class TileCardComponent implements AfterViewInit {
 
   @Input()
   set DashboardItem(item: any) {
-    //console.log('item ', item)
+    console.log('item ', item)
     this.dashboardTile = item;
   }
 
@@ -57,13 +57,9 @@ export class TileCardComponent implements AfterViewInit {
   constructor(public dashboardTilesAPIComponent: DashboardTilesAPIComponent) { }
 
 
-  public ngAfterViewInit(): void {
-    // console.log('  DashboardItem ', this.dashboardTile, ' flagRuns ', this.flagRuns)
-  }
-
 
   public getPriorityColor(idx: number): string {
-    const testColors = ['Navy', 'OrangeRed', 'DarkGreen', '#7A2B39', 'DodgerBlue', 'Red'];
+    const testColors = ['Navy', 'OrangeRed', 'DarkGreen', 'YellowGreen', 'DodgerBlue', 'Red', 'Purple', 'MediumSeaGreen', 'Peru'];
     return testColors[idx - 1];
   }
 
@@ -83,15 +79,16 @@ export class TileCardComponent implements AfterViewInit {
       tile.flagRuns.map((o: any) => { return o.historyId; }))
 
     this.dashboardTilesAPIComponent.allFlightList.forEach((fl, i) => {
+
       if (maxValue === fl.id) {
         latestRun = fl;
       }
     })
 
-    console.log('Flights to send pre-stringify ', latestRun.value, '\n\n');
+    console.log('Flights to send pre-stringify ', tile, '\n\n');
     const flightString = JSON.stringify(latestRun.value);
 
-    this.dashboardTilesAPIComponent.toOverviewWithFlightString(flightString)
+    this.dashboardTilesAPIComponent.toOverviewWithFlightString(flightString, tile.flagKey)
 
 
 
@@ -100,12 +97,12 @@ export class TileCardComponent implements AfterViewInit {
 
   public goToDestination(option: any, tile: any) {
 
-    //console.log('goToDestination  All option ', option, ' tile ', tile)
+    console.log('goToDestination  All option ', option, ' tile ', tile)
 
     this.showOptions = false;
 
     if (option === 0) {
-      this.callHistoryModal.emit(this.dashboardTile.flagRuns);
+      this.callHistoryModal.emit(this.dashboardTile);
     } else {
       this.sendFlightsToOverview(this.dashboardTile)
     }

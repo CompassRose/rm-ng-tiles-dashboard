@@ -1,8 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { Router } from '@angular/router';
-import { PathToAssets } from './dashboard-constants';
 import { SortTileOptionsService } from './services/sort-tiles-options.service';
-import { MockService } from './services/tiles-mock-api';
 import { environment } from '../environments/environment';
 import { DashboardTilesAPIComponent } from './api/dashboard-api.service';
 
@@ -14,7 +11,7 @@ import { DashboardTilesAPIComponent } from './api/dashboard-api.service';
 
 
 
-export class AppComponent implements OnInit {
+export class AppComponent {
 
 
   public hassSelectionBeenRegistered = false;
@@ -33,11 +30,14 @@ export class AppComponent implements OnInit {
 
   public allUsersInput: any[] = [];
 
+  public pathId: any;
+
+  public screenState = false;
+
+  public showEditorModal = false;
 
   constructor(
-    public router: Router,
     public sortTileOptionsService: SortTileOptionsService,
-    public mockTileService: MockService,
     public dashboardTilesAPIComponent: DashboardTilesAPIComponent,
     public changeDetector: ChangeDetectorRef) {
 
@@ -49,32 +49,28 @@ export class AppComponent implements OnInit {
         }
 
       })
-
-    // this.dashboardTilesAPIComponent.apiFlagChartData$
-    //   .subscribe((values: any) => {
-    //     if (values) {
-    //       console.log('apiFlagChartData$ ', values)
-    //     }
-
-    //   })
-
-    this.mockTileService.apiPrioritiesSubject$.subscribe((res: any) => {
-      if (res.length > 0) {
-        //  console.log('apiPrioritiesSubject ', res)
-      }
-    })
-
-
   }
 
-
-  public ngOnInit(): void {
-    this.mockTileService.loadConfiguration('mock-priorities');
-  }
 
   // From label cross in selected flag type
   public clear(item: any) {
-    //this.mockTileService.selectFlagTypes(item)
+
+  }
+
+
+  public closeModal() {
+    console.log('closeModal')
+    this.showEditorModal = false;
+  };
+
+  public openModal() {
+    console.log('openModal')
+    this.showEditorModal = true;
+  };
+
+
+  public gotToEditor(state: Boolean) {
+
   }
 
 

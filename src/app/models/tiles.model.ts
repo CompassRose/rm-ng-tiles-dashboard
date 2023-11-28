@@ -30,8 +30,10 @@ export interface FlagRuns {
 }
 
 export interface FlagList {
+
     flagKey: number;
     flagType: number;
+    flagTypeName?: string;
     flightCount: number;
     name: string;
     priority: number;

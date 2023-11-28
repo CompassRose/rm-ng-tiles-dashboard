@@ -13,7 +13,6 @@ import {
   stagger
 } from '@angular/animations';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { AuthenticationService } from '../services/authentication.service';
 
 
 export const fadeAnimation = trigger('fadeAnimation', [
@@ -26,15 +25,14 @@ export const fadeAnimation = trigger('fadeAnimation', [
 ]);
 
 @Component({
-  selector: 'app-grid',
-  templateUrl: './dashboard-grid.component.html',
-  styleUrls: ['./dashboard-grid.component.scss'],
-  animations: [fadeAnimation]
+  selector: 'flight-editor',
+  templateUrl: './flight-editor.component.html',
+  styleUrls: ['./flight-editor.component.scss']
 })
 
 
 
-export class DashboardGridComponent {
+export class FlightEditorComponent {
 
   public showOptions = false;
 
@@ -58,26 +56,14 @@ export class DashboardGridComponent {
 
   public pathId: any;
 
-  public showEditorModal = false;
-
   public selectionOptions: any[] = [
     { idx: 0, name: 'View History' },
     { idx: 1, name: 'Go to Rule' }
   ];
 
   constructor(
-    public router: Router,
-    private route: ActivatedRoute,
-    public authenticationService: AuthenticationService,
+
     public dashboardTilesAPIComponent: DashboardTilesAPIComponent) {
-
-
-
-
-    this.authenticationService.isLoginSubject$
-      .subscribe((log: any) => {
-        // console.log('||||||||||||   Subscribed  log ', log)
-      })
 
     this.dashboardTilesAPIComponent.apiFlagsRunFlight$
       .subscribe((flights: any) => {
@@ -86,19 +72,19 @@ export class DashboardGridComponent {
         }
       })
 
-    this.dashboardTilesAPIComponent.apiFlagsRunElement$
-      .subscribe((flagRuns: any[]) => {
-        if (flagRuns.length > 0) {
-          this.myFlags[this.counter].flagRuns = flagRuns;
-          this.flagsRunFromApi.push(flagRuns)
-          this.counter++;
-        }
+    // this.dashboardTilesAPIComponent.apiFlagsRunElement$
+    //   .subscribe((flagRuns: any[]) => {
+    //     if (flagRuns.length > 0) {
+    //       this.myFlags[this.counter].flagRuns = flagRuns;
+    //       this.flagsRunFromApi.push(flagRuns)
+    //       this.counter++;
+    //     }
 
-        this.selectedFlagRunFlights = flagRuns.map((r: any, i: number) => {
-          this.getFlightLists(r.flagKey, r.historyId)
+    //     this.selectedFlagRunFlights = flagRuns.map((r: any, i: number) => {
+    //       this.getFlightLists(r.flagKey, r.historyId)
 
-        })
-      })
+    //     })
+    //   })
 
 
     this.dashboardTilesAPIComponent.apiFlags$
@@ -125,40 +111,7 @@ export class DashboardGridComponent {
 
   public ngOnInit(): void {
 
-    this.route.paramMap
-      .subscribe((params: ParamMap) => {
-        // console.log('params ', params)
-        if (this.pathId !== params.get('UserId') && this.pathId !== null) {
-          this.pathId = params.get('UserId');
-          console.log('this.pathId ', this.pathId)
-
-          this.dashboardTilesAPIComponent.getActiveUser(this.pathId)
-
-          this.authenticationService.logIn(this.pathId)
-
-          this.dashboardTilesAPIComponent.getAnalystsFlags(this.pathId)
-          this.dashboardTilesAPIComponent.getSupervisorFlags(this.pathId)
-
-          //this.mockTileService.loadConfiguration('mock-priorities');
-        }
-      });
-
   }
-
-  public closeModal() {
-    console.log('closeModal')
-    this.showEditorModal = false;
-    // this.modal.classList.add("hidden");
-    // this.overlay.classList.add("hidden");
-  };
-
-  public openModal() {
-    console.log('openModal')
-    this.showEditorModal = true;
-    // this.modal.classList.remove("hidden");
-    // this.overlay.classList.remove("hidden");
-  };
-
 
   public getFlightLists(key: any, id: number) {
     return this.dashboardTilesAPIComponent.getFlightList(key, id)
@@ -183,6 +136,4 @@ export class DashboardGridComponent {
     })
     this.dashboardTilesAPIComponent.apiFlagsRunFlight$.next(this.flightsToPass)
   }
-
-
 }

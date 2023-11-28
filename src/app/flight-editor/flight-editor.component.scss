@@ -1,0 +1,88 @@
+$grid-contrast: adjust-color(gray, $lightness: 1%) !important;
+
+.clock-svg {
+    width: 16px;
+    height: 16px;
+    background-image: url("../../assets/svg/clock.svg") !important;
+    background-repeat: no-repeat;
+}
+
+.seperator-dot {
+    width: 11px;
+    height: 11px;
+    //left: 10px;
+    //margin-left: 0px;
+    //margin-top: 7px;
+    //position: absolute;
+    background: #3464bc;
+    box-shadow: 0px 0px 1px 2px rgba(0, 14, 67, 0.86);
+    border-radius: 100px;
+    border: 2px white solid;
+    .seperator-line {
+        margin-top: 10px;
+        width: 0px;
+        margin-left: 1px;
+        height: 100%;
+        border: 2px #012169 solid;
+    }
+}
+
+.modal-header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    color: blue !important;
+    padding: var(--bs-modal-header-padding);
+    border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
+    border-top-left-radius: var(--bs-modal-inner-border-radius);
+    border-top-right-radius: var(--bs-modal-inner-border-radius);
+}
+
+.modal-body {
+    position: relative;
+    padding: 8px 10px !important;
+    width: auto;
+    flex: 1 1 auto;
+    height: auto;
+    .dropdown {
+        position: static !important;
+    }
+}
+
+.modal-footer {
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5px !important;
+    background-color: var(--bs-modal-footer-bg);
+    border-top: var(--bs-modal-footer-border-width) solid var(--bs-modal-footer-border-color);
+    border-bottom-right-radius: var(--bs-modal-inner-border-radius);
+    border-bottom-left-radius: var(--bs-modal-inner-border-radius);
+}
+
+.border-gray-bottom {
+    background-color: rgb(240, 240, 240);
+    padding: 3px 12px;
+    border-radius: 5px;
+    margin-bottom: 6px;
+    //border-bottom: 1px solid rgb(197, 197, 197);
+}
+
+.action-center {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.grid-parent {
+    //width: 100% !important;
+    //width: 85% !important;
+    //padding: 0 20px;
+    //margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    //overflow-y: scroll;
+    flex-wrap: wrap;
+}

@@ -53,6 +53,23 @@ body {
   // --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
 }
 
+.btn-disabled {
+  --bs-btn-color: var(--bs-white) !important;
+  --bs-btn-bg: var(--accelya-primary-disabled) !important;
+  --bs-btn-disabled-bg: var(--accelya-primary-disabled) !important;
+  --bs-btn-disabled-color: var(--accelya-primary-color-disabled) !important;
+  // --bs-btn-border-color: var(--bd-violet);
+  --bs-border-radius: 6px !important;
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: var(--button-primary-blue-hover) !important;
+  // --bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+  //--bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-focus-shadow-rgb: var(--bs-white) !important;
+  --bs-btn-active-color: var(--bs-btn-hover-color) !important;
+  --bs-btn-active-bg: var(--button-primary-blue-pressed) !important;
+  // --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
+}
+
 // content-frame-comb-drop-input d-flex align-items-center
 .btn-primary-2 {
   --bs-btn-color: var(--bs-white);

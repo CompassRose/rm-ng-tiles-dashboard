@@ -59,128 +59,121 @@
     align-items: flex-start;
     justify-content: stretch;
     border-radius: 7px;
-    flex-wrap: wrap;
-    //min-height: 220px;
+    flex-wrap: nowrap;
+    height: 20vh;
 
     &.navy-background {
       background-color: $accelya-primary-blue;
       color: var(--txt-bgwhite);
     }
 
-    .logo-flight-nfo {
-      flex-wrap: nowrap;
-      padding: 10px;
-
-      .accelya-text-img {
-        width: 10px;
-        height: 20px;
-        display: flex;
-      }
-    }
-
     .priority-parent {
-      background-color: $accelya-primary-blue;
+      // background-color: $accelya-primary-blue;
       //border: 1px solid black;
-      min-width: 33%;
-      //height: 100%;
+      width: 33%;
+      height: 100% !important;
     }
 
     .analayst-parent {
-      background-color: $accelya-primary-blue;
+      //background-color: $accelya-primary-blue;
       //border: 1px solid black;
-      min-width: 33%;
-      //height: 100%;
+      width: 33%;
+      height: 100% !important;
     }
 
     .list-parent {
-      min-width: 33%;
+      width: 33%;
       margin-top: auto !important;
       display: flex;
       flex-direction: column;
       background-color: $accelya-primary-blue;
       //border: 1px solid black;
       align-items: flex-start;
-      justify-content: flex-start;
-      height: 225px;
-      //height: 100%;
-    }
-
-    .list-rect-group {
-      margin-top: auto;
-      padding-bottom: 20px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-
-      .list-column {
+      height: 100% !important;
+      .title-text {
+        margin-top: 10px;
+        font-size: 15px;
+        font-weight: normal;
+        color: white;
+      }
+      .list-rect-group {
+        margin-top: auto;
+        padding-bottom: 20px;
         display: flex;
-        flex-direction: column;
-
-        .list-row-group {
+        flex-direction: row;
+        //align-items: center;
+        min-width: 100% !important;
+        .list-column {
           display: flex;
-          align-items: center;
-
-          .left-strip {
-            width: 8px;
-            height: 65px;
-            margin: 0 0px 10px 5px;
-            border-top-left-radius: 6px;
-            border-bottom-left-radius: 6px;
-            margin-right: auto;
-            &.blue-tint {
-              background-color: rgb(55, 55, 189);
-            }
-            &.magenta-tint {
-              background-color: rgb(167, 65, 180);
-            }
-            &.orange-tint {
-              background-color: rgb(184, 94, 42);
-            }
-            &.green-tint {
-              background-color: rgb(22, 95, 22);
-            }
-          }
-
-          .list-rect {
+          flex-direction: column;
+          //width: 45% !important;
+          max-height: 100% !important;
+          min-width: 50%;
+          .list-row-group {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            width: 12.5rem;
-
-            height: 4.2rem;
-            padding-left: 10px;
-            margin: auto 5px 10px 0;
-            border-top-right-radius: 6px;
-            border-bottom-right-radius: 6px;
-            box-shadow: 0px 2px 8px rgba(1, 99, 226, 0.3);
-            background-color: rgba(0, 0, 0, 0.25);
-
-            .todo-calendar {
-              // z-index: 11001;
-              margin-top: 20px;
-              margin-right: 0px;
-              background-image: url("../assets/svg/todo-calendar.svg") !important;
-              background-repeat: no-repeat;
-              width: 45px;
-              height: 45px;
+            justify-content: flex-start;
+            max-height: 50%;
+            .left-strip {
+              width: 8px;
+              height: 65px;
+              margin: 0 0px 10px 5px;
+              border-top-left-radius: 6px;
+              border-bottom-left-radius: 6px;
+              margin-right: auto;
+              &.blue-tint {
+                background-color: rgb(55, 55, 189);
+              }
+              &.magenta-tint {
+                background-color: rgb(167, 65, 180);
+              }
+              &.orange-tint {
+                background-color: rgb(184, 94, 42);
+              }
+              &.green-tint {
+                background-color: rgb(22, 95, 22);
+              }
             }
-          }
 
-          .list-text-group {
-            display: flex;
-            flex-direction: column;
-            .list-sub {
-              font-size: 12px;
-              font-size: 12px;
-              line-height: 20px;
-              font-weight: 400;
-              color: #c2d0eb;
+            .list-rect {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 100%;
+
+              max-height: 4.2rem;
+              padding-left: 10px;
+              margin: auto 5px 10px 0;
+              border-top-right-radius: 6px;
+              border-bottom-right-radius: 6px;
+              box-shadow: 0px 2px 8px rgba(1, 99, 226, 0.3);
+              background-color: rgba(0, 0, 0, 0.25);
+
+              .todo-calendar {
+                margin-top: 20px;
+                margin-right: 0px;
+                background-image: url("../assets/svg/todo-calendar.svg") !important;
+                background-repeat: no-repeat;
+                width: 45px;
+                height: 45px;
+              }
+            }
+
+            .list-text-group {
+              display: flex;
+              flex-direction: column;
+              .list-sub {
+                font-size: 12px;
+                font-size: 12px;
+                line-height: 20px;
+                font-weight: 400;
+                color: #c2d0eb;
+              }
             }
           }
         }
       }
     }
-
     .menu-bar-lower {
       min-width: 75% !important;
       .routes {
@@ -223,8 +216,100 @@
 
 .airRm-text {
   color: #5f1baf;
-  font-size: 22px;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: bold;
   line-height: 28px; /* 140% */
+}
+
+.mymodal {
+  margin: 20 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.4rem;
+  width: 50%;
+  padding: 1.3rem;
+  height: 250px;
+  position: absolute;
+  z-index: 1100;
+  top: 20%;
+  left: calc(100% / 4) !important;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  &.hidden {
+    display: none;
+  }
+  &.shown {
+    display: flex;
+  }
+}
+
+.mymodal .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mymodal input {
+  padding: 0.7rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+.mymodal p {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0.4rem 0 0.2rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  font-weight: 700;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1em;
+}
+
+.btn-open {
+  position: absolute;
+  bottom: 150px;
+}
+
+.btn-close {
+  transform: translate(10px, -20px);
+  padding: 0.5rem 0.7rem;
+  background: #eee;
+  border-radius: 50%;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+  &.hidden {
+    display: none;
+  }
+  &.shown {
+    display: block;
+  }
 }

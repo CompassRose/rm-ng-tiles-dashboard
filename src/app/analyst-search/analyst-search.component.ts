@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
-import { SortTileOptionsService } from '../services/sort-tiles-options.service';
+
 import { of, delay, Observable, BehaviorSubject } from 'rxjs';
 import { UserModel, ApiUserModel } from '../models/tiles.model';
 import { DashboardTilesAPIComponent } from '../api/dashboard-api.service';
@@ -27,7 +27,7 @@ export class AnalystSearchComponent implements OnInit {
     public selectedUsersBySupervisor: any[] = [];
     //  public selectedUsers: UserModel[] = [];
 
-    constructor(public sortTileOptionsService: SortTileOptionsService, public dashboardTilesAPIComponent: DashboardTilesAPIComponent) {
+    constructor(public dashboardTilesAPIComponent: DashboardTilesAPIComponent) {
 
         this.dashboardTilesAPIComponent.apiAllUsers$
             .subscribe((params: any) => {

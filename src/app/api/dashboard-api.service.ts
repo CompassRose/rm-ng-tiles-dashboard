@@ -1,33 +1,26 @@
-import { Component, OnInit, Injectable } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { map, merge, Observable, Subject, debounceTime, BehaviorSubject } from 'rxjs';
-import { FlagRuns, FlagList, UserModel } from '../models/tiles.model';
-import { of, timer, from, startWith, tap, finalize, concatMap, takeUntil, interval, filter, switchMap, takeWhile } from 'rxjs';
-
-
-
-import { environment } from '../../environments/environment.development';
-
-// import {  } from '../models/tiles.model';
+import { Injectable } from '@angular/core';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { FlagRuns, FlagList } from '../models/tiles.model';
+import { timer, startWith, switchMap } from 'rxjs';
 import { FlagsDashboardDotNetWrapper } from './Flags-dashboard-Interface';
-
 import { DateFormatterPipe } from '../shared/pipes/dateModifierPipe';
+import * as moment from 'moment';
+import { flagTypes, } from '../dashboard-constants';
 
-
-const dateModifierPipe = new DateFormatterPipe();
+//const dateModifierPipe = new DateFormatterPipe();
 
 @Injectable({
     providedIn: 'root'
 })
 
-// 1371
-//1372
 
 export class DashboardTilesAPIComponent {
 
     public flagRuns: FlagRuns[] = [];
 
     public userFlags: FlagList[] = [];
+
+    public apiFlags$ = new BehaviorSubject<FlagList[]>([]);
 
     public activeUser: any;
 
@@ -38,10 +31,6 @@ export class DashboardTilesAPIComponent {
     public apiFlagChartData$ = new Subject<any>();
 
     public apiAllUsers$ = new BehaviorSubject<any>([]);
-
-    //public showHistoryModal$ = new BehaviorSubject<Boolean>(false);
-
-    public apiFlags$ = new BehaviorSubject<FlagList[]>([]);
 
     public apiFlagsRunElement$ = new BehaviorSubject<FlagRuns[]>([]);
 
@@ -57,6 +46,8 @@ export class DashboardTilesAPIComponent {
 
     public allUsersInput: any[] = [];
 
+    public apiPrioritiesSubject$ = new BehaviorSubject<any[]>([]);
+    public apiFlightsByNdoSubject$ = new BehaviorSubject<any[]>([]);
 
 
     constructor(public flagsDashboardDotNetWrapper: FlagsDashboardDotNetWrapper) {
@@ -76,11 +67,20 @@ export class DashboardTilesAPIComponent {
             }
         });
 
+        this.apiFlagChartData$
+            .subscribe((values: any) => {
+                if (values) {
+                    console.log('apiFlagChartData$ ', values)
+                    this.apiPrioritiesSubject$.next(values.priorityData);
+                    this.apiFlightsByNdoSubject$.next(values.ndoData)
+                }
+            })
+
     }
 
 
-    public toOverviewWithFlightString(flightStr: string) {
-        this.flagsDashboardDotNetWrapper.ToOverview(flightStr);
+    public toOverviewWithFlightString(flightStr: string, key: number) {
+        this.flagsDashboardDotNetWrapper.ToOverview(flightStr, key, this.activeUser.userId);
     }
 
 
@@ -98,19 +98,19 @@ export class DashboardTilesAPIComponent {
     }
 
 
-    // Negative SA values form API are fine - Display them as zero
-    // First time through 
+
     public getActiveUser(id: string) {
 
         let parser: any;
         this.flagsDashboardDotNetWrapper.GetUser(id)
             .then((response: string) => {
+                console.log('getActiveUser ', response)
                 parser = JSON.parse(response);
-                parser.userID = parser.userID.split(" ").join("");
-                parser.fullName = parser.fullName.split(" ").join("");
-                parser.userType = parser.userType.split(" ").join("");
+                //parser.userID = parser.userID.split(" ").join("");
+                // parser.fullName = parser.fullName.split(" ").join("");
+                //parser.userType = parser.userType.split(" ").join("");
                 this.activeUser = parser;
-                console.log('getActiveUser ', this.activeUser)
+
                 this.apiLoggedInUser$.next(parser)
                 this.getAllAnalystUsers()
             })
@@ -120,8 +120,9 @@ export class DashboardTilesAPIComponent {
 
 
     public getAnalystsFlags(user: string) {
-        // console.log('getActiveUser ', ' user ', user)
+        ///console.log('getActiveUser ', ' user ', user)
         let parser: FlagList[] = [];
+
 
         this.flagsDashboardDotNetWrapper.GetAnalystFlags(user)
             .then((response: string) => {
@@ -129,6 +130,9 @@ export class DashboardTilesAPIComponent {
                 parser = JSON.parse(response);
                 parser.forEach((flag, i) => {
                     //flag.name = flag.name.split(" ").join("");
+                    let formatted = moment(flag.processDate);
+                    flag.flagTypeName = flagTypes[flag.flagType].name;
+                    flag.processDate = formatted.format('YYYY/M/DD: h:mm A')
                     flag['flagRuns'] = [];
                     this.userFlags.push(flag)
                 })
@@ -146,9 +150,9 @@ export class DashboardTilesAPIComponent {
             .then((response: string) => {
                 parser = JSON.parse(response);
                 this.apiFlagChartData$.next(parser)
+
                 //console.log('GetAnalystFlagChartData  ', parser);
             })
-
     }
 
     public getAllAnalystUsers() {
@@ -197,27 +201,27 @@ export class DashboardTilesAPIComponent {
         let parser: any = {};
         let myTest;
         this.allFlightList = []
-        const flightHolder = this.flagsDashboardDotNetWrapper.GetFlightList(key, historyId)
+
+        const flightHolder = this.flagsDashboardDotNetWrapper.GetFlightList(key, historyId, this.activeUser.userId)
             .then((response: string) => {
-                //console.log('getFlightList ', key, ' historyId ', historyId)
-
                 parser = JSON.parse(response);
-
-                //  console.log('       getFlightList  ', ' tester ', ' parser ', parser)
                 return parser
             })
         flightHolder
             .then((response: any) => {
 
                 myTest = response;
-                // console.log(' myTest ', myTest)
+
+                myTest.flights.map((f: any, i: number) => {
+                    let formatted = moment(f.departureDate);
+                    f.departureDate = formatted.format('YYYY-MM-DD: h:mm A')
+                    return f;
+                })
+                // console.log('GetFlightList ', myTest.flights)
                 this.allFlightList.push({ id: historyId, value: myTest })
             })
-
-
-        //console.log(' tester2 this.allFlightList ', myTest)
-        //return this.allFlightList
     }
+
 
     public getReviews(key: number) {
         let parser: any[] = [];
@@ -226,8 +230,6 @@ export class DashboardTilesAPIComponent {
                 parser = JSON.parse(response);
                 // console.log('getReviews ', parser)
             })
-
     }
-
 
 }

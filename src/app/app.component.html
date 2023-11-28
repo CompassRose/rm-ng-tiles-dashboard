@@ -16,52 +16,54 @@
           </div>
         </div>
       </div>
+      <button class='btn btn-sm btn-primary-1'
+         (click)="gotToEditor(screenState = !screenState)">Editor</button>
       <span class="body-text body-12-16-400 text-p-blue me-2">v: {{currentApplicationVersion}}</span>
     </div>
     <div class="header navy-background">
       <section class="priority-parent">
-        <div class="fw-600 ms-3 mt-2">Priority Status</div>
+        <!-- <div class="fw-600 ms-3 mt-2">Priority Status</div> -->
         <app-priority-chart></app-priority-chart>
       </section>
       <section class="analayst-parent">
-        <div class="fw-600 mt-2">Affected Flights by NDO</div>
+        <!-- <div class="fw-600 mt-2">Affected Flights by NDO</div> -->
         <monthly-flags-chart></monthly-flags-chart>
       </section>
       <section class="list-parent">
 
-        <div class="fw-600">My List</div>
+        <div class="title-text">My Lists</div>
         <div class="list-rect-group">
-          <section>
-            <div class="list-column">
-              <div class="list-row-group">
-                <div class="left-strip blue-tint"></div>
-                <div class="list-rect">
-                  <div class="list-text-group subtitle-text sub-title-20-28-600 ms-2">
-                    Title
-                    <div class="list-sub">421 Flights</div>
-                  </div>
-                  <div class="todo-calendar"></div>
+
+          <div class="list-column">
+            <div class="list-row-group">
+              <div class="left-strip blue-tint"></div>
+              <div class="list-rect">
+                <div class="list-text-group body-text body-16-24-600 text-slate-blue ms-2">
+                  List 1
+                  <div class="list-sub">421 Flights</div>
                 </div>
-              </div>
-              <div class="list-row-group">
-                <div class="left-strip orange-tint"></div>
-                <div class="list-rect">
-                  <div class="list-text-group subtitle-text sub-title-20-28-600 ms-2">
-                    Title
-                    <div class="list-sub">388 Flights</div>
-                  </div>
-                  <div class="todo-calendar"></div>
-                </div>
+                <div class="todo-calendar"></div>
               </div>
             </div>
-          </section>
+            <div class="list-row-group">
+              <div class="left-strip orange-tint"></div>
+              <div class="list-rect">
+                <div class="list-text-group body-text body-16-24-600 text-slate-blue ms-2">
+                  List 2
+                  <div class="list-sub">388 Flights</div>
+                </div>
+                <div class="todo-calendar"></div>
+              </div>
+            </div>
+          </div>
+
           <div class="list-column">
             <div class="list-rect">
               <div class="list-row-group">
                 <div class="left-strip magenta-tint"></div>
                 <div class="list-rect">
-                  <div class="list-text-group subtitle-text sub-title-20-28-600 ms-2">
-                    Title
+                  <div class="list-text-group body-text body-16-24-600 text-slate-blue ms-2">
+                    List 3
                     <div class="list-sub">126 Flights</div>
                   </div>
                   <div class="todo-calendar"></div>
@@ -70,8 +72,8 @@
               <div class="list-row-group">
                 <div class="left-strip green-tint"></div>
                 <div class="list-rect">
-                  <div class="list-text-group subtitle-text sub-title-20-28-600 ms-2">
-                    Title
+                  <div class="list-text-group body-text body-16-24-600 text-slate-blue ms-2">
+                    List 4
                     <div class="list-sub">421 Flights</div>
                   </div>
                   <div class="todo-calendar"></div>
@@ -79,10 +81,39 @@
               </div>
             </div>
           </div>
+
         </div>
       </section>
     </div>
+
+    <section class="mymodal"
+       [ngClass]="showEditorModal ? 'modal shown' : 'modal hidden'">
+
+      <div class="flex">
+        <button class="btn-close">⨉</button>
+      </div>
+      <div>
+        <h3>Stay in touch</h3>
+        <p>
+          This is a dummy newsletter form so don't bother trying to test it. Not
+          that I expect you to, anyways. :)
+        </p>
+      </div>
+
+      <button class="btn"
+         (click)="closeModal()">Do Something</button>
+
+    </section>
+
+    <button class="btn btn-open"
+       (click)="openModal()">Open Modal</button>
+
+
+    <div class="overlay"
+       [ngClass]="!showEditorModal ? 'modal hidden' : 'modal shown'"></div>
+
     <div class="content-parent">
+
       <div class="floating-control-panel py-2">
 
         <div *ngIf="(dashboardTilesAPIComponent.apiLoggedInUser$ | async) as loggedInUserType"
@@ -93,8 +124,8 @@
         </div>
 
         <div class="menu-bar-items flags">
-          <div class="list-column-group w-25 mr-auto ms-2">
-            Flag Type
+          <div class="list-column-group mr-auto mx-2">
+            Flag Type:
           </div>
           <div *ngIf="(sortTileOptionsService.flagTypeBehaviorSubject$ | async) as flags"
              class="ml-auto w-75">
@@ -123,8 +154,8 @@
           </div>
         </div>
         <div class="menu-bar-items priorities">
-          <div class="list-column-group w-25 mr-auto ms-2">
-            Sort By
+          <div class="list-column-group mr-auto mx-2">
+            Sort By:
           </div>
           <div *ngIf="(sortTileOptionsService.priorityListBehaviorSubject$ | async) as priorities"
              class="ml-auto w-75">
@@ -149,7 +180,6 @@
             </ng-select>
           </div>
         </div>
-
       </div>
       <router-outlet></router-outlet>
     </div>

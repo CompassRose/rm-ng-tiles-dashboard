@@ -137,8 +137,8 @@ $font-family: "OpenSans-Semibold", sans-serif;
   color: $accelya-primary-blue;
 
   &.headline-20-28-600 {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 400;
     line-height: 28px;
   }
 
@@ -164,9 +164,15 @@ $font-family: "OpenSans-Semibold", sans-serif;
   &.text-p-blue {
     color: var(--accelya-primary-blue);
   }
+  &.text-s-blue {
+    color: rgba(100, 100, 255, 1);
+  }
   // text-body-plat
   &.text-body-plat {
-    color: var(--body-02-txt-color);
+    color: var(--accelya-primary-blue);
+  }
+  &.text-slate-blue {
+    color: var(--bg-light-blue);
   }
   &.body-10-14-400 {
     font-size: 10px;

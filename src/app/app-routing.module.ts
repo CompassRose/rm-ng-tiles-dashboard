@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FlagDisplaySupportComponent } from './flag-display-support/flag-display-support.component';
+import { DashboardGridComponent } from './dashboard-grid/dashboard-grid.component';
+import { FlightEditorComponent } from './flight-editor/flight-editor.component';
 
 const routes: Routes = [
-
-  { path: 'grid/:UserId', component: FlagDisplaySupportComponent },
+  { path: 'grid/:UserId', component: DashboardGridComponent },
+  { path: 'flightEdit', component: FlightEditorComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 
