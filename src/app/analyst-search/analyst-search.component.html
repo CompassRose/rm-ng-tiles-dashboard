@@ -14,7 +14,6 @@
            [items]="users"
            [bindLabel]="'fullName'">
             <ng-template ng-header-tmp>
-
                 <div class="div-wrapper">
                     <input type="checkbox"
                        [checked]="getNumAnalystsSelected()"
@@ -39,22 +38,10 @@
                         more...</span>
                 </div>
             </ng-template>
-            <!-- <ng-template ng-label-tmp
-               let-item="item"
-               let-i="index">
-                <div>
-                    {{item.fullName}}
-                </div>
-            </ng-template> -->
             <ng-template ng-option-tmp
                let-item="item"
                let-i="index">
                 <div class="analyst-row w-100">
-                    <!-- <div class="me-2">
-                            <img height="35"
-                               width="35"
-                               [src]="item.avatar" />
-                        </div> -->
                     <input type="checkbox"
                        [checked]="item.state"
                        (change)="onAdd(i)" />
@@ -70,5 +57,4 @@
             </ng-template>
         </ng-select>
     </div>
-
 </div>

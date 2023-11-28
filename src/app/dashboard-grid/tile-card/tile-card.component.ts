@@ -48,7 +48,7 @@ export class TileCardComponent {
   @Input()
   set FlagRuns(runs: any) {
     if (runs.length > 0) {
-      console.log(' @Input this.flagRuns ', this.flagRuns)
+      //console.log(' @Input this.flagRuns ', this.flagRuns)
       // this.flagRuns.push(runs);
     }
   }

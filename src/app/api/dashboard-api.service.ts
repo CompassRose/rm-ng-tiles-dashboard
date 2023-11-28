@@ -6,6 +6,7 @@ import { FlagsDashboardDotNetWrapper } from './Flags-dashboard-Interface';
 import { DateFormatterPipe } from '../shared/pipes/dateModifierPipe';
 import * as moment from 'moment';
 import { flagTypes, } from '../dashboard-constants';
+import { AuthenticationService } from '../services/authentication.service';
 
 //const dateModifierPipe = new DateFormatterPipe();
 
@@ -25,8 +26,6 @@ export class DashboardTilesAPIComponent {
     public activeUser: any;
 
     public allFlightList: any[] = [];
-
-    public apiLoggedInUser$ = new BehaviorSubject<any>([]);
 
     public apiFlagChartData$ = new Subject<any>();
 
@@ -50,16 +49,14 @@ export class DashboardTilesAPIComponent {
     public apiFlightsByNdoSubject$ = new BehaviorSubject<any[]>([]);
 
 
-    constructor(public flagsDashboardDotNetWrapper: FlagsDashboardDotNetWrapper) {
+    constructor(
+        public flagsDashboardDotNetWrapper: FlagsDashboardDotNetWrapper,
+        public authenticationService: AuthenticationService) {
 
         this.initializeTimer();
 
         this.timerObservable.subscribe((val: any) => {
             this.getFlagsCounter = val;
-
-            // if (this.getFlagsCounter % 5 === 0) {
-            //     //  console.log('       Counter >>>>>>>  ', this.getFlagsCounter);
-            // }
 
             if (this.getFlagsCounter > 300) {
                 console.log('Restarting 5 Minute Timer ', this.getFlagsCounter)
@@ -70,7 +67,7 @@ export class DashboardTilesAPIComponent {
         this.apiFlagChartData$
             .subscribe((values: any) => {
                 if (values) {
-                    console.log('apiFlagChartData$ ', values)
+                    // console.log('apiFlagChartData$ ', values)
                     this.apiPrioritiesSubject$.next(values.priorityData);
                     this.apiFlightsByNdoSubject$.next(values.ndoData)
                 }
@@ -85,7 +82,6 @@ export class DashboardTilesAPIComponent {
 
 
     public initializeTimer(): void {
-        // console.log('initializing Timer ', this.getFlagsCounter)
         this.timerObservable = this.resetFiveMinuteTimer$.pipe(
             startWith(void 0),
             switchMap(() => timer(1000, 1000))
@@ -104,14 +100,14 @@ export class DashboardTilesAPIComponent {
         let parser: any;
         this.flagsDashboardDotNetWrapper.GetUser(id)
             .then((response: string) => {
-                console.log('getActiveUser ', response)
+                //console.log('getActiveUser ', response)
                 parser = JSON.parse(response);
                 //parser.userID = parser.userID.split(" ").join("");
                 // parser.fullName = parser.fullName.split(" ").join("");
                 //parser.userType = parser.userType.split(" ").join("");
                 this.activeUser = parser;
 
-                this.apiLoggedInUser$.next(parser)
+                this.authenticationService.logIn(parser);
                 this.getAllAnalystUsers()
             })
     }
@@ -129,14 +125,13 @@ export class DashboardTilesAPIComponent {
                 //console.log('GetAnalystFlags response ', response)
                 parser = JSON.parse(response);
                 parser.forEach((flag, i) => {
-                    //flag.name = flag.name.split(" ").join("");
                     let formatted = moment(flag.processDate);
-                    flag.flagTypeName = flagTypes[flag.flagType].name;
-                    flag.processDate = formatted.format('YYYY/M/DD: h:mm A')
+                    flag.flagTypeName = flagTypes[flag.flagType + 1].name;
+                    flag.processDate = formatted.format('YYYY/M/DD h:mm A')
                     flag['flagRuns'] = [];
                     this.userFlags.push(flag)
                 })
-                console.log('this.userFlags ', this.userFlags)
+                //console.log('this.userFlags ', this.userFlags)
                 this.apiFlags$.next(this.userFlags);
                 this.getAnalystFlagChartData(user)
             })
@@ -188,8 +183,9 @@ export class DashboardTilesAPIComponent {
         let parser: FlagRuns[] = [];
         this.flagsDashboardDotNetWrapper.GetFlagRuns(flagKey)
             .then((response: string) => {
-                //console.log('getFlagRuns response ', response)
+
                 parser = JSON.parse(response);
+                // console.log('getFlagRuns parser ', parser)
                 this.apiFlagsRunElement$.next(parser)
             })
     }
@@ -214,7 +210,7 @@ export class DashboardTilesAPIComponent {
 
                 myTest.flights.map((f: any, i: number) => {
                     let formatted = moment(f.departureDate);
-                    f.departureDate = formatted.format('YYYY-MM-DD: h:mm A')
+                    f.departureDate = formatted.format('YYYY-MM-DD h:mm A')
                     return f;
                 })
                 // console.log('GetFlightList ', myTest.flights)

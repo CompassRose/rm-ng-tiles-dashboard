@@ -8,9 +8,16 @@ export enum ImagePath {
 
 
 export const flagTypes = [
-    { id: 0, name: 'Exception', metric: 'exception' },
-    { id: 1, name: 'Alert', metric: 'alert' },
-    { id: 2, name: 'Action', metric: 'action' },
+    { id: 0, name: 'All', metric: 'all' },
+    { id: 1, name: 'Exception', metric: 'exception' },
+    { id: 2, name: 'Alert', metric: 'alert' },
+    { id: 3, name: 'Action', metric: 'action' },
+];
+
+export const priorityItems = [
+    { id: 0, name: 'Priority', metric: 'priority' },
+    { id: 1, name: 'Last Run', metric: 'processDate' },
+    { id: 2, name: 'Reviewed', metric: 'reviewed' }
 ];
 
 export const PathToAssets = ImagePath.devPathToAssets;

@@ -260,9 +260,10 @@ a {
 .flight-details-select {
   font-size: 12px;
   //width: 100% !important;
-  width: 30rem !important;
+  width: 20rem !important;
   margin-left: auto;
   .flight-dropdown {
+    overflow-y: scroll;
     font-size: 12px;
   }
 }

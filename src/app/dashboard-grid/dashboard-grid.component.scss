@@ -27,41 +27,41 @@ $grid-contrast: adjust-color(gray, $lightness: 1%) !important;
     }
 }
 
-// .modal-header {
-//     display: flex;
-//     flex-shrink: 0;
-//     align-items: center;
-//     justify-content: space-between;
-//     color: blue !important;
-//     padding: var(--bs-modal-header-padding);
-//     border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
-//     border-top-left-radius: var(--bs-modal-inner-border-radius);
-//     border-top-right-radius: var(--bs-modal-inner-border-radius);
-// }
+.modal-header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    color: blue !important;
+    padding: var(--bs-modal-header-padding);
+    border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
+    border-top-left-radius: var(--bs-modal-inner-border-radius);
+    border-top-right-radius: var(--bs-modal-inner-border-radius);
+}
 
-// .modal-body {
-//     position: relative;
-//     padding: 8px 10px !important;
-//     width: auto;
-//     flex: 1 1 auto;
-//     height: auto;
-//     .dropdown {
-//         position: static !important;
-//     }
-// }
+.modal-body {
+    position: relative;
+    padding: 8px 10px !important;
+    width: auto;
+    flex: 1 1 auto;
+    height: auto;
+    .dropdown {
+        position: static !important;
+    }
+}
 
-// .modal-footer {
-//     display: flex;
-//     flex-shrink: 0;
-//     flex-wrap: wrap;
-//     align-items: center;
-//     justify-content: flex-end;
-//     padding: 5px !important;
-//     background-color: var(--bs-modal-footer-bg);
-//     border-top: var(--bs-modal-footer-border-width) solid var(--bs-modal-footer-border-color);
-//     border-bottom-right-radius: var(--bs-modal-inner-border-radius);
-//     border-bottom-left-radius: var(--bs-modal-inner-border-radius);
-// }
+.modal-footer {
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5px !important;
+    background-color: var(--bs-modal-footer-bg);
+    border-top: var(--bs-modal-footer-border-width) solid var(--bs-modal-footer-border-color);
+    border-bottom-right-radius: var(--bs-modal-inner-border-radius);
+    border-bottom-left-radius: var(--bs-modal-inner-border-radius);
+}
 
 .border-gray-bottom {
     background-color: rgb(240, 240, 240);

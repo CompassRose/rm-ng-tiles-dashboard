@@ -72,11 +72,9 @@ export class DashboardGridComponent {
     public dashboardTilesAPIComponent: DashboardTilesAPIComponent) {
 
 
-
-
-    this.authenticationService.isLoginSubject$
-      .subscribe((log: any) => {
-        // console.log('||||||||||||   Subscribed  log ', log)
+    this.authenticationService.isUserLoginSubject$
+      .subscribe((user: any) => {
+        console.log('authenticationService Subscribed  user ', user)
       })
 
     this.dashboardTilesAPIComponent.apiFlagsRunFlight$
@@ -102,11 +100,17 @@ export class DashboardGridComponent {
 
 
     this.dashboardTilesAPIComponent.apiFlags$
-      .subscribe((flags: FlagList[]) => {
-        this.myFlags = flags;
-        flags.forEach((f, i) => {
-          this.dashboardTilesAPIComponent.getFlagRuns(f.flagKey)
-        })
+      .subscribe((flags: any[]) => {
+        if (flags.length > 0) {
+          this.myFlags = flags;
+          flags.forEach((f: any, i: number) => {
+            if (f.flagRuns.length === 0) {
+              this.dashboardTilesAPIComponent.getFlagRuns(f.flagKey)
+            } else {
+              console.log('TEST flags ', f.flagRuns)
+            }
+          })
+        }
       })
 
 
@@ -131,15 +135,9 @@ export class DashboardGridComponent {
         if (this.pathId !== params.get('UserId') && this.pathId !== null) {
           this.pathId = params.get('UserId');
           console.log('this.pathId ', this.pathId)
-
-          this.dashboardTilesAPIComponent.getActiveUser(this.pathId)
-
-          this.authenticationService.logIn(this.pathId)
-
-          this.dashboardTilesAPIComponent.getAnalystsFlags(this.pathId)
-          this.dashboardTilesAPIComponent.getSupervisorFlags(this.pathId)
-
-          //this.mockTileService.loadConfiguration('mock-priorities');
+          this.dashboardTilesAPIComponent.getActiveUser(this.pathId);
+          this.dashboardTilesAPIComponent.getAnalystsFlags(this.pathId);
+          this.dashboardTilesAPIComponent.getSupervisorFlags(this.pathId);
         }
       });
 

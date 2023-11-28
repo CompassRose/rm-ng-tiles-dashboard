@@ -7,17 +7,15 @@
       <span class="airRm-text">AirRM </span>
       <span class="headline-text headline-20-28-600 ps-3">Flags Dashboard</span>
       <div class="logging-center">
-        <div *ngIf="(dashboardTilesAPIComponent.apiLoggedInUser$ | async) as loggedInUser">
+        <div *ngIf="(authenticationService.isUserLoginSubject$ | async) as loggedInUser">
           <div class="logged-in-as ms-2">
-            <div class="body-text body-12-16-600 text-body-plat">User: {{loggedInUser.userID}}</div>
+            <div class="body-text body-12-16-600 text-body-plat">User: {{loggedInUser.userId}}</div>
             <!-- <div class="body-text body-12-16-400 text-body-plat">{{loggedInUser.fullName}}</div> -->
             <div *ngIf="loggedInUser.isSupervisor"
                class="body-text body-12-16-400 text-body-plat">Supervisor</div>
           </div>
         </div>
       </div>
-      <button class='btn btn-sm btn-primary-1'
-         (click)="gotToEditor(screenState = !screenState)">Editor</button>
       <span class="body-text body-12-16-400 text-p-blue me-2">v: {{currentApplicationVersion}}</span>
     </div>
     <div class="header navy-background">
@@ -89,15 +87,14 @@
     <section class="mymodal"
        [ngClass]="showEditorModal ? 'modal shown' : 'modal hidden'">
 
-      <div class="flex">
+      <div class="d-flex">
         <button class="btn-close">⨉</button>
       </div>
-      <div>
-        <h3>Stay in touch</h3>
-        <p>
-          This is a dummy newsletter form so don't bother trying to test it. Not
-          that I expect you to, anyways. :)
-        </p>
+      <div class="grid-parent"
+         *ngIf="(dashboardTilesAPIComponent.apiFlags$ | async) as flagList">
+        <div *ngFor="let item of flagList">
+          {{item.flagTypeName}}
+        </div>
       </div>
 
       <button class="btn"
@@ -112,11 +109,13 @@
     <div class="overlay"
        [ngClass]="!showEditorModal ? 'modal hidden' : 'modal shown'"></div>
 
+
+
     <div class="content-parent">
 
       <div class="floating-control-panel py-2">
 
-        <div *ngIf="(dashboardTilesAPIComponent.apiLoggedInUser$ | async) as loggedInUserType"
+        <div *ngIf="(authenticationService.isUserLoginSubject$ | async) as loggedInUserType"
            class="analyst-width">
           <analyst-search [Users]="loggedInUserType"></analyst-search>
           <!-- <ng-template #placeholder
@@ -131,18 +130,18 @@
              class="ml-auto w-75">
             <ng-select class="custom-select"
                title="Select Flag Type"
-               (change)="sortTileOptionsService.selectFlagTypes($event)"
+               (change)="selectFlagTypes($event)"
                [clearable]="true"
                [searchable]="false"
                [multiple]="false"
                [closeOnSelect]="true"
                (clear)="clear('All');"
-               [(ngModel)]="sortTileOptionsService.selectedFlags"
+               [(ngModel)]="selectedFlags"
                placeholder="Select Flag Type"
-               [items]="sortTileOptionsService.flagTypes">
+               [items]="flags">
               <ng-template ng-label-tmp
                  let-item="item">
-                <div>{{item}}</div>
+                <div>{{item.name}}</div>
               </ng-template>
               <ng-template ng-option-tmp
                  let-item="item">
@@ -161,7 +160,7 @@
              class="ml-auto w-75">
             <ng-select class="custom-select"
                title="Select Priority"
-               (change)="sortTileOptionsService.selectSortMethod($event)"
+               (change)="selectSortMethod($event)"
                [clearable]="true"
                [searchable]="false"
                [(ngModel)]="sortTileOptionsService.selectedPriority"

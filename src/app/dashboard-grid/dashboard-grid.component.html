@@ -1,5 +1,6 @@
 <div class="grid-parent"
    *ngIf="(dashboardTilesAPIComponent.apiFlags$ | async) as flagList">
+
   <div *ngFor="let item of flagList">
     <app-tile-card (callHistoryModal)="updateFlagRun($event)"
        [DashboardItem]="item"
@@ -54,7 +55,9 @@
              class="btn btn-sm btn-disabled"
              data-bs-dismiss="modal">Open Flight List Editor</button>
         </div>
+
       </div>
     </div>
   </div>
+  <!-- <div class="modal-backdrop fade show"></div> -->
 </div>
