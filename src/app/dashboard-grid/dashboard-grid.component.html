@@ -1,3 +1,43 @@
+<section class="mymodal"
+   [ngClass]="showEditorModal ? 'modal shown' : 'modal hidden'">
+  <div class="myheader">
+    <div>Run History</div>
+    <button class="btn-close">⨉</button>
+  </div>
+  <div class="w-100">
+    <div class="flag-run-parent"
+       *ngFor="let item of selectedFlagRuns">
+      <span class="mr-auto w-50">Run: {{item.processDate}}</span>
+      <div class="ml-auto w-100">
+        <span>Flights:</span>
+        <!-- <a class="dropdown-arrow">HI</a> -->
+        <div class="container"
+           cdkDropList
+           id="dashboardTilesAPIComponent.shownFlightList"
+           [cdkDropListData]="dashboardTilesAPIComponent.shownFlightList"
+           [cdkDropListConnectedTo]="['dashboardTilesAPIComponent.shownFlightList']"
+           (cdkDropListDropped)="drop($event)"
+           *ngFor="let items of dashboardTilesAPIComponent.shownFlightList; let i = index">
+          <div class="item"
+             cdkDrag>{{i}} - {{ items.airlineCode }} - {{ items.flightLine }} - Date:
+            {{items.departureDate }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="myfooter ml-auto">
+    <button class="btn btn-primary-1"
+       (click)="closeModal()">Close</button>
+  </div>
+</section>
+
+
+<!-- 
+<button class="btn btn-primary-1"
+   (click)="openModal()">Open Modal</button>
+ -->
+
 <div class="grid-parent"
    *ngIf="(dashboardTilesAPIComponent.apiFlags$ | async) as flagList">
 
@@ -7,6 +47,9 @@
        [FlagRuns]="flagsRunFromApi"></app-tile-card>
   </div>
 </div>
+
+
+
 <div class="modal fade"
    id="exampleModal"
    tabindex="-1"
@@ -28,33 +71,36 @@
             <div class="flex-row border-gray-bottom">
               <div class="flag-run-row w-100">
                 <span class="mr-auto w-25">Run: {{item.processDate}}</span>
-                <span class="ml-auto w-75">
-                  <ng-select class="flight-details-select"
-                     title="Flights"
-                     [clearable]="false"
-                     [searchable]="false"
-                     appendTo=".modal-dialog"
-                     placeholder="View Flights"
-                     [items]="item.flights.value.flights">
-                    <ng-template ng-option-tmp
-                       let-item="item"
-                       let-i="index">
-                      <div class="flight-dropdown">
-                        {{ item.airlineCode }}: {{ item.flightLine }}:: Date: {{
-                        item.departureDate }}
-                      </div>
-                    </ng-template>
-                  </ng-select>
-                </span>
+                <div class="w-75 d-flex align-items-center flight-group">
+                  <span class="me-2">{{item.flightCount}} Flights</span>
+                  <span class="">
+                    <ng-select class="flight-details-select"
+                       title="Flights"
+                       [clearable]="false"
+                       [searchable]="false"
+                       appendTo=".modal-dialog"
+                       placeholder="View Flights"
+                       [items]="item.flights.value.flights">
+                      <ng-template ng-option-tmp
+                         let-item="item"
+                         let-i="index">
+                        <div class="flight-dropdown">
+                          {{ item.airlineCode }}: {{ item.flightLine }}:: Date: {{
+                          item.departureDate }}
+                        </div>
+                      </ng-template>
+                    </ng-select>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="modal-footer">
+        <!-- <div class="modal-footer">
           <button type="button"
              class="btn btn-sm btn-disabled"
              data-bs-dismiss="modal">Open Flight List Editor</button>
-        </div>
+        </div> -->
 
       </div>
     </div>

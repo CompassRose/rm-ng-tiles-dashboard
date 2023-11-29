@@ -1,6 +1,6 @@
 {
   "name": "flag-dashboard",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4201",
@@ -11,7 +11,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^16.2.10",
-    "@angular/cdk": "^15.0.4",
+    "@angular/cdk": "^16.2.10",
     "@angular/common": "^16.2.10",
     "@angular/compiler": "^16.2.10",
     "@angular/core": "^16.2.10",

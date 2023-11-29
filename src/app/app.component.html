@@ -83,34 +83,6 @@
         </div>
       </section>
     </div>
-
-    <section class="mymodal"
-       [ngClass]="showEditorModal ? 'modal shown' : 'modal hidden'">
-
-      <div class="d-flex">
-        <button class="btn-close">⨉</button>
-      </div>
-      <div class="grid-parent"
-         *ngIf="(dashboardTilesAPIComponent.apiFlags$ | async) as flagList">
-        <div *ngFor="let item of flagList">
-          {{item.flagTypeName}}
-        </div>
-      </div>
-
-      <button class="btn"
-         (click)="closeModal()">Do Something</button>
-
-    </section>
-
-    <button class="btn btn-open"
-       (click)="openModal()">Open Modal</button>
-
-
-    <div class="overlay"
-       [ngClass]="!showEditorModal ? 'modal hidden' : 'modal shown'"></div>
-
-
-
     <div class="content-parent">
 
       <div class="floating-control-panel py-2">

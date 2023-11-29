@@ -247,11 +247,14 @@ a {
 .flag-run-row {
   display: flex;
   align-items: center;
-  // text-align: left;
+  text-align: left;
   color: #111111;
   font-size: 13px;
   font-weight: 600;
-  gap: 10px;
+  .flight-group {
+    justify-content: flex-end;
+  }
+  //gap: 10px;
   .dropdown-end {
     align-self: flex-end;
   }

@@ -222,30 +222,69 @@
   line-height: 28px; /* 140% */
 }
 
-.mymodal {
-  margin: 20 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 0.4rem;
-  width: 50%;
-  padding: 1.3rem;
-  height: 250px;
-  position: absolute;
-  z-index: 1100;
-  top: 20%;
-  left: calc(100% / 4) !important;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 15px;
-  &.hidden {
-    display: none;
-  }
-  &.shown {
-    display: flex;
-  }
-}
+// .mymodal {
+//   margin: 20 auto;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: flex-start;
+//   gap: 0.4rem;
+//   width: 50%;
+//   padding: 1.3rem;
+//   height: auto;
+//   position: absolute;
+//   z-index: 1100;
+//   top: 20%;
+//   left: calc(100% / 4) !important;
+//   background-color: white;
+//   border: 1px solid #ddd;
+//   border-radius: 10px;
+
+//   .container {
+//     display: flex;
+//     width: 100% !important;
+//     flex-direction: column;
+//     gap: 10px; /* Adjust the value as needed for the spacing between stacked elements */
+//   }
+
+//   .container .item {
+//     width: 50%;
+//     background-color: #6495ed;
+//     color: white;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     cursor: move;
+//     padding: 1em;
+//     transition: transform 0.2s ease-in-out; /* Add a transition for smooth animation */
+//   }
+
+//   .container .item.cdk-drag-preview {
+//     opacity: 0.8; /* Adjust the opacity of the dragged element preview */
+//     background-color: #ffa500; /* Customize the background color of the dragged element preview */
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow to the dragged element preview */
+//   }
+
+//   .draggable-group {
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     background-color: white;
+//     .drag-list-item {
+//       cursor: pointer;
+//       width: 100%;
+//       background-color: red;
+//       margin-bottom: 2px;
+//       padding: 3px 5px;
+//     }
+//   }
+//   &.hidden {
+//     display: none;
+//   }
+//   &.shown {
+//     display: flex;
+//   }
+// }
 
 .mymodal .flex {
   display: flex;

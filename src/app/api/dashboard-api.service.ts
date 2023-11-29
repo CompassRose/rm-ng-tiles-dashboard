@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
-import { FlagRuns, FlagList } from '../models/tiles.model';
+import { FlagRuns, FlightContents, FlagList, ApiFlightValues, FlagRunFlights, ApiFlagRun } from '../models/tiles.model';
 import { timer, startWith, switchMap } from 'rxjs';
 import { FlagsDashboardDotNetWrapper } from './Flags-dashboard-Interface';
 import { DateFormatterPipe } from '../shared/pipes/dateModifierPipe';
@@ -17,7 +17,11 @@ import { AuthenticationService } from '../services/authentication.service';
 
 export class DashboardTilesAPIComponent {
 
-    public flagRuns: FlagRuns[] = [];
+    public flagRuns: ApiFlagRun[] = [];
+
+    public apiFlagRuns$ = new Subject<ApiFlagRun[]>();
+
+    public apiFlagsRunElement$ = new BehaviorSubject<ApiFlagRun[]>([]);
 
     public userFlags: FlagList[] = [];
 
@@ -27,15 +31,16 @@ export class DashboardTilesAPIComponent {
 
     public allFlightList: any[] = [];
 
+    public shownFlightList: FlightContents[] = [];
+
+    public apiFlagsRunFlight$ = new BehaviorSubject<FlagRunFlights[]>([]);
+
     public apiFlagChartData$ = new Subject<any>();
 
     public apiAllUsers$ = new BehaviorSubject<any>([]);
 
-    public apiFlagsRunElement$ = new BehaviorSubject<FlagRuns[]>([]);
 
-    public apiFlagsRunFlight$ = new BehaviorSubject<any[]>([]);
 
-    public apiFlagRuns$ = new Subject<FlagRuns[]>();
 
     public resetFiveMinuteTimer$ = new Subject();
 
@@ -180,7 +185,7 @@ export class DashboardTilesAPIComponent {
 
 
     public getFlagRuns(flagKey: number) {
-        let parser: FlagRuns[] = [];
+        let parser: ApiFlagRun[] = [];
         this.flagsDashboardDotNetWrapper.GetFlagRuns(flagKey)
             .then((response: string) => {
 
@@ -195,8 +200,9 @@ export class DashboardTilesAPIComponent {
     public getFlightList(key: number, historyId: number): any {
 
         let parser: any = {};
-        let myTest;
-        this.allFlightList = []
+        let myTest: ApiFlightValues;
+        let apiTest;
+        this.allFlightList = [];
 
         const flightHolder = this.flagsDashboardDotNetWrapper.GetFlightList(key, historyId, this.activeUser.userId)
             .then((response: string) => {
@@ -206,15 +212,18 @@ export class DashboardTilesAPIComponent {
         flightHolder
             .then((response: any) => {
 
-                myTest = response;
-
-                myTest.flights.map((f: any, i: number) => {
+                let myTest: FlightContents[] = [];
+                apiTest = response;
+                myTest = apiTest.flights.map((f: any, i: number) => {
                     let formatted = moment(f.departureDate);
                     f.departureDate = formatted.format('YYYY-MM-DD h:mm A')
                     return f;
                 })
-                // console.log('GetFlightList ', myTest.flights)
-                this.allFlightList.push({ id: historyId, value: myTest })
+
+                console.log('GetFlightList ', myTest)
+                this.shownFlightList = myTest;
+
+                this.allFlightList.push({ id: historyId, value: apiTest })
             })
     }
 

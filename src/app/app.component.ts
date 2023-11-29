@@ -4,6 +4,7 @@ import { environment } from '../environments/environment';
 import { DashboardTilesAPIComponent } from './api/dashboard-api.service';
 import { AuthenticationService } from './services/authentication.service';
 import { flagTypes } from './dashboard-constants';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-root',
@@ -47,7 +48,20 @@ export class AppComponent {
       })
   }
 
-
+  public drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      // Reorder items within the same list
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      // Move items between lists
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    }
+  }
 
   public selectFlagTypes(event: any) {
 
@@ -58,7 +72,7 @@ export class AppComponent {
 
     if (event.name === 'All') {
       flagListReturn = [...this.savedFlagsStatic];
-      // console.log('selectFlagTypes ', event, ' flagListReturn ', flagListReturn)
+      console.log('selectFlagTypes ', event, ' flagListReturn ', flagListReturn)
     } else {
       flagListReturn = this.selectedFlags.filter((flag: any) => {
         // console.log('flag ', flag.flagTypeName)
@@ -90,15 +104,10 @@ export class AppComponent {
         } else {
           result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
         }
-
-        ///console.log('result ', sortOrder)
         return result * sortOrder;
       }
     }
-
     this.selectedFlags.sort(dynamicSort(ev.metric));
-    //console.log('this.dashboard ', this.selectedFlags)
-
   }
 
   // From label cross in selected flag type

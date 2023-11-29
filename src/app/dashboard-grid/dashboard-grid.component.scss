@@ -27,6 +27,93 @@ $grid-contrast: adjust-color(gray, $lightness: 1%) !important;
     }
 }
 
+.flag-run-parent {
+    width: 100% !important;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.mymodal {
+    //margin: 10 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.4rem;
+    width: 50%;
+    padding: 0.6rem;
+    height: auto;
+    position: absolute;
+    z-index: 1100;
+    top: 20%;
+    left: calc(100% / 4) !important;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    .myheader {
+        width: 100%;
+        background-color: #0e197a;
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: space-between;
+        color: white !important;
+        padding: var(--bs-modal-header-padding);
+        border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
+        border-top-left-radius: var(--bs-modal-inner-border-radius);
+        border-top-right-radius: var(--bs-modal-inner-border-radius);
+    }
+
+    .myfooter {
+        border-top: 1px solid rgb(206, 206, 206);
+        padding: 6px 0;
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    &.hidden {
+        display: none;
+    }
+    &.shown {
+        display: flex;
+    }
+}
+
+.container {
+    display: flex;
+    width: 100% !important;
+    flex-direction: column;
+    // .dropdown-arrow {
+    //     background-color: #0e197a;
+    //     width: 10px;
+    //     height: 10px;
+    // }
+    //gap: 10px; /* Adjust the value as needed for the spacing between stacked elements */
+}
+
+.container .item {
+    width: 100%;
+    background-color: #6495ed;
+    margin-bottom: 6px;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 12px;
+    align-items: center;
+    cursor: move;
+    padding: 2px 5px;
+    transition: transform 0.5s ease-in-out; /* Add a transition for smooth animation */
+}
+
+// .container .item.cdk-drag-preview {
+//     z-index: 12000;
+//     opacity: 0.8; /* Adjust the opacity of the dragged element preview */
+//     background-color: #ffa500; /* Customize the background color of the dragged element preview */
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Add a box shadow to the dragged element preview */
+// }
+
 .modal-header {
     display: flex;
     flex-shrink: 0;

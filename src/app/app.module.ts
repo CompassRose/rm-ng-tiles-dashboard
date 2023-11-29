@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { AppRoutingModule } from './app-routing.module';
-import { MaterialExampleModule } from '../material.module';
+//import { MaterialExampleModule } from '../material.module';
 //import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { GridsterModule } from 'angular-gridster2';
 import { DashboardGridComponent } from './dashboard-grid/dashboard-grid.component';
@@ -19,8 +19,9 @@ import { FlagsDashboardDotNetWrapper } from './api/Flags-dashboard-Interface';
 import { DashboardTilesAPIComponent } from './api/dashboard-api.service';
 //import { BidPriceAspNetService } from "./api/au-visualization.service";
 import { AnalystSearchComponent } from '../app/analyst-search/analyst-search.component';
-import { FlightEditorComponent } from './flight-editor/flight-editor.component';
 import { AuthenticationService } from './services/authentication.service';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 @NgModule({
   declarations: [
@@ -29,13 +30,13 @@ import { AuthenticationService } from './services/authentication.service';
     PriorityChartComponent,
     MonthlyFlagsChartComponent,
     TileCardComponent,
-    FlightEditorComponent,
     AnalystSearchComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
-    MaterialExampleModule,
+    DragDropModule,
+    //MaterialExampleModule,
     GridsterModule,
     BrowserAnimationsModule,
     NgSelectModule,

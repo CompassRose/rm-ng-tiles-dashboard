@@ -22,15 +22,65 @@ export interface NdoValuesModel {
 }
 
 export interface FlagRuns {
+    airlineCode: string;
+    departureDate: string;
+    flightLine: string;
+    odMasterkey: number;
+}
+
+export interface FlagRuns {
+    airlineCode: string;
+    departureDate: string;
+    flightLine: string;
+    odMasterkey: number;
+}
+
+
+export interface FlagRunFlights {
+    id: number;
+    value: ApiFlightValues;
+}
+
+export interface ApiFlightValues {
+    boxContents: BoxContent;
+    flights: EachFlights[];
+}
+
+export interface ApiFlagRun {
+    flagKey: number
+    flightCount: number;
+    historyId: number;
+    processDate: string;
+}
+
+export interface FlagRunDev {
+    flagKey: number
+    flightCount: number;
+    historyId: number;
+    processDate: string;
+    flights?: any;
+}
+
+export interface BoxContent {
+    shortNames: string;
+    suffixes: string;
+}
+
+export interface EachFlights {
     flagKey: number;
     flightCount: number;
     historyId: number
     processDate: string;
-    flights?: any[];
+}
+
+export interface FlightContents {
+    airlineCode: string;
+    departureDate: string;
+    flightLine: string;
+    odMasterkey: number;
 }
 
 export interface FlagList {
-
     flagKey: number;
     flagType: number;
     flagTypeName?: string;

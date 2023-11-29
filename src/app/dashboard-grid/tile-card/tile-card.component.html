@@ -1,15 +1,14 @@
 <div class="item-content">
     <div [ngClass]="dashboardTile.reviewed ? 'reviewed-tag visible' : 'reviewed-tag not-visible'">Reviewed</div>
     <div class="drag-handler">
+        <div class="top-row">{{dashboardTile.name}}</div>
         <div class="identity-row noselect mt-2 mb-1">
             <div class="card-top-row mb-2">
                 <div class="number-container"
                    [style.background-color]="getPriorityColor(dashboardTile.priority)">
                     <span class="number-wrapper">{{dashboardTile.priority}}</span>
                 </div>
-
                 <div class="card-row-frame">
-                    <div class="div">{{dashboardTile.name}}</div>
                     <div class="body-text body-12-16-600 text-p-blue">{{dashboardTile.flagTypeName}}</div>
                     <div class="body-text body-12-16-600 text-p-blue">Flight Count:
                         {{dashboardTile.flightCount}}</div>
@@ -29,7 +28,6 @@
             </div>
             <a class="ellipsis-vertical"
                (click)="selectDropdown()"></a>
-
             <div class="flex-column noselect"
                [ngClass]="showOptions ? 'dropdown-selector opened' : 'dropdown-selector closed'">
 
@@ -39,10 +37,8 @@
                    data-bs-target="#exampleModal">
                     View History
                 </a>
-
                 <a class="link-text"
                    (click)="goToDestination(1, dashboardTile)">Go To Overview</a>
-
             </div>
         </div>
     </div>
