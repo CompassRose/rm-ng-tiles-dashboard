@@ -44,7 +44,7 @@ export class MonthlyFlagsChartComponent implements OnInit {
         res.forEach((r: any, i: number) => {
           if (i === 0) {
             //iIncrement = 1
-          } else if (r.value % 10 !== 0) {
+          } else if (r.value % 5 !== 0) {
             iIncrement = r.value;
             ndoCount += r.count;
           } else {

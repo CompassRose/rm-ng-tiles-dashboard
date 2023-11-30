@@ -74,7 +74,6 @@ export class TileCardComponent {
   public sendFlightsToOverview(tile: any) {
 
     let latestRun: any = {};
-
     let maxValue = Math.max.apply(null,
       tile.flagRuns.map((o: any) => { return o.historyId; }))
 
@@ -89,8 +88,6 @@ export class TileCardComponent {
     const flightString = JSON.stringify(latestRun.value);
 
     this.dashboardTilesAPIComponent.toOverviewWithFlightString(flightString, tile.flagKey)
-
-
 
   }
 

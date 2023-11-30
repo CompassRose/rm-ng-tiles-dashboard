@@ -19,7 +19,7 @@ export class DashboardTilesAPIComponent {
 
     public flagRuns: ApiFlagRun[] = [];
 
-    public apiFlagRuns$ = new Subject<ApiFlagRun[]>();
+    //public apiFlagRuns$ = new Subject<ApiFlagRun[]>();
 
     public apiFlagsRunElement$ = new BehaviorSubject<ApiFlagRun[]>([]);
 
@@ -83,6 +83,13 @@ export class DashboardTilesAPIComponent {
 
     public toOverviewWithFlightString(flightStr: string, key: number) {
         this.flagsDashboardDotNetWrapper.ToOverview(flightStr, key, this.activeUser.userId);
+        // @ts-ignore
+        const userObj: any = JSON.parse(window.localStorage.getItem('currentUser'));
+        console.log('userObj ', userObj.userId);
+
+        setTimeout(() => {
+            this.getAnalystsFlags(userObj.userId);
+        }, 1000);
     }
 
 
@@ -129,7 +136,8 @@ export class DashboardTilesAPIComponent {
             .then((response: string) => {
                 //console.log('GetAnalystFlags response ', response)
                 parser = JSON.parse(response);
-                parser.forEach((flag, i) => {
+                this.userFlags = [];
+                parser.forEach((flag) => {
                     let formatted = moment(flag.processDate);
                     flag.flagTypeName = flagTypes[flag.flagType + 1].name;
                     flag.processDate = formatted.format('YYYY/M/DD h:mm A')
@@ -141,6 +149,7 @@ export class DashboardTilesAPIComponent {
                 this.getAnalystFlagChartData(user)
             })
     }
+
 
 
     public getAnalystFlagChartData(userId: string) {
@@ -185,12 +194,11 @@ export class DashboardTilesAPIComponent {
 
 
     public getFlagRuns(flagKey: number) {
+        console.log('getFlagRuns ', flagKey)
         let parser: ApiFlagRun[] = [];
         this.flagsDashboardDotNetWrapper.GetFlagRuns(flagKey)
             .then((response: string) => {
-
                 parser = JSON.parse(response);
-                // console.log('getFlagRuns parser ', parser)
                 this.apiFlagsRunElement$.next(parser)
             })
     }
@@ -220,7 +228,7 @@ export class DashboardTilesAPIComponent {
                     return f;
                 })
 
-                console.log('GetFlightList ', myTest)
+                //console.log('GetFlightList ', myTest)
                 this.shownFlightList = myTest;
 
                 this.allFlightList.push({ id: historyId, value: apiTest })

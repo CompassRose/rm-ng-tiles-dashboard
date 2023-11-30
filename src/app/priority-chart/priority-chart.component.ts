@@ -36,11 +36,8 @@ export class PriorityChartComponent {
     let totalCount = 0;
 
     dashboardTilesAPIComponent.apiPrioritiesSubject$.subscribe((res: any) => {
-
       if (res.length > 0) {
-
         this.priorityValues = res;
-
         //console.log('response $ ', this.priorityValues)
         this.priorityValues.forEach((priorValue: any) => {
           totalCount += priorValue.count
@@ -49,7 +46,6 @@ export class PriorityChartComponent {
         //console.log('totalCount', totalCount)
         this.priorityPercent = totalCount
         this.blueRamp = this.generateRamps(this.priorityValues.length, this.blueRampRange);
-
         this.createSvg()
       }
     })

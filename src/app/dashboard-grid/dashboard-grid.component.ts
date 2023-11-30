@@ -48,7 +48,6 @@ export class DashboardGridComponent {
 
   public selectedFlagRunFlights: FlagRunFlights[] = [];
 
-
   public myFlags: FlagList[] = [];
 
   public counter = 0
@@ -78,27 +77,45 @@ export class DashboardGridComponent {
         console.log('authenticationService Subscribed  user ', user)
       })
 
-    this.dashboardTilesAPIComponent.apiFlagsRunFlight$
-      .subscribe((flights: any) => {
-        if (flights.length > 0) {
-          console.log('Subscribed  flights ', flights)
-        }
-      })
+    // this.dashboardTilesAPIComponent.apiFlagsRunFlight$
+    //   .subscribe((flights: any) => {
+    //     if (flights.length > 0) {
+    //       console.log('Subscribed  flights ', flights)
+    //     }
+    //   })
 
+
+    // this.dashboardTilesAPIComponent.apiFlagRuns$
+    //   .subscribe((sendFlagRun: ApiFlagRun[]) => {
+    //     console.log('sendFlagRun ', sendFlagRun)
+    //     let keyHolder: number[] = [];
+    //     if (sendFlagRun.length > 0) {
+    //       sendFlagRun.forEach((r: ApiFlagRun, e: number) => {
+    //         if (!keyHolder.includes(r.flagKey)) {
+    //           keyHolder.push(r.flagKey)
+    //         }
+    //       })
+    //       console.log('keyHolder ', keyHolder)
+    //     }
+    //   })
 
     this.dashboardTilesAPIComponent.apiFlagsRunElement$
       .subscribe((flagRuns: ApiFlagRun[]) => {
+        console.log('flagRuns ', flagRuns)
         if (flagRuns.length > 0) {
           this.myFlags[this.counter].flagRuns = flagRuns;
           this.flagsRunFromApi.push(...flagRuns);
           this.counter++;
+
+          this.flagsRunFromApi.map((r: ApiFlagRun) => {
+            return this.getFlightLists(r.flagKey, r.historyId);
+          })
         }
 
-        this.flagsRunFromApi.map((r: ApiFlagRun) => {
-          console.log('r ', r)
-          return this.getFlightLists(r.flagKey, r.historyId);
-        })
-        console.log('this.selectedFlagRunFlights ', this.selectedFlagRunFlights)
+        if (this.counter === this.myFlags.length) {
+          this.counter = 0;
+        }
+        //console.log('this.selectedFlagRunFlights ', this.selectedFlagRunFlights)
       })
 
 
@@ -109,24 +126,8 @@ export class DashboardGridComponent {
           flags.forEach((f: any, i: number) => {
             if (f.flagRuns.length === 0) {
               this.dashboardTilesAPIComponent.getFlagRuns(f.flagKey)
-            } else {
-              console.log('TEST flags ', f.flagRuns)
             }
           })
-        }
-      })
-
-
-    this.dashboardTilesAPIComponent.apiFlagRuns$
-      .subscribe((sendFlagRun: ApiFlagRun[]) => {
-        let keyHolder: number[] = [];
-        if (sendFlagRun.length > 0) {
-          sendFlagRun.forEach((r: ApiFlagRun, e: number) => {
-            if (!keyHolder.includes(r.flagKey)) {
-              keyHolder.push(r.flagKey)
-            }
-          })
-          console.log('keyHolder ', keyHolder)
         }
       })
   }
@@ -135,7 +136,6 @@ export class DashboardGridComponent {
 
     this.route.paramMap
       .subscribe((params: ParamMap) => {
-        // console.log('params ', params)
         if (this.pathId !== params.get('UserId') && this.pathId !== null) {
           this.pathId = params.get('UserId');
           console.log('this.pathId ', this.pathId)
@@ -180,18 +180,12 @@ export class DashboardGridComponent {
 
 
   public updateFlagRun(event: any) {
-
     console.log('event ', event.flagRuns)
-
     this.selectedFlagRuns = event.flagRuns;
-
     this.flagNameAndType = `${event.flagTypeName}: ${event.name}`
-
     event.flagRuns.map((r: any, e: number) => {
-
       this.dashboardTilesAPIComponent.allFlightList.forEach((fl, i) => {
         if (r.historyId === fl.id) {
-
           this.selectedFlagRuns[e].flights = fl;
           this.flightsToPass.push(fl)
         }
@@ -200,6 +194,4 @@ export class DashboardGridComponent {
     })
     this.dashboardTilesAPIComponent.apiFlagsRunFlight$.next(this.flightsToPass)
   }
-
-
 }

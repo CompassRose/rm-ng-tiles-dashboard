@@ -155,7 +155,6 @@ $grid-contrast: adjust-color(gray, $lightness: 1%) !important;
     padding: 3px 12px;
     border-radius: 5px;
     margin-bottom: 6px;
-    //border-bottom: 1px solid rgb(197, 197, 197);
 }
 
 .action-center {
@@ -164,7 +163,8 @@ $grid-contrast: adjust-color(gray, $lightness: 1%) !important;
 }
 
 .grid-parent {
-    //width: 100% !important;
+    margin-top: 10px;
+    width: 100% !important;
     //width: 85% !important;
     //padding: 0 20px;
     //margin: 0 auto;

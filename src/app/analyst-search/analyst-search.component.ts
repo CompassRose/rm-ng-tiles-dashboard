@@ -1,6 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
-
-import { of, delay, Observable, BehaviorSubject } from 'rxjs';
+import { Component, Input } from '@angular/core';
 import { UserModel, ApiUserModel } from '../models/tiles.model';
 import { DashboardTilesAPIComponent } from '../api/dashboard-api.service';
 
@@ -13,7 +11,7 @@ import { DashboardTilesAPIComponent } from '../api/dashboard-api.service';
 
 
 
-export class AnalystSearchComponent implements OnInit {
+export class AnalystSearchComponent {
 
     public myAllUserList: ApiUserModel[] = [];
 
@@ -25,7 +23,6 @@ export class AnalystSearchComponent implements OnInit {
     public userSelectAllState = false;
 
     public selectedUsersBySupervisor: any[] = [];
-    //  public selectedUsers: UserModel[] = [];
 
     constructor(public dashboardTilesAPIComponent: DashboardTilesAPIComponent) {
 
@@ -33,47 +30,28 @@ export class AnalystSearchComponent implements OnInit {
             .subscribe((params: any) => {
 
                 if (params.length > 0) {
-                    params.map((u: any, i: number) => {
-
+                    params.map((u: any) => {
                         const result = u.fullName.split(/(?=[A-Z])/);
-
-                        //   console.log(u.fullName.replace(/([A-Z])/g, ' $1').trim());
-
-                        // console.log('result  ', result[result.length - 1])
+                        //console.log('trim  ', u.fullName.replace(/([A-Z])/g, ' $1').trim());
                         u.lastName = result[result.length - 1];
-                        return u.state = false;
+                        u.firstName = result[0]
+                        console.log('         result  ', result.length, ' Name ', u.firstName, u.lastName)
+                        this.myAllUserList.push(u)
 
                     })
-                    this.myAllUserList = params;
-                    // console.log('||||||||||||||  this.myAllUserList ', this.myAllUserList)
-
+                    console.log('||||||||||||||  this.myAllUserList ', this.myAllUserList)
                 }
             })
     }
 
 
-    public ngOnInit(): void {
-        //  console.log('getNumAnalystsSelected ', this.myAllUserList)
-        // this.onSelectAll()
-    }
-
     public getNumAnalystsSelected(): boolean {
 
         // console.log('getNumAnalystsSelected ', this.myAllUserList)
         let test = false;
-
         this.myAllUserList.forEach((aUser: UserModel) => {
-            //if (!aUser.state){
 
-            //}
         })
-
-        //if (this.selectedUsersBySupervisor.length ) {
-        // if (this.selectedUsersBySupervisor.length === this.allUserList.length) {
-        //   test = true;
-        //   //}
-        // }
-
         return test
     }
 
