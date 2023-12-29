@@ -35,11 +35,11 @@ export class AnalystSearchComponent {
                         //console.log('trim  ', u.fullName.replace(/([A-Z])/g, ' $1').trim());
                         u.lastName = result[result.length - 1];
                         u.firstName = result[0]
-                        console.log('         result  ', result.length, ' Name ', u.firstName, u.lastName)
+                        // console.log('         result  ', result.length, ' Name ', u.firstName, u.lastName)
                         this.myAllUserList.push(u)
 
                     })
-                    console.log('||||||||||||||  this.myAllUserList ', this.myAllUserList)
+                    //console.log('||||||||||||||  this.myAllUserList ', this.myAllUserList)
                 }
             })
     }
@@ -98,7 +98,7 @@ export class AnalystSearchComponent {
 
     public onAdd(event: any) {
 
-        console.log(' -------onAdd ', ' idx ', event)
+        //console.log(' -------onAdd ', ' idx ', event)
 
         this.myAllUserList[event].state = !this.myAllUserList[event].state;
 
@@ -106,7 +106,7 @@ export class AnalystSearchComponent {
             return fi === event;
         })
 
-        console.log('\n\n --this.selectedUsersBySupervisor', elementOrder, ' state ', this.myAllUserList[event].state, ' -----  ', this.selectedUsersBySupervisor[elementOrder])
+        //console.log('\n\n --this.selectedUsersBySupervisor', elementOrder, ' state ', this.myAllUserList[event].state, ' -----  ', this.selectedUsersBySupervisor[elementOrder])
 
         if (this.selectedUsersBySupervisor.includes(event) && !this.myAllUserList[event].state) {
 
@@ -117,7 +117,7 @@ export class AnalystSearchComponent {
 
 
 
-        console.log('\n\n -.selectedUsersBySupervisor ', this.selectedUsersBySupervisor)
+        //console.log('\n\n -.selectedUsersBySupervisor ', this.selectedUsersBySupervisor)
 
     }
 }

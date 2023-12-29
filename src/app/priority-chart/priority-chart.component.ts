@@ -1,7 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import * as echarts from 'echarts';
 import { formatRgb, formatHsl, converter, formatHex, samples, filterSepia, interpolate, interpolatorSplineBasis } from 'culori';
-import { blueRamp16 } from '../dashboard-constants';
 import { DashboardTilesAPIComponent } from '../api/dashboard-api.service';
 const culori: any = require('culori')
 
@@ -11,7 +10,7 @@ const culori: any = require('culori')
   styleUrls: ['./priority-chart.component.scss']
 })
 
-export class PriorityChartComponent {
+export class PriorityChartComponent implements OnInit {
 
   public options: any = {};
   public myChart: any = null;
@@ -46,7 +45,9 @@ export class PriorityChartComponent {
         //console.log('totalCount', totalCount)
         this.priorityPercent = totalCount
         this.blueRamp = this.generateRamps(this.priorityValues.length, this.blueRampRange);
-        this.createSvg()
+
+        this.setChartContents()
+
       }
     })
   }
@@ -56,6 +57,11 @@ export class PriorityChartComponent {
     if (this.myChart) {
       this.myChart.resize();
     }
+  }
+
+
+  public ngOnInit(): void {
+    this.createSvg();
   }
 
 
@@ -78,107 +84,104 @@ export class PriorityChartComponent {
     const chart: HTMLCanvasElement = document.getElementById('priority-chart') as HTMLCanvasElement;
     this.myChart = echarts.init(chart, 'light');
 
-    setTimeout(() => {
-      this.setChartContents()
-    }, 100);
-
   }
 
 
   public setChartContents() {
 
+    if (this.myChart) {
 
-    this.myChart.setOption({
+      this.myChart.setOption({
 
-      title: {
-        text: 'Priority Status',
-        left: 10,
-        top: 10,
-        textStyle: {
-          color: 'white',
-          fontWeight: 'normal',
-          fontSize: 14
-        }
-      },
-      grid: {
-        //show: false,
-        left: 0,
-        right: 65,
-        top: 5,
-        bottom: 20
-      },
-      tooltip: {
-        trigger: 'item'
-      },
-      legend: {
-        show: false,
-        top: '10%',
-        right: 50,
-        align: 'right',
-        orient: 'vertical',
-        icon: 'circle',
-        itemHeight: 20,
-        itemWidth: 10,
-        itemGap: 15,
-        textStyle: {
-          color: 'white',
-          fontSize: 11,
-        },
-
-        formatter: this.priorityValues.map((item: any, i) => {
-          //console.log('formatter ', item, ' priorityPercent ', this.priorityPercent)
-          const percentValue = +((item.count / this.priorityPercent) * 100).toFixed(2);
-          const percentStr = `${percentValue} %`
-          const percentVal = {
-            name: percentStr,
-            icon: 'circle',
-          }
-          return percentVal
-        }),
-      },
-      series: [
-        {
-          name: 'Urgency',
-          type: 'pie',
-          radius: ['30%', '50%'],
-          avoidLabelOverlap: false,
-          label: {
-            rotate: 0,
-            show: true,
-            //overflow: 'truncate',
-            //position: 'outer',
-            //alignTo: 'none',
+        title: {
+          text: 'Priority Status',
+          left: 10,
+          top: 10,
+          textStyle: {
             color: 'white',
-            //edgeDistance: '25%',
-            //bleedMargin: 0,
-            distanceToLabelLine: 0
+            fontWeight: 'normal',
+            fontSize: 14
+          }
+        },
+        grid: {
+          //show: false,
+          left: 0,
+          right: 65,
+          top: 5,
+          bottom: 20
+        },
+        tooltip: {
+          trigger: 'item'
+        },
+        legend: {
+          show: false,
+          top: '10%',
+          right: 50,
+          align: 'right',
+          orient: 'vertical',
+          icon: 'circle',
+          itemHeight: 20,
+          itemWidth: 10,
+          itemGap: 15,
+          textStyle: {
+            color: 'white',
+            fontSize: 11,
           },
 
-          // emphasis: {
-          //   label: {
-          //     show: true,
-          //     fontSize: 40,
-          //     fontWeight: 'bold'
-          //   }
-          // },
-          labelLine: {
-            show: true
-          },
-          data: this.priorityValues.map((values: any, i) => {
-            return {
-              value: values.count,
-              name: values.value,
-              itemStyle: {
-                color: this.blueRamp[i]
-              },
-              textStyle: {
-                color: 'white'
-              }
+          formatter: this.priorityValues.map((item: any, i) => {
+            //console.log('formatter ', item, ' priorityPercent ', this.priorityPercent)
+            const percentValue = +((item.count / this.priorityPercent) * 100).toFixed(2);
+            const percentStr = `${percentValue} %`
+            const percentVal = {
+              name: percentStr,
+              icon: 'circle',
             }
-          })
-        }
-      ]
-    });
-  }
+            return percentVal
+          }),
+        },
+        series: [
+          {
+            name: 'Urgency',
+            type: 'pie',
+            radius: ['30%', '50%'],
+            avoidLabelOverlap: false,
+            label: {
+              rotate: 0,
+              show: true,
+              //overflow: 'truncate',
+              //position: 'outer',
+              //alignTo: 'none',
+              color: 'white',
+              //edgeDistance: '25%',
+              //bleedMargin: 0,
+              distanceToLabelLine: 0
+            },
 
+            // emphasis: {
+            //   label: {
+            //     show: true,
+            //     fontSize: 40,
+            //     fontWeight: 'bold'
+            //   }
+            // },
+            labelLine: {
+              show: true
+            },
+            data: this.priorityValues.map((values: any, i) => {
+              return {
+                value: values.count,
+                name: values.value,
+                itemStyle: {
+                  color: this.blueRamp[i]
+                },
+                textStyle: {
+                  color: 'white'
+                }
+              }
+            })
+          }
+        ]
+      });
+    }
+  }
 }

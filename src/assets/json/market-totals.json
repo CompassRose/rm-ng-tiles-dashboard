@@ -1,0 +1,4810 @@
+[
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 0,
+        "Revenue": "237,751.37",
+        "Count": 4263,
+        "AvgFare": 55.77
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 1,
+        "Revenue": "132,028.01",
+        "Count": 2462,
+        "AvgFare": 53.63
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 2,
+        "Revenue": "69,035.86",
+        "Count": 1294,
+        "AvgFare": 53.35
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 3,
+        "Revenue": "43,663.02",
+        "Count": 810,
+        "AvgFare": 53.9
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 4,
+        "Revenue": "43,230.58",
+        "Count": 751,
+        "AvgFare": 57.56
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 5,
+        "Revenue": "51,695.99",
+        "Count": 900,
+        "AvgFare": 57.44
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 6,
+        "Revenue": "110,421.79",
+        "Count": 1833,
+        "AvgFare": 60.24
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 7,
+        "Revenue": "260,143.99",
+        "Count": 4403,
+        "AvgFare": 59.08
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 8,
+        "Revenue": "587,430.53",
+        "Count": 9826,
+        "AvgFare": 59.78
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 9,
+        "Revenue": "937,152.36",
+        "Count": 16040,
+        "AvgFare": 58.43
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 10,
+        "Revenue": "1,216,280.23",
+        "Count": 20334,
+        "AvgFare": 59.82
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 11,
+        "Revenue": "1,337,947.51",
+        "Count": 22374,
+        "AvgFare": 59.8
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 12,
+        "Revenue": "775,739.70",
+        "Count": 13731,
+        "AvgFare": 56.5
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 13,
+        "Revenue": "768,148.96",
+        "Count": 13612,
+        "AvgFare": 56.43
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 14,
+        "Revenue": "1,290,327.31",
+        "Count": 22644,
+        "AvgFare": 56.98
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 15,
+        "Revenue": "1,581,366.40",
+        "Count": 26686,
+        "AvgFare": 59.26
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 16,
+        "Revenue": "1,684,758.52",
+        "Count": 28360,
+        "AvgFare": 59.41
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 17,
+        "Revenue": "1,753,641.29",
+        "Count": 29570,
+        "AvgFare": 59.3
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 18,
+        "Revenue": "1,802,172.00",
+        "Count": 30391,
+        "AvgFare": 59.3
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 19,
+        "Revenue": "1,887,901.78",
+        "Count": 32297,
+        "AvgFare": 58.45
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 20,
+        "Revenue": "1,884,950.20",
+        "Count": 31845,
+        "AvgFare": 59.19
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 21,
+        "Revenue": "1,604,706.14",
+        "Count": 27709,
+        "AvgFare": 57.91
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 22,
+        "Revenue": "1,064,196.54",
+        "Count": 18482,
+        "AvgFare": 57.58
+    },
+    {
+        "Week": 48,
+        "WeekDay": 1,
+        "Hour": 23,
+        "Revenue": "528,552.70",
+        "Count": 9600,
+        "AvgFare": 55.06
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 0,
+        "Revenue": "233,768.29",
+        "Count": 4274,
+        "AvgFare": 54.7
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 1,
+        "Revenue": "111,234.00",
+        "Count": 2013,
+        "AvgFare": 55.26
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 2,
+        "Revenue": "63,001.13",
+        "Count": 1210,
+        "AvgFare": 52.07
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 3,
+        "Revenue": "49,671.00",
+        "Count": 890,
+        "AvgFare": 55.81
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 4,
+        "Revenue": "48,268.40",
+        "Count": 946,
+        "AvgFare": 51.02
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 5,
+        "Revenue": "92,231.32",
+        "Count": 1622,
+        "AvgFare": 56.86
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 6,
+        "Revenue": "190,640.78",
+        "Count": 3264,
+        "AvgFare": 58.41
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 7,
+        "Revenue": "497,297.43",
+        "Count": 8509,
+        "AvgFare": 58.44
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 8,
+        "Revenue": "947,888.57",
+        "Count": 15937,
+        "AvgFare": 59.48
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 9,
+        "Revenue": "1,393,396.00",
+        "Count": 23790,
+        "AvgFare": 58.57
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 10,
+        "Revenue": "1,699,927.65",
+        "Count": 28625,
+        "AvgFare": 59.39
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 11,
+        "Revenue": "1,757,041.82",
+        "Count": 29968,
+        "AvgFare": 58.63
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 12,
+        "Revenue": "1,620,767.72",
+        "Count": 28682,
+        "AvgFare": 56.51
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 13,
+        "Revenue": "1,601,482.95",
+        "Count": 28793,
+        "AvgFare": 55.62
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 14,
+        "Revenue": "1,607,365.19",
+        "Count": 28687,
+        "AvgFare": 56.03
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 15,
+        "Revenue": "1,627,840.00",
+        "Count": 28334,
+        "AvgFare": 57.45
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 16,
+        "Revenue": "1,789,801.24",
+        "Count": 30928,
+        "AvgFare": 57.87
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 17,
+        "Revenue": "1,827,803.82",
+        "Count": 32645,
+        "AvgFare": 55.99
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 18,
+        "Revenue": "1,971,528.08",
+        "Count": 35280,
+        "AvgFare": 55.88
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 19,
+        "Revenue": "2,182,464.27",
+        "Count": 39759,
+        "AvgFare": 54.89
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 20,
+        "Revenue": "2,425,328.55",
+        "Count": 43784,
+        "AvgFare": 55.39
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 21,
+        "Revenue": "2,286,520.31",
+        "Count": 41739,
+        "AvgFare": 54.78
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 22,
+        "Revenue": "1,642,039.25",
+        "Count": 30696,
+        "AvgFare": 53.49
+    },
+    {
+        "Week": 48,
+        "WeekDay": 2,
+        "Hour": 23,
+        "Revenue": "871,894.92",
+        "Count": 16365,
+        "AvgFare": 53.28
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 0,
+        "Revenue": "348,135.35",
+        "Count": 6482,
+        "AvgFare": 53.71
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 1,
+        "Revenue": "143,683.22",
+        "Count": 2719,
+        "AvgFare": 52.84
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 2,
+        "Revenue": "82,573.45",
+        "Count": 1531,
+        "AvgFare": 53.93
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 3,
+        "Revenue": "69,592.38",
+        "Count": 1223,
+        "AvgFare": 56.9
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 4,
+        "Revenue": "79,850.73",
+        "Count": 1440,
+        "AvgFare": 55.45
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 5,
+        "Revenue": "128,155.88",
+        "Count": 2189,
+        "AvgFare": 58.55
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 6,
+        "Revenue": "260,382.43",
+        "Count": 4459,
+        "AvgFare": 58.39
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 7,
+        "Revenue": "605,985.15",
+        "Count": 10482,
+        "AvgFare": 57.81
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 8,
+        "Revenue": "1,022,886.89",
+        "Count": 17633,
+        "AvgFare": 58.01
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 9,
+        "Revenue": "1,504,017.39",
+        "Count": 25840,
+        "AvgFare": 58.21
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 10,
+        "Revenue": "1,693,964.99",
+        "Count": 28990,
+        "AvgFare": 58.43
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 11,
+        "Revenue": "1,642,904.02",
+        "Count": 28603,
+        "AvgFare": 57.44
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 12,
+        "Revenue": "1,523,276.42",
+        "Count": 27189,
+        "AvgFare": 56.03
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 13,
+        "Revenue": "1,568,692.47",
+        "Count": 27056,
+        "AvgFare": 57.98
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 14,
+        "Revenue": "1,499,790.22",
+        "Count": 26215,
+        "AvgFare": 57.21
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 15,
+        "Revenue": "1,479,137.88",
+        "Count": 25981,
+        "AvgFare": 56.93
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 16,
+        "Revenue": "1,656,508.96",
+        "Count": 28004,
+        "AvgFare": 59.15
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 17,
+        "Revenue": "1,701,745.17",
+        "Count": 30105,
+        "AvgFare": 56.53
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 18,
+        "Revenue": "1,805,466.35",
+        "Count": 32065,
+        "AvgFare": 56.31
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 19,
+        "Revenue": "2,010,889.65",
+        "Count": 36031,
+        "AvgFare": 55.81
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 20,
+        "Revenue": "2,340,853.82",
+        "Count": 40851,
+        "AvgFare": 57.3
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 21,
+        "Revenue": "2,169,330.29",
+        "Count": 39304,
+        "AvgFare": 55.19
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 22,
+        "Revenue": "1,582,247.81",
+        "Count": 29192,
+        "AvgFare": 54.2
+    },
+    {
+        "Week": 48,
+        "WeekDay": 3,
+        "Hour": 23,
+        "Revenue": "822,754.68",
+        "Count": 15000,
+        "AvgFare": 54.85
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 0,
+        "Revenue": "325,920.96",
+        "Count": 5965,
+        "AvgFare": 54.64
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 1,
+        "Revenue": "148,231.03",
+        "Count": 2762,
+        "AvgFare": 53.67
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 2,
+        "Revenue": "94,659.62",
+        "Count": 1671,
+        "AvgFare": 56.65
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 3,
+        "Revenue": "83,876.14",
+        "Count": 1408,
+        "AvgFare": 59.57
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 4,
+        "Revenue": "87,846.21",
+        "Count": 1499,
+        "AvgFare": 58.6
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 5,
+        "Revenue": "119,331.24",
+        "Count": 2059,
+        "AvgFare": 57.96
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 6,
+        "Revenue": "228,346.62",
+        "Count": 3879,
+        "AvgFare": 58.87
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 7,
+        "Revenue": "499,561.63",
+        "Count": 8292,
+        "AvgFare": 60.25
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 8,
+        "Revenue": "889,073.88",
+        "Count": 14885,
+        "AvgFare": 59.73
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 9,
+        "Revenue": "1,287,361.16",
+        "Count": 21703,
+        "AvgFare": 59.32
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 10,
+        "Revenue": "1,435,052.34",
+        "Count": 23962,
+        "AvgFare": 59.89
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 11,
+        "Revenue": "1,506,840.26",
+        "Count": 25308,
+        "AvgFare": 59.54
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 12,
+        "Revenue": "1,436,276.07",
+        "Count": 24851,
+        "AvgFare": 57.8
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 13,
+        "Revenue": "1,415,801.64",
+        "Count": 25109,
+        "AvgFare": 56.39
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 14,
+        "Revenue": "1,406,263.03",
+        "Count": 23982,
+        "AvgFare": 58.64
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 15,
+        "Revenue": "1,371,922.82",
+        "Count": 23609,
+        "AvgFare": 58.11
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 16,
+        "Revenue": "1,367,937.89",
+        "Count": 23953,
+        "AvgFare": 57.11
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 17,
+        "Revenue": "1,513,223.96",
+        "Count": 26643,
+        "AvgFare": 56.8
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 18,
+        "Revenue": "1,598,784.86",
+        "Count": 28144,
+        "AvgFare": 56.81
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 19,
+        "Revenue": "1,728,651.39",
+        "Count": 30500,
+        "AvgFare": 56.68
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 20,
+        "Revenue": "1,959,599.86",
+        "Count": 34400,
+        "AvgFare": 56.97
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 21,
+        "Revenue": "1,754,513.28",
+        "Count": 30687,
+        "AvgFare": 57.17
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 22,
+        "Revenue": "1,266,426.53",
+        "Count": 22573,
+        "AvgFare": 56.1
+    },
+    {
+        "Week": 48,
+        "WeekDay": 4,
+        "Hour": 23,
+        "Revenue": "621,480.58",
+        "Count": 11253,
+        "AvgFare": 55.23
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 0,
+        "Revenue": "278,888.40",
+        "Count": 4947,
+        "AvgFare": 56.38
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 1,
+        "Revenue": "130,764.01",
+        "Count": 2365,
+        "AvgFare": 55.29
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 2,
+        "Revenue": "78,674.46",
+        "Count": 1385,
+        "AvgFare": 56.8
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 3,
+        "Revenue": "61,487.10",
+        "Count": 1053,
+        "AvgFare": 58.39
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 4,
+        "Revenue": "66,904.82",
+        "Count": 1162,
+        "AvgFare": 57.58
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 5,
+        "Revenue": "114,119.04",
+        "Count": 2023,
+        "AvgFare": 56.41
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 6,
+        "Revenue": "231,885.44",
+        "Count": 3918,
+        "AvgFare": 59.18
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 7,
+        "Revenue": "491,641.64",
+        "Count": 8148,
+        "AvgFare": 60.34
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 8,
+        "Revenue": "863,173.42",
+        "Count": 14336,
+        "AvgFare": 60.21
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 9,
+        "Revenue": "1,211,727.74",
+        "Count": 19830,
+        "AvgFare": 61.11
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 10,
+        "Revenue": "1,369,521.97",
+        "Count": 22964,
+        "AvgFare": 59.64
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 11,
+        "Revenue": "1,396,240.83",
+        "Count": 23635,
+        "AvgFare": 59.08
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 12,
+        "Revenue": "1,345,229.34",
+        "Count": 22625,
+        "AvgFare": 59.46
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 13,
+        "Revenue": "1,221,058.29",
+        "Count": 20931,
+        "AvgFare": 58.34
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 14,
+        "Revenue": "1,371,458.91",
+        "Count": 22656,
+        "AvgFare": 60.53
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 15,
+        "Revenue": "1,334,585.37",
+        "Count": 22166,
+        "AvgFare": 60.21
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 16,
+        "Revenue": "1,312,338.48",
+        "Count": 21987,
+        "AvgFare": 59.69
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 17,
+        "Revenue": "1,378,203.18",
+        "Count": 23582,
+        "AvgFare": 58.44
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 18,
+        "Revenue": "1,432,012.05",
+        "Count": 24786,
+        "AvgFare": 57.78
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 19,
+        "Revenue": "1,539,476.04",
+        "Count": 26438,
+        "AvgFare": 58.23
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 20,
+        "Revenue": "1,678,512.71",
+        "Count": 28961,
+        "AvgFare": 57.96
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 21,
+        "Revenue": "1,496,199.91",
+        "Count": 26270,
+        "AvgFare": 56.95
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 22,
+        "Revenue": "1,078,884.46",
+        "Count": 19203,
+        "AvgFare": 56.18
+    },
+    {
+        "Week": 48,
+        "WeekDay": 5,
+        "Hour": 23,
+        "Revenue": "626,499.61",
+        "Count": 10465,
+        "AvgFare": 59.87
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 0,
+        "Revenue": "295,080.50",
+        "Count": 5148,
+        "AvgFare": 57.32
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 1,
+        "Revenue": "145,602.35",
+        "Count": 2562,
+        "AvgFare": 56.83
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 2,
+        "Revenue": "85,489.96",
+        "Count": 1493,
+        "AvgFare": 57.26
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 3,
+        "Revenue": "62,242.64",
+        "Count": 1155,
+        "AvgFare": 53.89
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 4,
+        "Revenue": "66,731.57",
+        "Count": 1186,
+        "AvgFare": 56.27
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 5,
+        "Revenue": "123,900.85",
+        "Count": 2147,
+        "AvgFare": 57.71
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 6,
+        "Revenue": "260,286.54",
+        "Count": 4226,
+        "AvgFare": 61.59
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 7,
+        "Revenue": "497,730.40",
+        "Count": 8325,
+        "AvgFare": 59.79
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 8,
+        "Revenue": "932,937.23",
+        "Count": 15580,
+        "AvgFare": 59.88
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 9,
+        "Revenue": "1,252,856.77",
+        "Count": 20924,
+        "AvgFare": 59.88
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 10,
+        "Revenue": "1,470,320.57",
+        "Count": 24541,
+        "AvgFare": 59.91
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 11,
+        "Revenue": "1,427,057.16",
+        "Count": 24490,
+        "AvgFare": 58.27
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 12,
+        "Revenue": "1,380,662.59",
+        "Count": 23844,
+        "AvgFare": 57.9
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 13,
+        "Revenue": "1,364,583.12",
+        "Count": 23037,
+        "AvgFare": 59.23
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 14,
+        "Revenue": "1,380,593.00",
+        "Count": 23337,
+        "AvgFare": 59.16
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 15,
+        "Revenue": "1,385,295.21",
+        "Count": 23907,
+        "AvgFare": 57.95
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 16,
+        "Revenue": "1,434,121.47",
+        "Count": 24465,
+        "AvgFare": 58.62
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 17,
+        "Revenue": "1,425,762.55",
+        "Count": 24325,
+        "AvgFare": 58.61
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 18,
+        "Revenue": "1,359,635.63",
+        "Count": 23931,
+        "AvgFare": 56.81
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 19,
+        "Revenue": "1,309,888.05",
+        "Count": 23348,
+        "AvgFare": 56.1
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 20,
+        "Revenue": "1,273,945.13",
+        "Count": 23182,
+        "AvgFare": 54.95
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 21,
+        "Revenue": "1,139,062.32",
+        "Count": 21228,
+        "AvgFare": 53.66
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 22,
+        "Revenue": "853,383.63",
+        "Count": 15971,
+        "AvgFare": 53.43
+    },
+    {
+        "Week": 48,
+        "WeekDay": 6,
+        "Hour": 23,
+        "Revenue": "557,491.93",
+        "Count": 10322,
+        "AvgFare": 54.01
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 0,
+        "Revenue": "284,202.80",
+        "Count": 4931,
+        "AvgFare": 57.64
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 1,
+        "Revenue": "150,634.80",
+        "Count": 2637,
+        "AvgFare": 57.12
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 2,
+        "Revenue": "89,239.78",
+        "Count": 1555,
+        "AvgFare": 57.39
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 3,
+        "Revenue": "57,504.83",
+        "Count": 983,
+        "AvgFare": 58.5
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 4,
+        "Revenue": "51,720.38",
+        "Count": 837,
+        "AvgFare": 61.79
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 5,
+        "Revenue": "63,601.29",
+        "Count": 1181,
+        "AvgFare": 53.85
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 6,
+        "Revenue": "140,521.33",
+        "Count": 2426,
+        "AvgFare": 57.92
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 7,
+        "Revenue": "298,283.90",
+        "Count": 5202,
+        "AvgFare": 57.34
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 8,
+        "Revenue": "583,243.06",
+        "Count": 9752,
+        "AvgFare": 59.81
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 9,
+        "Revenue": "884,583.01",
+        "Count": 14628,
+        "AvgFare": 60.47
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 10,
+        "Revenue": "1,127,272.88",
+        "Count": 18625,
+        "AvgFare": 60.52
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 11,
+        "Revenue": "1,174,766.57",
+        "Count": 19547,
+        "AvgFare": 60.1
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 12,
+        "Revenue": "1,126,795.66",
+        "Count": 18720,
+        "AvgFare": 60.19
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 13,
+        "Revenue": "1,146,261.28",
+        "Count": 19364,
+        "AvgFare": 59.2
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 14,
+        "Revenue": "1,137,206.21",
+        "Count": 18772,
+        "AvgFare": 60.58
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 15,
+        "Revenue": "1,115,430.19",
+        "Count": 18289,
+        "AvgFare": 60.99
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 16,
+        "Revenue": "1,173,992.04",
+        "Count": 19049,
+        "AvgFare": 61.63
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 17,
+        "Revenue": "1,321,468.49",
+        "Count": 21035,
+        "AvgFare": 62.82
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 18,
+        "Revenue": "1,333,993.30",
+        "Count": 20436,
+        "AvgFare": 65.28
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 19,
+        "Revenue": "1,073,179.85",
+        "Count": 17729,
+        "AvgFare": 60.53
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 20,
+        "Revenue": "1,033,444.19",
+        "Count": 17204,
+        "AvgFare": 60.07
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 21,
+        "Revenue": "934,671.75",
+        "Count": 15532,
+        "AvgFare": 60.18
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 22,
+        "Revenue": "675,879.88",
+        "Count": 11472,
+        "AvgFare": 58.92
+    },
+    {
+        "Week": 48,
+        "WeekDay": 7,
+        "Hour": 23,
+        "Revenue": "429,705.14",
+        "Count": 7484,
+        "AvgFare": 57.42
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 0,
+        "Revenue": "261,550.85",
+        "Count": 4444,
+        "AvgFare": 58.85
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 1,
+        "Revenue": "145,785.56",
+        "Count": 2413,
+        "AvgFare": 60.42
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 2,
+        "Revenue": "74,784.95",
+        "Count": 1194,
+        "AvgFare": 62.63
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 3,
+        "Revenue": "64,761.43",
+        "Count": 1029,
+        "AvgFare": 62.94
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 4,
+        "Revenue": "55,169.25",
+        "Count": 906,
+        "AvgFare": 60.89
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 5,
+        "Revenue": "67,039.55",
+        "Count": 1040,
+        "AvgFare": 64.46
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 6,
+        "Revenue": "94,216.14",
+        "Count": 1541,
+        "AvgFare": 61.14
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 7,
+        "Revenue": "233,211.50",
+        "Count": 3749,
+        "AvgFare": 62.21
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 8,
+        "Revenue": "526,473.44",
+        "Count": 8543,
+        "AvgFare": 61.63
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 9,
+        "Revenue": "834,288.38",
+        "Count": 13653,
+        "AvgFare": 61.11
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 10,
+        "Revenue": "1,082,993.36",
+        "Count": 17655,
+        "AvgFare": 61.34
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 11,
+        "Revenue": "1,242,789.92",
+        "Count": 19838,
+        "AvgFare": 62.65
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 12,
+        "Revenue": "1,202,631.72",
+        "Count": 19470,
+        "AvgFare": 61.77
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 13,
+        "Revenue": "1,213,551.39",
+        "Count": 19957,
+        "AvgFare": 60.81
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 14,
+        "Revenue": "1,234,826.14",
+        "Count": 20221,
+        "AvgFare": 61.07
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 15,
+        "Revenue": "1,227,229.64",
+        "Count": 20581,
+        "AvgFare": 59.63
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 16,
+        "Revenue": "1,328,972.59",
+        "Count": 21745,
+        "AvgFare": 61.12
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 17,
+        "Revenue": "1,476,775.76",
+        "Count": 24704,
+        "AvgFare": 59.78
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 18,
+        "Revenue": "1,489,358.89",
+        "Count": 24656,
+        "AvgFare": 60.41
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 19,
+        "Revenue": "1,567,851.52",
+        "Count": 26160,
+        "AvgFare": 59.93
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 20,
+        "Revenue": "1,523,961.96",
+        "Count": 25176,
+        "AvgFare": 60.53
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 21,
+        "Revenue": "1,304,359.58",
+        "Count": 21675,
+        "AvgFare": 60.18
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 22,
+        "Revenue": "873,944.50",
+        "Count": 14618,
+        "AvgFare": 59.79
+    },
+    {
+        "Week": 49,
+        "WeekDay": 1,
+        "Hour": 23,
+        "Revenue": "466,548.60",
+        "Count": 7969,
+        "AvgFare": 58.55
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 0,
+        "Revenue": "221,635.30",
+        "Count": 3831,
+        "AvgFare": 57.85
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 1,
+        "Revenue": "113,265.28",
+        "Count": 1922,
+        "AvgFare": 58.93
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 2,
+        "Revenue": "65,029.97",
+        "Count": 1105,
+        "AvgFare": 58.85
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 3,
+        "Revenue": "48,390.69",
+        "Count": 796,
+        "AvgFare": 60.79
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 4,
+        "Revenue": "52,833.55",
+        "Count": 888,
+        "AvgFare": 59.5
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 5,
+        "Revenue": "85,613.85",
+        "Count": 1315,
+        "AvgFare": 65.11
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 6,
+        "Revenue": "195,317.40",
+        "Count": 2884,
+        "AvgFare": 67.72
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 7,
+        "Revenue": "427,765.51",
+        "Count": 6522,
+        "AvgFare": 65.59
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 8,
+        "Revenue": "751,357.02",
+        "Count": 11942,
+        "AvgFare": 62.92
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 9,
+        "Revenue": "1,142,251.86",
+        "Count": 18144,
+        "AvgFare": 62.95
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 10,
+        "Revenue": "1,377,515.57",
+        "Count": 22402,
+        "AvgFare": 61.49
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 11,
+        "Revenue": "1,454,971.82",
+        "Count": 23288,
+        "AvgFare": 62.48
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 12,
+        "Revenue": "1,398,542.03",
+        "Count": 23250,
+        "AvgFare": 60.15
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 13,
+        "Revenue": "1,346,748.77",
+        "Count": 22489,
+        "AvgFare": 59.88
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 14,
+        "Revenue": "1,343,751.11",
+        "Count": 22435,
+        "AvgFare": 59.9
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 15,
+        "Revenue": "1,324,744.25",
+        "Count": 21937,
+        "AvgFare": 60.39
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 16,
+        "Revenue": "1,371,735.38",
+        "Count": 22743,
+        "AvgFare": 60.31
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 17,
+        "Revenue": "1,512,385.51",
+        "Count": 24998,
+        "AvgFare": 60.5
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 18,
+        "Revenue": "1,518,616.22",
+        "Count": 25759,
+        "AvgFare": 58.95
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 19,
+        "Revenue": "1,648,538.86",
+        "Count": 28140,
+        "AvgFare": 58.58
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 20,
+        "Revenue": "1,806,116.84",
+        "Count": 30606,
+        "AvgFare": 59.01
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 21,
+        "Revenue": "1,669,371.74",
+        "Count": 28262,
+        "AvgFare": 59.07
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 22,
+        "Revenue": "1,085,777.47",
+        "Count": 18263,
+        "AvgFare": 59.45
+    },
+    {
+        "Week": 49,
+        "WeekDay": 2,
+        "Hour": 23,
+        "Revenue": "549,069.64",
+        "Count": 9610,
+        "AvgFare": 57.14
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 0,
+        "Revenue": "250,636.99",
+        "Count": 4428,
+        "AvgFare": 56.6
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 1,
+        "Revenue": "122,120.87",
+        "Count": 2081,
+        "AvgFare": 58.68
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 2,
+        "Revenue": "70,294.84",
+        "Count": 1260,
+        "AvgFare": 55.79
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 3,
+        "Revenue": "54,133.76",
+        "Count": 968,
+        "AvgFare": 55.92
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 4,
+        "Revenue": "57,035.13",
+        "Count": 988,
+        "AvgFare": 57.73
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 5,
+        "Revenue": "108,939.55",
+        "Count": 1792,
+        "AvgFare": 60.79
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 6,
+        "Revenue": "205,510.01",
+        "Count": 3485,
+        "AvgFare": 58.97
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 7,
+        "Revenue": "422,928.38",
+        "Count": 7102,
+        "AvgFare": 59.55
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 8,
+        "Revenue": "817,450.90",
+        "Count": 13381,
+        "AvgFare": 61.09
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 9,
+        "Revenue": "1,170,954.45",
+        "Count": 19347,
+        "AvgFare": 60.52
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 10,
+        "Revenue": "1,284,045.65",
+        "Count": 21446,
+        "AvgFare": 59.87
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 11,
+        "Revenue": "1,363,008.05",
+        "Count": 22387,
+        "AvgFare": 60.88
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 12,
+        "Revenue": "1,328,569.53",
+        "Count": 22455,
+        "AvgFare": 59.17
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 13,
+        "Revenue": "1,293,091.80",
+        "Count": 22517,
+        "AvgFare": 57.43
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 14,
+        "Revenue": "1,292,132.61",
+        "Count": 22100,
+        "AvgFare": 58.47
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 15,
+        "Revenue": "1,328,127.10",
+        "Count": 22411,
+        "AvgFare": 59.26
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 16,
+        "Revenue": "1,351,327.62",
+        "Count": 22826,
+        "AvgFare": 59.2
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 17,
+        "Revenue": "1,525,631.45",
+        "Count": 25588,
+        "AvgFare": 59.62
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 18,
+        "Revenue": "1,511,225.15",
+        "Count": 25707,
+        "AvgFare": 58.79
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 19,
+        "Revenue": "1,630,521.81",
+        "Count": 27542,
+        "AvgFare": 59.2
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 20,
+        "Revenue": "1,830,343.91",
+        "Count": 30810,
+        "AvgFare": 59.41
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 21,
+        "Revenue": "1,637,057.32",
+        "Count": 27806,
+        "AvgFare": 58.87
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 22,
+        "Revenue": "1,162,443.06",
+        "Count": 19826,
+        "AvgFare": 58.63
+    },
+    {
+        "Week": 49,
+        "WeekDay": 3,
+        "Hour": 23,
+        "Revenue": "621,156.24",
+        "Count": 10952,
+        "AvgFare": 56.72
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 0,
+        "Revenue": "278,521.29",
+        "Count": 4818,
+        "AvgFare": 57.81
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 1,
+        "Revenue": "121,907.74",
+        "Count": 2207,
+        "AvgFare": 55.24
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 2,
+        "Revenue": "78,533.11",
+        "Count": 1407,
+        "AvgFare": 55.82
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 3,
+        "Revenue": "59,187.10",
+        "Count": 1042,
+        "AvgFare": 56.8
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 4,
+        "Revenue": "58,218.71",
+        "Count": 1049,
+        "AvgFare": 55.5
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 5,
+        "Revenue": "107,175.66",
+        "Count": 1745,
+        "AvgFare": 61.42
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 6,
+        "Revenue": "202,469.04",
+        "Count": 3482,
+        "AvgFare": 58.15
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 7,
+        "Revenue": "402,048.11",
+        "Count": 6977,
+        "AvgFare": 57.62
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 8,
+        "Revenue": "822,820.71",
+        "Count": 13706,
+        "AvgFare": 60.03
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 9,
+        "Revenue": "1,056,674.42",
+        "Count": 17893,
+        "AvgFare": 59.06
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 10,
+        "Revenue": "1,277,621.59",
+        "Count": 21575,
+        "AvgFare": 59.22
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 11,
+        "Revenue": "1,321,683.28",
+        "Count": 22291,
+        "AvgFare": 59.29
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 12,
+        "Revenue": "1,247,675.89",
+        "Count": 21699,
+        "AvgFare": 57.5
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 13,
+        "Revenue": "1,280,150.33",
+        "Count": 21611,
+        "AvgFare": 59.24
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 14,
+        "Revenue": "1,261,621.63",
+        "Count": 20798,
+        "AvgFare": 60.66
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 15,
+        "Revenue": "1,210,017.83",
+        "Count": 20908,
+        "AvgFare": 57.87
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 16,
+        "Revenue": "1,286,433.19",
+        "Count": 22059,
+        "AvgFare": 58.32
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 17,
+        "Revenue": "1,340,386.74",
+        "Count": 23840,
+        "AvgFare": 56.22
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 18,
+        "Revenue": "1,362,337.42",
+        "Count": 24472,
+        "AvgFare": 55.67
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 19,
+        "Revenue": "1,445,930.38",
+        "Count": 26260,
+        "AvgFare": 55.06
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 20,
+        "Revenue": "1,566,976.07",
+        "Count": 28334,
+        "AvgFare": 55.3
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 21,
+        "Revenue": "1,408,075.28",
+        "Count": 25513,
+        "AvgFare": 55.19
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 22,
+        "Revenue": "962,806.88",
+        "Count": 17988,
+        "AvgFare": 53.52
+    },
+    {
+        "Week": 49,
+        "WeekDay": 4,
+        "Hour": 23,
+        "Revenue": "528,372.04",
+        "Count": 9925,
+        "AvgFare": 53.24
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 0,
+        "Revenue": "245,276.52",
+        "Count": 4588,
+        "AvgFare": 53.46
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 1,
+        "Revenue": "111,449.49",
+        "Count": 2128,
+        "AvgFare": 52.37
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 2,
+        "Revenue": "70,283.06",
+        "Count": 1304,
+        "AvgFare": 53.9
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 3,
+        "Revenue": "54,337.00",
+        "Count": 950,
+        "AvgFare": 57.2
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 4,
+        "Revenue": "55,267.95",
+        "Count": 955,
+        "AvgFare": 57.87
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 5,
+        "Revenue": "97,380.04",
+        "Count": 1652,
+        "AvgFare": 58.95
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 6,
+        "Revenue": "200,685.74",
+        "Count": 3425,
+        "AvgFare": 58.59
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 7,
+        "Revenue": "432,575.84",
+        "Count": 7366,
+        "AvgFare": 58.73
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 8,
+        "Revenue": "780,058.83",
+        "Count": 13280,
+        "AvgFare": 58.74
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 9,
+        "Revenue": "1,092,106.59",
+        "Count": 18667,
+        "AvgFare": 58.5
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 10,
+        "Revenue": "1,276,960.01",
+        "Count": 21980,
+        "AvgFare": 58.1
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 11,
+        "Revenue": "1,282,472.75",
+        "Count": 22157,
+        "AvgFare": 57.88
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 12,
+        "Revenue": "1,226,998.11",
+        "Count": 21136,
+        "AvgFare": 58.05
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 13,
+        "Revenue": "1,164,290.07",
+        "Count": 20519,
+        "AvgFare": 56.74
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 14,
+        "Revenue": "1,179,018.51",
+        "Count": 20781,
+        "AvgFare": 56.74
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 15,
+        "Revenue": "1,186,137.36",
+        "Count": 21450,
+        "AvgFare": 55.3
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 16,
+        "Revenue": "1,249,796.86",
+        "Count": 22050,
+        "AvgFare": 56.68
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 17,
+        "Revenue": "1,280,418.87",
+        "Count": 22589,
+        "AvgFare": 56.68
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 18,
+        "Revenue": "1,323,601.68",
+        "Count": 23826,
+        "AvgFare": 55.55
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 19,
+        "Revenue": "1,372,231.72",
+        "Count": 24802,
+        "AvgFare": 55.33
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 20,
+        "Revenue": "1,364,280.75",
+        "Count": 24679,
+        "AvgFare": 55.28
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 21,
+        "Revenue": "1,259,878.19",
+        "Count": 22579,
+        "AvgFare": 55.8
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 22,
+        "Revenue": "902,377.86",
+        "Count": 16369,
+        "AvgFare": 55.13
+    },
+    {
+        "Week": 49,
+        "WeekDay": 5,
+        "Hour": 23,
+        "Revenue": "526,963.57",
+        "Count": 9884,
+        "AvgFare": 53.31
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 0,
+        "Revenue": "269,488.02",
+        "Count": 5062,
+        "AvgFare": 53.24
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 1,
+        "Revenue": "126,889.06",
+        "Count": 2379,
+        "AvgFare": 53.34
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 2,
+        "Revenue": "67,765.19",
+        "Count": 1312,
+        "AvgFare": 51.65
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 3,
+        "Revenue": "57,893.13",
+        "Count": 1040,
+        "AvgFare": 55.67
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 4,
+        "Revenue": "56,115.56",
+        "Count": 985,
+        "AvgFare": 56.97
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 5,
+        "Revenue": "93,561.00",
+        "Count": 1615,
+        "AvgFare": 57.93
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 6,
+        "Revenue": "181,244.53",
+        "Count": 3319,
+        "AvgFare": 54.61
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 7,
+        "Revenue": "393,550.80",
+        "Count": 6912,
+        "AvgFare": 56.94
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 8,
+        "Revenue": "751,044.87",
+        "Count": 13114,
+        "AvgFare": 57.27
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 9,
+        "Revenue": "1,083,815.33",
+        "Count": 19013,
+        "AvgFare": 57
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 10,
+        "Revenue": "1,217,733.51",
+        "Count": 22096,
+        "AvgFare": 55.11
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 11,
+        "Revenue": "1,291,637.99",
+        "Count": 24038,
+        "AvgFare": 53.73
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 12,
+        "Revenue": "1,257,975.21",
+        "Count": 24490,
+        "AvgFare": 51.37
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 13,
+        "Revenue": "1,194,791.36",
+        "Count": 23455,
+        "AvgFare": 50.94
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 14,
+        "Revenue": "1,235,527.91",
+        "Count": 23362,
+        "AvgFare": 52.89
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 15,
+        "Revenue": "1,217,805.05",
+        "Count": 23247,
+        "AvgFare": 52.39
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 16,
+        "Revenue": "1,137,679.18",
+        "Count": 22957,
+        "AvgFare": 49.56
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 17,
+        "Revenue": "1,187,606.98",
+        "Count": 23462,
+        "AvgFare": 50.62
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 18,
+        "Revenue": "1,141,383.97",
+        "Count": 22963,
+        "AvgFare": 49.71
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 19,
+        "Revenue": "1,168,784.06",
+        "Count": 22715,
+        "AvgFare": 51.45
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 20,
+        "Revenue": "1,096,842.53",
+        "Count": 21907,
+        "AvgFare": 50.07
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 21,
+        "Revenue": "988,480.11",
+        "Count": 19599,
+        "AvgFare": 50.44
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 22,
+        "Revenue": "710,880.74",
+        "Count": 14810,
+        "AvgFare": 48
+    },
+    {
+        "Week": 49,
+        "WeekDay": 6,
+        "Hour": 23,
+        "Revenue": "453,136.45",
+        "Count": 9532,
+        "AvgFare": 47.54
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 0,
+        "Revenue": "261,517.49",
+        "Count": 5301,
+        "AvgFare": 49.33
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 1,
+        "Revenue": "126,165.24",
+        "Count": 2662,
+        "AvgFare": 47.39
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 2,
+        "Revenue": "69,546.88",
+        "Count": 1509,
+        "AvgFare": 46.09
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 3,
+        "Revenue": "47,120.51",
+        "Count": 1012,
+        "AvgFare": 46.56
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 4,
+        "Revenue": "41,069.95",
+        "Count": 849,
+        "AvgFare": 48.37
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 5,
+        "Revenue": "63,812.46",
+        "Count": 1163,
+        "AvgFare": 54.87
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 6,
+        "Revenue": "137,353.79",
+        "Count": 2554,
+        "AvgFare": 53.78
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 7,
+        "Revenue": "253,614.23",
+        "Count": 5070,
+        "AvgFare": 50.02
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 8,
+        "Revenue": "529,454.80",
+        "Count": 10302,
+        "AvgFare": 51.39
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 9,
+        "Revenue": "820,611.83",
+        "Count": 15667,
+        "AvgFare": 52.38
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 10,
+        "Revenue": "975,205.91",
+        "Count": 18766,
+        "AvgFare": 51.97
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 11,
+        "Revenue": "1,067,098.28",
+        "Count": 20255,
+        "AvgFare": 52.68
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 12,
+        "Revenue": "996,755.47",
+        "Count": 19879,
+        "AvgFare": 50.14
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 13,
+        "Revenue": "1,037,307.80",
+        "Count": 20291,
+        "AvgFare": 51.12
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 14,
+        "Revenue": "986,394.84",
+        "Count": 19410,
+        "AvgFare": 50.82
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 15,
+        "Revenue": "976,082.76",
+        "Count": 18836,
+        "AvgFare": 51.82
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 16,
+        "Revenue": "937,670.95",
+        "Count": 18477,
+        "AvgFare": 50.75
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 17,
+        "Revenue": "957,916.69",
+        "Count": 18676,
+        "AvgFare": 51.29
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 18,
+        "Revenue": "925,711.56",
+        "Count": 18137,
+        "AvgFare": 51.04
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 19,
+        "Revenue": "870,340.78",
+        "Count": 17416,
+        "AvgFare": 49.97
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 20,
+        "Revenue": "852,778.30",
+        "Count": 17056,
+        "AvgFare": 50
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 21,
+        "Revenue": "785,497.48",
+        "Count": 15720,
+        "AvgFare": 49.97
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 22,
+        "Revenue": "595,601.38",
+        "Count": 12058,
+        "AvgFare": 49.39
+    },
+    {
+        "Week": 49,
+        "WeekDay": 7,
+        "Hour": 23,
+        "Revenue": "380,015.15",
+        "Count": 7681,
+        "AvgFare": 49.47
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 0,
+        "Revenue": "224,207.67",
+        "Count": 4562,
+        "AvgFare": 49.15
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 1,
+        "Revenue": "124,938.14",
+        "Count": 2604,
+        "AvgFare": 47.98
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 2,
+        "Revenue": "74,590.93",
+        "Count": 1415,
+        "AvgFare": 52.71
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 3,
+        "Revenue": "48,644.22",
+        "Count": 921,
+        "AvgFare": 52.82
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 4,
+        "Revenue": "41,437.27",
+        "Count": 832,
+        "AvgFare": 49.8
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 5,
+        "Revenue": "51,031.95",
+        "Count": 900,
+        "AvgFare": 56.7
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 6,
+        "Revenue": "84,468.26",
+        "Count": 1574,
+        "AvgFare": 53.66
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 7,
+        "Revenue": "203,739.81",
+        "Count": 3730,
+        "AvgFare": 54.62
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 8,
+        "Revenue": "397,945.89",
+        "Count": 7549,
+        "AvgFare": 52.72
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 9,
+        "Revenue": "703,613.70",
+        "Count": 13326,
+        "AvgFare": 52.8
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 10,
+        "Revenue": "955,771.20",
+        "Count": 18304,
+        "AvgFare": 52.22
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 11,
+        "Revenue": "1,071,862.95",
+        "Count": 20688,
+        "AvgFare": 51.81
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 12,
+        "Revenue": "1,075,755.77",
+        "Count": 20532,
+        "AvgFare": 52.39
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 13,
+        "Revenue": "1,069,655.26",
+        "Count": 20948,
+        "AvgFare": 51.06
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 14,
+        "Revenue": "1,110,646.67",
+        "Count": 21572,
+        "AvgFare": 51.49
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 15,
+        "Revenue": "1,119,512.76",
+        "Count": 21418,
+        "AvgFare": 52.27
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 16,
+        "Revenue": "1,165,954.46",
+        "Count": 22161,
+        "AvgFare": 52.61
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 17,
+        "Revenue": "1,278,337.12",
+        "Count": 24427,
+        "AvgFare": 52.33
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 18,
+        "Revenue": "1,331,468.80",
+        "Count": 25474,
+        "AvgFare": 52.27
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 19,
+        "Revenue": "1,333,529.34",
+        "Count": 26407,
+        "AvgFare": 50.5
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 20,
+        "Revenue": "1,382,611.23",
+        "Count": 27236,
+        "AvgFare": 50.76
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 21,
+        "Revenue": "1,175,109.28",
+        "Count": 22924,
+        "AvgFare": 51.26
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 22,
+        "Revenue": "799,336.87",
+        "Count": 16187,
+        "AvgFare": 49.38
+    },
+    {
+        "Week": 50,
+        "WeekDay": 1,
+        "Hour": 23,
+        "Revenue": "457,099.79",
+        "Count": 9167,
+        "AvgFare": 49.86
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 0,
+        "Revenue": "208,098.88",
+        "Count": 4173,
+        "AvgFare": 49.87
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 1,
+        "Revenue": "103,057.49",
+        "Count": 2079,
+        "AvgFare": 49.57
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 2,
+        "Revenue": "62,203.94",
+        "Count": 1218,
+        "AvgFare": 51.07
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 3,
+        "Revenue": "47,891.69",
+        "Count": 889,
+        "AvgFare": 53.87
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 4,
+        "Revenue": "45,276.59",
+        "Count": 932,
+        "AvgFare": 48.58
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 5,
+        "Revenue": "79,884.83",
+        "Count": 1604,
+        "AvgFare": 49.8
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 6,
+        "Revenue": "161,657.09",
+        "Count": 2998,
+        "AvgFare": 53.92
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 7,
+        "Revenue": "349,524.99",
+        "Count": 6553,
+        "AvgFare": 53.34
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 8,
+        "Revenue": "713,202.31",
+        "Count": 12948,
+        "AvgFare": 55.08
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 9,
+        "Revenue": "1,026,495.52",
+        "Count": 18901,
+        "AvgFare": 54.31
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 10,
+        "Revenue": "1,289,928.31",
+        "Count": 23907,
+        "AvgFare": 53.96
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 11,
+        "Revenue": "1,300,632.55",
+        "Count": 24344,
+        "AvgFare": 53.43
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 12,
+        "Revenue": "1,237,009.35",
+        "Count": 23702,
+        "AvgFare": 52.19
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 13,
+        "Revenue": "1,223,778.24",
+        "Count": 23466,
+        "AvgFare": 52.15
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 14,
+        "Revenue": "1,218,392.51",
+        "Count": 23165,
+        "AvgFare": 52.6
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 15,
+        "Revenue": "1,212,893.64",
+        "Count": 23474,
+        "AvgFare": 51.67
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 16,
+        "Revenue": "1,278,989.57",
+        "Count": 24848,
+        "AvgFare": 51.47
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 17,
+        "Revenue": "1,324,782.91",
+        "Count": 26367,
+        "AvgFare": 50.24
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 18,
+        "Revenue": "1,475,597.90",
+        "Count": 28646,
+        "AvgFare": 51.51
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 19,
+        "Revenue": "1,589,878.76",
+        "Count": 30810,
+        "AvgFare": 51.6
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 20,
+        "Revenue": "1,728,940.68",
+        "Count": 33592,
+        "AvgFare": 51.47
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 21,
+        "Revenue": "1,553,707.59",
+        "Count": 30416,
+        "AvgFare": 51.08
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 22,
+        "Revenue": "1,040,685.32",
+        "Count": 20830,
+        "AvgFare": 49.96
+    },
+    {
+        "Week": 50,
+        "WeekDay": 2,
+        "Hour": 23,
+        "Revenue": "502,553.20",
+        "Count": 10165,
+        "AvgFare": 49.44
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 0,
+        "Revenue": "234,852.85",
+        "Count": 4791,
+        "AvgFare": 49.02
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 1,
+        "Revenue": "115,745.56",
+        "Count": 2374,
+        "AvgFare": 48.76
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 2,
+        "Revenue": "74,921.33",
+        "Count": 1493,
+        "AvgFare": 50.18
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 3,
+        "Revenue": "57,011.77",
+        "Count": 1114,
+        "AvgFare": 51.18
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 4,
+        "Revenue": "59,900.32",
+        "Count": 1154,
+        "AvgFare": 51.91
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 5,
+        "Revenue": "97,705.30",
+        "Count": 1976,
+        "AvgFare": 49.45
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 6,
+        "Revenue": "223,434.28",
+        "Count": 4124,
+        "AvgFare": 54.18
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 7,
+        "Revenue": "486,838.07",
+        "Count": 9097,
+        "AvgFare": 53.52
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 8,
+        "Revenue": "784,430.20",
+        "Count": 15495,
+        "AvgFare": 50.62
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 9,
+        "Revenue": "1,098,721.92",
+        "Count": 21195,
+        "AvgFare": 51.84
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 10,
+        "Revenue": "1,293,696.79",
+        "Count": 24300,
+        "AvgFare": 53.24
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 11,
+        "Revenue": "1,289,043.41",
+        "Count": 24657,
+        "AvgFare": 52.28
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 12,
+        "Revenue": "1,264,640.81",
+        "Count": 24687,
+        "AvgFare": 51.23
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 13,
+        "Revenue": "1,298,024.92",
+        "Count": 25091,
+        "AvgFare": 51.73
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 14,
+        "Revenue": "1,298,519.54",
+        "Count": 25063,
+        "AvgFare": 51.81
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 15,
+        "Revenue": "1,285,275.62",
+        "Count": 24623,
+        "AvgFare": 52.2
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 16,
+        "Revenue": "1,347,165.19",
+        "Count": 25689,
+        "AvgFare": 52.44
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 17,
+        "Revenue": "1,392,225.03",
+        "Count": 26746,
+        "AvgFare": 52.05
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 18,
+        "Revenue": "1,432,888.07",
+        "Count": 28056,
+        "AvgFare": 51.07
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 19,
+        "Revenue": "1,534,246.32",
+        "Count": 30605,
+        "AvgFare": 50.13
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 20,
+        "Revenue": "1,673,837.08",
+        "Count": 32899,
+        "AvgFare": 50.88
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 21,
+        "Revenue": "1,544,008.04",
+        "Count": 30727,
+        "AvgFare": 50.25
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 22,
+        "Revenue": "1,118,887.57",
+        "Count": 22429,
+        "AvgFare": 49.89
+    },
+    {
+        "Week": 50,
+        "WeekDay": 3,
+        "Hour": 23,
+        "Revenue": "564,654.07",
+        "Count": 11547,
+        "AvgFare": 48.9
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 0,
+        "Revenue": "250,896.89",
+        "Count": 5135,
+        "AvgFare": 48.86
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 1,
+        "Revenue": "126,998.16",
+        "Count": 2545,
+        "AvgFare": 49.9
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 2,
+        "Revenue": "71,065.66",
+        "Count": 1416,
+        "AvgFare": 50.19
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 3,
+        "Revenue": "44,512.52",
+        "Count": 1000,
+        "AvgFare": 44.51
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 4,
+        "Revenue": "61,743.42",
+        "Count": 1214,
+        "AvgFare": 50.86
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 5,
+        "Revenue": "99,277.32",
+        "Count": 1959,
+        "AvgFare": 50.68
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 6,
+        "Revenue": "193,873.16",
+        "Count": 3735,
+        "AvgFare": 51.91
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 7,
+        "Revenue": "414,404.44",
+        "Count": 8155,
+        "AvgFare": 50.82
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 8,
+        "Revenue": "712,805.29",
+        "Count": 14091,
+        "AvgFare": 50.59
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 9,
+        "Revenue": "1,116,886.23",
+        "Count": 20560,
+        "AvgFare": 54.32
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 10,
+        "Revenue": "1,228,292.38",
+        "Count": 23181,
+        "AvgFare": 52.99
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 11,
+        "Revenue": "1,204,585.91",
+        "Count": 24083,
+        "AvgFare": 50.02
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 12,
+        "Revenue": "1,166,046.09",
+        "Count": 23136,
+        "AvgFare": 50.4
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 13,
+        "Revenue": "1,129,655.53",
+        "Count": 22708,
+        "AvgFare": 49.75
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 14,
+        "Revenue": "1,171,647.54",
+        "Count": 23172,
+        "AvgFare": 50.56
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 15,
+        "Revenue": "1,167,718.04",
+        "Count": 23423,
+        "AvgFare": 49.85
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 16,
+        "Revenue": "1,200,804.37",
+        "Count": 25399,
+        "AvgFare": 47.28
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 17,
+        "Revenue": "1,266,024.86",
+        "Count": 24763,
+        "AvgFare": 51.13
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 18,
+        "Revenue": "1,281,399.42",
+        "Count": 25904,
+        "AvgFare": 49.47
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 19,
+        "Revenue": "1,394,275.68",
+        "Count": 27959,
+        "AvgFare": 49.87
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 20,
+        "Revenue": "1,490,302.09",
+        "Count": 29604,
+        "AvgFare": 50.34
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 21,
+        "Revenue": "1,416,313.84",
+        "Count": 28593,
+        "AvgFare": 49.53
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 22,
+        "Revenue": "955,813.41",
+        "Count": 19882,
+        "AvgFare": 48.07
+    },
+    {
+        "Week": 50,
+        "WeekDay": 4,
+        "Hour": 23,
+        "Revenue": "546,993.79",
+        "Count": 11306,
+        "AvgFare": 48.38
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 0,
+        "Revenue": "232,507.48",
+        "Count": 4802,
+        "AvgFare": 48.42
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 1,
+        "Revenue": "121,318.88",
+        "Count": 2432,
+        "AvgFare": 49.88
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 2,
+        "Revenue": "66,547.08",
+        "Count": 1315,
+        "AvgFare": 50.61
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 3,
+        "Revenue": "49,161.60",
+        "Count": 964,
+        "AvgFare": 51
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 4,
+        "Revenue": "48,077.36",
+        "Count": 993,
+        "AvgFare": 48.42
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 5,
+        "Revenue": "77,272.27",
+        "Count": 1587,
+        "AvgFare": 48.69
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 6,
+        "Revenue": "180,330.80",
+        "Count": 3395,
+        "AvgFare": 53.12
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 7,
+        "Revenue": "368,336.91",
+        "Count": 7129,
+        "AvgFare": 51.67
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 8,
+        "Revenue": "703,841.87",
+        "Count": 13533,
+        "AvgFare": 52.01
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 9,
+        "Revenue": "984,731.89",
+        "Count": 18842,
+        "AvgFare": 52.26
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 10,
+        "Revenue": "1,160,454.60",
+        "Count": 22524,
+        "AvgFare": 51.52
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 11,
+        "Revenue": "1,221,745.22",
+        "Count": 23705,
+        "AvgFare": 51.54
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 12,
+        "Revenue": "1,176,950.46",
+        "Count": 22259,
+        "AvgFare": 52.88
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 13,
+        "Revenue": "1,115,570.88",
+        "Count": 21791,
+        "AvgFare": 51.19
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 14,
+        "Revenue": "1,101,317.06",
+        "Count": 21895,
+        "AvgFare": 50.3
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 15,
+        "Revenue": "1,090,055.55",
+        "Count": 21066,
+        "AvgFare": 51.74
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 16,
+        "Revenue": "1,201,392.40",
+        "Count": 23130,
+        "AvgFare": 51.94
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 17,
+        "Revenue": "1,160,562.51",
+        "Count": 22983,
+        "AvgFare": 50.5
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 18,
+        "Revenue": "1,249,263.65",
+        "Count": 24074,
+        "AvgFare": 51.89
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 19,
+        "Revenue": "1,277,974.40",
+        "Count": 25178,
+        "AvgFare": 50.76
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 20,
+        "Revenue": "1,339,880.88",
+        "Count": 26666,
+        "AvgFare": 50.25
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 21,
+        "Revenue": "1,190,971.28",
+        "Count": 24024,
+        "AvgFare": 49.57
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 22,
+        "Revenue": "876,692.43",
+        "Count": 17879,
+        "AvgFare": 49.03
+    },
+    {
+        "Week": 50,
+        "WeekDay": 5,
+        "Hour": 23,
+        "Revenue": "478,787.83",
+        "Count": 9792,
+        "AvgFare": 48.9
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 0,
+        "Revenue": "237,265.74",
+        "Count": 5028,
+        "AvgFare": 47.19
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 1,
+        "Revenue": "119,589.89",
+        "Count": 2429,
+        "AvgFare": 49.23
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 2,
+        "Revenue": "63,583.77",
+        "Count": 1304,
+        "AvgFare": 48.76
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 3,
+        "Revenue": "55,821.06",
+        "Count": 1080,
+        "AvgFare": 51.69
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 4,
+        "Revenue": "57,176.09",
+        "Count": 1130,
+        "AvgFare": 50.6
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 5,
+        "Revenue": "115,230.61",
+        "Count": 2163,
+        "AvgFare": 53.27
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 6,
+        "Revenue": "226,673.56",
+        "Count": 4179,
+        "AvgFare": 54.24
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 7,
+        "Revenue": "385,327.32",
+        "Count": 7701,
+        "AvgFare": 50.04
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 8,
+        "Revenue": "738,509.78",
+        "Count": 14085,
+        "AvgFare": 52.43
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 9,
+        "Revenue": "1,042,759.82",
+        "Count": 19828,
+        "AvgFare": 52.59
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 10,
+        "Revenue": "1,204,420.52",
+        "Count": 22956,
+        "AvgFare": 52.47
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 11,
+        "Revenue": "1,209,326.06",
+        "Count": 23759,
+        "AvgFare": 50.9
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 12,
+        "Revenue": "1,170,492.80",
+        "Count": 22175,
+        "AvgFare": 52.78
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 13,
+        "Revenue": "1,143,278.02",
+        "Count": 22065,
+        "AvgFare": 51.81
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 14,
+        "Revenue": "1,174,744.73",
+        "Count": 22763,
+        "AvgFare": 51.61
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 15,
+        "Revenue": "1,143,476.21",
+        "Count": 22030,
+        "AvgFare": 51.91
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 16,
+        "Revenue": "1,178,031.74",
+        "Count": 22819,
+        "AvgFare": 51.63
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 17,
+        "Revenue": "1,086,298.29",
+        "Count": 21844,
+        "AvgFare": 49.73
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 18,
+        "Revenue": "1,017,377.30",
+        "Count": 20648,
+        "AvgFare": 49.27
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 19,
+        "Revenue": "951,738.60",
+        "Count": 19004,
+        "AvgFare": 50.08
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 20,
+        "Revenue": "994,330.76",
+        "Count": 20260,
+        "AvgFare": 49.08
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 21,
+        "Revenue": "892,530.05",
+        "Count": 18367,
+        "AvgFare": 48.59
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 22,
+        "Revenue": "663,710.46",
+        "Count": 13861,
+        "AvgFare": 47.88
+    },
+    {
+        "Week": 50,
+        "WeekDay": 6,
+        "Hour": 23,
+        "Revenue": "426,901.66",
+        "Count": 8869,
+        "AvgFare": 48.13
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 0,
+        "Revenue": "234,785.27",
+        "Count": 4750,
+        "AvgFare": 49.43
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 1,
+        "Revenue": "119,156.37",
+        "Count": 2415,
+        "AvgFare": 49.34
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 2,
+        "Revenue": "72,609.39",
+        "Count": 1425,
+        "AvgFare": 50.95
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 3,
+        "Revenue": "53,197.40",
+        "Count": 1035,
+        "AvgFare": 51.4
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 4,
+        "Revenue": "43,551.75",
+        "Count": 817,
+        "AvgFare": 53.31
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 5,
+        "Revenue": "64,270.89",
+        "Count": 1252,
+        "AvgFare": 51.33
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 6,
+        "Revenue": "115,074.28",
+        "Count": 2307,
+        "AvgFare": 49.88
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 7,
+        "Revenue": "253,753.76",
+        "Count": 5236,
+        "AvgFare": 48.46
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 8,
+        "Revenue": "514,972.07",
+        "Count": 10261,
+        "AvgFare": 50.19
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 9,
+        "Revenue": "726,151.43",
+        "Count": 14372,
+        "AvgFare": 50.53
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 10,
+        "Revenue": "937,949.67",
+        "Count": 18441,
+        "AvgFare": 50.86
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 11,
+        "Revenue": "959,604.74",
+        "Count": 18715,
+        "AvgFare": 51.27
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 12,
+        "Revenue": "944,545.30",
+        "Count": 18946,
+        "AvgFare": 49.85
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 13,
+        "Revenue": "911,059.72",
+        "Count": 17874,
+        "AvgFare": 50.97
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 14,
+        "Revenue": "884,438.74",
+        "Count": 17834,
+        "AvgFare": 49.59
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 15,
+        "Revenue": "881,970.38",
+        "Count": 17749,
+        "AvgFare": 49.69
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 16,
+        "Revenue": "921,165.78",
+        "Count": 18090,
+        "AvgFare": 50.92
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 17,
+        "Revenue": "875,027.11",
+        "Count": 17621,
+        "AvgFare": 49.66
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 18,
+        "Revenue": "847,401.04",
+        "Count": 17177,
+        "AvgFare": 49.33
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 19,
+        "Revenue": "808,180.30",
+        "Count": 16379,
+        "AvgFare": 49.34
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 20,
+        "Revenue": "783,555.89",
+        "Count": 16194,
+        "AvgFare": 48.39
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 21,
+        "Revenue": "723,546.90",
+        "Count": 14643,
+        "AvgFare": 49.41
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 22,
+        "Revenue": "560,019.21",
+        "Count": 11547,
+        "AvgFare": 48.5
+    },
+    {
+        "Week": 50,
+        "WeekDay": 7,
+        "Hour": 23,
+        "Revenue": "359,157.88",
+        "Count": 7615,
+        "AvgFare": 47.16
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 0,
+        "Revenue": "216,700.05",
+        "Count": 4263,
+        "AvgFare": 50.83
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 1,
+        "Revenue": "107,551.72",
+        "Count": 2152,
+        "AvgFare": 49.98
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 2,
+        "Revenue": "65,220.19",
+        "Count": 1297,
+        "AvgFare": 50.29
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 3,
+        "Revenue": "40,095.29",
+        "Count": 832,
+        "AvgFare": 48.19
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 4,
+        "Revenue": "33,251.55",
+        "Count": 694,
+        "AvgFare": 47.91
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 5,
+        "Revenue": "43,180.76",
+        "Count": 899,
+        "AvgFare": 48.03
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 6,
+        "Revenue": "84,136.26",
+        "Count": 1735,
+        "AvgFare": 48.49
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 7,
+        "Revenue": "184,342.65",
+        "Count": 4004,
+        "AvgFare": 46.04
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 8,
+        "Revenue": "379,596.00",
+        "Count": 7941,
+        "AvgFare": 47.8
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 9,
+        "Revenue": "659,694.96",
+        "Count": 13666,
+        "AvgFare": 48.27
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 10,
+        "Revenue": "881,379.86",
+        "Count": 17355,
+        "AvgFare": 50.79
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 11,
+        "Revenue": "935,599.19",
+        "Count": 18461,
+        "AvgFare": 50.68
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 12,
+        "Revenue": "942,932.55",
+        "Count": 18656,
+        "AvgFare": 50.54
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 13,
+        "Revenue": "973,030.79",
+        "Count": 18930,
+        "AvgFare": 51.4
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 14,
+        "Revenue": "996,803.49",
+        "Count": 19511,
+        "AvgFare": 51.09
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 15,
+        "Revenue": "996,014.56",
+        "Count": 19735,
+        "AvgFare": 50.47
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 16,
+        "Revenue": "1,057,903.82",
+        "Count": 20682,
+        "AvgFare": 51.15
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 17,
+        "Revenue": "1,134,714.45",
+        "Count": 22345,
+        "AvgFare": 50.78
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 18,
+        "Revenue": "1,154,079.46",
+        "Count": 22905,
+        "AvgFare": 50.39
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 19,
+        "Revenue": "1,188,180.10",
+        "Count": 23474,
+        "AvgFare": 50.62
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 20,
+        "Revenue": "1,230,201.75",
+        "Count": 24773,
+        "AvgFare": 49.66
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 21,
+        "Revenue": "1,088,903.58",
+        "Count": 21829,
+        "AvgFare": 49.88
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 22,
+        "Revenue": "707,049.48",
+        "Count": 14553,
+        "AvgFare": 48.58
+    },
+    {
+        "Week": 51,
+        "WeekDay": 1,
+        "Hour": 23,
+        "Revenue": "365,203.99",
+        "Count": 7728,
+        "AvgFare": 47.26
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 0,
+        "Revenue": "175,686.80",
+        "Count": 3747,
+        "AvgFare": 46.89
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 1,
+        "Revenue": "95,763.20",
+        "Count": 2013,
+        "AvgFare": 47.57
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 2,
+        "Revenue": "57,325.70",
+        "Count": 1132,
+        "AvgFare": 50.64
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 3,
+        "Revenue": "40,105.07",
+        "Count": 769,
+        "AvgFare": 52.15
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 4,
+        "Revenue": "37,617.39",
+        "Count": 757,
+        "AvgFare": 49.69
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 5,
+        "Revenue": "60,317.64",
+        "Count": 1201,
+        "AvgFare": 50.22
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 6,
+        "Revenue": "134,577.85",
+        "Count": 2681,
+        "AvgFare": 50.2
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 7,
+        "Revenue": "320,260.09",
+        "Count": 6335,
+        "AvgFare": 50.55
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 8,
+        "Revenue": "639,935.51",
+        "Count": 12098,
+        "AvgFare": 52.9
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 9,
+        "Revenue": "951,232.00",
+        "Count": 17839,
+        "AvgFare": 53.32
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 10,
+        "Revenue": "1,157,008.83",
+        "Count": 21924,
+        "AvgFare": 52.77
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 11,
+        "Revenue": "1,204,856.77",
+        "Count": 23098,
+        "AvgFare": 52.16
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 12,
+        "Revenue": "1,218,698.46",
+        "Count": 23162,
+        "AvgFare": 52.62
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 13,
+        "Revenue": "1,107,186.43",
+        "Count": 22021,
+        "AvgFare": 50.28
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 14,
+        "Revenue": "1,155,508.29",
+        "Count": 23369,
+        "AvgFare": 49.45
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 15,
+        "Revenue": "1,234,564.24",
+        "Count": 24367,
+        "AvgFare": 50.67
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 16,
+        "Revenue": "1,355,667.29",
+        "Count": 25960,
+        "AvgFare": 52.22
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 17,
+        "Revenue": "1,308,329.92",
+        "Count": 25296,
+        "AvgFare": 51.72
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 18,
+        "Revenue": "1,340,405.10",
+        "Count": 26775,
+        "AvgFare": 50.06
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 19,
+        "Revenue": "1,386,743.92",
+        "Count": 27748,
+        "AvgFare": 49.98
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 20,
+        "Revenue": "1,432,960.41",
+        "Count": 29283,
+        "AvgFare": 48.93
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 21,
+        "Revenue": "1,350,350.42",
+        "Count": 27205,
+        "AvgFare": 49.64
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 22,
+        "Revenue": "902,768.66",
+        "Count": 18589,
+        "AvgFare": 48.56
+    },
+    {
+        "Week": 51,
+        "WeekDay": 2,
+        "Hour": 23,
+        "Revenue": "466,028.00",
+        "Count": 9774,
+        "AvgFare": 47.68
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 0,
+        "Revenue": "215,072.81",
+        "Count": 4429,
+        "AvgFare": 48.56
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 1,
+        "Revenue": "99,931.23",
+        "Count": 2171,
+        "AvgFare": 46.03
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 2,
+        "Revenue": "60,607.68",
+        "Count": 1361,
+        "AvgFare": 44.53
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 3,
+        "Revenue": "55,743.80",
+        "Count": 1164,
+        "AvgFare": 47.89
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 4,
+        "Revenue": "53,134.96",
+        "Count": 1063,
+        "AvgFare": 49.99
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 5,
+        "Revenue": "92,830.93",
+        "Count": 1785,
+        "AvgFare": 52.01
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 6,
+        "Revenue": "196,613.23",
+        "Count": 3886,
+        "AvgFare": 50.6
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 7,
+        "Revenue": "384,244.68",
+        "Count": 7836,
+        "AvgFare": 49.04
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 8,
+        "Revenue": "748,806.93",
+        "Count": 14466,
+        "AvgFare": 51.76
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 9,
+        "Revenue": "1,016,855.59",
+        "Count": 20125,
+        "AvgFare": 50.53
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 10,
+        "Revenue": "1,232,259.74",
+        "Count": 23487,
+        "AvgFare": 52.47
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 11,
+        "Revenue": "1,198,692.43",
+        "Count": 23370,
+        "AvgFare": 51.29
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 12,
+        "Revenue": "1,165,395.80",
+        "Count": 22014,
+        "AvgFare": 52.94
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 13,
+        "Revenue": "1,112,206.58",
+        "Count": 21852,
+        "AvgFare": 50.9
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 14,
+        "Revenue": "1,140,004.67",
+        "Count": 22086,
+        "AvgFare": 51.62
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 15,
+        "Revenue": "1,135,902.26",
+        "Count": 22299,
+        "AvgFare": 50.94
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 16,
+        "Revenue": "1,184,117.96",
+        "Count": 23246,
+        "AvgFare": 50.94
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 17,
+        "Revenue": "1,232,259.13",
+        "Count": 24128,
+        "AvgFare": 51.07
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 18,
+        "Revenue": "1,228,805.00",
+        "Count": 24291,
+        "AvgFare": 50.59
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 19,
+        "Revenue": "1,282,644.79",
+        "Count": 25728,
+        "AvgFare": 49.85
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 20,
+        "Revenue": "1,358,183.27",
+        "Count": 27313,
+        "AvgFare": 49.73
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 21,
+        "Revenue": "1,290,125.00",
+        "Count": 25876,
+        "AvgFare": 49.86
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 22,
+        "Revenue": "927,607.38",
+        "Count": 18956,
+        "AvgFare": 48.93
+    },
+    {
+        "Week": 51,
+        "WeekDay": 3,
+        "Hour": 23,
+        "Revenue": "492,830.77",
+        "Count": 9910,
+        "AvgFare": 49.73
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 0,
+        "Revenue": "238,396.78",
+        "Count": 4918,
+        "AvgFare": 48.47
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 1,
+        "Revenue": "103,866.76",
+        "Count": 2282,
+        "AvgFare": 45.52
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 2,
+        "Revenue": "62,455.39",
+        "Count": 1257,
+        "AvgFare": 49.69
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 3,
+        "Revenue": "53,091.69",
+        "Count": 1100,
+        "AvgFare": 48.27
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 4,
+        "Revenue": "52,216.49",
+        "Count": 1043,
+        "AvgFare": 50.06
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 5,
+        "Revenue": "89,810.99",
+        "Count": 1808,
+        "AvgFare": 49.67
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 6,
+        "Revenue": "188,258.14",
+        "Count": 3743,
+        "AvgFare": 50.3
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 7,
+        "Revenue": "463,173.95",
+        "Count": 8979,
+        "AvgFare": 51.58
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 8,
+        "Revenue": "839,915.43",
+        "Count": 15846,
+        "AvgFare": 53
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 9,
+        "Revenue": "1,106,728.24",
+        "Count": 21857,
+        "AvgFare": 50.63
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 10,
+        "Revenue": "1,269,320.83",
+        "Count": 24545,
+        "AvgFare": 51.71
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 11,
+        "Revenue": "1,217,689.18",
+        "Count": 24184,
+        "AvgFare": 50.35
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 12,
+        "Revenue": "1,194,915.68",
+        "Count": 24269,
+        "AvgFare": 49.24
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 13,
+        "Revenue": "1,154,428.20",
+        "Count": 22761,
+        "AvgFare": 50.72
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 14,
+        "Revenue": "1,134,906.51",
+        "Count": 23117,
+        "AvgFare": 49.09
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 15,
+        "Revenue": "1,187,118.58",
+        "Count": 23870,
+        "AvgFare": 49.73
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 16,
+        "Revenue": "1,187,694.38",
+        "Count": 23803,
+        "AvgFare": 49.9
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 17,
+        "Revenue": "1,272,435.45",
+        "Count": 24731,
+        "AvgFare": 51.45
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 18,
+        "Revenue": "1,175,366.85",
+        "Count": 23867,
+        "AvgFare": 49.25
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 19,
+        "Revenue": "1,224,473.22",
+        "Count": 25169,
+        "AvgFare": 48.65
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 20,
+        "Revenue": "1,330,433.21",
+        "Count": 27485,
+        "AvgFare": 48.41
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 21,
+        "Revenue": "1,241,833.40",
+        "Count": 25841,
+        "AvgFare": 48.06
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 22,
+        "Revenue": "874,851.04",
+        "Count": 18488,
+        "AvgFare": 47.32
+    },
+    {
+        "Week": 51,
+        "WeekDay": 4,
+        "Hour": 23,
+        "Revenue": "502,025.85",
+        "Count": 10729,
+        "AvgFare": 46.79
+    },
+    {
+        "Week": 51,
+        "WeekDay": 5,
+        "Hour": 0,
+        "Revenue": "137,965.77",
+        "Count": 2876,
+        "AvgFare": 47.97
+    }
+]

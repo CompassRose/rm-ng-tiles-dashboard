@@ -80,7 +80,9 @@ export class FlagsDashboardDotNetWrapper implements IFlagsDashboardDotNet {
   //, userId: string
   public GetFlightList(flagKey: number, historyId: number, userId: string): Promise<string> {
     return new Promise<string>(async (resolve, reject) => {
+
       const result = await this.bridge.GetFlightList(flagKey, historyId, userId);
+      //console.log('result ', JSON.parse(result))
       resolve(result);
     });
   }
@@ -111,9 +113,12 @@ export class FlagsDashboardDotNetWrapper implements IFlagsDashboardDotNet {
     });
   }
 
+
   //, flagKey: number, userId: string
   public ToOverview(fligtList: string, flagKey: number, userId: string): Promise<boolean> {
-    //console.log('API ToOverview ', fligtList)
+
+    console.log('API ToOverview ', userId,)
+
     return new Promise<boolean>(async (resolve, reject) => {
 
       const result = await this.bridge.ToOverview(fligtList, flagKey, userId);

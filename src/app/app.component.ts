@@ -1,10 +1,11 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { SortTileOptionsService } from './services/sort-tiles-options.service';
+import { Component, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { environment } from '../environments/environment';
 import { DashboardTilesAPIComponent } from './api/dashboard-api.service';
 import { AuthenticationService } from './services/authentication.service';
 import { flagTypes } from './dashboard-constants';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { DashboardFacadeComponent } from './api/dashboard-facade';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   public currentApplicationVersion = environment.appVersion;
 
@@ -23,19 +24,56 @@ export class AppComponent {
   // Moved from Mock
   public selectedFlags: any;
 
+  public pathId: any;
+  public pathIdFromStorage: any;
+
+  public timelineOrGrid = 0;
+  public buttonName = '';
+
   constructor(
-    public sortTileOptionsService: SortTileOptionsService,
+    public router: Router,
+    public route: ActivatedRoute,
+
+    public dashboardFacadeComponent: DashboardFacadeComponent,
     public authenticationService: AuthenticationService,
     public dashboardTilesAPIComponent: DashboardTilesAPIComponent,
     public changeDetector: ChangeDetectorRef) {
 
-    this.dashboardTilesAPIComponent.apiFlags$
+
+    //console.log(' ???? ', window.localStorage.getItem('currentUser'));
+
+    window.localStorage.setItem('currentUserString', 'RMSTEST');
+
+    this.pathIdFromStorage = window.localStorage.getItem('currentUserString')
+
+    this.authenticationService.isUserLoginSubject$
+      .subscribe((user: any) => {
+        if (user !== null) {
+          // console.log('authenticationService Subscribed  user ', user)
+          this.pathId = user.userId;
+
+          const returnFlags = async () => {
+            const a = await this.dashboardTilesAPIComponent.getAnalystsFlags(this.pathId);
+            this.dashboardFacadeComponent.apiFlags$.next(a);
+          };
+
+          returnFlags()
+
+          this.dashboardTilesAPIComponent.getSupervisorFlags(this.pathId);
+          setTimeout(() => {
+            ///timeline-component
+            this.router.navigate(['/monthly-avail']);
+          }, 100);
+
+        }
+      })
+
+
+    this.dashboardFacadeComponent.apiFlags$
       .subscribe((flagResponse: any) => {
-        //console.log('||||  Active Flags  ', flagResponse, ' savedFlagsStatic ', this.savedFlagsStatic)
         if (this.savedFlagsStatic.length === 0) {
           this.savedFlagsStatic = [...flagResponse];
         }
-
         this.selectedFlags = flagResponse;
       })
 
@@ -43,36 +81,45 @@ export class AppComponent {
       .subscribe((params: any) => {
         if (params.length > 0) {
           this.dashboardTilesAPIComponent.allUsersInput = params
-          // console.log('this.allUsersInput  ', this.dashboardTilesAPIComponent.allUsersInput)
         }
       })
   }
 
-  public drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      // Reorder items within the same list
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      // Move items between lists
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      );
-    }
+
+
+  public ngOnInit(): void {
+
+    this.route.paramMap
+      .subscribe((params: ParamMap) => {
+
+        console.log('this.pathIdFromStorage ', this.pathIdFromStorage)
+
+        // // if (this.pathId !== null)
+        if (window.localStorage.getItem('currentUser') !== null) {
+          this.pathId = this.pathIdFromStorage;
+        } else {
+          this.pathId = this.pathIdFromStorage;
+        }
+        this.dashboardTilesAPIComponent.getActiveUser(this.pathId);
+      });
+
+    this.buttonName = 'Flags';
+    this.timelineOrGrid = 3;
+    this.router.navigate(['/monthly-avail']);
   }
 
-  public selectFlagTypes(event: any) {
 
-    //console.log('selectFlagTypes ', event, ' savedFlagsStatic ', this.savedFlagsStatic)
+
+
+
+  public selectFlagTypes(event: any) {
 
     this.selectedFlags = [...this.savedFlagsStatic];
     let flagListReturn: any[] = [];
 
     if (event.name === 'All') {
       flagListReturn = [...this.savedFlagsStatic];
-      console.log('selectFlagTypes ', event, ' flagListReturn ', flagListReturn)
+      //console.log('selectFlagTypes ', event, ' flagListReturn ', flagListReturn)
     } else {
       flagListReturn = this.selectedFlags.filter((flag: any) => {
         // console.log('flag ', flag.flagTypeName)
@@ -82,9 +129,48 @@ export class AppComponent {
       })
     }
 
-    this.dashboardTilesAPIComponent.apiFlags$.next(flagListReturn);
+    this.dashboardFacadeComponent.apiFlags$.next(flagListReturn);
     //console.log('flagListReturn) ', flagListReturn)
   }
+
+  public backToTiles() {
+    console.log('backToTiles')
+    this.router.navigate(['/tiles-grid']);
+  }
+
+
+
+  public gotoTimeline() {
+
+    this.timelineOrGrid++;
+
+    if (this.timelineOrGrid === 4) {
+      this.timelineOrGrid = 0
+    }
+
+    if (this.timelineOrGrid === 0) {
+      this.buttonName = 'TimeLine Bar';
+      this.router.navigate(['/tiles-grid']);
+    }
+    if (this.timelineOrGrid === 1) {
+
+      this.buttonName = 'TimeLine Test'
+      this.router.navigate(['/dimension-bar']);
+    }
+    if (this.timelineOrGrid === 2) {
+      this.buttonName = 'TimeLine Heatmap'
+      this.router.navigate(['/timeline-component']);
+    }
+
+    if (this.timelineOrGrid === 3) {
+      this.router.navigate(['/monthly-avail']);
+    }
+
+
+
+    console.log('gotoTimeline ', this.timelineOrGrid)
+  }
+
 
   // from Priority Selection
   public selectSortMethod(ev: any) {
@@ -92,12 +178,9 @@ export class AppComponent {
     //console.log('selectSortMethod ', ev)
 
     function dynamicSort(property: any) {
-      //console.log('dynamicSort ', property)
       var sortOrder = 1;
       // Sort function
       return function (a: any, b: any) {
-        // console.log('dynamicSort ', a, ' b ', b)
-        // console.log('a ', a[property], ' b ', b[property])
         let result;
         if (typeof a[property] == 'boolean') {
           result = (a[property] > b[property]) ? -1 : (a[property] > b[property]) ? 0 : 1;

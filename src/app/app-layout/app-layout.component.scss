@@ -1,0 +1,69 @@
+@import "../../styles/configuration.scss";
+
+// .container {
+//   min-width: 1440px !important;
+//   height: 100vh;
+// }
+
+.accelya-logo-svg {
+    background-image: url("../../assets/svg/accelya-logo.svg") !important;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 38px;
+}
+
+.airRm-text {
+    color: #5f1baf;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 28px; /* 140% */
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.4rem;
+    font-weight: 700;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1em;
+}
+
+.btn-open {
+    position: absolute;
+    bottom: 150px;
+}
+
+.btn-close {
+    transform: translate(10px, -20px);
+    padding: 0.5rem 0.7rem;
+    background: #eee;
+    border-radius: 50%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+    &.hidden {
+        display: none;
+    }
+    &.shown {
+        display: block;
+    }
+}

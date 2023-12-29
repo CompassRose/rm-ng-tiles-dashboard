@@ -4,9 +4,12 @@
     <div class="pre-header">
       <span class="accelya-logo-svg">
       </span>
-      <span class="airRm-text">AirRM </span>
+      <span class="airRm-text"
+         (click)="gotoTimeline()">AirRM </span>
       <span class="headline-text headline-20-28-600 ps-3">Flags Dashboard</span>
       <div class="logging-center">
+        <button class="btn btn-primary-1"
+           (click)="gotoTimeline()">{{buttonName}}</button>
         <div *ngIf="(authenticationService.isUserLoginSubject$ | async) as loggedInUser">
           <div class="logged-in-as ms-2">
             <div class="body-text body-12-16-600 text-body-plat">User: {{loggedInUser.userId}}</div>
@@ -16,8 +19,10 @@
           </div>
         </div>
       </div>
+
       <span class="body-text body-12-16-400 text-p-blue me-2">v: {{currentApplicationVersion}}</span>
     </div>
+
     <div class="header navy-background">
       <section class="priority-parent">
         <!-- <div class="fw-600 ms-3 mt-2">Priority Status</div> -->
@@ -82,6 +87,8 @@
       </section> -->
 
     </div>
+
+
     <div class="content-parent">
       <div class="floating-control-panel py-2">
         <div *ngIf="(authenticationService.isUserLoginSubject$ | async) as loggedInUserType"
@@ -95,7 +102,7 @@
           <div class="list-column-group mr-auto mx-2">
             Flag Type:
           </div>
-          <div *ngIf="(sortTileOptionsService.flagTypeBehaviorSubject$ | async) as flags"
+          <div *ngIf="(dashboardFacadeComponent.flagTypeBehaviorSubject$ | async) as flags"
              class="ml-auto w-75">
             <ng-select class="custom-select"
                title="Select Flag Type"
@@ -125,14 +132,14 @@
           <div class="list-column-group mr-auto mx-2">
             Sort By:
           </div>
-          <div *ngIf="(sortTileOptionsService.priorityListBehaviorSubject$ | async) as priorities"
+          <div *ngIf="(dashboardFacadeComponent.priorityListBehaviorSubject$ | async) as priorities"
              class="ml-auto w-75">
             <ng-select class="custom-select"
                title="Select Priority"
                (change)="selectSortMethod($event)"
                [clearable]="true"
                [searchable]="false"
-               [(ngModel)]="sortTileOptionsService.selectedPriority"
+               [(ngModel)]="dashboardFacadeComponent.selectedPriority"
                placeholder="Select Priority"
                [items]="priorities">
               <ng-template ng-label-tmp
@@ -149,11 +156,15 @@
           </div>
         </div>
       </div>
-      <router-outlet></router-outlet>
     </div>
+    <router-outlet></router-outlet>
     <div class="footer">
       <span class="accelya-logo-svg"></span>
       <span class="privacy-text">
         Privacy | Terms & Conditions</span>
     </div>
+
+
   </div>
+
+</div>

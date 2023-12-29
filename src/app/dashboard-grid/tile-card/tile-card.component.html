@@ -31,9 +31,7 @@
             <div class="flex-column noselect"
                [ngClass]="showOptions ? 'dropdown-selector opened' : 'dropdown-selector closed'">
                 <a class="link-text"
-                   (click)="goToDestination(0, dashboardTile)"
-                   data-bs-toggle="modal"
-                   data-bs-target="#exampleModal">
+                   (click)="goToDestination(0, dashboardTile)">
                     View History</a>
                 <a class="link-text"
                    (click)="goToDestination(1, dashboardTile)">Go To Overview</a>

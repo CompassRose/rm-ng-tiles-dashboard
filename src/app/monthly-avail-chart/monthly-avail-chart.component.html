@@ -1,0 +1,42 @@
+<div class="timeline-placement">
+  <div class="noselect">
+    <div class="chart-container">
+      <div class="text-header-area mb-2">
+        <div class="me-5 white-space-no-wrap">Weekly Heatmap</div>
+        <div class="flex-row">
+          <div class="list-column-group ml-auto mx-2">
+            Metric:
+          </div>
+          <div class="">
+            <ng-select class="custom-select"
+               title="Select Priority"
+               (change)="selectMetric($event)"
+               [clearable]="false"
+               [searchable]="false"
+               [ngModel]="kpiMetricCompare[selectedMetric].value"
+               placeholder="Count"
+               [items]="kpiMetricCompare">
+              <ng-template ng-label-tmp
+                 let-item="item">
+                <div>{{item.value}}</div>
+              </ng-template>
+              <ng-template ng-option-tmp
+                 let-item="item">
+                <div>
+                  {{ item.value }}
+                </div>
+              </ng-template>
+            </ng-select>
+          </div>
+        </div>
+
+      </div>
+      <div class="chart-body">
+        <div echarts
+           id="monthly-available"
+           [options]="options"></div>
+      </div>
+    </div>
+
+  </div>
+</div>

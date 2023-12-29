@@ -38,12 +38,12 @@ export interface FlagRuns {
 
 export interface FlagRunFlights {
     id: number;
-    value: ApiFlightValues;
+    flights: any;
 }
 
 export interface ApiFlightValues {
     boxContents: BoxContent;
-    flights: EachFlights[];
+    flights: any[];
 }
 
 export interface ApiFlagRun {
