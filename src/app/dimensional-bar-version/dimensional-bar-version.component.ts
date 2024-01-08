@@ -75,10 +75,10 @@ export class DimensionalBarComponent {
 
   private setupEventListeners() {
 
-    this.dashboardTilesAPIComponent.getMarketCsvData(this.dashboardTilesAPIComponent.Tiles_Heatmap)
-      .subscribe((tilesHeatmap: any[]) => {
-        //console.log(' MARKET Total ', tilesHeatmap)
-      })
+    // this.dashboardTilesAPIComponent.getMarketCsvData(this.dashboardTilesAPIComponent.Tiles_Heatmap)
+    //   .subscribe((tilesHeatmap: any[]) => {
+    //     //console.log(' MARKET Total ', tilesHeatmap)
+    //   })
 
 
 
@@ -236,6 +236,7 @@ export class DimensionalBarComponent {
             ]
           }
         },
+
         timeline: {
           currentIndex: 0,
           data: this.allWeeks,
@@ -249,14 +250,16 @@ export class DimensionalBarComponent {
           playInterval: 3000,
           //replaceMerge: ['xAxis', 'series'],
         },
-        postEffect: {
-          enable: true,
-          focalDistance: 100,
-        },
+        // postEffect: {
+        //   enable: true,
+        //   focalDistance: 100,
+        // },
         grid3D: {
           boxWidth: 200,
           boxDepth: 80,
-          boxHeight: 100,
+          //boxHeight: 60,
+          bottom: 370,
+          top: 0,
           light: {
             main: {
               intensity: 1.2
@@ -326,7 +329,7 @@ export class DimensionalBarComponent {
               name: this.heatmapData[0].name,
               type: 'bar3D',
               data: this.heatmapData[0].values.map(function (item) {
-                console.log('item ', item)
+                //console.log('item ', item)
                 return {
                   value: [item[0], item[1], item[2]]
                 };

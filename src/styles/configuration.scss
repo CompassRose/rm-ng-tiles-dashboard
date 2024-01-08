@@ -13,6 +13,11 @@ $font-size-base-md: 12px; //12px @ 16px base
 $font-size-base-sm: 11px !important; //11px @ 16px base
 $font-size-base-xs: 10px !important; //10px @ 16px base
 
+$font-size-base-ml: 13px; //12px @ 16px base
+$font-size-base-md: 12px; //12px @ 16px base
+$font-size-base-sm: 11px !important; //11px @ 16px base
+$font-size-base-xs: 10px !important; //10px @ 16px base
+
 $font-weight-lg: 600;
 $font-weight-md: 500;
 $font-weight-nml: 400;
@@ -110,6 +115,26 @@ $font-family: "OpenSans-Semibold", sans-serif;
 .font-14 {
   font-size: $font-size-base-lg;
 }
+
+.font-14 {
+  // line-height: 1.25rem;
+  font-size: $font-size-base-lg;
+}
+
+.font-13 {
+  // line-height: 1.25rem;
+  font-size: $font-size-base-ml;
+}
+
+.font-12 {
+  // line-height: 1.25rem;
+  font-size: $font-size-base-md;
+}
+
+.font-11 {
+  font-size: $font-size-base-sm;
+}
+
 /* Rules for sizing the icon. */
 .material-icons.md-18 {
   font-size: 18px;

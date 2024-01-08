@@ -4,12 +4,9 @@
     <div class="pre-header">
       <span class="accelya-logo-svg">
       </span>
-      <span class="airRm-text"
-         (click)="gotoTimeline()">AirRM </span>
+      <span class="airRm-text">AirRM </span>
       <span class="headline-text headline-20-28-600 ps-3">Flags Dashboard</span>
       <div class="logging-center">
-        <button class="btn btn-primary-1"
-           (click)="gotoTimeline()">{{buttonName}}</button>
         <div *ngIf="(authenticationService.isUserLoginSubject$ | async) as loggedInUser">
           <div class="logged-in-as ms-2">
             <div class="body-text body-12-16-600 text-body-plat">User: {{loggedInUser.userId}}</div>
@@ -20,7 +17,8 @@
         </div>
       </div>
 
-      <span class="body-text body-12-16-400 text-p-blue me-2">v: {{currentApplicationVersion}}</span>
+      <a class="body-text body-12-16-400 text-p-blue me-2"
+         (click)="gotoTimeline()">v: {{currentApplicationVersion}}</a>
     </div>
 
     <div class="header navy-background">
@@ -156,15 +154,12 @@
           </div>
         </div>
       </div>
+      <router-outlet></router-outlet>
     </div>
-    <router-outlet></router-outlet>
     <div class="footer">
       <span class="accelya-logo-svg"></span>
       <span class="privacy-text">
         Privacy | Terms & Conditions</span>
     </div>
-
-
   </div>
-
 </div>

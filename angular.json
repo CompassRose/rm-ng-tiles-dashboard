@@ -32,12 +32,10 @@
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.css",
               "src/theme.scss",
-              "src/styles.scss",
-              "./node_modules/cropperjs/dist/cropper.css"
+              "src/styles.scss"
             ],
             "scripts": [
-              "./node_modules/bootstrap/dist/js/bootstrap.js",
-              "./node_modules/cropperjs/dist/cropper.js"
+              "./node_modules/bootstrap/dist/js/bootstrap.js"
             ]
           },
           "configurations": {

@@ -1,4 +1,32 @@
-#monthly-available {
+#market-study {
+  width: 100% !important;
+  height: 28vh !important;
+}
+
+#market-study-totals {
   width: 80vw !important;
-  height: 35vh !important;
+  height: 25vh !important;
+}
+
+.horiz-centered-flex {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap !important;
+}
+
+.color-select {
+  min-width: 120px;
+
+  .color-row {
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    .color-square {
+      z-index: 10;
+      width: 10px !important;
+      height: 10px !important;
+    }
+  }
 }

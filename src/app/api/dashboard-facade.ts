@@ -65,17 +65,6 @@ export class DashboardFacadeComponent {
                 }
             })
 
-        // this.dashboardTilesAPIComponent.getCsvData(this.dashboardTilesAPIComponent.Tiles_Heatmap)
-        //     .subscribe((tilesHeatmap: any[]) => {
-        //         console.log(' tilesHeatmap ', tilesHeatmap)
-        //     })
-
-
-        // this.dashboardTilesAPIComponent.getMarketCsvData(this.dashboardTilesAPIComponent.Tiles_Heatmap)
-        //     .subscribe((tilesHeatmap: any[]) => {
-        //         console.log(' MARKET Total ', tilesHeatmap)
-        //     })
-
 
         this.apiFlags$
             .subscribe((flags: any[]) => {

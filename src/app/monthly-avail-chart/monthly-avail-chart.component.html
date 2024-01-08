@@ -2,19 +2,62 @@
   <div class="noselect">
     <div class="chart-container">
       <div class="text-header-area mb-2">
-        <div class="me-5 white-space-no-wrap">Weekly Heatmap</div>
+        <div class="me-5 white-space-no-wrap">Market Study Heatmap</div>
+
+        <div class="flex-row ms-auto me-3">
+          <!-- <div class="font-13 me-3">
+            Mode:
+          </div> -->
+          <div class="flex-row">
+            <div class="font-12">Market</div>
+            <mat-slide-toggle class="mat-slide-toggle"
+               [ngModel]="marketMetricState"
+               (change)="onModeChange($event)"></mat-slide-toggle>
+            <div class="font-12">Totals</div>
+          </div>
+        </div>
+
+        <div class="flex-row">
+          <ng-select class="custom-select"
+             *ngIf="colorRange"
+             style="min-width: 9rem;"
+             title="Select Color Range"
+             [(ngModel)]="colorCollections[colorIdx].id"
+             (change)="selectColorRange($event)"
+             [clearable]="false"
+             [searchable]="false"
+             [items]="colorCollections"
+             [bindValue]="'id'"
+             [bindLabel]="'key'">
+            <ng-template ng-option-tmp
+               let-item="item">
+              <div class="color-row">
+                <div>{{ item.key }}</div>
+                <div style="padding-left: 8px;"
+                   class="d-flex ml-auto">
+                  <div *ngFor="let square of item.value">
+                    <div class="color-square"
+                       [style.background-color]="square"></div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+
         <div class="flex-row">
           <div class="list-column-group ml-auto mx-2">
             Metric:
           </div>
           <div class="">
             <ng-select class="custom-select"
+               style="min-width: 6rem;"
                title="Select Priority"
                (change)="selectMetric($event)"
                [clearable]="false"
                [searchable]="false"
-               [ngModel]="kpiMetricCompare[selectedMetric].value"
-               placeholder="Count"
+               [(ngModel)]="kpiMetricCompare[selectedMetric].id"
+               [bindValue]="'id'"
                [items]="kpiMetricCompare">
               <ng-template ng-label-tmp
                  let-item="item">
@@ -23,20 +66,18 @@
               <ng-template ng-option-tmp
                  let-item="item">
                 <div>
-                  {{ item.value }}
+                  {{ item.name }}
                 </div>
               </ng-template>
             </ng-select>
           </div>
         </div>
-
       </div>
       <div class="chart-body">
         <div echarts
-           id="monthly-available"
+           id="market-study"
            [options]="options"></div>
       </div>
     </div>
-
   </div>
 </div>

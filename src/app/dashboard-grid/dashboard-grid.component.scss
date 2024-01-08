@@ -100,22 +100,3 @@ $grid-contrast: adjust-color(gray, $lightness: 1%) !important;
     width: 100%;
     margin: 0 auto;
 }
-
-.grid-grand-parent {
-    margin: 10px auto;
-    width: 85% !important;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    .grid-parent {
-        width: 100% !important;
-
-        //padding: 0 20px;
-        //margin: 0 auto;
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        //overflow-y: scroll;
-        flex-wrap: wrap;
-    }
-}

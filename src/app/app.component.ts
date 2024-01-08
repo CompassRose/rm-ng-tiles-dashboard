@@ -28,7 +28,6 @@ export class AppComponent implements OnInit {
   public pathIdFromStorage: any;
 
   public timelineOrGrid = 0;
-  public buttonName = '';
 
   constructor(
     public router: Router,
@@ -49,9 +48,7 @@ export class AppComponent implements OnInit {
     this.authenticationService.isUserLoginSubject$
       .subscribe((user: any) => {
         if (user !== null) {
-          // console.log('authenticationService Subscribed  user ', user)
           this.pathId = user.userId;
-
           const returnFlags = async () => {
             const a = await this.dashboardTilesAPIComponent.getAnalystsFlags(this.pathId);
             this.dashboardFacadeComponent.apiFlags$.next(a);
@@ -61,8 +58,8 @@ export class AppComponent implements OnInit {
 
           this.dashboardTilesAPIComponent.getSupervisorFlags(this.pathId);
           setTimeout(() => {
-            ///timeline-component
-            this.router.navigate(['/monthly-avail']);
+            this.timelineOrGrid = 1;
+            this.router.navigate(['/market-study']);
           }, 100);
 
         }
@@ -94,7 +91,6 @@ export class AppComponent implements OnInit {
 
         console.log('this.pathIdFromStorage ', this.pathIdFromStorage)
 
-        // // if (this.pathId !== null)
         if (window.localStorage.getItem('currentUser') !== null) {
           this.pathId = this.pathIdFromStorage;
         } else {
@@ -103,9 +99,8 @@ export class AppComponent implements OnInit {
         this.dashboardTilesAPIComponent.getActiveUser(this.pathId);
       });
 
-    this.buttonName = 'Flags';
-    this.timelineOrGrid = 3;
-    this.router.navigate(['/monthly-avail']);
+    this.timelineOrGrid = 1;
+    this.router.navigate(['/market-study']);
   }
 
 
@@ -119,10 +114,8 @@ export class AppComponent implements OnInit {
 
     if (event.name === 'All') {
       flagListReturn = [...this.savedFlagsStatic];
-      //console.log('selectFlagTypes ', event, ' flagListReturn ', flagListReturn)
     } else {
       flagListReturn = this.selectedFlags.filter((flag: any) => {
-        // console.log('flag ', flag.flagTypeName)
         if (flag.flagTypeName === event.name) {
           return flag
         }
@@ -144,29 +137,22 @@ export class AppComponent implements OnInit {
 
     this.timelineOrGrid++;
 
-    if (this.timelineOrGrid === 4) {
-      this.timelineOrGrid = 0
+    if (this.timelineOrGrid === 3) {
+      this.timelineOrGrid = 0;
     }
 
     if (this.timelineOrGrid === 0) {
-      this.buttonName = 'TimeLine Bar';
       this.router.navigate(['/tiles-grid']);
     }
-    if (this.timelineOrGrid === 1) {
 
-      this.buttonName = 'TimeLine Test'
+    if (this.timelineOrGrid === 1) {
+      this.router.navigate(['/market-study']);
+    }
+
+
+    if (this.timelineOrGrid === 2) {
       this.router.navigate(['/dimension-bar']);
     }
-    if (this.timelineOrGrid === 2) {
-      this.buttonName = 'TimeLine Heatmap'
-      this.router.navigate(['/timeline-component']);
-    }
-
-    if (this.timelineOrGrid === 3) {
-      this.router.navigate(['/monthly-avail']);
-    }
-
-
 
     console.log('gotoTimeline ', this.timelineOrGrid)
   }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject, map, BehaviorSubject } from 'rxjs';
-import { FlagRuns, FlightContents, FlagList, ApiFlightValues, FlagRunFlights, ApiFlagRun } from '../models/tiles.model';
+import { FlightContents, FlagList, ApiFlightValues, FlagRunFlights, ApiFlagRun } from '../models/tiles.model';
 import { timer, startWith, switchMap } from 'rxjs';
 import { FlagsDashboardDotNetWrapper } from './Flags-dashboard-Interface';
 import { DateFormatterPipe } from '../shared/pipes/dateModifierPipe';
@@ -11,7 +11,6 @@ import { HttpClient } from "@angular/common/http";
 
 //const dateModifierPipe = new DateFormatterPipe();
 
-const Papa = require('papaparse')
 
 @Injectable({
     providedIn: 'root'
@@ -49,7 +48,6 @@ export class DashboardTilesAPIComponent {
     public apiFlightsByNdoSubject$ = new BehaviorSubject<any[]>([]);
 
     public Market_Values = './assets/csv/tiles-heatmap5.csv';
-    public Market_Values_JSON = './assets/json/market-totals.json';
     public Tiles_Heatmap = './assets/csv/tiles-heatmap-fixed.csv';
 
     constructor(
@@ -86,24 +84,26 @@ export class DashboardTilesAPIComponent {
     public getCsvData(metric: any): Observable<any[]> {
 
         return this.http
-            .get(this.Tiles_Heatmap, { responseType: 'text' })
+            .get(metric, { responseType: 'text' })
             .pipe(
                 map(res => {
-                    return this.csvJSON(res);
+                    return this.csvJSON(res, 'both');
                 }));
     }
 
     public getMarketCsvData(metric: any): Observable<any[]> {
-
+        console.log('metric ', metric)
         return this.http
-            .get(this.Market_Values, { responseType: 'text' })
+            .get(metric, { responseType: 'text' })
             .pipe(
                 map(res => {
-                    return this.csvJSON(res);
+                    return this.csvJSON(res, 'numbers');
                 }));
     }
 
-    public csvJSONWithStrings(csv: any) {
+
+
+    public csvJSON(csv: any, type: any) {
 
         const lines = csv.split(/[\r\n]+/);
 
@@ -116,40 +116,21 @@ export class DashboardTilesAPIComponent {
         for (let i = 1; i < lines.length; i++) {
             const obj: any = {};
             const currentline = lines[i].split(',');
+
             for (let j = 0; j < headers.length; j++) {
-                //console.log('j ', j, ' currentline[j] ', currentline[j])
-                if (j === 0) {
-                    obj[headers[j].toString()] = currentline[j];
+
+                if (type === 'both') {
+
+                    if (j === 0) {
+                        //  console.log('j ', j, ' 000000 ', currentline[j])
+                        obj[headers[j].toString()] = currentline[j];
+
+                    } else {
+
+                        obj[headers[j]] = +currentline[j];
+                    }
                 } else {
-                    obj[headers[j]] = +currentline[j];
-                }
-
-            }
-            result.push(obj);
-        }
-
-        return result;
-        // return JSON.stringify(result); //JSON
-    }
-
-    public csvJSON(csv: any) {
-
-        const lines = csv.split(/[\r\n]+/);
-
-        for (let i = 0; i < lines.length; i++) {
-            lines[i] = lines[i].replace(/\s/, '');
-        }
-        const result = [];
-        const headers = lines[0].split(',');
-
-        for (let i = 1; i < lines.length; i++) {
-            const obj: any = {};
-            const currentline = lines[i].split(',');
-            for (let j = 0; j < headers.length; j++) {
-                //console.log('j ', j, ' currentline[j] ', currentline[j])
-                if (j === 0) {
-                    obj[headers[j].toString()] = currentline[j];
-                } else {
+                    /// console.log('??  ', headers)
                     obj[headers[j]] = +currentline[j];
                 }
 

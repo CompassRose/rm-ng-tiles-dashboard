@@ -5,8 +5,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { AppRoutingModule } from './app-routing.module';
-//import { MaterialExampleModule } from '../material.module';
-//import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DashboardGridComponent } from './dashboard-grid/dashboard-grid.component';
 import { PriorityChartComponent } from './priority-chart/priority-chart.component';
 import { MonthlyFlagsChartComponent } from './monthly-flags-chart/monthly-flags-chart.component';
@@ -18,18 +17,23 @@ import { DashboardTilesAPIComponent } from './api/dashboard-api.service';
 import { BidPriceAspNetService } from "./api/au-visualization.service";
 import { AnalystSearchComponent } from '../app/analyst-search/analyst-search.component';
 import { AuthenticationService } from './services/authentication.service';
-import { DragDropModule } from '@angular/cdk/drag-drop';
 import { TilesTimelineComponent } from './tiles-timeline/tiles-timeline.component';
 import { AppLayoutComponent } from './app-layout/app-layout.component';
 import { DashboardFacadeComponent } from './api/dashboard-facade';
 import { HeatmapTimelineComponent } from './timeline-heatmap/timeline-heatmap.component';
 import { MonthlyAvailComponent } from './monthly-avail-chart/monthly-avail-chart.component';
 import { DimensionalBarComponent } from './dimensional-bar-version/dimensional-bar-version.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MaterialExampleModule } from '../material.module';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatIconModule } from '@angular/material/icon';
+import { ShortNumberPipe } from './shared/pipes/short-number-pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardGridComponent,
+    ShortNumberPipe,
     PriorityChartComponent,
     MonthlyFlagsChartComponent,
     HeatmapTimelineComponent,
@@ -41,9 +45,14 @@ import { DimensionalBarComponent } from './dimensional-bar-version/dimensional-b
     AppLayoutComponent
   ],
   imports: [
+    MaterialExampleModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSlideToggleModule,
+    MatSliderModule,
+    MatIconModule,
     BrowserModule,
     CommonModule,
-    DragDropModule,
     BrowserAnimationsModule,
     NgSelectModule,
     AppRoutingModule,
@@ -52,7 +61,6 @@ import { DimensionalBarComponent } from './dimensional-bar-version/dimensional-b
       echarts: () => import('echarts')
     })
   ],
-
   providers: [FlagsDashboardDotNetWrapper, DashboardFacadeComponent, DashboardTilesAPIComponent, AuthenticationService, { provide: LocationStrategy, useClass: HashLocationStrategy }],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
